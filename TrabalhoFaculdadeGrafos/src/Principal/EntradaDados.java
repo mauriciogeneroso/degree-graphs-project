@@ -5,17 +5,40 @@
  */
 package Principal;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pigo
  */
 public class EntradaDados extends javax.swing.JFrame {
+
+    private ButtonGroup buttonGroup1;
+    private ButtonGroup buttonGroup2;
+    private String[] nos;
+    private String[] arestas;
     
     /**
      * Creates new form EntradaDados
      */
     public EntradaDados() {
         initComponents();
+
+        // Grupo de botões para os JRadioButton direcionado e não direcionado
+        buttonGroup1 = new ButtonGroup();
+        buttonGroup1.add(buttonNaoDirecionado);
+        buttonGroup1.add(radioButtonDirecionado);
+        // Fim do grupo de botões da direção das arestas
+        
+    // Grupo de botões para informar se o grafo é completo ou se o usuário definirá as adjacências
+        buttonGroup2 = new ButtonGroup();
+        buttonGroup2.add(radioButtonCompleto);
+        buttonGroup2.add(radioButtonDefinir);
+        // Fim do grupo de botões da direção das arestas
+        
+        
+
     }
 
     /**
@@ -36,12 +59,21 @@ public class EntradaDados extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textFieldNos = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        textFieldArestas = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        buttonGerarDefinicao = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        radioButtonDirecionado = new javax.swing.JRadioButton();
+        buttonNaoDirecionado = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textAreaDefinir = new javax.swing.JTextArea();
+        jPanel4 = new javax.swing.JPanel();
+        radioButtonCompleto = new javax.swing.JRadioButton();
+        radioButtonDefinir = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -51,19 +83,36 @@ public class EntradaDados extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setText("Grafo = (N,A, G);");
+        jLabel1.setText("Grafo = (N, A, G);");
 
         jLabel2.setText("N = Número de nós.");
 
-        jLabel3.setText("A = Número de arestas.");
+        jLabel3.setText("A = Conjunto de arestas.");
 
         jLabel4.setText("G = Função de adjacência entre os nós.");
 
-        jLabel5.setText("Insira os dados do grafo");
+        jLabel5.setText("Insira os dados do grafo:");
 
-        jLabel6.setText("N:");
+        jLabel6.setText("N = {");
 
-        jLabel7.setText("A:");
+        textFieldNos.setToolTipText("Exemplo: N = {A, B, C}");
+
+        jLabel7.setText("A = {");
+
+        textFieldArestas.setToolTipText("Exemplo: A = {a1, a2, a3}");
+        textFieldArestas.setEnabled(false);
+
+        jLabel8.setText("}");
+
+        jLabel9.setText("}");
+
+        buttonGerarDefinicao.setText("Gerar Definição");
+        buttonGerarDefinicao.setEnabled(false);
+        buttonGerarDefinicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGerarDefinicaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -82,14 +131,23 @@ public class EntradaDados extends javax.swing.JFrame {
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel5)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textFieldArestas))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textFieldNos, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(buttonGerarDefinicao)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -109,21 +167,27 @@ public class EntradaDados extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldNos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldArestas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonGerarDefinicao)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jRadioButton1.setText("Direcionado");
+        radioButtonDirecionado.setText("Direcionado");
 
-        jRadioButton2.setSelected(true);
-        jRadioButton2.setText("Não direcionado");
+        buttonNaoDirecionado.setSelected(true);
+        buttonNaoDirecionado.setText("Não direcionado");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -131,19 +195,93 @@ public class EntradaDados extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                .addComponent(radioButtonDirecionado)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonNaoDirecionado)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton1)
+                .addComponent(radioButtonDirecionado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(buttonNaoDirecionado)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        textAreaDefinir.setColumns(20);
+        textAreaDefinir.setRows(5);
+        textAreaDefinir.setEnabled(false);
+        jScrollPane1.setViewportView(textAreaDefinir);
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        radioButtonCompleto.setSelected(true);
+        radioButtonCompleto.setText("Completo");
+        radioButtonCompleto.setToolTipText("Grafo simples onde todos os nós são adjacêntes a todos os nós");
+        radioButtonCompleto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonCompletoActionPerformed(evt);
+            }
+        });
+
+        radioButtonDefinir.setText("Definir:");
+        radioButtonDefinir.setToolTipText("Definir a adjcência dos nós");
+        radioButtonDefinir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonDefinirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(radioButtonCompleto)
+                    .addComponent(radioButtonDefinir))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(radioButtonCompleto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(radioButtonDefinir)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -154,33 +292,42 @@ public class EntradaDados extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jButton1.setText("Criar grafo");
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(372, 372, 372)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
-                .addContainerGap())
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,50 +336,108 @@ public class EntradaDados extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+    private void radioButtonDefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonDefinirActionPerformed
+        textAreaDefinir.setEnabled(true);
+        textFieldArestas.setEnabled(true);
+        buttonGerarDefinicao.setEnabled(true);
+    }//GEN-LAST:event_radioButtonDefinirActionPerformed
+
+    private void radioButtonCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonCompletoActionPerformed
+        textAreaDefinir.setText("");
+        textAreaDefinir.setEnabled(false);
+        textFieldArestas.setText("");
+        textFieldArestas.setEnabled(false);
+        buttonGerarDefinicao.setEnabled(false);
+    }//GEN-LAST:event_radioButtonCompletoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void buttonGerarDefinicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGerarDefinicaoActionPerformed
+        if (textFieldNos.getText().equals("") && textFieldArestas.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Informe os Nós e Arestas para gerar a definição", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else if (textFieldNos.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Informe os Nós para gerar a definição", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else if (textFieldArestas.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Informe as Arestas para gerar a definição", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            try {
+                if (!textFieldNos.getText().equals("") && !textFieldArestas.equals("")){
+                    nos = capturarNos(textFieldNos.getText());
+                    arestas = capturarArestas(textFieldArestas.getText());
                 }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EntradaDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EntradaDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EntradaDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EntradaDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (Exception e){
+                JOptionPane.showMessageDialog(this, "As entradas de nós e arestas são inválidas.\n"
+                                                  + "Ajuste para gerar a definição corretamente.", "Erro", JOptionPane.ERROR_MESSAGE);
+           }
+        }    
+    }//GEN-LAST:event_buttonGerarDefinicaoActionPerformed
+
+    private String[] capturarNos(String entradaNos){
+        String[] nosTemp;
+        entradaNos += '}';
+        int qntNos = 0;
+        
+        // Conta a quantidade de Nós para inicializar o array
+        for (int i = 0; i < entradaNos.length(); i++){
+            if (entradaNos.charAt(i) == ',')
+                qntNos++;
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EntradaDados().setVisible(true);
+        
+        // Inicializar o array de nós e armazena cada aresta informada pelo usuário
+        nosTemp = new String[qntNos + 1];
+        String tempNo = "";
+        for (int i = 0, j = 0; i < entradaNos.length(); i++){
+            if (entradaNos.charAt(i) != ',' && entradaNos.charAt(i) != ' ' && entradaNos.charAt(i)  != '}'){
+                tempNo += entradaNos.charAt(i);
+            } else if (entradaNos.charAt(i) == ',' || entradaNos.charAt(i)  == '}'){
+                nosTemp[j] = tempNo;
+                System.out.println(tempNo); 
+                tempNo = "";
+                j++;
             }
-        });
+        }
+        return nosTemp;
     }
+    
+    private String[] capturarArestas(String entradaArestas){
+        String[] arestaTemp;
+        entradaArestas += '}';
+        int qntArestas = 0;
 
+        // Conta a quantidade de Arestas para inicializar o array
+        for (int i = 0; i < entradaArestas.length(); i++){
+            if (entradaArestas.charAt(i) == ',')
+                qntArestas++;
+        }
+        // Inicializar o array de nós e armazena cada aresta informada pelo usuário
+        arestaTemp = new String[qntArestas + 1];
+        String tempAresta = "";
+        for (int i = 0, j = 0; i < entradaArestas.length(); i++){
+            if (entradaArestas.charAt(i) != ',' && entradaArestas.charAt(i) != ' ' && entradaArestas.charAt(i)  != '}'){
+                tempAresta += entradaArestas.charAt(i);
+            } else if (entradaArestas.charAt(i) == ',' || entradaArestas.charAt(i)  == '}'){
+                arestaTemp[j] = tempAresta;
+                System.out.println(tempAresta); 
+                tempAresta = "";
+                j++;
+            }
+        }
+        return arestaTemp;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonGerarDefinicao;
+    private javax.swing.JRadioButton buttonNaoDirecionado;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -242,13 +447,21 @@ public class EntradaDados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JRadioButton radioButtonCompleto;
+    private javax.swing.JRadioButton radioButtonDefinir;
+    private javax.swing.JRadioButton radioButtonDirecionado;
+    private javax.swing.JTextArea textAreaDefinir;
+    private javax.swing.JTextField textFieldArestas;
+    private javax.swing.JTextField textFieldNos;
     // End of variables declaration//GEN-END:variables
+    
 }
