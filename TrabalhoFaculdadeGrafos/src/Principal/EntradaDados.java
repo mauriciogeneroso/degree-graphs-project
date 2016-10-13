@@ -5,6 +5,7 @@
  */
 package Principal;
 
+import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -14,7 +15,9 @@ import javax.swing.JOptionPane;
  */
 public class EntradaDados extends javax.swing.JFrame {
     
-    private boolean[][] matrizAdj; 
+    private int[][] matrizAdj;
+    private int[][] matrizInc;
+    //private ArrayList listaAdj;
     
     private ButtonGroup buttonGroup1;
     private ButtonGroup buttonGroup2;
@@ -75,7 +78,7 @@ public class EntradaDados extends javax.swing.JFrame {
         labelDefinirAresta = new javax.swing.JLabel();
         comboBoxAresta = new javax.swing.JComboBox<>();
         buttonCriarGrafo = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        buttonCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -178,9 +181,19 @@ public class EntradaDados extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         radioButtonDirecionado.setText("Direcionado");
+        radioButtonDirecionado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonDirecionadoActionPerformed(evt);
+            }
+        });
 
         radioButtonNaoDirecionado.setSelected(true);
         radioButtonNaoDirecionado.setText("Não direcionado");
+        radioButtonNaoDirecionado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonNaoDirecionadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -247,11 +260,6 @@ public class EntradaDados extends javax.swing.JFrame {
 
         comboBoxNoInicial.setToolTipText("");
         comboBoxNoInicial.setEnabled(false);
-        comboBoxNoInicial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxNoInicialActionPerformed(evt);
-            }
-        });
 
         labelDefinirNo.setText("Nó:");
         labelDefinirNo.setEnabled(false);
@@ -281,26 +289,26 @@ public class EntradaDados extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(buttonDefinirAdjacencia))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelDefinirNo2)
-                            .addComponent(labelDefinirNo)
-                            .addComponent(labelDefinirAresta))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(comboBoxNoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboBoxNoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(comboBoxAresta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelDefinirNo2)
+                                    .addComponent(labelDefinirNo)
+                                    .addComponent(labelDefinirAresta))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(comboBoxNoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboBoxNoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboBoxAresta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -354,10 +362,10 @@ public class EntradaDados extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonCancelar.setText("Cancelar");
+        buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buttonCancelarActionPerformed(evt);
             }
         });
 
@@ -373,7 +381,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(buttonCriarGrafo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(buttonCancelar)
                 .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
@@ -383,7 +391,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(buttonCancelar)
                     .addComponent(buttonCriarGrafo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -435,21 +443,17 @@ public class EntradaDados extends javax.swing.JFrame {
         buttonCriarGrafo.setEnabled(true);
     }//GEN-LAST:event_radioButtonCompletoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_buttonCancelarActionPerformed
     
-    private void comboBoxNoInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNoInicialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxNoInicialActionPerformed
-
     private void textFieldArestasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldArestasFocusLost
         if (textFieldArestas.getText().equals("")){
             JOptionPane.showMessageDialog(this, "Informe as Arestas para definir o grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             try {
                 String[] arrayAresta = capturarArestas(textFieldArestas.getText());
-                
+                comboBoxAresta.removeAllItems();
                 for (String arestaa : arrayAresta){
                     comboBoxAresta.addItem(arestaa);
                 }
@@ -462,46 +466,98 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldArestasFocusLost
 
     private void buttonDefinirAdjacenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDefinirAdjacenciaActionPerformed
-        int linha = quantidadeNos(textFieldNos.getText());
-        int coluna = quantidadeArestas(textFieldArestas.getText());
+        int qntNos = quantidadeNos(textFieldNos.getText());
+        int qntArestas = quantidadeArestas(textFieldArestas.getText());
         
-        if (matrizAdj == null){
-            System.out.println("Matriz nula");
-            matrizAdj = new boolean[linha][coluna];   
-            limparMatrizAdj(); 
-        }
-            matrizAdj[comboBoxNoInicial.getSelectedIndex()][comboBoxNoFinal.getSelectedIndex()] = true;
+        if (radioButtonNaoDirecionado.isSelected()){
+            // Cria matriz de Adjacência Não direcionada
+            if (matrizAdj == null){
+                matrizAdj = new int[qntNos][qntNos];   
+                limparMatrizAdj(); 
+            }
+            
+            matrizAdj[comboBoxNoInicial.getSelectedIndex()][comboBoxNoFinal.getSelectedIndex()] += 1;
             comboBoxAresta.removeItemAt(comboBoxAresta.getSelectedIndex());
             if (comboBoxAresta.getSelectedIndex() == -1){
                 buttonDefinirAdjacencia.setEnabled(false);
                 buttonCriarGrafo.setEnabled(true);
             }
+        } else if (radioButtonDirecionado.isSelected()){
+            //Cria Matriz de Adjacência direcionada
+            if (matrizInc == null){
+                matrizInc = new int[qntNos][qntArestas];   
+                limparMatrizInc(); 
+            }
+            
+            // aqui tem erro, está inserindo sempre na primeira posição porque o item informado passa para a primeira posição
+            // tem que criar um array com cada aresta e comparar, para então colocar na coluna referente aquele array.
+            matrizInc[comboBoxNoInicial.getSelectedIndex()][comboBoxAresta.getSelectedIndex()] += 1;
+            comboBoxAresta.removeItemAt(comboBoxAresta.getSelectedIndex());
+            if (comboBoxAresta.getSelectedIndex() == -1){
+                buttonDefinirAdjacencia.setEnabled(false);
+                buttonCriarGrafo.setEnabled(true);
+            }
+            imprimirMatrizInc();
+        }
     }//GEN-LAST:event_buttonDefinirAdjacenciaActionPerformed
 
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
-        imprimirMatriz();
+        if (radioButtonNaoDirecionado.isSelected())
+            imprimirMatrizAdj();
+        else if (radioButtonDirecionado.isSelected())
+            imprimirMatrizInc();
     }//GEN-LAST:event_buttonCriarGrafoActionPerformed
 
-    private void imprimirMatriz(){
-        int linha = quantidadeNos(textFieldNos.getText());
-        System.out.println(linha);
-        int coluna = quantidadeArestas(textFieldArestas.getText());
-        System.out.println(coluna);
-        for (int i = 0; i < linha; i ++){
-            for (int j = 0; j < coluna; j++){
+    private void radioButtonDirecionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonDirecionadoActionPerformed
+        if (matrizInc != null)
+            limparMatrizInc();
+        // RECARREGAR AS ARESTAS JÁ USADAS...COLOCAR UM MÉTODO SEPARADO
+    }//GEN-LAST:event_radioButtonDirecionadoActionPerformed
+
+    private void radioButtonNaoDirecionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonNaoDirecionadoActionPerformed
+        if (matrizAdj != null)
+            limparMatrizAdj();
+        // RECARREGAR AS ARESTAS JÁ USADAS...COLOCAR UM MÉTODO SEPARADO
+    }//GEN-LAST:event_radioButtonNaoDirecionadoActionPerformed
+
+    private void imprimirMatrizAdj(){
+        int qntNos = quantidadeNos(textFieldNos.getText());
+        for (int i = 0; i < qntNos; i ++){
+            for (int j = 0; j < qntNos; j++){
                 System.out.print(matrizAdj[i][j] + " ");
             }
             System.out.println("");
         }
     }
     
+    private void imprimirMatrizInc(){
+        int qntNos = quantidadeNos(textFieldNos.getText());
+        int qntArestas = quantidadeArestas(textFieldArestas.getText());
+        for (int i = 0; i < qntNos; i ++){
+            for (int j = 0; j < qntArestas; j++){
+                System.out.print(matrizInc[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+    
     private void limparMatrizAdj(){
-        int linha = quantidadeNos(textFieldNos.getText()) - 1;
-        int coluna = quantidadeArestas(textFieldArestas.getText()) - 1;
+        int qntNos = quantidadeNos(textFieldNos.getText()) - 1;
         
-        for (int i = 0; i < linha; i ++){
-            for (int j = 0; j < coluna; j++){
-                matrizAdj[i][j] = false;
+        for (int i = 0; i < qntNos; i ++){
+            for (int j = 0; j < qntNos; j++){
+                matrizAdj[i][j] = 0;
+            }
+        }
+    }
+    
+    private void limparMatrizInc(){
+        int qntNos = quantidadeNos(textFieldNos.getText()) - 1;
+        int qntArestas = quantidadeArestas(textFieldArestas.getText()) - 1;
+        
+        for (int i = 0; i < qntNos; i ++){
+            for (int j = 0; j < qntArestas; j++){
+                matrizInc[i][j] = 0;
             }
         }
     }
@@ -529,7 +585,6 @@ public class EntradaDados extends javax.swing.JFrame {
                 tempNo += entradaNos.charAt(i);
             } else if (entradaNos.charAt(i) == ',' || entradaNos.charAt(i)  == '}'){
                 nosTemp[j] = tempNo;
-                System.out.println(tempNo); 
                 tempNo = "";
                 j++;
             }
@@ -560,7 +615,6 @@ public class EntradaDados extends javax.swing.JFrame {
                 tempAresta += entradaArestas.charAt(i);
             } else if (entradaArestas.charAt(i) == ',' || entradaArestas.charAt(i)  == '}'){
                 arestaTemp[j] = tempAresta;
-                System.out.println(tempAresta); 
                 tempAresta = "";
                 j++;
             }
@@ -569,12 +623,12 @@ public class EntradaDados extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCancelar;
     private javax.swing.JButton buttonCriarGrafo;
     private javax.swing.JButton buttonDefinirAdjacencia;
     private javax.swing.JComboBox<String> comboBoxAresta;
     private javax.swing.JComboBox<String> comboBoxNoFinal;
     private javax.swing.JComboBox<String> comboBoxNoInicial;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
