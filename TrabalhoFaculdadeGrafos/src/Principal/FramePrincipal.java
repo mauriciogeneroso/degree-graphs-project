@@ -11,13 +11,13 @@ package Principal;
  */
 public class FramePrincipal extends javax.swing.JFrame {
 
+    private Grafo grafo;
     /**
      * Creates new form FramePrincipal
      */
     public FramePrincipal() {
         initComponents();
-        
-        
+        grafo = new Grafo();
     }
 
     /**
@@ -140,7 +140,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        EntradaDados entrada = new EntradaDados();
+        EntradaDados entrada = new EntradaDados(grafo);
         
         
         entrada.setLocationRelativeTo(this);

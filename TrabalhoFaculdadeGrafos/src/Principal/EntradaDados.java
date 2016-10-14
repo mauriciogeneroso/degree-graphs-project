@@ -14,17 +14,21 @@ import javax.swing.JOptionPane;
  */
 public class EntradaDados extends javax.swing.JFrame {
     
-    private int[][] matrizAdj;
-    private int[][] matrizInc;
+    private int[][] matrizAdjNaoDir;
+    private int[][] matrizIncNaoDir;
+    private int[][] matrizAdjDir;
+    private int[][] matrizIncDir;
     //private ArrayList listaAdj;
     
     private ButtonGroup buttonGroup1;
     private ButtonGroup buttonGroup2;
     private String[] nos;
     private String[] arestas;
-   
-    public EntradaDados() {
+    Grafo grafo;
+    
+    public EntradaDados(Grafo grafo) {
         initComponents();
+        this.grafo = grafo;
         
         // Grupo de botões para os JRadioButton direcionado e não direcionado
         buttonGroup1 = new ButtonGroup();
@@ -468,82 +472,115 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldArestasFocusLost
 
     private void buttonDefinirAdjacenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDefinirAdjacenciaActionPerformed
-        int qntArestas = quantidadeArestas(textFieldArestas.getText());
-        
         if (radioButtonNaoDirecionado.isSelected() && radioButtonDefinir.isSelected()){
             matrizAdjNaoDir();
             matrizIcdNaoDir();
-            
-            //Após definir remove o index
-            comboBoxAresta.removeItemAt(comboBoxAresta.getSelectedIndex());
-            if (comboBoxAresta.getSelectedIndex() == -1) {
-                buttonDefinirAdjacencia.setEnabled(false);
-                buttonCriarGrafo.setEnabled(true);
-            }    
-            
-            
-            
         } else if (radioButtonDirecionado.isSelected() && radioButtonDefinir.isSelected()){
-            //Cria Matriz de Adjacência direcionada
-            if (matrizInc == null){
-                //matrizInc = new int[qntNos][qntArestas];   
-                limparMatrizInc(); 
-            }
-            
-            // aqui tem erro, está inserindo sempre na primeira posição porque o item informado passa para a primeira posição
-            // tem que criar um array com cada aresta e comparar, para então colocar na coluna referente aquele array.
-            matrizInc[comboBoxNoInicial.getSelectedIndex()][comboBoxAresta.getSelectedIndex()] += 1;
-            comboBoxAresta.removeItemAt(comboBoxAresta.getSelectedIndex());
-            if (comboBoxAresta.getSelectedIndex() == -1){
-                buttonDefinirAdjacencia.setEnabled(false);
-                buttonCriarGrafo.setEnabled(true);
-            }
-            imprimirMatrizInc();
+            matrizAdjDir();
+            matrizIcdDir();
+        }
+        //Após definir remove o index
+        comboBoxAresta.removeItemAt(comboBoxAresta.getSelectedIndex());
+        if (comboBoxAresta.getSelectedIndex() == -1) {
+            buttonDefinirAdjacencia.setEnabled(false);
+            buttonCriarGrafo.setEnabled(true);
         }
     }//GEN-LAST:event_buttonDefinirAdjacenciaActionPerformed
 
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
         if (radioButtonNaoDirecionado.isSelected() && radioButtonDefinir.isSelected()){
-            System.out.println("Adjacência:");
-            imprimirMatrizAdj();
-            System.out.println("\nIncidência:");
-            imprimirMatrizInc();
+            System.out.println("Adjacência não direcionado:");
+            imprimirMatriz(matrizAdjNaoDir);
+            System.out.println("\nIncidência não direcionado:");
+            imprimirMatriz(matrizIncNaoDir);            
+            grafo.setMatrizAdjNaoDir(matrizAdjNaoDir);
+            grafo.setMatrizIncNaoDir(matrizIncNaoDir);
+        } else if (radioButtonDirecionado.isSelected() && radioButtonDefinir.isSelected()){
+            System.out.println("Adjacência direcionado:");
+            imprimirMatriz(matrizAdjDir);
+            System.out.println("\nIncidência direcionado:");
+            imprimirMatriz(matrizIncDir);
+            grafo.setMatrizAdjDir(matrizAdjDir);
+            grafo.setMatrizIncDir(matrizIncDir);
         }
+        
+        
+        this.dispose();
     }//GEN-LAST:event_buttonCriarGrafoActionPerformed
 
     private void radioButtonDirecionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonDirecionadoActionPerformed
-        if (matrizInc != null)
-            limparMatrizInc();
+        if (matrizIncNaoDir != null)
+            limparMatriz(matrizIncNaoDir);
         // RECARREGAR AS ARESTAS JÁ USADAS...COLOCAR UM MÉTODO SEPARADO
     }//GEN-LAST:event_radioButtonDirecionadoActionPerformed
 
     private void radioButtonNaoDirecionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonNaoDirecionadoActionPerformed
-        if (matrizAdj != null)
-            limparMatrizAdj();
+        //if (matrizAdjNaoDir != null)
+        //    limparMatriz();
         // RECARREGAR AS ARESTAS JÁ USADAS...COLOCAR UM MÉTODO SEPARADO
     }//GEN-LAST:event_radioButtonNaoDirecionadoActionPerformed
 
+    private void limparMatriz(int[][] matriz){
+        
+        for (int i = 0; i < matriz.length; i++){
+            for (int j = 0; j < matriz[i].length; j++){
+                matriz[i][j] = 0;
+            }
+        }
+    }
+    
+    private void imprimirMatriz(int[][] matriz){
+        for (int[] matriz1 : matriz) {
+            for (int j = 0; j < matriz1.length; j++) {
+                System.out.print(matriz1[j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+    
     private void matrizAdjNaoDir(){
         // Cria matriz de Adjacência não direcionada
         int qntNos = quantidadeNos(textFieldNos.getText());
-        if (matrizAdj == null) {
-            matrizAdj = new int[qntNos][qntNos];
-            limparMatrizAdj();
+        if (matrizAdjNaoDir == null) {
+            matrizAdjNaoDir = new int[qntNos][qntNos];
+            limparMatriz(matrizAdjNaoDir);
         }
-        matrizAdj[posicaoNoInicialSelecionado()][posicaoNoFinalSelecionado()] += 1;
-        matrizAdj[posicaoNoFinalSelecionado()][posicaoNoInicialSelecionado()] += 1;  
+        matrizAdjNaoDir[posicaoNoInicialSelecionado()][posicaoNoFinalSelecionado()] += 1;
+        matrizAdjNaoDir[posicaoNoFinalSelecionado()][posicaoNoInicialSelecionado()] += 1;  
     }
     
     private void matrizIcdNaoDir(){
         // Cria matriz de incidência não direcionada
         int qntNos = quantidadeNos(textFieldNos.getText());
         int qntArestas = quantidadeArestas(textFieldArestas.getText());
-        if (matrizInc == null) {
-            matrizInc = new int[qntNos][qntArestas];
-            limparMatrizInc();
+        if (matrizIncNaoDir == null) {
+            matrizIncNaoDir = new int[qntNos][qntArestas];
+            limparMatriz(matrizIncNaoDir);
         }
-        matrizInc[posicaoNoInicialSelecionado()][posicaoArestaSelecionada()] += 1;
-        matrizInc[posicaoNoFinalSelecionado()][posicaoArestaSelecionada()] += 1;
+        matrizIncNaoDir[posicaoNoInicialSelecionado()][posicaoArestaSelecionada()] += 1;
+        matrizIncNaoDir[posicaoNoFinalSelecionado()][posicaoArestaSelecionada()] += 1;
+    }
+    
+    private void matrizAdjDir(){
+        // Cria matriz de Adjacência direcionada
+        int qntNos = quantidadeNos(textFieldNos.getText());
+        if (matrizAdjDir == null) {
+            matrizAdjDir = new int[qntNos][qntNos];
+            limparMatriz(matrizAdjDir);
+        }
+        matrizAdjDir[posicaoNoInicialSelecionado()][posicaoNoFinalSelecionado()] += 1;
+    }
+    
+    private void matrizIcdDir(){
+        // Cria matriz de incidência não direcionada
+        int qntNos = quantidadeNos(textFieldNos.getText());
+        int qntArestas = quantidadeArestas(textFieldArestas.getText());
+        if (matrizIncDir == null) {
+            matrizIncDir = new int[qntNos][qntArestas];
+            limparMatriz(matrizIncDir);
+        }
+        matrizIncDir[posicaoNoInicialSelecionado()][posicaoArestaSelecionada()] += 1;
+        matrizIncDir[posicaoNoFinalSelecionado()][posicaoArestaSelecionada()] -= 1;
     }
     
     private int posicaoNoInicialSelecionado(){
@@ -580,48 +617,6 @@ public class EntradaDados extends javax.swing.JFrame {
             }
         }
         return posicaoAresta;
-    }
-    
-    private void imprimirMatrizAdj(){
-        int qntNos = quantidadeNos(textFieldNos.getText());
-        for (int i = 0; i < qntNos; i ++){
-            for (int j = 0; j < qntNos; j++){
-                System.out.print(matrizAdj[i][j] + " ");
-            }
-            System.out.println("");
-        }
-    }
-    
-    private void imprimirMatrizInc(){
-        int qntNos = quantidadeNos(textFieldNos.getText());
-        int qntArestas = quantidadeArestas(textFieldArestas.getText());
-        for (int i = 0; i < qntNos; i ++){
-            for (int j = 0; j < qntArestas; j++){
-                System.out.print(matrizInc[i][j] + " ");
-            }
-            System.out.println("");
-        }
-    }
-    
-    private void limparMatrizAdj(){
-        int qntNos = quantidadeNos(textFieldNos.getText()) - 1;
-        
-        for (int i = 0; i < qntNos; i ++){
-            for (int j = 0; j < qntNos; j++){
-                matrizAdj[i][j] = 0;
-            }
-        }
-    }
-    
-    private void limparMatrizInc(){
-        int qntNos = quantidadeNos(textFieldNos.getText()) - 1;
-        int qntArestas = quantidadeArestas(textFieldArestas.getText()) - 1;
-        
-        for (int i = 0; i < qntNos; i ++){
-            for (int j = 0; j < qntArestas; j++){
-                matrizInc[i][j] = 0;
-            }
-        }
     }
     
     private int quantidadeNos(String entradaNos){

@@ -11,14 +11,48 @@ package Principal;
  */
 public class Grafo {
 
-    private int[][] matrizAdj;
-
-    public int[][] getMatrizAdj() {
-        return matrizAdj;
+    private int[][] matrizAdjNaoDir;
+    private int[][] matrizIncNaoDir;
+    private int[][] matrizAdjDir;
+    private int[][] matrizIncDir;
+    
+    public Grafo(){
+        matrizAdjNaoDir = null;
+        matrizIncNaoDir = null;
+        matrizAdjDir = null;
+        matrizIncDir = null;
+    }
+    
+    public int[][] getMatrizAdjNaoDir() {
+        return matrizAdjNaoDir;
     }
 
-    public void setMatrizAdj(int[][] matrizAdj) {
-        this.matrizAdj = matrizAdj;
+    public void setMatrizAdjNaoDir(int[][] matrizAdjNaoDir) {
+        this.matrizAdjNaoDir = matrizAdjNaoDir;
+    }
+
+    public int[][] getMatrizIncNaoDir() {
+        return matrizIncNaoDir;
+    }
+
+    public void setMatrizIncNaoDir(int[][] matrizIncNaoDir) {
+        this.matrizIncNaoDir = matrizIncNaoDir;
+    }
+
+    public int[][] getMatrizAdjDir() {
+        return matrizAdjDir;
+    }
+
+    public void setMatrizAdjDir(int[][] matrizAdjDir) {
+        this.matrizAdjDir = matrizAdjDir;
+    }
+
+    public int[][] getMatrizIncDir() {
+        return matrizIncDir;
+    }
+
+    public void setMatrizIncDir(int[][] matrizIncDir) {
+        this.matrizIncDir = matrizIncDir;
     }
 
 }
