@@ -5,7 +5,6 @@
  */
 package Principal;
 
-import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -417,8 +416,10 @@ public class EntradaDados extends javax.swing.JFrame {
                 buttonCriarGrafo.setEnabled(false);
 
                 if (!capturarNos(textFieldNos.getText()).equals("")){
-                    String[] arrayNo = capturarNos(textFieldNos.getText());
-                    for (String noo : arrayNo){
+                    nos = capturarNos(textFieldNos.getText());
+                    comboBoxNoInicial.removeAllItems();
+                    comboBoxNoFinal.removeAllItems();
+                    for (String noo : nos){
                         comboBoxNoInicial.addItem(noo);
                         comboBoxNoFinal.addItem(noo);
                     }
@@ -458,6 +459,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     comboBoxAresta.addItem(arestaa);
                 }
                 buttonDefinirAdjacencia.setEnabled(true);
+                arestas = capturarArestas(textFieldArestas.getText());
             } catch (Exception e){
                 JOptionPane.showMessageDialog(this, "Valores inválidos para as Arestas informadas", "Aviso", JOptionPane.INFORMATION_MESSAGE);
                 textFieldArestas.setFocusable(true);
@@ -466,26 +468,25 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldArestasFocusLost
 
     private void buttonDefinirAdjacenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDefinirAdjacenciaActionPerformed
-        int qntNos = quantidadeNos(textFieldNos.getText());
         int qntArestas = quantidadeArestas(textFieldArestas.getText());
         
-        if (radioButtonNaoDirecionado.isSelected()){
-            // Cria matriz de Adjacência Não direcionada
-            if (matrizAdj == null){
-                matrizAdj = new int[qntNos][qntNos];   
-                limparMatrizAdj(); 
-            }
+        if (radioButtonNaoDirecionado.isSelected() && radioButtonDefinir.isSelected()){
+            matrizAdjNaoDir();
+            matrizIcdNaoDir();
             
-            matrizAdj[comboBoxNoInicial.getSelectedIndex()][comboBoxNoFinal.getSelectedIndex()] += 1;
+            //Após definir remove o index
             comboBoxAresta.removeItemAt(comboBoxAresta.getSelectedIndex());
-            if (comboBoxAresta.getSelectedIndex() == -1){
+            if (comboBoxAresta.getSelectedIndex() == -1) {
                 buttonDefinirAdjacencia.setEnabled(false);
                 buttonCriarGrafo.setEnabled(true);
-            }
-        } else if (radioButtonDirecionado.isSelected()){
+            }    
+            
+            
+            
+        } else if (radioButtonDirecionado.isSelected() && radioButtonDefinir.isSelected()){
             //Cria Matriz de Adjacência direcionada
             if (matrizInc == null){
-                matrizInc = new int[qntNos][qntArestas];   
+                //matrizInc = new int[qntNos][qntArestas];   
                 limparMatrizInc(); 
             }
             
@@ -502,10 +503,12 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonDefinirAdjacenciaActionPerformed
 
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
-        if (radioButtonNaoDirecionado.isSelected())
+        if (radioButtonNaoDirecionado.isSelected() && radioButtonDefinir.isSelected()){
+            System.out.println("Adjacência:");
             imprimirMatrizAdj();
-        else if (radioButtonDirecionado.isSelected())
+            System.out.println("\nIncidência:");
             imprimirMatrizInc();
+        }
     }//GEN-LAST:event_buttonCriarGrafoActionPerformed
 
     private void radioButtonDirecionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonDirecionadoActionPerformed
@@ -520,6 +523,65 @@ public class EntradaDados extends javax.swing.JFrame {
         // RECARREGAR AS ARESTAS JÁ USADAS...COLOCAR UM MÉTODO SEPARADO
     }//GEN-LAST:event_radioButtonNaoDirecionadoActionPerformed
 
+    private void matrizAdjNaoDir(){
+        // Cria matriz de Adjacência não direcionada
+        int qntNos = quantidadeNos(textFieldNos.getText());
+        if (matrizAdj == null) {
+            matrizAdj = new int[qntNos][qntNos];
+            limparMatrizAdj();
+        }
+        matrizAdj[posicaoNoInicialSelecionado()][posicaoNoFinalSelecionado()] += 1;
+        matrizAdj[posicaoNoFinalSelecionado()][posicaoNoInicialSelecionado()] += 1;  
+    }
+    
+    private void matrizIcdNaoDir(){
+        // Cria matriz de incidência não direcionada
+        int qntNos = quantidadeNos(textFieldNos.getText());
+        int qntArestas = quantidadeArestas(textFieldArestas.getText());
+        if (matrizInc == null) {
+            matrizInc = new int[qntNos][qntArestas];
+            limparMatrizInc();
+        }
+        matrizInc[posicaoNoInicialSelecionado()][posicaoArestaSelecionada()] += 1;
+        matrizInc[posicaoNoFinalSelecionado()][posicaoArestaSelecionada()] += 1;
+    }
+    
+    private int posicaoNoInicialSelecionado(){
+        String tempNoInicialSelected = comboBoxNoInicial.getItemAt(comboBoxNoInicial.getSelectedIndex());   
+        int posicaoLinhaNo = 0;
+        for (int i = 0; i < nos.length; i++){
+            if (nos[i].equals(tempNoInicialSelected)){
+                posicaoLinhaNo = i;
+                break;
+            }
+        }
+        return posicaoLinhaNo;
+    }
+    
+    private int posicaoNoFinalSelecionado(){
+        String tempNoFinalSelected = comboBoxNoFinal.getItemAt(comboBoxNoFinal.getSelectedIndex());
+        int posicaoColunaNo = 0;
+        for (int i = 0; i < nos.length; i++){
+            if (nos[i].equals(tempNoFinalSelected)){
+                posicaoColunaNo = i;
+                break;
+            }
+        }
+        return posicaoColunaNo;
+    }
+    
+    private int posicaoArestaSelecionada(){
+        String tempArestaSelected = comboBoxAresta.getItemAt(comboBoxAresta.getSelectedIndex());
+        int posicaoAresta = 0;
+        for (int i = 0; i < arestas.length; i++){
+            if (arestas[i].equals(tempArestaSelected)){
+                posicaoAresta = i;
+                break;
+            }
+        }
+        return posicaoAresta;
+    }
+    
     private void imprimirMatrizAdj(){
         int qntNos = quantidadeNos(textFieldNos.getText());
         for (int i = 0; i < qntNos; i ++){
@@ -563,8 +625,7 @@ public class EntradaDados extends javax.swing.JFrame {
     }
     
     private int quantidadeNos(String entradaNos){
-        int qntNos = 0;
-        
+        int qntNos = 0;       
         for (int i = 0; i < entradaNos.length(); i++){
             if (entradaNos.charAt(i) == ',')
                 qntNos++;
