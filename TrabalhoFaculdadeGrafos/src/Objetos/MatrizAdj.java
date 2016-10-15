@@ -1,7 +1,5 @@
 package Objetos;
 
-import javax.swing.JOptionPane;
-
 /**
  * Estudantes de Ciência da Computação - 4 fase.
  *
@@ -20,7 +18,7 @@ public class MatrizAdj extends Matriz {
             matriz[noInicial][noFinal] += 1;
             matriz[noFinal][noInicial] += 1;
         }
-        System.out.println("Matriz de adjacência: ");
+        System.out.println("Matriz de adjacência - Grafo não direcionado: ");
         this.imprimirMatriz();
     }
 

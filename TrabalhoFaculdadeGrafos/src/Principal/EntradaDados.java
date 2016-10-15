@@ -480,7 +480,7 @@ public class EntradaDados extends javax.swing.JFrame {
             grafo.alterarMatriz(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
             grafo.alterarMatriz(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
         } else if (rButtonDirecionado.isSelected() && rButtonDefinir.isSelected()) {
-
+            
         }
         //Após definir remove o index
         cBoxAresta.removeItemAt(cBoxAresta.getSelectedIndex());

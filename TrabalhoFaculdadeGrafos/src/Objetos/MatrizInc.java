@@ -17,7 +17,7 @@ public class MatrizInc extends Matriz {
             matriz[noInicial][aresta] += 1;
             matriz[noFinal][aresta] += 1;
         }
-        System.out.println("Matriz de Incidência: ");
+        System.out.println("Matriz de Incidência - Grafo não direcionada: ");
         this.imprimirMatriz();
     }
     

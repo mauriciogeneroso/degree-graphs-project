@@ -10,11 +10,11 @@ package Objetos;
  *
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
- * @author Maurício Generoso *
+ * @author Maurício Generoso
  */
 public abstract class Matriz {
 
-    int [][] matriz;
+    int[][] matriz;
     int linhas;
     int colunas;
 
@@ -37,7 +37,7 @@ public abstract class Matriz {
     private void setColunas(int colunas) {
         this.colunas = colunas;
     }
-    
+
     public void limparMatriz() {
         for (int[] mt : matriz) {
             for (int j = 0; j < mt.length; j++) {
@@ -45,7 +45,7 @@ public abstract class Matriz {
             }
         }
     }
-    
+
     public void imprimirMatriz() {
         for (int[] mt : matriz) {
             for (int j = 0; j < mt.length; j++) {
@@ -66,5 +66,5 @@ public abstract class Matriz {
             }
         }
     }
-    
+
 }

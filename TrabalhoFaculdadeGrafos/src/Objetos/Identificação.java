@@ -12,26 +12,25 @@ package Objetos;
 public class Identificação {
    
 public int VerifGrafoSimples(){
- int v;
-
-return v;          
+    int v = 0;
+    return v;          
 }
 
 public int VerifGrafoPlanar(){
-int v;
+int v = 0;
 
 return v;    
 }
     
 public int VerifGrafoCompleto(){
-int v;
+int v = 0;
 
 return v;
     
 }
 
 public int VerifGrafoConexo(){
-int v;
+int v = 0;
 
 return v;
 }
