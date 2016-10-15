@@ -5,6 +5,8 @@
  */
 package Principal;
 
+import Objetos.Grafo;
+
 /**
  *
  * @author pigo
