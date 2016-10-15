@@ -8,8 +8,12 @@ package Principal;
 import Objetos.Grafo;
 
 /**
- *
- * @author pigo
+ * Estudantes de Ciência da Computação - 4 fase.
+ *  
+ * @Gustavo Souza
+ * @author Luan Darabas
+ * @author Luiz Alexandre da Luz
+ * @author Maurício Generoso
  */
 public class FramePrincipal extends javax.swing.JFrame {
 

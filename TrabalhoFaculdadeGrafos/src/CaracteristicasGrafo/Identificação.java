@@ -6,8 +6,10 @@
 package CaracteristicasGrafo;
 
 /**
- *
- * @author User
+ * @Gustavo Souza
+ * @author Luan Darabas
+ * @author Luiz Alexandre da Luz
+ * @author Maurício Generoso 
  */
 public class Identificação {
    

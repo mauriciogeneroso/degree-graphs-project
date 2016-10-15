@@ -8,8 +8,10 @@ package Objetos;
 import java.util.ArrayList;
 
 /**
- *
- * @author pigo
+ * @Gustavo Souza
+ * @author Luan Darabas
+ * @author Luiz Alexandre da Luz
+ * @author Maurício Generoso 
  */
 public class Lista {
     
