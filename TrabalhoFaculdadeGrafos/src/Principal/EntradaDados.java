@@ -5,8 +5,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
 /**
- * Janela para entrada do Grafo, Nesta janela o usuário estará informando as
- * características para realizar a criação do grafo.
+ * Janela para entrada do Grafo, nesta janela o usuário estará informando as características para realizar a criação do grafo.
  *
  * Estudantes de Ciência da Computação - 4 fase.
  *

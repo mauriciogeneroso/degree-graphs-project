@@ -1,11 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Objetos;
 
 /**
+ * Matriz para armazenar os grafos, nesta classe está implementado caracteristicas e métodos comuns das matrizes de Adjacência e Incidência, 
+ * porém as alterações das informações são implementadas nas subclasses que herdam de "Matriz", pois cada tipo de armazenamento do Grafo 
+ * requer uma forma diferente de estar alterando a Matriz.
+ * 
  * Estudantes de Ciência da Computação - 4 fase.
  *  
  * @Gustavo Souza
@@ -48,12 +47,7 @@ public abstract class Matriz {
     }
 
     public void imprimirMatriz() {
-        for (int[] mt : matriz) {
-            for (int j = 0; j < mt.length; j++) {
-                System.out.print(mt[j] + " ");
-            }
-            System.out.println("");
-        }
+        System.out.println(this); // Iŕa chamar o toString();
     }
 
     public void iniciarMatriz(int linhas, int colunas) {
@@ -67,4 +61,17 @@ public abstract class Matriz {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        String imprimir = "";
+        for (int[] mt : matriz) {
+            for (int j = 0; j < mt.length; j++) {
+                imprimir += mt[j] + " ";
+            }
+            imprimir += "\n";
+        }
+        return imprimir;
+    }
+    
 }

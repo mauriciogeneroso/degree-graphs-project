@@ -1,6 +1,9 @@
 package Objetos;
 
 /**
+ * 
+ * Classe que representa e herda de "Matriz"; É implementado nesta subclasse como é alterado os dados de um grafo em Matriz de Incidência.
+ * 
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @Gustavo Souza
