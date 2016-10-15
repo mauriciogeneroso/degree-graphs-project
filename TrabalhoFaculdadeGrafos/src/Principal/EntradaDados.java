@@ -477,12 +477,13 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private void buttonDefinirAdjacenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDefinirAdjacenciaActionPerformed
         if (rButtonNaoDirecionado.isSelected() && rButtonDefinir.isSelected()) {
-            grafo.alterarMatriz(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo.alterarMatriz(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
         } else if (rButtonDirecionado.isSelected() && rButtonDefinir.isSelected()) {
-            
+            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
         }
-        //Após definir remove o index
+        //Após definir remove a aresta da seleção de acordo com o index
         cBoxAresta.removeItemAt(cBoxAresta.getSelectedIndex());
         if (cBoxAresta.getSelectedIndex() == -1) {
             buttonDefinirAdjacencia.setEnabled(false);
@@ -568,11 +569,11 @@ public class EntradaDados extends javax.swing.JFrame {
         cBoxAresta.removeAllItems();
         buttonDefinirAdjacencia.setEnabled(false);
         buttonCriarGrafo.setEnabled(true);
+        cancelarCriacaoGrafo();
     }
 
     private void cancelarCriacaoGrafo() {
-        grafo.setArestas(null);
-        grafo.setArestas(null);
+        grafo.destruirGrafo();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,11 +6,17 @@ package Objetos;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- *
  */
 public class MatrizAdj extends Matriz {
 
-    public void alterarMatriz(int noInicial, int noFinal) {
+    
+    public void alterarMatrizGrafoDirecionado(int noInicial, int noFinal) {
+        matriz[noInicial][noFinal] += 1;
+        System.out.println("Matriz de adjacência - Grafo direcionado: ");
+        this.imprimirMatriz();
+    }
+    
+    public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal) {
         if (noInicial == noFinal){
             // Se houver laço só irá armazenar uma vez
             matriz[noInicial][noFinal] += 1;
@@ -21,5 +27,5 @@ public class MatrizAdj extends Matriz {
         System.out.println("Matriz de adjacência - Grafo não direcionado: ");
         this.imprimirMatriz();
     }
-
+    
 }

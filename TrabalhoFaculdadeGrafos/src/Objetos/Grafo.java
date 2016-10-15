@@ -13,7 +13,6 @@ package Objetos;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- *
  */
 public class Grafo {
 
@@ -88,11 +87,27 @@ public class Grafo {
         mt.iniciarMatriz(qntLinhas, qntColunas);
     }
     
-    public void alterarMatriz(Matriz mt, int noInicial, int noFinal, int aresta){
+    public void destruirGrafo(){
+        nos = null;
+        arestas = null;
+        matrizAdj = null;
+        matrizInc = null;
+    }
+    
+    public void alterarMatrizGrafoNaoDirecionado(Matriz mt, int noInicial, int noFinal, int aresta){
         if (mt instanceof MatrizAdj){
-            ((MatrizAdj) mt).alterarMatriz(noInicial, noFinal);
+            ((MatrizAdj) mt).alterarMatrizGrafoNaoDirecionado(noInicial, noFinal);
         } else if (mt instanceof MatrizInc){
-            ((MatrizInc) mt).alterarMatriz(noInicial, noFinal, aresta);
+            ((MatrizInc) mt).alterarMatrizGrafoNaoDirecionado(noInicial, noFinal, aresta);
         }
     }
+    
+    public void alterarMatrizGrafoDirecionado(Matriz mt, int noInicial, int noFinal, int aresta){
+        if (mt instanceof MatrizAdj){
+            ((MatrizAdj) mt).alterarMatrizGrafoDirecionado(noInicial, noFinal);
+        } else if (mt instanceof MatrizInc){
+            ((MatrizInc) mt).alterarMatrizGrafoDirecionado(noInicial, noFinal, aresta);
+        }
+    }
+    
 }
