@@ -118,8 +118,10 @@ public class Grafo {
     public void destruirGrafo() {
         nos = null;
         arestas = null;
-        matrizAdj = null;
-        matrizInc = null;
+        matrizAdj = new MatrizAdj();
+        matrizInc = new MatrizInc();
+        listaAdj = null;
+        listaInc = null;
     }
 
     public void alterarMatrizGrafoNaoDirecionado(Matriz mt, int noInicial, int noFinal, int aresta) {
@@ -144,6 +146,7 @@ public class Grafo {
         for (int i = 0; i < quantidadeNos(); i++){
             System.out.println(nos[i] + " -> " + lt[i]);
         }
+        //System.out.println("\n");
     }
     
     private int posicaoLista(String no){

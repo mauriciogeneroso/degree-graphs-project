@@ -47,7 +47,7 @@ public abstract class Matriz {
     }
 
     public void imprimirMatriz() {
-        System.out.println(this); // Iŕa chamar o toString();
+        System.out.print(this); // Iŕa chamar o toString();
     }
 
     public void iniciarMatriz(int linhas, int colunas) {

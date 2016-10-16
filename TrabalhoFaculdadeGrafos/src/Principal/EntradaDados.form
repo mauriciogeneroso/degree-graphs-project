@@ -362,18 +362,12 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Direcionado"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rButtonDirecionadoActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rButtonNaoDirecionado">
                   <Properties>
                     <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="N&#xe3;o direcionado"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rButtonNaoDirecionadoActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
