@@ -14,6 +14,7 @@ package Testes.PreencherTabela;
   
   public PreencheTabela(ArrayList[][] lin){
       setLinhas (lin);
+      
   }   
   public ArrayList[][] getLinhas(){
       return linhas;

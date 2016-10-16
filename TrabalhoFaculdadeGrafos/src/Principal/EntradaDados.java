@@ -642,7 +642,7 @@ public class EntradaDados extends javax.swing.JFrame {
     private void cancelarCriacaoGrafo() {
         grafo.destruirGrafo();
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelar;
     private javax.swing.JButton buttonCriarGrafo;

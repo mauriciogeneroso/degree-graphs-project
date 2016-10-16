@@ -1,6 +1,7 @@
 
 package Testes.PreencherTabela;
 
+import java.math.MathContext;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -34,13 +35,13 @@ public class Tabela2 extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-
+                "Título 1", "Título 2", "Título 3", "Título 4"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -70,12 +71,15 @@ public class Tabela2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        matriz = new ArrayList[4][4];
         for(int i = 0; i < 4; i++) {
             for(int j = 0; j < 4; j++) {
                 Object temp = (i+j);
+                matriz[i][j] = new ArrayList();
                 matriz[i][j].add(temp);
             }
         }
+        preencherTabela(matriz);
         JOptionPane.showMessageDialog(null, "Dirce foi chamada");
     }//GEN-LAST:event_jButton1ActionPerformed
 
