@@ -1,7 +1,7 @@
 package CaracteristicasGrafo;
 
 /**
- * @Gustavo Souza
+ * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso 

@@ -1,4 +1,4 @@
-package Objetos;
+package Objetos.Armazenamento;
 
 /**
  * 
@@ -6,7 +6,7 @@ package Objetos;
  * 
  * Estudantes de Ciência da Computação - 4 fase.
  *
- * @Gustavo Souza
+ * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  *
  * Estudantes de Ciência da Computação - 4 fase.
  *
- * @Gustavo Souza
+ * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
@@ -425,6 +425,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     grafo.iniciarMatriz(grafo.getMatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
                     // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
                     // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incid.
+                    grafo.iniciarListas();
                     cBoxNoInicial.removeAllItems();
                     cBoxNoFinal.removeAllItems();
                     for (String no : grafo.getNos()) {
@@ -479,10 +480,12 @@ public class EntradaDados extends javax.swing.JFrame {
         if (rButtonNaoDirecionado.isSelected() && rButtonDefinir.isSelected()) {
             grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
             grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+            grafo.alterarListaGrafoNaoDirecionado(grafo.getNoPosicao(posicaoNoInicialSelecionado()), grafo.getNoPosicao(posicaoNoFinalSelecionado()), grafo.getArestaPosicao(posicaoArestaSelecionada()));
         } else if (rButtonDirecionado.isSelected() && rButtonDefinir.isSelected()) {
             grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
             grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-        }
+            grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(posicaoNoInicialSelecionado()), grafo.getNoPosicao(posicaoNoFinalSelecionado()), grafo.getArestaPosicao(posicaoArestaSelecionada()));
+        }   
         //Após definir remove a aresta da seleção de acordo com o index
         cBoxAresta.removeItemAt(cBoxAresta.getSelectedIndex());
         if (cBoxAresta.getSelectedIndex() == -1) {

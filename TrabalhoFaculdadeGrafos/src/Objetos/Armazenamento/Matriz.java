@@ -1,4 +1,4 @@
-package Objetos;
+package Objetos.Armazenamento;
 
 /**
  * Matriz para armazenar os grafos, nesta classe está implementado caracteristicas e métodos comuns das matrizes de Adjacência e Incidência, 
@@ -7,7 +7,7 @@ package Objetos;
  * 
  * Estudantes de Ciência da Computação - 4 fase.
  *  
- * @Gustavo Souza
+ * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso

@@ -1,11 +1,11 @@
-package Objetos;
+package Objetos.Armazenamento;
 
 /**
  * Classe que representa e herda de "Matriz"; É implementado nesta subclasse como é alterado os dados de um grafo em Matriz de Adjacência.
  * 
  * Estudantes de Ciência da Computação - 4 fase.
  *
- * @Gustavo Souza
+ * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
