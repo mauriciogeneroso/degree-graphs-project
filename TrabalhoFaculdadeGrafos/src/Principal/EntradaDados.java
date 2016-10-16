@@ -637,7 +637,6 @@ public class EntradaDados extends javax.swing.JFrame {
         buttonDefinirAdjacencia.setEnabled(false);
         buttonCriarGrafo.setEnabled(true);
         cancelarCriacaoGrafo();
-        
     }
 
     private void cancelarCriacaoGrafo() {
