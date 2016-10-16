@@ -9,7 +9,7 @@ package Objetos.Armazenamento;
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
- * @author Maurício Generoso
+ * @author Maurício Generoso - Classe implementada por Maurício
  */
 public class MatrizInc extends Matriz {
     
