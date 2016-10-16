@@ -1,6 +1,8 @@
 package Objetos;
 
-import Objetos.Armazenamento.ListaInc;
+import Objetos.Armazenamento.ElementoAdj;
+import Objetos.Armazenamento.ElementoInc;
+import Objetos.Armazenamento.Lista;
 import Objetos.Armazenamento.MatrizInc;
 import Objetos.Armazenamento.MatrizAdj;
 import Objetos.Armazenamento.Matriz;
@@ -27,8 +29,8 @@ public class Grafo {
     private Matriz matrizInc;
 
     // Listas
-    //private ListaInc[] listaAdj;
-    private ListaInc[] listaInc;
+    private Lista<ElementoAdj>[] listaAdj;
+    private Lista<ElementoInc>[] listaInc;
 
     // Nós e arestas
     private String[] nos;
@@ -38,7 +40,7 @@ public class Grafo {
         matrizAdj = new MatrizAdj();
         matrizInc = new MatrizInc();
 
-        //listaAdj = null;
+        listaAdj = null;
         listaInc = null;
 
         nos = null;
@@ -53,11 +55,11 @@ public class Grafo {
         return matrizInc;
     }
 
-//    public ListaInc[] getListaAdj() {
-//        return listaAdj;
-//    }
+    public Lista<ElementoAdj>[] getListaAdj() {
+        return listaAdj;
+    }
     
-    public ListaInc[] getListaInc() {
+    public Lista<ElementoInc>[] getListaInc() {
         return listaInc;
     }
 
@@ -102,11 +104,14 @@ public class Grafo {
     }
 
     public void iniciarListas() {
-        //listaAdj = new ListaAdj[this.quantidadeNos()];
-        
-        listaInc = new ListaInc[quantidadeNos()];
+        listaAdj = new Lista[quantidadeNos()];
         for (int i = 0; i < quantidadeNos(); i++) {
-            listaInc[i] = new ListaInc(nos[i]);
+            listaAdj[i] = new Lista<>();
+        }
+        
+        listaInc = new Lista[quantidadeNos()];
+        for (int i = 0; i < quantidadeNos(); i++) {
+            listaInc[i] = new Lista<>();
         }
     }
 
@@ -133,12 +138,11 @@ public class Grafo {
         }
     }
     
-    private void imprimirListaInc(){
+    private void imprimirLista(Lista[] lt){
         // Este método iŕá chamar o toString() da classe "Lista" para cada posição do array(listaInc[i]).
         // O toString() da classe Lista irá imprimir cada elemento presente em tal posição do vetor, ou seja, a outra lista(chamando o toString de cada elemento);
-        System.out.println("Lista de Incidência: ");
         for (int i = 0; i < quantidadeNos(); i++){
-            System.out.println(nos[i] + " -> " + listaInc[i]);
+            System.out.println(nos[i] + " -> " + lt[i]);
         }
     }
     
@@ -153,18 +157,34 @@ public class Grafo {
     }
     
     public void alterarListaGrafoNaoDirecionado(String noInicial, String noFinal, String aresta) {
-        //adj
-        
-        listaInc[posicaoLista(noInicial)].adiciona(noFinal, aresta);
-        listaInc[posicaoLista(noFinal)].adiciona(noInicial, aresta);
-        imprimirListaInc();
+        if (noInicial == noFinal){
+            listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
+        } else {
+            listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
+            listaAdj[posicaoLista(noFinal)].adiciona(new ElementoAdj(noInicial));
+        }
+        System.out.println("Lista de Adjacência não direcionada: ");
+        imprimirLista(listaAdj);
+        // ----------------------------
+        if (noInicial == noFinal){
+            listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
+        } else {
+            listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
+            listaInc[posicaoLista(noFinal)].adiciona(new ElementoInc(noInicial, aresta));
+        }
+        System.out.println("Lista de Incidência não direcionada: ");
+        imprimirLista(listaInc);
     }
     
     public void alterarListaGrafoDirecionado(String noInicial, String noFinal, String aresta) {
-        //adj
+        listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
+        System.out.println("Lista de Adjacência direcionada: ");
+        imprimirLista(listaAdj);
         
-        listaInc[posicaoLista(noInicial)].adiciona(noFinal, aresta);
-        imprimirListaInc();
+        // ----------------------------
+        
+        listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
+        System.out.println("Lista de Incidência direcionada: ");
+        imprimirLista(listaInc);
     }
 }
-

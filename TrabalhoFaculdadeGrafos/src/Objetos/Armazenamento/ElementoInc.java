@@ -10,29 +10,20 @@ package Objetos.Armazenamento;
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso - Classe implementada por Maurício
 */
-public class Elemento {
+public class ElementoInc {
 
     private String no;
     private String aresta;
-    private Elemento proximo;
     
-    public Elemento(String no){
+    public ElementoInc(String no){
         this.no = no;
     }
     
-    public Elemento(String no, String aresta){
+    public ElementoInc(String no, String aresta){
         this.no = no;
         this.aresta = aresta;
     }
-
-    public Elemento getProximo() {
-        return proximo;
-    }
     
-    public void setProximo(Elemento proximo) {
-        this.proximo = proximo;
-    }
-
     @Override
     public String toString() {
         return "{" + "No = " + no + ", Aresta = " + aresta + '}';
