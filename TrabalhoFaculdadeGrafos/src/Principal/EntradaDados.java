@@ -511,7 +511,7 @@ public class EntradaDados extends javax.swing.JFrame {
         if (rButtonDefinir.isSelected()){
             this.dispose();
         } else {
-            if (entradaNos.getText().equals("")){
+            if (entradaNos.getText().trim().equals("")){
                JOptionPane.showMessageDialog(this, "É necessário informar os nós para criar o Grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             } else {
                // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
