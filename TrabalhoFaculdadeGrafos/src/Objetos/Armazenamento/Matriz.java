@@ -69,7 +69,7 @@ public abstract class Matriz {
         String imprimir = "";
         for (int[] mt : matriz) {
             for (int j = 0; j < mt.length; j++) {
-                imprimir += mt[j] + " ";
+                imprimir += mt[j] + "   ";
             }
             imprimir += "\n";
         }

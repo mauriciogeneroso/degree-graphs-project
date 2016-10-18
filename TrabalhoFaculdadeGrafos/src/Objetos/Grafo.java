@@ -140,7 +140,7 @@ public class Grafo {
         }
     }
     
-    private void imprimirLista(Lista[] lt){
+    public void imprimirLista(Lista[] lt){
         // Este método iŕá chamar o toString() da classe "Lista" para cada posição do array(listaInc[i]).
         // O toString() da classe Lista irá imprimir cada elemento presente em tal posição do vetor, ou seja, a outra lista(chamando o toString de cada elemento);
         for (int i = 0; i < quantidadeNos(); i++){
