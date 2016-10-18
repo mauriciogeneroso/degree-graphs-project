@@ -49,6 +49,8 @@ public abstract class Matriz {
     public void imprimirMatriz() {
         System.out.print(this); // Iŕa chamar o toString();
     }
+    
+    
 
     public void iniciarMatriz(int linhas, int colunas) {
         /// Cuidar, a classe possui dois atributos com o mesmo nome linhas e colunas
@@ -73,5 +75,7 @@ public abstract class Matriz {
         }
         return imprimir;
     }
+    
+
     
 }
