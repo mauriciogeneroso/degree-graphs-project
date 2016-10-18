@@ -83,7 +83,7 @@ public class EntradaDados extends javax.swing.JFrame {
 
         jLabel1.setText("Grafo = (N, A, G);");
 
-        jLabel2.setText("N = Número de nós.");
+        jLabel2.setText("N = Conjunto de nós.");
 
         jLabel3.setText("A = Conjunto de arestas.");
 

@@ -1,8 +1,9 @@
 package Principal;
 
 import CaracteristicasGrafo.Identificacao;
-import Objetos.Armazenamento.MatrizAdj;
+import Objetos.Armazenamento.Lista;
 import Objetos.Grafo;
+import javax.swing.ButtonGroup;
 
 /**
  * Estudantes de Ciência da Computação - 4 fase.
@@ -16,13 +17,19 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private Grafo grafo;
     private Identificacao ident;
+    private ButtonGroup buttonGroup;
+    
     /**
      * Creates new form FramePrincipal
      */
     public FramePrincipal() {
         initComponents();
-        grafo = new Grafo();
         ident = new Identificacao();
+        buttonGroup = new ButtonGroup();
+        buttonGroup.add(rButtonMatrizAdj);
+        buttonGroup.add(rButtonMatrizInc);
+        buttonGroup.add(rButtonListaAdj);
+        buttonGroup.add(rButtonListaInc);
     }
 
     /**
@@ -36,12 +43,12 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textArea = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        rButtonMatrizAdj = new javax.swing.JRadioButton();
+        rButtonMatrizInc = new javax.swing.JRadioButton();
+        rButtonListaAdj = new javax.swing.JRadioButton();
+        rButtonListaInc = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -62,24 +69,51 @@ public class FramePrincipal extends javax.swing.JFrame {
         setTitle("Grafos");
         setLocation(new java.awt.Point(0, 0));
         setResizable(false);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Grafo atual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        textArea.setEditable(false);
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        jScrollPane1.setViewportView(textArea);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Visualizar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
 
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Matriz de Adjacência");
+        rButtonMatrizAdj.setSelected(true);
+        rButtonMatrizAdj.setText("Matriz de Adjacência");
+        rButtonMatrizAdj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rButtonMatrizAdjActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("Matriz de Incidência");
+        rButtonMatrizInc.setText("Matriz de Incidência");
+        rButtonMatrizInc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rButtonMatrizIncActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText("Lista de Adjacência");
+        rButtonListaAdj.setText("Lista de Adjacência");
+        rButtonListaAdj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rButtonListaAdjActionPerformed(evt);
+            }
+        });
 
-        jRadioButton4.setText("Lista de Incidência");
+        rButtonListaInc.setText("Lista de Incidência");
+        rButtonListaInc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rButtonListaIncActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -88,22 +122,22 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(rButtonMatrizAdj)
+                    .addComponent(rButtonMatrizInc)
+                    .addComponent(rButtonListaAdj)
+                    .addComponent(rButtonListaInc))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jRadioButton1)
+                .addComponent(rButtonMatrizAdj)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(rButtonMatrizInc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(rButtonListaAdj)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton4)
+                .addComponent(rButtonListaInc)
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
@@ -273,6 +307,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void buttonEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntradaDadosActionPerformed
+        grafo = new Grafo();
         EntradaDados entrada = new EntradaDados(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
@@ -286,6 +321,102 @@ public class FramePrincipal extends javax.swing.JFrame {
         ident.VerifGrafoSimples(grafo);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+        verificaSeIraExibirOsDados();
+    }//GEN-LAST:event_formWindowGainedFocus
+
+    private void rButtonMatrizAdjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButtonMatrizAdjActionPerformed
+        verificaSeIraExibirOsDados();
+    }//GEN-LAST:event_rButtonMatrizAdjActionPerformed
+
+    private void rButtonMatrizIncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButtonMatrizIncActionPerformed
+        verificaSeIraExibirOsDados();
+    }//GEN-LAST:event_rButtonMatrizIncActionPerformed
+
+    private void rButtonListaAdjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButtonListaAdjActionPerformed
+        verificaSeIraExibirOsDados();
+    }//GEN-LAST:event_rButtonListaAdjActionPerformed
+
+    private void rButtonListaIncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButtonListaIncActionPerformed
+        verificaSeIraExibirOsDados();
+    }//GEN-LAST:event_rButtonListaIncActionPerformed
+
+    private void verificaSeIraExibirOsDados(){
+        if (grafo != null){
+            if (rButtonMatrizAdj.isSelected()){
+                exibirMatrizAdj();
+            } else if (rButtonMatrizInc.isSelected()){
+                exibirMatrizInc();
+            } else if (rButtonListaAdj.isSelected()){
+                exibirListaAdc();
+            } else if (rButtonListaInc.isSelected()){
+                exibirListaInc();
+            }
+        }
+    }
+    
+    private void imprimirInformacoes(){
+        // Imprime os Nós
+            String nosFormal = "Nós = {";
+            String[] nos = grafo.getNos();
+            for (int i = 0; i < grafo.quantidadeNos() - 1; i++){
+                nosFormal += nos[i] + ", ";
+            }
+            nosFormal += nos[nos.length - 1] + "}\n";
+            textArea.setText(nosFormal);
+            
+            // Imprime as Arestas
+            String arestasFormal = "Arestas = {";
+            String arestas[] = grafo.getArestas();
+            for (int i = 0; i < grafo.quantidadeArestas()- 1; i++){
+                arestasFormal += arestas[i] + ", ";
+            }
+            arestasFormal += arestas[arestas.length - 1] + "}\n\n";
+            textArea.setText(textArea.getText() + arestasFormal);
+    }
+    
+    private void exibirMatrizAdj(){
+        textArea.setText("");
+        imprimirInformacoes();
+        textArea.setText(textArea.getText() + "------------------------------------------\n\n");
+        textArea.setText(textArea.getText() + "Matriz de Adjacência: \n\n");
+        textArea.setText(textArea.getText() + grafo.getMatrizAdj());
+    }
+    
+    private void exibirMatrizInc(){
+        textArea.setText("");
+        imprimirInformacoes();
+        textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
+        textArea.setText(textArea.getText() + "Matriz de Incidência: \n\n");
+        textArea.setText(textArea.getText() + grafo.getMatrizInc());
+    }
+    
+    private void exibirListaAdc(){
+        textArea.setText("");
+        imprimirInformacoes();
+        textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
+        textArea.setText(textArea.getText() + "Lista de Adjacência: \n\n");
+        String[] nos = grafo.getNos();
+        Lista[] lt = grafo.getListaAdj();
+        
+        for (int i = 0; i < grafo.quantidadeNos(); i++){
+            textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
+        }
+    }
+    
+    private void exibirListaInc(){
+        textArea.setText("");
+        imprimirInformacoes();
+        textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
+        textArea.setText(textArea.getText() + "Lista de Incidência: \n\n");
+        String[] nos = grafo.getNos();
+        Lista[] lt = grafo.getListaInc();
+        
+        for (int i = 0; i < grafo.quantidadeNos(); i++){
+            textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -339,11 +470,11 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JRadioButton rButtonListaAdj;
+    private javax.swing.JRadioButton rButtonListaInc;
+    private javax.swing.JRadioButton rButtonMatrizAdj;
+    private javax.swing.JRadioButton rButtonMatrizInc;
+    private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
 }
