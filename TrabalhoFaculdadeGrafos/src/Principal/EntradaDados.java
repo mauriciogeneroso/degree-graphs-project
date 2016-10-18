@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class EntradaDados extends javax.swing.JFrame {
 
     private Grafo grafo;
-
+    private boolean desabilitar = true;
     private ButtonGroup buttonGroup1;
     private ButtonGroup buttonGroup2;
 
@@ -421,14 +421,6 @@ public class EntradaDados extends javax.swing.JFrame {
                     cBoxNoFinal.setEnabled(true);
                     cBoxAresta.setEnabled(true);
                     buttonCriarGrafo.setEnabled(false);
-                    
-                    if (rButtonDirecionado.isSelected()){
-                        rButtonNaoDirecionado.setEnabled(false);
-                        rButtonNaoDirecionado.setToolTipText("Para marcar esta opção deve estar selecionado a opção \"Completo\"");
-                    } else {
-                        rButtonDirecionado.setEnabled(false);
-                        rButtonDirecionado.setToolTipText("Para marcar esta opção deve estar selecionado a opção \"Completo\"");
-                    }
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Valores inválidos para os Nós informados", "Aviso", JOptionPane.INFORMATION_MESSAGE);
@@ -452,12 +444,16 @@ public class EntradaDados extends javax.swing.JFrame {
         buttonDefinirAdjacencia.setEnabled(false);
         buttonCriarGrafo.setEnabled(true);
         cancelarCriacaoGrafo();
-        if (rButtonDirecionado.isSelected()){
+        
+        if (!desabilitar){
+            if (rButtonDirecionado.isSelected()){
             rButtonNaoDirecionado.setEnabled(true);
             rButtonNaoDirecionado.setToolTipText(null);
-        } else {
-            rButtonDirecionado.setEnabled(true);
-            rButtonDirecionado.setToolTipText(null);
+            } else {
+                rButtonDirecionado.setEnabled(true);
+                rButtonDirecionado.setToolTipText(null);
+            }
+            desabilitar = !desabilitar;
         }
     }//GEN-LAST:event_rButtonCompletoActionPerformed
 
@@ -501,6 +497,18 @@ public class EntradaDados extends javax.swing.JFrame {
             buttonDefinirAdjacencia.setEnabled(false);
             buttonCriarGrafo.setEnabled(true);
         }
+        
+        if (desabilitar){
+            if (rButtonDirecionado.isSelected()){
+                rButtonNaoDirecionado.setEnabled(false);
+                rButtonNaoDirecionado.setToolTipText("Para marcar esta opção deve estar selecionado a opção \"Completo\"");
+            } else {
+                rButtonDirecionado.setEnabled(false);
+                rButtonDirecionado.setToolTipText("Para marcar esta opção deve estar selecionado a opção \"Completo\"");
+            }
+            desabilitar = !desabilitar;
+        }
+        
     }//GEN-LAST:event_buttonDefinirAdjacenciaActionPerformed
 
     private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
