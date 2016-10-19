@@ -4,19 +4,14 @@ import CaracteristicasGrafo.Identificacao;
 import Objetos.Armazenamento.Lista;
 import Objetos.Grafo;
 import View.Login.Configuracao;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import javafx.stage.FileChooser;
 import javax.swing.ButtonGroup;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
  * Estudantes de Ciência da Computação - 4 fase.
- *  
+ *
  * @author Gustavo Souza
- * @author Luan Darabas
+ * @author Luan Darabas - Implementações adicionais
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso - Classe implementada por Maurício
  */
@@ -25,7 +20,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private Grafo grafo;
     private Identificacao ident;
     private ButtonGroup buttonGroup;
-    
+
     public FramePrincipal() {
         initComponents();
         ident = new Identificacao();
@@ -35,7 +30,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         buttonGroup.add(rButtonListaAdj);
         buttonGroup.add(rButtonListaInc);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -370,18 +365,22 @@ public class FramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntradaDadosActionPerformed
-        grafo = new Grafo();
+        //grafo = new Grafo();
         EntradaDados entrada = new EntradaDados(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
     }//GEN-LAST:event_btEntradaDadosActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
-        // TODO add your handling code here:
+        if (grafo != null) {
+            textArea.setText("");
+            grafo.destruirGrafo();
+            grafo = null;
+        }
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimplesActionPerformed
-        if (grafo == null){
+        if (grafo == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Simples", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ident.VerifGrafoSimples(grafo);
@@ -389,7 +388,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btSimplesActionPerformed
 
     private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
-        if (grafo == null){
+        if (grafo == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ident.VerifGrafoCompleto(grafo);
@@ -397,7 +396,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btCompletoActionPerformed
 
     private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
-        if (grafo == null){
+        if (grafo == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ident.VerifGrafoConexo(grafo);
@@ -405,7 +404,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btConexoActionPerformed
 
     private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
-        if (grafo == null){
+        if (grafo == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ident.VerifGrafoPlanar(grafo);
@@ -458,89 +457,89 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btCarrregarGrafoActionPerformed
 
     private void btSalvarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarGrafoActionPerformed
-        if (grafo == null){
+        if (grafo == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para ser salvo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             // CRIAR ALGORITMO PARA SALVAR OS DADOS
         }
     }//GEN-LAST:event_btSalvarGrafoActionPerformed
 
-    private void verificaSeIraExibirOsDados(){
-        if (grafo != null){
-            if (rButtonMatrizAdj.isSelected()){
+    private void verificaSeIraExibirOsDados() {
+        if (grafo != null) {
+            if (rButtonMatrizAdj.isSelected()) {
                 exibirMatrizAdj();
-            } else if (rButtonMatrizInc.isSelected()){
+            } else if (rButtonMatrizInc.isSelected()) {
                 exibirMatrizInc();
-            } else if (rButtonListaAdj.isSelected()){
+            } else if (rButtonListaAdj.isSelected()) {
                 exibirListaAdc();
-            } else if (rButtonListaInc.isSelected()){
+            } else if (rButtonListaInc.isSelected()) {
                 exibirListaInc();
             }
         }
     }
-    
-    private void imprimirInformacoes(){
+
+    private void imprimirInformacoes() {
         // Imprime os Nós
-            String nosFormal = "Nós = {";
-            String[] nos = grafo.getNos();
-            for (int i = 0; i < grafo.quantidadeNos() - 1; i++){
-                nosFormal += nos[i] + ", ";
-            }
-            nosFormal += nos[nos.length - 1] + "}\n";
-            textArea.setText(nosFormal);
-            
-            // Imprime as Arestas
-            String arestasFormal = "Arestas = {";
-            String arestas[] = grafo.getArestas();
-            for (int i = 0; i < grafo.quantidadeArestas()- 1; i++){
-                arestasFormal += arestas[i] + ", ";
-            }
-            arestasFormal += arestas[arestas.length - 1] + "}\n\n";
-            textArea.setText(textArea.getText() + arestasFormal);
+        String nosFormal = "Nós = {";
+        String[] nos = grafo.getNos();
+        for (int i = 0; i < grafo.quantidadeNos() - 1; i++) {
+            nosFormal += nos[i] + ", ";
+        }
+        nosFormal += nos[nos.length - 1] + "}\n";
+        textArea.setText(nosFormal);
+
+        // Imprime as Arestas
+        String arestasFormal = "Arestas = {";
+        String arestas[] = grafo.getArestas();
+        for (int i = 0; i < grafo.quantidadeArestas() - 1; i++) {
+            arestasFormal += arestas[i] + ", ";
+        }
+        arestasFormal += arestas[arestas.length - 1] + "}\n\n";
+        textArea.setText(textArea.getText() + arestasFormal);
     }
-    
-    private void exibirMatrizAdj(){
+
+    private void exibirMatrizAdj() {
         textArea.setText("");
         imprimirInformacoes();
         textArea.setText(textArea.getText() + "------------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Matriz de Adjacência: \n\n");
         textArea.setText(textArea.getText() + grafo.getMatrizAdj());
     }
-    
-    private void exibirMatrizInc(){
+
+    private void exibirMatrizInc() {
         textArea.setText("");
         imprimirInformacoes();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Matriz de Incidência: \n\n");
         textArea.setText(textArea.getText() + grafo.getMatrizInc());
     }
-    
-    private void exibirListaAdc(){
+
+    private void exibirListaAdc() {
         textArea.setText("");
         imprimirInformacoes();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Lista de Adjacência: \n\n");
         String[] nos = grafo.getNos();
         Lista[] lt = grafo.getListaAdj();
-        
-        for (int i = 0; i < grafo.quantidadeNos(); i++){
+
+        for (int i = 0; i < grafo.quantidadeNos(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
         }
     }
-    
-    private void exibirListaInc(){
+
+    private void exibirListaInc() {
         textArea.setText("");
         imprimirInformacoes();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Lista de Incidência: \n\n");
         String[] nos = grafo.getNos();
         Lista[] lt = grafo.getListaInc();
-        
-        for (int i = 0; i < grafo.quantidadeNos(); i++){
+
+        for (int i = 0; i < grafo.quantidadeNos(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */
