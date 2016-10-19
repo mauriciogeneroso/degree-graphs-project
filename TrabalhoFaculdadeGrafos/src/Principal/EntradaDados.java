@@ -63,16 +63,17 @@ public class EntradaDados extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         rButtonCompleto = new javax.swing.JRadioButton();
         rButtonDefinir = new javax.swing.JRadioButton();
-        cBoxNoInicial = new javax.swing.JComboBox<>();
+        cBoxNoInicial = new javax.swing.JComboBox<String>();
         labelDefinirNo = new javax.swing.JLabel();
         labelDefinirNo2 = new javax.swing.JLabel();
-        cBoxNoFinal = new javax.swing.JComboBox<>();
+        cBoxNoFinal = new javax.swing.JComboBox<String>();
         buttonDefinirAdjacencia = new javax.swing.JButton();
         labelDefinirAresta = new javax.swing.JLabel();
-        cBoxAresta = new javax.swing.JComboBox<>();
+        cBoxAresta = new javax.swing.JComboBox<String>();
         buttonCriarGrafo = new javax.swing.JButton();
         buttonCancelar = new javax.swing.JButton();
         buttonLimpar = new javax.swing.JButton();
+        jlInfoMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -94,12 +95,23 @@ public class EntradaDados extends javax.swing.JFrame {
         jLabel6.setText("N = {");
 
         entradaNos.setToolTipText("Exemplo: N = {A, B, C}");
+        entradaNos.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaNosFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaNosFocusLost(evt);
+            }
+        });
 
         jLabel7.setText("A = {");
 
         entradaArestas.setToolTipText("Exemplo: A = {a1, a2, a3}");
         entradaArestas.setEnabled(false);
         entradaArestas.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaArestasFocusGained(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 entradaArestasFocusLost(evt);
             }
@@ -340,6 +352,7 @@ public class EntradaDados extends javax.swing.JFrame {
         );
 
         buttonCriarGrafo.setText("Criar grafo");
+        buttonCriarGrafo.setPreferredSize(new java.awt.Dimension(85, 40));
         buttonCriarGrafo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCriarGrafoActionPerformed(evt);
@@ -347,6 +360,7 @@ public class EntradaDados extends javax.swing.JFrame {
         });
 
         buttonCancelar.setText("Cancelar");
+        buttonCancelar.setPreferredSize(new java.awt.Dimension(75, 40));
         buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCancelarActionPerformed(evt);
@@ -354,6 +368,7 @@ public class EntradaDados extends javax.swing.JFrame {
         });
 
         buttonLimpar.setText("Limpar");
+        buttonLimpar.setPreferredSize(new java.awt.Dimension(63, 40));
         buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonLimparActionPerformed(evt);
@@ -366,28 +381,40 @@ public class EntradaDados extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(buttonCriarGrafo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonLimpar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonCancelar)
-                .addGap(22, 22, 22))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jlInfoMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonCriarGrafo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonCancelar)
-                    .addComponent(buttonCriarGrafo)
-                    .addComponent(buttonLimpar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jlInfoMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonCriarGrafo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
 
         pack();
@@ -463,6 +490,7 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
     private void entradaArestasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusLost
+        jlInfoMessage.setText("");
         if (entradaArestas.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Informe as Arestas para definir o grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
@@ -578,6 +606,18 @@ public class EntradaDados extends javax.swing.JFrame {
         } // fim do else
     }//GEN-LAST:event_buttonCriarGrafoActionPerformed
 
+    private void entradaNosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNosFocusGained
+        jlInfoMessage.setText("Exemplo: N = {A, B, C}");
+    }//GEN-LAST:event_entradaNosFocusGained
+
+    private void entradaNosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNosFocusLost
+         jlInfoMessage.setText("");
+    }//GEN-LAST:event_entradaNosFocusLost
+
+    private void entradaArestasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusGained
+        jlInfoMessage.setText("Exemplo: A = {a1, a2, a3}");
+    }//GEN-LAST:event_entradaArestasFocusGained
+
     private int posicaoNoInicialSelecionado() {
         String tempNoInicialSelected = cBoxNoInicial.getItemAt(cBoxNoInicial.getSelectedIndex());
         int posicaoLinhaNo = 0;
@@ -676,6 +716,7 @@ public class EntradaDados extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jlInfoMessage;
     private javax.swing.JLabel labelDefinirAresta;
     private javax.swing.JLabel labelDefinirNo;
     private javax.swing.JLabel labelDefinirNo2;
