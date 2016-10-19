@@ -65,10 +65,10 @@ public class FramePrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jmiNovoGrafo = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jmiSair = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jmiImportar = new javax.swing.JMenuItem();
         jmiExportar = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jmiSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Grafos");
@@ -305,6 +305,15 @@ public class FramePrincipal extends javax.swing.JFrame {
         jMenu1.add(jmiNovoGrafo);
         jMenu1.add(jSeparator1);
 
+        jmiImportar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        jmiImportar.setText("Importar");
+        jMenu1.add(jmiImportar);
+
+        jmiExportar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jmiExportar.setText("Exportar");
+        jMenu1.add(jmiExportar);
+        jMenu1.add(jSeparator2);
+
         jmiSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
         jmiSair.setText("Sair");
         jmiSair.addActionListener(new java.awt.event.ActionListener() {
@@ -313,15 +322,6 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jmiSair);
-        jMenu1.add(jSeparator2);
-
-        jmiImportar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        jmiImportar.setText("Importar");
-        jMenu1.add(jmiImportar);
-
-        jmiExportar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jmiExportar.setText("Exportar");
-        jMenu1.add(jmiExportar);
 
         jMenuBar1.add(jMenu1);
 
