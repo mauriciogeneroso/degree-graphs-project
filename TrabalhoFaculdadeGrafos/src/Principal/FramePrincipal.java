@@ -49,18 +49,18 @@ public class FramePrincipal extends javax.swing.JFrame {
         rButtonListaAdj = new javax.swing.JRadioButton();
         rButtonListaInc = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btSimples = new javax.swing.JButton();
+        btCompleto = new javax.swing.JButton();
+        btConexo = new javax.swing.JButton();
+        btPlanar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        buttonEntradaDados = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btCarrregarGrafo = new javax.swing.JButton();
+        btSalvarGrafo = new javax.swing.JButton();
+        btEntradaDados = new javax.swing.JButton();
+        btLimpar = new javax.swing.JButton();
+        btSair = new javax.swing.JButton();
         btConfig = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btVisualizar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmiNovoGrafo = new javax.swing.JMenuItem();
@@ -148,31 +148,31 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setText("O grafo é simples?");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btSimples.setText("O grafo é simples?");
+        btSimples.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btSimplesActionPerformed(evt);
             }
         });
 
-        jButton5.setText("O grafo é completo?");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btCompleto.setText("O grafo é completo?");
+        btCompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btCompletoActionPerformed(evt);
             }
         });
 
-        jButton6.setText("O grafo é conexo?");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btConexo.setText("O grafo é conexo?");
+        btConexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btConexoActionPerformed(evt);
             }
         });
 
-        jButton7.setText("O grafo é planar?");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btPlanar.setText("O grafo é planar?");
+        btPlanar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btPlanarActionPerformed(evt);
             }
         });
 
@@ -183,36 +183,41 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
+                    .addComponent(btPlanar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btConexo, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                    .addComponent(btCompleto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btSimples, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btSimples)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(btCompleto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6)
+                .addComponent(btConexo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
+                .addComponent(btPlanar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton3.setText("Carregar Grafo");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btCarrregarGrafo.setText("Carregar Grafo");
+        btCarrregarGrafo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btCarrregarGrafoActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Salvar Grafo");
+        btSalvarGrafo.setText("Salvar Grafo");
+        btSalvarGrafo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalvarGrafoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -221,17 +226,17 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btSalvarGrafo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btCarrregarGrafo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3)
+                .addComponent(btCarrregarGrafo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(btSalvarGrafo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -258,24 +263,24 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        buttonEntradaDados.setText("Inserir novo");
-        buttonEntradaDados.addActionListener(new java.awt.event.ActionListener() {
+        btEntradaDados.setText("Inserir novo");
+        btEntradaDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonEntradaDadosActionPerformed(evt);
+                btEntradaDadosActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Limpar dados");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btLimpar.setText("Limpar dados");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btLimparActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Sair");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btSair.setText("Sair");
+        btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btSairActionPerformed(evt);
             }
         });
 
@@ -286,7 +291,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setText("Visualizar");
+        btVisualizar.setText("Visualizar");
 
         jMenu1.setText("Arquivo");
 
@@ -333,15 +338,16 @@ public class FramePrincipal extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonEntradaDados)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
                         .addGap(6, 6, 6)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btEntradaDados)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btVisualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btLimpar)
+                        .addGap(6, 6, 6)
+                        .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(13, 13, 13))))
         );
         layout.setVerticalGroup(
@@ -350,12 +356,11 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton8)
-                        .addComponent(jButton2)
-                        .addComponent(jButton9)
-                        .addComponent(buttonEntradaDados))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSair)
+                    .addComponent(btLimpar)
+                    .addComponent(btVisualizar)
+                    .addComponent(btEntradaDados)
                     .addComponent(btConfig))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -364,32 +369,48 @@ public class FramePrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntradaDadosActionPerformed
+    private void btEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntradaDadosActionPerformed
         grafo = new Grafo();
         EntradaDados entrada = new EntradaDados(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
-    }//GEN-LAST:event_buttonEntradaDadosActionPerformed
+    }//GEN-LAST:event_btEntradaDadosActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btLimparActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ident.VerifGrafoSimples(grafo);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimplesActionPerformed
+        if (grafo == null){
+            JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Simples", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            ident.VerifGrafoSimples(grafo);
+        }
+    }//GEN-LAST:event_btSimplesActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        ident.VerifGrafoCompleto(grafo);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
+        if (grafo == null){
+            JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            ident.VerifGrafoCompleto(grafo);
+        }
+    }//GEN-LAST:event_btCompletoActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        ident.VerifGrafoConexo(grafo);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
+        if (grafo == null){
+            JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            ident.VerifGrafoConexo(grafo);
+        }
+    }//GEN-LAST:event_btConexoActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        ident.VerifGrafoPlanar(grafo);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
+        if (grafo == null){
+            JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            ident.VerifGrafoPlanar(grafo);
+        }
+    }//GEN-LAST:event_btPlanarActionPerformed
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         verificaSeIraExibirOsDados();
@@ -428,13 +449,21 @@ public class FramePrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jmiSairActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btSairActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btCarrregarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarrregarGrafoActionPerformed
         jmiImportar.doClick();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btCarrregarGrafoActionPerformed
+
+    private void btSalvarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarGrafoActionPerformed
+        if (grafo == null){
+            JOptionPane.showMessageDialog(this, "Não existe um Grafo para ser salvo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            // CRIAR ALGORITMO PARA SALVAR OS DADOS
+        }
+    }//GEN-LAST:event_btSalvarGrafoActionPerformed
 
     private void verificaSeIraExibirOsDados(){
         if (grafo != null){
@@ -548,17 +577,17 @@ public class FramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCarrregarGrafo;
+    private javax.swing.JButton btCompleto;
+    private javax.swing.JButton btConexo;
     private javax.swing.JButton btConfig;
-    private javax.swing.JButton buttonEntradaDados;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btEntradaDados;
+    private javax.swing.JButton btLimpar;
+    private javax.swing.JButton btPlanar;
+    private javax.swing.JButton btSair;
+    private javax.swing.JButton btSalvarGrafo;
+    private javax.swing.JButton btSimples;
+    private javax.swing.JButton btVisualizar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
