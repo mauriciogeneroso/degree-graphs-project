@@ -21,6 +21,7 @@ import javax.swing.ButtonGroup;
  * @version 1.7
  */
 public class FramePrincipal extends javax.swing.JFrame {
+    private static final long serialVersionUID = 1L;
 
     private Grafo grafo;
     private Identificacao ident;
