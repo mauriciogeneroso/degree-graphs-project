@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
  * @version 1.7
  */
 public class EntradaDados extends javax.swing.JFrame {
+    private static final long serialVersionUID = 1L;
 
     private Grafo grafo;
     private Grafo old = null;
