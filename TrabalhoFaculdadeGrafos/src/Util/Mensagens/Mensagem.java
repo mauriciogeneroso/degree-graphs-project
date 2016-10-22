@@ -44,6 +44,9 @@ public class Mensagem extends javax.swing.JDialog {
             case 7:
                 image = new ImageIcon(getClass().getResource("/Util/Icons/like.png"));
                 break;
+            case 8:
+                image = new ImageIcon(getClass().getResource("/Util/Icons/error.png"));
+                break;
             default:
         }
         
@@ -64,6 +67,7 @@ public class Mensagem extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
+        setOpacity(0.7F);
 
         jlTitle.setBackground(new java.awt.Color(255, 255, 255));
         jlTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N

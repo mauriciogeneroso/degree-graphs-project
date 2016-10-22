@@ -3,6 +3,7 @@ package Principal;
 import Objetos.Armazenamento.MatrizAdj;
 import Objetos.Armazenamento.MatrizInc;
 import Objetos.Grafo;
+import Util.MensagemCtrl;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -21,6 +22,7 @@ import javax.swing.JOptionPane;
  * @version 1.7
  */
 public class EntradaDados extends javax.swing.JFrame {
+    private static final long serialVersionUID = 1L;
 
     private Grafo grafo;
     private Grafo old = null;
@@ -428,11 +430,11 @@ public class EntradaDados extends javax.swing.JFrame {
         if (entradaNos.getText().equals("")) {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
-            JOptionPane.showMessageDialog(this, "Informe os Nós para definir", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Informe os Nós para definir", "Aviso", 2);
         } else if (nosRepetidos()) {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
-            JOptionPane.showMessageDialog(this, "Existem nós com o mesmo nome", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
         } else {
             try {
                 if (grafo.getMatrizAdj() != null) {
@@ -461,6 +463,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     buttonCriarGrafo.setEnabled(false);
                 }
             } catch (Exception e) {
+                MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
                 JOptionPane.showMessageDialog(this, "Valores inválidos para os Nós informados", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             }
         }

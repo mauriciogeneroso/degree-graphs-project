@@ -23,18 +23,15 @@ import java.util.logging.Logger;
 public final class MensagemCtrl {
     private MensagemCtrl() {
     }
-    
-    
-     /**Método para calculo da diária com base no salário do
-     * funcionário dividido pelo mês comercial de 30 dias para efeito * de cálculo de ajuda de custo para viagem.
-     * @author Emanuel Silva
-     * @param  titulo String - Título da mensagem
+        
+     /**Método para chamar classe de mensagem
      * @param  mensagem String - Mensagem para ser exibida
-     * @param iconType int - 1 - Código do ícone: <br>1 - Informação<br>2 - Aviso<br>3 - Configurações<br>4 - Adicionar<br>5 - Exportar<br>6 - Importar<br>7 - Sucesso
+     * @param  titulo String - Título da mensagem
+     * @param iconType int - 1 - Código do ícone: <br>1 - Informação<br>2 - Aviso<br>3 - Configurações<br>4 - Adicionar<br>5 - Exportar<br>6 - Importar<br>7 - Sucesso<br>8 - Erro
      */
     
     
-    public static void callMessage(String titulo, String mensagem, int iconType) {
+    public static void callMessage(String mensagem, String titulo, int iconType) {
         try {
             Mensagem message = new Mensagem(mensagem, titulo, iconType);
             message.setVisible(true);
