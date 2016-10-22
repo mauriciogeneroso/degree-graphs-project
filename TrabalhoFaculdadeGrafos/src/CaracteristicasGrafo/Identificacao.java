@@ -1,23 +1,28 @@
 package CaracteristicasGrafo;
 
 import Objetos.Armazenamento.Matriz;
-import Objetos.Armazenamento.MatrizAdj;
 import Objetos.Grafo;
 
 /**
+ * Essa classe implementa todas as funções de identificações de um grafo.
+ *
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
+ *
+ * @since 19/10/2016
+ * @version 1.2
+ * @release 19/10/2016
  */
 public class Identificacao {
-
+    private static final long serialVersionUID = 1L;
     public int VerifGrafoSimples(Grafo grafo) {
         int v = 0;
 
-        Matriz mt = (MatrizAdj) grafo.getMatrizAdj();
+        Matriz mt = grafo.getMatrizAdj();
 
         mt.imprimirMatriz();
         for (int i = 0; i < mt.getLinhas(); i++) {
@@ -43,7 +48,7 @@ public class Identificacao {
 
     public int VerifGrafoPlanar(Grafo grafo) {
         int v = 0;
-        Matriz mt = (MatrizAdj) grafo.getMatrizAdj();
+        Matriz mt = grafo.getMatrizAdj();
         int nos = grafo.quantidadeNos();
         int aresta = grafo.quantidadeArestas();
         return v;
@@ -52,7 +57,7 @@ public class Identificacao {
     public int VerifGrafoCompleto(Grafo grafo) {
         int v = 0;
 
-        Matriz mt = (MatrizAdj) grafo.getMatrizAdj();
+        Matriz mt = grafo.getMatrizAdj();
 
         mt.imprimirMatriz();
         for (int i = 0; i < mt.getLinhas(); i++) {
@@ -76,28 +81,23 @@ public class Identificacao {
         return v;
     }
 
-    @SuppressWarnings("empty-statement")
-
     public int VerifGrafoConexo(Grafo grafo) {
         int v = 0;
         int soma = 0;
         int it = 1;
-        Matriz mt = (MatrizAdj) grafo.getMatrizAdj();
+        Matriz mt = grafo.getMatrizAdj();
 
         mt.imprimirMatriz();
 
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
-                if (i == j || mt.getMatriz()[i][j] > 0) {
-                    continue;
-                } else {
+                if (!(i == j || mt.getMatriz()[i][j] > 0)) {
                     v = 1;
                     break;
                 }
             }
         }
         if (v == 0) {
-
             int n = 0;
             int cont = 1;
             int nos = grafo.quantidadeNos();

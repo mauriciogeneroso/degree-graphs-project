@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package File;
 
 import Objetos.Grafo;
@@ -18,11 +13,23 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
+ * Classe para importar e exportar grafos.
+ * 
+ * Estudantes de Ciência da Computação - 4 fase.
  *
- * @author pigo
+ * @author Gustavo Souza
+ * @author Luan Darabas
+ * @author Luiz Alexandre da Luz
+ * @author Maurício Generoso
+ * @since 22/10/2016
+ * @version 1.1
+ * @release 22/10/2016
  */
-public class Arquivo {
 
+public class Arquivo {
+    private Arquivo() {
+    }
+    
     public static Grafo importarGrafo(JFrame frame) throws FileNotFoundException, IOException, ClassNotFoundException {
         JFileChooser fc = new JFileChooser();
         fc.showOpenDialog(frame);
@@ -36,11 +43,10 @@ public class Arquivo {
 
         java.io.File sFile = fc.getSelectedFile();
         gravarArquivo(frame, sFile.getAbsolutePath(), grafo);
-
     }
 
     private static void gravarArquivo(JFrame frame, String nomeArquivo, Grafo grafo) {
-        FileOutputStream output = null;
+        FileOutputStream output;
         ObjectOutputStream objOutput = null;
         try {
             output = new FileOutputStream(nomeArquivo, false);
@@ -62,13 +68,12 @@ public class Arquivo {
     }
 
     private static Grafo lerArquivo(JFrame frame, File arq) throws ClassNotFoundException, FileNotFoundException, IOException {
-        FileInputStream input = null;
-        ObjectInputStream objInput = null;
+        FileInputStream input;
+        ObjectInputStream objInput;
          
         input = new FileInputStream(arq);
         objInput = new ObjectInputStream(input);
 
         return (Grafo) objInput.readObject();
-
     }
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View.Login;
 
 import Principal.FramePrincipal;
@@ -13,10 +8,22 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
+ * Classe responsável por armazenar as variáveis finais do aplicativo.
  *
- * @author comp15
+ * Estudantes de Ciência da Computação - 4 fase.
+ *
+ * @author Gustavo Souza
+ * @author Luan Darabas
+ * @author Luiz Alexandre da Luz
+ * @author Maurício Generoso
+ * 
+ * @since 15/10/2016
+ * @version 1.3
+ * @release 19/10/2016
  */
+
 public class Configuracao extends javax.swing.JFrame {
+    private static final long serialVersionUID = 1L;
 
     /**
      * Creates new form Configuracao

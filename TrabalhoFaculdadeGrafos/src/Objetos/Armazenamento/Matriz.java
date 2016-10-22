@@ -14,9 +14,13 @@ import java.io.Serializable;
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
- * @author Maurício Generoso - Classe implementada por Maurício
+ * @author Maurício Generoso
+ * @since 15/10/2016
+ * @version 1.7
+ * @release 22/10/2016
  */
-public abstract class Matriz implements Serializable {
+public abstract class Matriz implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
     int[][] matriz;
     int linhas;

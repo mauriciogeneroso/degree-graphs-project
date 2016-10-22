@@ -1,20 +1,24 @@
 package Objetos.Armazenamento;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Classe genérica para utilização no armazenamento das Listas de Adjacência e
  * Incidência.
  *
- *
+ * Estudantes de Ciência da Computação - 4 fase.
+ * 
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
- * @author Maurício Generoso - Classe implementada por Maurício
+ * @author Maurício Generoso
+ * @since 15/10/2016
+ * @version 1.7
+ * @release 22/10/2016
  * @param <T>
  */
-public class Lista<T> implements Serializable {
+public class Lista<T> implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
     ArrayList<T> lista = new ArrayList<>();
 
@@ -27,10 +31,7 @@ public class Lista<T> implements Serializable {
     }
 
     public boolean isEmpty() {
-        if (lista.isEmpty()) {
-            return true;
-        }
-        return false;
+        return lista.isEmpty();
     }
 
     @Override

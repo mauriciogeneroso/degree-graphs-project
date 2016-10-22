@@ -5,8 +5,20 @@ import View.Login.Login;
 import java.io.IOException;
 
 /**
- * @author Darabas
+ * Classe comnm objetivo de controlar a inicialização do software.
+ *
+ * Estudantes de Ciência da Computação - 4 fase.
+ *
+ * @author Gustavo Souza
+ * @author Luan Darabas
+ * @author Luiz Alexandre da Luz
+ * @author Maurício Generoso
+ * 
+ * @since 19/10/2016
+ * @version 1
+ * @release 22/10/2016
  */
+
 public class Principal {
 
     public static void main(String[] args) throws IOException {

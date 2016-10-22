@@ -6,7 +6,6 @@ import Objetos.Armazenamento.Lista;
 import Objetos.Armazenamento.MatrizInc;
 import Objetos.Armazenamento.MatrizAdj;
 import Objetos.Armazenamento.Matriz;
-import java.io.Serializable;
 
 /**
  * Classe para armazenar a Matriz e lista de Adjacência e Incidência. O
@@ -15,16 +14,18 @@ import java.io.Serializable;
  * matriz será criada com caracteristicas de direcionada, e assim por diante
  * para todos os demais casos.
  *
- *
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso - Classe implementada por Maurício
+ * @since 15/10/2016
+ * @version 1.7
+ * @release 22/10/2016
  */
-public class Grafo implements Serializable {
-
+public class Grafo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     // Matrizes
     private Matriz matrizAdj;
     private Matriz matrizInc;
@@ -169,21 +170,20 @@ public class Grafo implements Serializable {
     }
 
     public void alterarListaGrafoNaoDirecionado(String noInicial, String noFinal, String aresta) {
-        if (noInicial == noFinal) {
+        if (noInicial.equals(noFinal)) {
             listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
+            
+            listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta)); //uni os dois para não ter 2 ifs com mesmo resultado, desnecessário
         } else {
             listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
             listaAdj[posicaoLista(noFinal)].adiciona(new ElementoAdj(noInicial));
-        }
-        System.out.println("Lista de Adjacência não direcionada: ");
-        imprimirLista(listaAdj);
-        // ----------------------------
-        if (noInicial == noFinal) {
-            listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
-        } else {
+            
             listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
             listaInc[posicaoLista(noFinal)].adiciona(new ElementoInc(noInicial, aresta));
         }
+        System.out.println("Lista de Adjacência não direcionada: ");
+        imprimirLista(listaAdj);
+        
         System.out.println("Lista de Incidência não direcionada: ");
         imprimirLista(listaInc);
     }
@@ -193,7 +193,6 @@ public class Grafo implements Serializable {
         System.out.println("Lista de Adjacência direcionada: ");
         imprimirLista(listaAdj);
 
-        // ----------------------------
         listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
         System.out.println("Lista de Incidência direcionada: ");
         imprimirLista(listaInc);

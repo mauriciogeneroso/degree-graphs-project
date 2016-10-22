@@ -8,10 +8,25 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @author Darabas
+ * Classe responsável pelo tratamento do arquivo de propriedades do programa, 
+ * chamado config.properties, manipulanto toda alteração e leitura do mesmo.
+ *
+ * Estudantes de Ciência da Computação - 4 fase.
+ *
+ * @author Gustavo Souza
+ * @author Luan Darabas
+ * @author Luiz Alexandre da Luz
+ * @author Maurício Generoso
+ * 
+ * @since 15/10/2016
+ * @version 1.2
+ * @release 19/10/2016
  */
 
 public final class CarregaConfiguracoes {
+    
+    private CarregaConfiguracoes() {
+    }
     
     protected static Properties getProperties() throws IOException {
         Properties temp = new Properties();
@@ -57,4 +72,6 @@ public final class CarregaConfiguracoes {
         prop.setProperty(Strings.USERNAME_SAVE_NAME, Strings.USERNAME_SAVE_DEFAULT);//false
         prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
     }
+
+    
 }

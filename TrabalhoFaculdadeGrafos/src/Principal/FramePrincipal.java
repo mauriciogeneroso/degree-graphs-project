@@ -17,7 +17,10 @@ import javax.swing.JOptionPane;
  * @author Gustavo Souza
  * @author Luan Darabas - Implementações adicionais
  * @author Luiz Alexandre da Luz
- * @author Maurício Generoso - Classe implementada por Maurício
+ * @author Maurício Generoso
+ * @since 15/10/2016
+ * @version 1.7
+ * @release 22/10/2016
  */
 public class FramePrincipal extends javax.swing.JFrame {
 

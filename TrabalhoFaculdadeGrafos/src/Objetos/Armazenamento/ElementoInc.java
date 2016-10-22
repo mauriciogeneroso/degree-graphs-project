@@ -1,8 +1,5 @@
 package Objetos.Armazenamento;
 
-import java.io.Serializable;
-import javax.sql.rowset.serial.SerialArray;
-
 /**
  * Esta classe é um complemento para ser usada na Lista de Incidência onde
  * armazena o nó e a aresta da adjacência..
@@ -12,9 +9,13 @@ import javax.sql.rowset.serial.SerialArray;
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
- * @author Maurício Generoso - Classe implementada por Maurício
+ * @author Maurício Generoso
+ * @since 15/10/2016
+ * @version 1.7
+ * @release 22/10/2016
  */
-public class ElementoInc implements Serializable {
+public class ElementoInc implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
     private String no;
     private String aresta;
