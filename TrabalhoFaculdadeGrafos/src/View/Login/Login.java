@@ -182,7 +182,7 @@ public class Login extends javax.swing.JFrame {
             }
                 if(jcbSave.isSelected()){
                     try {
-                        CarregaConfiguracoes.setSaveUsernameTrue();
+                        CarregaConfiguracoes.setSaveUsername(true);
                     } catch (IOException ex) {
                         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                     }

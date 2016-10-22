@@ -7,7 +7,6 @@
       <Color blue="0" green="0" red="0" type="rgb"/>
     </Property>
     <Property name="undecorated" type="boolean" value="true"/>
-    <Property name="opacity" type="float" value="0.9"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>

@@ -223,13 +223,13 @@ public class Configuracao extends javax.swing.JFrame {
             }
                 if(jbcSave.isSelected()){
                     try {
-                        CarregaConfiguracoes.setSaveUsernameTrue();
+                        CarregaConfiguracoes.setSaveUsername(true);
                     } catch (IOException ex) {
                         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }else{
                     try {
-                        CarregaConfiguracoes.setSaveUsernameFalse();
+                        CarregaConfiguracoes.setSaveUsername(false);
                     } catch (IOException ex) {
                         Logger.getLogger(Configuracao.class.getName()).log(Level.SEVERE, null, ex);
                     }
