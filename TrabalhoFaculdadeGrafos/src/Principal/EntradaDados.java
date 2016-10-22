@@ -5,7 +5,6 @@ import Objetos.Armazenamento.MatrizInc;
 import Objetos.Grafo;
 import Util.MensagemCtrl;
 import javax.swing.ButtonGroup;
-import javax.swing.JOptionPane;
 
 /**
  * Janela para entrada do Grafo, nesta janela o usuário estará informando as
@@ -17,11 +16,12 @@ import javax.swing.JOptionPane;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- * 
+ *
  * @since 15/10/2016
  * @version 1.7
  */
 public class EntradaDados extends javax.swing.JFrame {
+
     private static final long serialVersionUID = 1L;
 
     private Grafo grafo;
@@ -463,8 +463,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     buttonCriarGrafo.setEnabled(false);
                 }
             } catch (Exception e) {
-                MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
-                JOptionPane.showMessageDialog(this, "Valores inválidos para os Nós informados", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                MensagemCtrl.callMessage("Valores inválidos para os Nós informados", "Erro!", 8);
             }
         }
     }//GEN-LAST:event_rButtonDefinirActionPerformed
@@ -511,9 +510,9 @@ public class EntradaDados extends javax.swing.JFrame {
     private void entradaArestasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusLost
         jlInfoMessage.setText("");
         if (entradaArestas.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Informe as Arestas para definir o grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Informe as Arestas para definir o grafo", "Aviso", 2);
         } else if (arestasRepetidas()) {
-            JOptionPane.showMessageDialog(this, "Existem arestas com o mesmo nome", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Existem arestas com o mesmo nome", "Aviso", 2);
         } else {
             try {
                 grafo.setArestas(capturarArestas(entradaArestas.getText()));
@@ -524,7 +523,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 }
                 buttonDefinirAdjacencia.setEnabled(true);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Valores inválidos para as Arestas informadas", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                MensagemCtrl.callMessage("Valores inválidos para as Arestas informadas", "Aviso", 8);
                 entradaArestas.setFocusable(true);
             }
         }
@@ -569,16 +568,15 @@ public class EntradaDados extends javax.swing.JFrame {
             old = null;
             this.dispose();
         } else if (entradaNos.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(this, "É necessário informar os nós para criar o Grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("É necessário informar os nós para criar o Grafo", "Aviso", 2);
         } else {
             // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
             grafo.setNos(capturarNos(entradaNos.getText()));
 
-            if (grafo.quantidadeNos() == 1){
-                JOptionPane.showMessageDialog(this, "Não é posśivel criar um grafo completo com apenas um nó", 
-                                              "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            if (grafo.quantidadeNos() == 1) {
+                MensagemCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
             } else {
-                            
+
                 int contArestas = 0;
                 for (int i = 0; i < grafo.quantidadeNos(); i++) {
                     for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
