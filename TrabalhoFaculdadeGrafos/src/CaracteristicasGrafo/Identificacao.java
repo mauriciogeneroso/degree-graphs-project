@@ -21,6 +21,13 @@ public class Identificacao {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Verifica se um grafo é simples
+     *
+     * @param grafo Grafo - Entrada de um Grafo
+     * @return boolean - Verdadiro caso seja um grafo simples, caso contrário,
+     * falso.
+     */
     public boolean VerifGrafoSimples(Grafo grafo) {
         Matriz mt = grafo.getMatrizAdj();
         for (int i = 0; i < mt.getLinhas(); i++) {
@@ -38,6 +45,13 @@ public class Identificacao {
         return true;
     }
 
+    /**
+     * Verifica se um grafo é planar
+     *
+     * @param grafo Grafo - Entrada de um Grafo
+     * @return boolean - Verdadiro caso seja um grafo planar, caso contrário,
+     * falso.
+     */
     public boolean VerifGrafoPlanar(Grafo grafo) {
         // Fazer a validação e retornar false se não for planar
         Matriz mt = grafo.getMatrizAdj();
@@ -46,6 +60,13 @@ public class Identificacao {
         return true;
     }
 
+    /**
+     * Verifica se um grafo é completo
+     *
+     * @param grafo Grafo - Entrada de um Grafo
+     * @return boolean - Verdadiro caso seja um grafo completo, caso contrário,
+     * falso.
+     */
     public boolean VerifGrafoCompleto(Grafo grafo) {
         Matriz mt = grafo.getMatrizAdj();
         for (int i = 0; i < mt.getLinhas(); i++) {
@@ -63,6 +84,13 @@ public class Identificacao {
         return true;
     }
 
+    /**
+     * Verifica se um grafo é conexo
+     *
+     * @param grafo Grafo - Entrada de um Grafo
+     * @return boolean - Verdadiro caso seja um grafo conexo, caso contrário,
+     * falso.
+     */
     public boolean VerifGrafoConexo(Grafo grafo) {
         // Fazer a validação e retornar false se não for conexo
         int v = 0;

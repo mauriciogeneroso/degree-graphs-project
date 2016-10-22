@@ -26,7 +26,9 @@ public final class CarregaConfiguracoes {
     private CarregaConfiguracoes() {
     }
 
-    /**Método para resgatar propriedades
+    /**
+     * Método para resgatar propriedades
+     *
      * @return Properties - Propriedades contidas no arquivo
      */
     protected static Properties getProperties() {
@@ -39,7 +41,9 @@ public final class CarregaConfiguracoes {
         return temp;
     }
 
-    /**Método para resgatar usuário
+    /**
+     * Método para resgatar usuário
+     *
      * @return String - Nome do usuário contido no arquivo de propriedades
      */
     public static String getUsuario() {
@@ -47,8 +51,10 @@ public final class CarregaConfiguracoes {
         return prop.getProperty(Strings.USERNAME_PROPERTIES_NAME);
     }
 
-    /**Método para atribuir um nome de usuário para salvar no arquivo de
+    /**
+     * Método para atribuir um nome de usuário para salvar no arquivo de
      * propriedades
+     *
      * @param usuario String - Nomo de usuário para ser inserido
      */
     public static void setUsuario(String usuario) {
@@ -61,7 +67,9 @@ public final class CarregaConfiguracoes {
         }
     }
 
-    /**Verifica se existe um usuário com opção de salvar login
+    /**
+     * Verifica se existe um usuário com opção de salvar login
+     *
      * @return boolean
      */
     public static boolean isUsernameSave() throws IOException {
@@ -69,7 +77,8 @@ public final class CarregaConfiguracoes {
         return prop.getProperty(Strings.USERNAME_SAVE_NAME).equals("true");
     }
 
-    /**Reatribui nome de usuário e é salvo ultimo login para valores default
+    /**
+     * Reatribui nome de usuário e é salvo ultimo login para valores default
      */
     public static void resetUsername() throws IOException {
         Properties prop = getProperties();
@@ -78,7 +87,9 @@ public final class CarregaConfiguracoes {
         prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
     }
 
-    /**Atribui opção de salvar login
+    /**
+     * Atribui opção de salvar login
+     *
      * @param opcao boolean - Valor para atrubiur opção de salvar login
      */
     public static void setSaveUsername(boolean opcao) throws IOException {
@@ -90,5 +101,5 @@ public final class CarregaConfiguracoes {
         }
         prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
     }
-    
+
 }

@@ -28,7 +28,9 @@ public class Arquivo {
     private Arquivo() {
     }
 
-    /**Reatribui nome de usuário e é salvo ultimo login para valores default
+    /**
+     * Reatribui nome de usuário e é salvo ultimo login para valores default.
+     *
      * @param frame JFrame - Para poder retornar
      * @return Grafo - Retorna o grafo importado
      */
@@ -38,7 +40,9 @@ public class Arquivo {
         return lerArquivo(frame, fc.getSelectedFile());
     }
 
-    /**Exporta o grafo
+    /**
+     * Exporta o grafo.
+     *
      * @param frame JFrame - Para poder retornar
      * @param grafo Grafo - para poder exportar
      */
@@ -49,7 +53,9 @@ public class Arquivo {
         gravarArquivo(frame, sFile.getAbsolutePath(), grafo);
     }
 
-    /**Grava arquivo
+    /**
+     * Grava arquivo.
+     *
      * @param frame JFrame - Para poder retornar
      * @param nomeArquivo String - Nome do arquivo
      * @param grafo Grafo - para poder gravar
@@ -76,8 +82,10 @@ public class Arquivo {
         }
     }
 
-    /**Lê arquivo
-     * @param frame JFrame - Para poder retornar
+    /**
+     * Lê arquivo
+     *
+     * @param frame JFrame - Para poder retornar.
      * @param arq File - Arquivo para leitura
      * @return Grafo - Grafo da leitura realizada no arquivo solicitado
      */
@@ -94,5 +102,5 @@ public class Arquivo {
         }
         return grafo;
     }
-    
+
 }
