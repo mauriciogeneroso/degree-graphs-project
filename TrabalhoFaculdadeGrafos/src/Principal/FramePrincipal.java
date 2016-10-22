@@ -8,7 +8,6 @@ import Util.MensagemCtrl;
 import View.Login.Configuracao;
 import java.io.IOException;
 import javax.swing.ButtonGroup;
-import javax.swing.JOptionPane;
 
 /**
  * Estudantes de Ciência da Computação - 4 fase.
@@ -17,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- * 
+ *
  * @since 15/10/2016
  * @version 1.7
  */
@@ -50,7 +49,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         initComponents();
         ident = new Identificacao();
         grafo = new Grafo();
@@ -433,32 +432,33 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimplesActionPerformed
         if (grafo.getMatrizAdj() == null) {
-            JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Simples", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é simples", "Grafo Simples", 2);
+
         } else {
-            if (ident.VerifGrafoSimples(grafo)){
-               JOptionPane.showMessageDialog(this, "O grafo é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+            if (ident.VerifGrafoSimples(grafo)) {
+                MensagemCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
             } else {
-                JOptionPane.showMessageDialog(this, "O grafo não é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+                MensagemCtrl.callMessage("O grafo não é simples!", "Grafo Simples", 1);
             }
         }
     }//GEN-LAST:event_btSimplesActionPerformed
 
     private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
         if (grafo.getMatrizAdj() == null) {
-            JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é completo.", "Grafo Completo", 2);
         } else {
-            if (ident.VerifGrafoCompleto(grafo)){
-                MensagemCtrl.callMessage("Grafo completo", "O grafo é completo", ICONIFIED);
-               //JOptionPane.showMessageDialog(this, "O grafo é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+            if (ident.VerifGrafoCompleto(grafo)) {
+                MensagemCtrl.callMessage("Grafo completo", "O grafo é completo", 1);
+                //JOptionPane.showMessageDialog(this, "O grafo é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, "O grafo não é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+                MensagemCtrl.callMessage("O grafo não é simples", "Grafo Simples", 1);
             }
         }
     }//GEN-LAST:event_btCompletoActionPerformed
 
     private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
         if (grafo.getListaAdj() == null) {
-            JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é completo", "Grafo Conexo", 2);
         } else {
             ident.VerifGrafoConexo(grafo);
         }
@@ -466,7 +466,8 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
         if (grafo.getListaAdj() == null) {
-            JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é planar", "Grafo Planar", 2);
+
         } else {
             ident.VerifGrafoPlanar(grafo);
         }
@@ -529,33 +530,34 @@ public class FramePrincipal extends javax.swing.JFrame {
         exportar();
     }//GEN-LAST:event_jmiExportarActionPerformed
 
-    private void importar(){
+    private void importar() {
         try {
-            grafo = Arquivo.importarGrafo(this);                                                                                                                                    
+            grafo = Arquivo.importarGrafo(this);
             verificaSeIraExibirOsDados();
         } catch (IOException ex) {
             //Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, "Erro ao abrir arquivo", "Erro", JOptionPane.ERROR_MESSAGE);
+            MensagemCtrl.callMessage("Erro ao abrir arquivo!", "Erro ao importar", 8);
+
         } catch (ClassNotFoundException ex) {
             //Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, "O arquivo não contém um Grafo", "Erro", JOptionPane.ERROR_MESSAGE);
-        } catch (NullPointerException exx){
+            MensagemCtrl.callMessage("O arquivo não contém um Grafo!", "Erro ao importar", 8);
+        } catch (NullPointerException exx) {
             // Não faz nada pois foi clicado em cancelar
-        }                                                                                                                                                                                                                                                                                                                                                                                   
+        }
     }
-    
-    private void exportar(){
+
+    private void exportar() {
         if (grafo.getListaInc() == null) {
-            JOptionPane.showMessageDialog(this, "Não existe um Grafo para ser exportado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Não existe um Grafo para ser exportado!", "Exportar", 8);
         } else {
             try {
                 Arquivo.exportarGrafo(this, grafo);
-            } catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 // Não faz nada pois o usuário clicou em cancelar
             }
         }
     }
-    
+
     private void verificaSeIraExibirOsDados() {
         if (grafo.getListaAdj() != null) {
             if (rButtonMatrizAdj.isSelected()) {

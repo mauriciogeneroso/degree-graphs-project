@@ -574,8 +574,8 @@ public class EntradaDados extends javax.swing.JFrame {
             grafo.setNos(capturarNos(entradaNos.getText()));
 
             if (grafo.quantidadeNos() == 1){
-                JOptionPane.showMessageDialog(this, "Não é posśivel criar um grafo completo com apenas um nó", 
-                                              "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                MensagemCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
+                                              
             } else if (nosRepetidos()){
                 MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
             } else {
