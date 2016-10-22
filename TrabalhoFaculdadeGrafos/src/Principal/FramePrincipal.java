@@ -5,13 +5,7 @@ import File.Arquivo;
 import Objetos.Armazenamento.Lista;
 import Objetos.Grafo;
 import View.Login.Configuracao;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
@@ -54,7 +48,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         initComponents();
         ident = new Identificacao();
         grafo = new Grafo();
@@ -91,13 +85,14 @@ public class FramePrincipal extends javax.swing.JFrame {
         btConfig = new javax.swing.JButton();
         btVisualizar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menuArquivo = new javax.swing.JMenu();
         jmiNovoGrafo = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jmiImportar = new javax.swing.JMenuItem();
         jmiExportar = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jmiSair = new javax.swing.JMenuItem();
+        menuSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Grafos");
@@ -322,7 +317,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         btVisualizar.setText("Visualizar");
 
-        jMenu1.setText("Arquivo");
+        menuArquivo.setText("Arquivo");
 
         jmiNovoGrafo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jmiNovoGrafo.setText("Inserir novo grafo");
@@ -331,17 +326,27 @@ public class FramePrincipal extends javax.swing.JFrame {
                 jmiNovoGrafoActionPerformed(evt);
             }
         });
-        jMenu1.add(jmiNovoGrafo);
-        jMenu1.add(jSeparator1);
+        menuArquivo.add(jmiNovoGrafo);
+        menuArquivo.add(jSeparator1);
 
         jmiImportar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         jmiImportar.setText("Importar");
-        jMenu1.add(jmiImportar);
+        jmiImportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiImportarActionPerformed(evt);
+            }
+        });
+        menuArquivo.add(jmiImportar);
 
         jmiExportar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jmiExportar.setText("Exportar");
-        jMenu1.add(jmiExportar);
-        jMenu1.add(jSeparator2);
+        jmiExportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiExportarActionPerformed(evt);
+            }
+        });
+        menuArquivo.add(jmiExportar);
+        menuArquivo.add(jSeparator2);
 
         jmiSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
         jmiSair.setText("Sair");
@@ -350,9 +355,12 @@ public class FramePrincipal extends javax.swing.JFrame {
                 jmiSairActionPerformed(evt);
             }
         });
-        jMenu1.add(jmiSair);
+        menuArquivo.add(jmiSair);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menuArquivo);
+
+        menuSobre.setText("Sobre");
+        jMenuBar1.add(menuSobre);
 
         setJMenuBar(jMenuBar1);
 
@@ -396,14 +404,13 @@ public class FramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntradaDadosActionPerformed
-        //grafo = new Grafo();
         EntradaDados entrada = new EntradaDados(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
     }//GEN-LAST:event_btEntradaDadosActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
-        if (grafo != null) {
+        if (grafo.getMatrizAdj() != null) {
             textArea.setText("");
             grafo.destruirGrafo();
             grafo = null;
@@ -411,7 +418,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimplesActionPerformed
-        if (grafo == null) {
+        if (grafo.getMatrizAdj() == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Simples", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ident.VerifGrafoSimples(grafo);
@@ -419,7 +426,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btSimplesActionPerformed
 
     private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
-        if (grafo == null) {
+        if (grafo.getMatrizAdj() == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ident.VerifGrafoCompleto(grafo);
@@ -427,7 +434,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btCompletoActionPerformed
 
     private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
-        if (grafo == null) {
+        if (grafo.getListaAdj() == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ident.VerifGrafoConexo(grafo);
@@ -435,7 +442,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btConexoActionPerformed
 
     private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
-        if (grafo == null) {
+        if (grafo.getListaAdj() == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ident.VerifGrafoPlanar(grafo);
@@ -469,7 +476,6 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btConfigActionPerformed
 
     private void jmiNovoGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNovoGrafoActionPerformed
-        grafo = new Grafo();
         EntradaDados entrada = new EntradaDados(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
@@ -485,7 +491,22 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btCarrregarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarrregarGrafoActionPerformed
         jmiImportar.doClick();
+        importar();
+    }//GEN-LAST:event_btCarrregarGrafoActionPerformed
 
+    private void btSalvarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarGrafoActionPerformed
+        exportar();
+    }//GEN-LAST:event_btSalvarGrafoActionPerformed
+
+    private void jmiImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiImportarActionPerformed
+        importar();
+    }//GEN-LAST:event_jmiImportarActionPerformed
+
+    private void jmiExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiExportarActionPerformed
+        exportar();
+    }//GEN-LAST:event_jmiExportarActionPerformed
+
+    private void importar(){
         try {
             grafo = Arquivo.importarGrafo(this);
             verificaSeIraExibirOsDados();
@@ -495,18 +516,23 @@ public class FramePrincipal extends javax.swing.JFrame {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "O arquivo não contém um Grafo", "Erro", JOptionPane.ERROR_MESSAGE);
+        } catch (NullPointerException exx){
+            // Não faz nada pois foi clicado em cancelar
         }
-
-    }//GEN-LAST:event_btCarrregarGrafoActionPerformed
-
-    private void btSalvarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarGrafoActionPerformed
+    }
+    
+    private void exportar(){
         if (grafo.getListaInc() == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para ser exportado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            Arquivo.exportarGrafo(this, grafo);
+            try {
+                Arquivo.exportarGrafo(this, grafo);
+            } catch (NullPointerException e){
+                // Não faz nada pois o usuário clicou em cancelar
+            }
         }
-    }//GEN-LAST:event_btSalvarGrafoActionPerformed
-
+    }
+    
     private void verificaSeIraExibirOsDados() {
         if (grafo.getListaAdj() != null) {
             if (rButtonMatrizAdj.isSelected()) {
@@ -595,7 +621,6 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btSalvarGrafo;
     private javax.swing.JButton btSimples;
     private javax.swing.JButton btVisualizar;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -608,6 +633,8 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiImportar;
     private javax.swing.JMenuItem jmiNovoGrafo;
     private javax.swing.JMenuItem jmiSair;
+    private javax.swing.JMenu menuArquivo;
+    private javax.swing.JMenu menuSobre;
     private javax.swing.JRadioButton rButtonListaAdj;
     private javax.swing.JRadioButton rButtonListaInc;
     private javax.swing.JRadioButton rButtonMatrizAdj;

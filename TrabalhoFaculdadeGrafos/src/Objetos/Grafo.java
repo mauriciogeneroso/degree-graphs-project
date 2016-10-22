@@ -38,8 +38,8 @@ public class Grafo implements Serializable {
     private String[] arestas;
 
     public Grafo() {
-        matrizAdj = new MatrizAdj();
-        matrizInc = new MatrizInc();
+        matrizAdj = null;
+        matrizInc = null;
 
         listaAdj = null;
         listaInc = null;
@@ -101,7 +101,15 @@ public class Grafo implements Serializable {
     }
 
     public void iniciarMatriz(Matriz mt, int qntLinhas, int qntColunas) {
-        mt.iniciarMatriz(qntLinhas, qntColunas);
+        if (mt instanceof MatrizAdj){
+            mt = new MatrizAdj();
+            mt.iniciarMatriz(qntLinhas, qntColunas);
+            matrizAdj = mt;
+        } else if (mt instanceof MatrizInc){
+            mt = new MatrizInc();
+            mt.iniciarMatriz(qntLinhas, qntColunas);
+            matrizInc = mt;
+        }
     }
 
     public void iniciarListas() {
@@ -119,8 +127,8 @@ public class Grafo implements Serializable {
     public void destruirGrafo() {
         nos = null;
         arestas = null;
-        matrizAdj = new MatrizAdj();
-        matrizInc = new MatrizInc();
+        matrizAdj = null;
+        matrizInc = null;
         listaAdj = null;
         listaInc = null;
     }

@@ -64,7 +64,7 @@ public class Arquivo {
     private static Grafo lerArquivo(JFrame frame, File arq) throws ClassNotFoundException, FileNotFoundException, IOException {
         FileInputStream input = null;
         ObjectInputStream objInput = null;
-
+         
         input = new FileInputStream(arq);
         objInput = new ObjectInputStream(input);
 

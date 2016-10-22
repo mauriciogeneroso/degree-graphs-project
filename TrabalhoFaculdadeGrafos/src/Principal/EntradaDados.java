@@ -1,5 +1,7 @@
 package Principal;
 
+import Objetos.Armazenamento.MatrizAdj;
+import Objetos.Armazenamento.MatrizInc;
 import Objetos.Grafo;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
@@ -423,7 +425,7 @@ public class EntradaDados extends javax.swing.JFrame {
             try {
                 grafo.setNos(capturarNos(entradaNos.getText()));
                 if (!grafo.noIsEmpty()) {
-                    grafo.iniciarMatriz(grafo.getMatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
+                    grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
                     // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
                     // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
                     grafo.iniciarListas();
@@ -489,7 +491,7 @@ public class EntradaDados extends javax.swing.JFrame {
         } else {
             try {
                 grafo.setArestas(capturarArestas(entradaArestas.getText()));
-                grafo.iniciarMatriz(grafo.getMatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
                 cBoxAresta.removeAllItems();
                 for (String arestaa : grafo.getArestas()) {
                     cBoxAresta.addItem(arestaa);
@@ -553,7 +555,7 @@ public class EntradaDados extends javax.swing.JFrame {
                    }
                }
                
-               grafo.iniciarMatriz(grafo.getMatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos()); // Adjacência
+               grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos()); // Adjacência
                grafo.iniciarListas();
                if (rButtonNaoDirecionado.isSelected()){
                     // Não direcionado
@@ -563,7 +565,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     }
                     
                     grafo.setArestas(arestasNaoDirecionado);
-                    grafo.iniciarMatriz(grafo.getMatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                    grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
                     contArestas = 0;
                     for (int i = 0; i < grafo.quantidadeNos(); i++){
                         for (int j = i + 1; j < grafo.quantidadeNos(); j++){
@@ -580,7 +582,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     }
                     
                     grafo.setArestas(arestasDirecionado);
-                    grafo.iniciarMatriz(grafo.getMatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                    grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
                     contArestas = 0;
                     for (int i = 0; i < grafo.quantidadeNos(); i++){
                         for (int j = i + 1; j < grafo.quantidadeNos(); j++){
