@@ -19,8 +19,9 @@ import Objetos.Grafo;
  * @release 19/10/2016
  */
 public class Identificacao {
+
     private static final long serialVersionUID = 1L;
-    
+
     public boolean VerifGrafoSimples(Grafo grafo) {
         Matriz mt = grafo.getMatrizAdj();
         for (int i = 0; i < mt.getLinhas(); i++) {
@@ -38,42 +39,33 @@ public class Identificacao {
         return true;
     }
 
-    public int VerifGrafoPlanar(Grafo grafo) {
-        int v = 0;
+    public boolean VerifGrafoPlanar(Grafo grafo) {
+        // Fazer a validação e retornar false se não for planar
         Matriz mt = grafo.getMatrizAdj();
         int nos = grafo.quantidadeNos();
         int aresta = grafo.quantidadeArestas();
-        return v;
+        return true;
     }
 
-    public int VerifGrafoCompleto(Grafo grafo) {
-        int v = 0;
-
+    public boolean VerifGrafoCompleto(Grafo grafo) {
         Matriz mt = grafo.getMatrizAdj();
-
-        mt.imprimirMatriz();
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
                 if (i != j && mt.getMatriz()[i][j] != 1) {
-                    v = 1;
-                    break;
+                    // Existe algum nó que não é ligado ou que possui aresta paralela
+                    return false;
                 }
                 if (i == j && mt.getMatriz()[i][j] > 0) {
-                    v = 1;
-                    break;
+                    // Existe um laço no próprio nó
+                    return false;
                 }
             }
         }
-
-        if (v == 1) {
-            System.out.println("O Grafo não é Completo");
-        } else {
-            System.out.println("O Grafo é Completo");
-        }
-        return v;
+        return true;
     }
 
-    public int VerifGrafoConexo(Grafo grafo) {
+    public boolean VerifGrafoConexo(Grafo grafo) {
+        // Fazer a validação e retornar false se não for conexo
         int v = 0;
         int soma = 0;
         int it = 1;
@@ -148,6 +140,6 @@ public class Identificacao {
         } else {
             System.out.println("O Grafo é Conexo");
         }
-        return v;
+        return true;
     }
 }

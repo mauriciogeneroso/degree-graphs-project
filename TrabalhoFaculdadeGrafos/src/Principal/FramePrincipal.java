@@ -4,6 +4,7 @@ import CaracteristicasGrafo.Identificacao;
 import File.Arquivo;
 import Objetos.Armazenamento.Lista;
 import Objetos.Grafo;
+import Util.MensagemCtrl;
 import View.Login.Configuracao;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -448,7 +449,12 @@ public class FramePrincipal extends javax.swing.JFrame {
         if (grafo.getMatrizAdj() == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Completo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            ident.VerifGrafoCompleto(grafo);
+            if (ident.VerifGrafoCompleto(grafo)){
+                MensagemCtrl.callMessage("Grafo completo", "O grafo é completo", ICONIFIED);
+               //JOptionPane.showMessageDialog(this, "O grafo é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "O grafo não é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btCompletoActionPerformed
 
@@ -527,7 +533,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void importar(){
         try {
-            grafo = Arquivo.importarGrafo(this);
+            grafo = Arquivo.importarGrafo(this);                                                                                                                                    
             verificaSeIraExibirOsDados();
         } catch (IOException ex) {
             //Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
@@ -537,7 +543,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "O arquivo não contém um Grafo", "Erro", JOptionPane.ERROR_MESSAGE);
         } catch (NullPointerException exx){
             // Não faz nada pois foi clicado em cancelar
-        }
+        }                                                                                                                                                                                                                                                                                                                                                                                   
     }
     
     private void exportar(){
