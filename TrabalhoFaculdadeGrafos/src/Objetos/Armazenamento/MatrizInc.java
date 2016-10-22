@@ -1,9 +1,12 @@
 package Objetos.Armazenamento;
 
+import java.io.Serializable;
+
 /**
- * 
- * Classe que representa e herda de "Matriz"; É implementado nesta subclasse como é alterado os dados de um grafo em Matriz de Incidência.
- * 
+ *
+ * Classe que representa e herda de "Matriz"; É implementado nesta subclasse
+ * como é alterado os dados de um grafo em Matriz de Incidência.
+ *
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
@@ -11,10 +14,10 @@ package Objetos.Armazenamento;
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso - Classe implementada por Maurício
  */
-public class MatrizInc extends Matriz {
-    
+public class MatrizInc extends Matriz implements Serializable {
+
     public void alterarMatrizGrafoDirecionado(int noInicial, int noFinal, int aresta) {
-        if (noInicial == noFinal){
+        if (noInicial == noFinal) {
             matriz[noInicial][aresta] += 1;
         } else {
             matriz[noInicial][aresta] += 1;
@@ -23,9 +26,9 @@ public class MatrizInc extends Matriz {
         System.out.println("Matriz de incidência - Grafo direcionado: ");
         this.imprimirMatriz();
     }
-    
+
     public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal, int aresta) {
-        if (noInicial == noFinal){
+        if (noInicial == noFinal) {
             // Se houver laço só irá armazenar uma vez
             matriz[noInicial][aresta] += 1;
         } else {
@@ -35,5 +38,5 @@ public class MatrizInc extends Matriz {
         System.out.println("Matriz de Incidência - Grafo não direcionada: ");
         this.imprimirMatriz();
     }
-    
+
 }

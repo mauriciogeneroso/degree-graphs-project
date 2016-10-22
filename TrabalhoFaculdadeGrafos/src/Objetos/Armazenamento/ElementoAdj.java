@@ -1,20 +1,23 @@
 package Objetos.Armazenamento;
 
+import java.io.Serializable;
+
 /**
- *  Esta classe é um complemento para ser usada na Lista de Adjacência onde armazena o nó da adjacência.
- * 
+ * Esta classe é um complemento para ser usada na Lista de Adjacência onde
+ * armazena o nó da adjacência.
+ *
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso - Classe implementada por Maurício
-*/
-public class ElementoAdj {
-    
+ */
+public class ElementoAdj implements Serializable {
+
     private String no;
-    
-    public ElementoAdj(String no){
+
+    public ElementoAdj(String no) {
         this.no = no;
     }
 

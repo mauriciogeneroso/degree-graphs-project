@@ -544,6 +544,7 @@ public class EntradaDados extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(this, "É necessário informar os nós para criar o Grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             } else {
                // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
+               //grafo = new Grafo();
                grafo.setNos(capturarNos(entradaNos.getText()));
                
                int contArestas = 0;

@@ -1,8 +1,11 @@
 package Objetos.Armazenamento;
 
+import java.io.Serializable;
+
 /**
- * Classe que representa e herda de "Matriz"; É implementado nesta subclasse como é alterado os dados de um grafo em Matriz de Adjacência.
- * 
+ * Classe que representa e herda de "Matriz"; É implementado nesta subclasse
+ * como é alterado os dados de um grafo em Matriz de Adjacência.
+ *
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
@@ -10,17 +13,16 @@ package Objetos.Armazenamento;
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso - Classe implementada por Maurício
  */
-public class MatrizAdj extends Matriz {
+public class MatrizAdj extends Matriz implements Serializable {
 
-    
     public void alterarMatrizGrafoDirecionado(int noInicial, int noFinal) {
         matriz[noInicial][noFinal] += 1;
         System.out.println("Matriz de adjacência - Grafo direcionado: ");
         this.imprimirMatriz();
     }
-    
+
     public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal) {
-        if (noInicial == noFinal){
+        if (noInicial == noFinal) {
             // Se houver laço só irá armazenar uma vez
             matriz[noInicial][noFinal] += 1;
         } else {
@@ -30,5 +32,5 @@ public class MatrizAdj extends Matriz {
         System.out.println("Matriz de adjacência - Grafo não direcionado: ");
         this.imprimirMatriz();
     }
-    
+
 }

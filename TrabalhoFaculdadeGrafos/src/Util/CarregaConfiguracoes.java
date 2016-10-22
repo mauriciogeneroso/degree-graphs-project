@@ -35,7 +35,7 @@ public final class CarregaConfiguracoes {
     }
     
     public static boolean isUsernameSave() throws IOException {
-        Properties prop = getProperties();
+       Properties prop = getProperties();
         return prop.getProperty(Strings.USERNAME_SAVE_NAME).equals("true");
     }
     

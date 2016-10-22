@@ -1,18 +1,22 @@
 package Objetos.Armazenamento;
 
+import java.io.Serializable;
+
 /**
- * Matriz para armazenar os grafos, nesta classe está implementado caracteristicas e métodos comuns das matrizes de Adjacência e Incidência, 
- * porém as alterações das informações são implementadas nas subclasses que herdam de "Matriz", pois cada tipo de armazenamento do Grafo 
- * requer uma forma diferente de estar alterando a Matriz.
- * 
+ * Matriz para armazenar os grafos, nesta classe está implementado
+ * caracteristicas e métodos comuns das matrizes de Adjacência e Incidência,
+ * porém as alterações das informações são implementadas nas subclasses que
+ * herdam de "Matriz", pois cada tipo de armazenamento do Grafo requer uma forma
+ * diferente de estar alterando a Matriz.
+ *
  * Estudantes de Ciência da Computação - 4 fase.
- *  
+ *
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso - Classe implementada por Maurício
  */
-public abstract class Matriz {
+public abstract class Matriz implements Serializable {
 
     int[][] matriz;
     int linhas;
@@ -49,8 +53,6 @@ public abstract class Matriz {
     public void imprimirMatriz() {
         System.out.print(this); // Iŕa chamar o toString();
     }
-    
-    
 
     public void iniciarMatriz(int linhas, int colunas) {
         /// Cuidar, a classe possui dois atributos com o mesmo nome linhas e colunas
@@ -75,7 +77,5 @@ public abstract class Matriz {
         }
         return imprimir;
     }
-    
 
-    
 }

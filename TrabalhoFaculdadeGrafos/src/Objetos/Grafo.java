@@ -6,6 +6,7 @@ import Objetos.Armazenamento.Lista;
 import Objetos.Armazenamento.MatrizInc;
 import Objetos.Armazenamento.MatrizAdj;
 import Objetos.Armazenamento.Matriz;
+import java.io.Serializable;
 
 /**
  * Classe para armazenar a Matriz e lista de Adjacência e Incidência. O
@@ -22,7 +23,7 @@ import Objetos.Armazenamento.Matriz;
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso - Classe implementada por Maurício
  */
-public class Grafo {
+public class Grafo implements Serializable {
 
     // Matrizes
     private Matriz matrizAdj;
