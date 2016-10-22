@@ -552,14 +552,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         try {
             grafo = Arquivo.importarGrafo(this);
             verificaSeIraExibirOsDados();
-        } catch (IOException ex) {
-            //Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            MensagemCtrl.callMessage("Erro ao abrir arquivo!", "Erro ao importar", 8);
-
-        } catch (ClassNotFoundException ex) {
-            //Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            MensagemCtrl.callMessage("O arquivo não contém um Grafo!", "Erro ao importar", 8);
-        } catch (NullPointerException exx) {
+        } catch (NullPointerException ex) {
             // Não faz nada pois foi clicado em cancelar
         }
     }
