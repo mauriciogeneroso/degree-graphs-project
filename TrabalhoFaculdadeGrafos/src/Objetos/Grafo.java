@@ -59,7 +59,7 @@ public class Grafo implements Serializable {
     public Lista<ElementoAdj>[] getListaAdj() {
         return listaAdj;
     }
-    
+
     public Lista<ElementoInc>[] getListaInc() {
         return listaInc;
     }
@@ -79,15 +79,15 @@ public class Grafo implements Serializable {
     public void setArestas(String[] arestas) {
         this.arestas = arestas;
     }
-    
-    public String getNoPosicao(int posicao){
+
+    public String getNoPosicao(int posicao) {
         return nos[posicao];
     }
-    
-    public String getArestaPosicao(int posicao){
+
+    public String getArestaPosicao(int posicao) {
         return arestas[posicao];
     }
-    
+
     public int quantidadeNos() {
         return nos.length;
     }
@@ -101,11 +101,11 @@ public class Grafo implements Serializable {
     }
 
     public void iniciarMatriz(Matriz mt, int qntLinhas, int qntColunas) {
-        if (mt instanceof MatrizAdj){
+        if (mt instanceof MatrizAdj) {
             mt = new MatrizAdj();
             mt.iniciarMatriz(qntLinhas, qntColunas);
             matrizAdj = mt;
-        } else if (mt instanceof MatrizInc){
+        } else if (mt instanceof MatrizInc) {
             mt = new MatrizInc();
             mt.iniciarMatriz(qntLinhas, qntColunas);
             matrizInc = mt;
@@ -117,7 +117,7 @@ public class Grafo implements Serializable {
         for (int i = 0; i < quantidadeNos(); i++) {
             listaAdj[i] = new Lista<>();
         }
-        
+
         listaInc = new Lista[quantidadeNos()];
         for (int i = 0; i < quantidadeNos(); i++) {
             listaInc[i] = new Lista<>();
@@ -148,28 +148,28 @@ public class Grafo implements Serializable {
             ((MatrizInc) mt).alterarMatrizGrafoDirecionado(noInicial, noFinal, aresta);
         }
     }
-    
-    public void imprimirLista(Lista[] lt){
+
+    public void imprimirLista(Lista[] lt) {
         // Este método iŕá chamar o toString() da classe "Lista" para cada posição do array(listaInc[i]).
         // O toString() da classe Lista irá imprimir cada elemento presente em tal posição do vetor, ou seja, a outra lista(chamando o toString de cada elemento);
-        for (int i = 0; i < quantidadeNos(); i++){
+        for (int i = 0; i < quantidadeNos(); i++) {
             System.out.println(nos[i] + " -> " + lt[i]);
         }
         //System.out.println("\n");
     }
-    
-    private int posicaoLista(String no){
-        for (int i = 0; i < quantidadeNos(); i++){
-            if (nos[i].equals(no)){
+
+    private int posicaoLista(String no) {
+        for (int i = 0; i < quantidadeNos(); i++) {
+            if (nos[i].equals(no)) {
                 return i;
             }
         }
         System.out.println("OCORREU UM ERRO");
         return -1;
     }
-    
+
     public void alterarListaGrafoNaoDirecionado(String noInicial, String noFinal, String aresta) {
-        if (noInicial == noFinal){
+        if (noInicial == noFinal) {
             listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
         } else {
             listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
@@ -178,7 +178,7 @@ public class Grafo implements Serializable {
         System.out.println("Lista de Adjacência não direcionada: ");
         imprimirLista(listaAdj);
         // ----------------------------
-        if (noInicial == noFinal){
+        if (noInicial == noFinal) {
             listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
         } else {
             listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
@@ -187,14 +187,13 @@ public class Grafo implements Serializable {
         System.out.println("Lista de Incidência não direcionada: ");
         imprimirLista(listaInc);
     }
-    
+
     public void alterarListaGrafoDirecionado(String noInicial, String noFinal, String aresta) {
         listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
         System.out.println("Lista de Adjacência direcionada: ");
         imprimirLista(listaAdj);
-        
+
         // ----------------------------
-        
         listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
         System.out.println("Lista de Incidência direcionada: ");
         imprimirLista(listaInc);

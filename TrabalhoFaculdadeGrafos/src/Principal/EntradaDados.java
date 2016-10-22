@@ -7,18 +7,20 @@ import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
 /**
- * Janela para entrada do Grafo, nesta janela o usuário estará informando as características para realizar a criação do grafo.
+ * Janela para entrada do Grafo, nesta janela o usuário estará informando as
+ * características para realizar a criação do grafo.
  *
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
- * @author Maurício Generoso - Classe implementada por Maurício
+ * @author Maurício Generoso
  */
 public class EntradaDados extends javax.swing.JFrame {
 
     private Grafo grafo;
+    private Grafo old = null;
     private boolean desabilitar = true;
     private ButtonGroup buttonGroup1;
     private ButtonGroup buttonGroup2;
@@ -26,7 +28,10 @@ public class EntradaDados extends javax.swing.JFrame {
     public EntradaDados(Grafo grafo) {
         initComponents();
         this.grafo = grafo;
-        
+        if (grafo.getMatrizAdj() != null) {
+            old = grafo;
+        }
+
         // Grupo de botões para os JRadioButton direcionado e não direcionado
         buttonGroup1 = new ButtonGroup();
         buttonGroup1.add(rButtonNaoDirecionado);
@@ -423,6 +428,10 @@ public class EntradaDados extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Informe os Nós para definir", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             try {
+                if (grafo.getMatrizAdj() != null) {
+                        grafo = new Grafo();
+                }
+                
                 grafo.setNos(capturarNos(entradaNos.getText()));
                 if (!grafo.noIsEmpty()) {
                     grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
@@ -466,11 +475,11 @@ public class EntradaDados extends javax.swing.JFrame {
         buttonDefinirAdjacencia.setEnabled(false);
         buttonCriarGrafo.setEnabled(true);
         cancelarCriacaoGrafo();
-        
-        if (!desabilitar){
-            if (rButtonDirecionado.isSelected()){
-            rButtonNaoDirecionado.setEnabled(true);
-            rButtonNaoDirecionado.setToolTipText(null);
+
+        if (!desabilitar) {
+            if (rButtonDirecionado.isSelected()) {
+                rButtonNaoDirecionado.setEnabled(true);
+                rButtonNaoDirecionado.setToolTipText(null);
             } else {
                 rButtonDirecionado.setEnabled(true);
                 rButtonDirecionado.setToolTipText(null);
@@ -480,7 +489,12 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_rButtonCompletoActionPerformed
 
     private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
-        cancelarCriacaoGrafo();
+        if (old != null) {
+            grafo = old;
+            old = null;
+        } else {
+            cancelarCriacaoGrafo();
+        }
         this.dispose();
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
@@ -513,16 +527,16 @@ public class EntradaDados extends javax.swing.JFrame {
             grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
             grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
             grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(posicaoNoInicialSelecionado()), grafo.getNoPosicao(posicaoNoFinalSelecionado()), grafo.getArestaPosicao(posicaoArestaSelecionada()));
-        }   
+        }
         //Após definir remove a aresta da seleção de acordo com o index
         cBoxAresta.removeItemAt(cBoxAresta.getSelectedIndex());
         if (cBoxAresta.getSelectedIndex() == -1) {
             buttonDefinirAdjacencia.setEnabled(false);
             buttonCriarGrafo.setEnabled(true);
         }
-        
-        if (desabilitar){
-            if (rButtonDirecionado.isSelected()){
+
+        if (desabilitar) {
+            if (rButtonDirecionado.isSelected()) {
                 rButtonNaoDirecionado.setEnabled(false);
                 rButtonNaoDirecionado.setToolTipText("Para marcar esta opção deve estar selecionado a opção \"Completo\"");
             } else {
@@ -531,7 +545,7 @@ public class EntradaDados extends javax.swing.JFrame {
             }
             desabilitar = !desabilitar;
         }
-        
+
     }//GEN-LAST:event_buttonDefinirAdjacenciaActionPerformed
 
     private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
@@ -539,66 +553,64 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonLimparActionPerformed
 
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
-        if (rButtonDefinir.isSelected()){
+        if (rButtonDefinir.isSelected()) {
             this.dispose();
+        } else if (entradaNos.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "É necessário informar os nós para criar o Grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            if (entradaNos.getText().trim().equals("")){
-               JOptionPane.showMessageDialog(this, "É necessário informar os nós para criar o Grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
+            grafo.setNos(capturarNos(entradaNos.getText()));
+
+            int contArestas = 0;
+            for (int i = 0; i < grafo.quantidadeNos(); i++) {
+                for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
+                    contArestas++;
+                }
+            }
+
+            grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos()); // Adjacência
+            grafo.iniciarListas();
+            if (rButtonNaoDirecionado.isSelected()) {
+                // Não direcionado
+                String[] arestasNaoDirecionado = new String[contArestas];
+                for (int i = 0; i < contArestas; i++) {
+                    arestasNaoDirecionado[i] = String.valueOf(i);
+                }
+
+                grafo.setArestas(arestasNaoDirecionado);
+                grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                contArestas = 0;
+                for (int i = 0; i < grafo.quantidadeNos(); i++) {
+                    for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
+                        grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizAdj(), i, j, contArestas);
+                        grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizInc(), i, j, contArestas);
+                        grafo.alterarListaGrafoNaoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas++));
+                    }
+                }
             } else {
-               // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
-               grafo.setNos(capturarNos(entradaNos.getText()));
-               
-               int contArestas = 0;
-               for (int i = 0; i < grafo.quantidadeNos(); i++){
-                   for (int j = i + 1; j < grafo.quantidadeNos(); j++){
-                       contArestas++;
-                   }
-               }
-               
-               grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos()); // Adjacência
-               grafo.iniciarListas();
-               if (rButtonNaoDirecionado.isSelected()){
-                    // Não direcionado
-                    String[] arestasNaoDirecionado = new String[contArestas];
-                    for (int i = 0; i < contArestas; i++){
-                        arestasNaoDirecionado[i] = String.valueOf(i);
-                    }
-                    
-                    grafo.setArestas(arestasNaoDirecionado);
-                    grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
-                    contArestas = 0;
-                    for (int i = 0; i < grafo.quantidadeNos(); i++){
-                        for (int j = i + 1; j < grafo.quantidadeNos(); j++){
-                            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizAdj(), i, j, contArestas);
-                            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizInc(), i, j, contArestas);
-                            grafo.alterarListaGrafoNaoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas++));
-                        }
-                    }
-               } else {
-                   // Direcionado
-                    String[] arestasDirecionado = new String[2 * contArestas];
-                    for (int i = 0; i < 2 * contArestas; i++){
-                        arestasDirecionado[i] = String.valueOf(i);
-                    }
-                    
-                    grafo.setArestas(arestasDirecionado);
-                    grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
-                    contArestas = 0;
-                    for (int i = 0; i < grafo.quantidadeNos(); i++){
-                        for (int j = i + 1; j < grafo.quantidadeNos(); j++){
-                              grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), i, j, contArestas); // Matriz Adj Direcionado
-                              grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), j, i, contArestas); // Matriz Adj direcionado, com os nós invertidos para ficar completo
-                              grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), i, j, contArestas); // Matriz Inc, mesmo do item acima, a linha abaixo é a volta da aresta direcionada
-                              grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), j, i, contArestas + 1);
-                              grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas));
-                              grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(j), grafo.getNoPosicao(i), grafo.getArestaPosicao(contArestas + 1));
-                              contArestas += 2;
-                        } // fim do for
+                // Direcionado
+                String[] arestasDirecionado = new String[2 * contArestas];
+                for (int i = 0; i < 2 * contArestas; i++) {
+                    arestasDirecionado[i] = String.valueOf(i);
+                }
+
+                grafo.setArestas(arestasDirecionado);
+                grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                contArestas = 0;
+                for (int i = 0; i < grafo.quantidadeNos(); i++) {
+                    for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
+                        grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), i, j, contArestas); // Matriz Adj Direcionado
+                        grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), j, i, contArestas); // Matriz Adj direcionado, com os nós invertidos para ficar completo
+                        grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), i, j, contArestas); // Matriz Inc, mesmo do item acima, a linha abaixo é a volta da aresta direcionada
+                        grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), j, i, contArestas + 1);
+                        grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas));
+                        grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(j), grafo.getNoPosicao(i), grafo.getArestaPosicao(contArestas + 1));
+                        contArestas += 2;
                     } // fim do for
-               } // fim do else
-               this.dispose();
+                } // fim do for
             } // fim do else
-        } // fim do else
+            this.dispose();
+        } // fim do else // fim do else
     }//GEN-LAST:event_buttonCriarGrafoActionPerformed
 
     private void entradaNosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNosFocusGained
@@ -606,7 +618,7 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_entradaNosFocusGained
 
     private void entradaNosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNosFocusLost
-         jlInfoMessage.setText("");
+        jlInfoMessage.setText("");
     }//GEN-LAST:event_entradaNosFocusLost
 
     private void entradaArestasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusGained
@@ -683,9 +695,11 @@ public class EntradaDados extends javax.swing.JFrame {
     }
 
     private void cancelarCriacaoGrafo() {
-        grafo.destruirGrafo();
+        if (grafo.getMatrizAdj() == null) {
+            grafo.destruirGrafo();
+        }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelar;
     private javax.swing.JButton buttonCriarGrafo;
