@@ -426,12 +426,16 @@ public class EntradaDados extends javax.swing.JFrame {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
             JOptionPane.showMessageDialog(this, "Informe os Nós para definir", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else if (nosRepetidos()) {
+            rButtonDefinir.setSelected(false);
+            rButtonCompleto.setSelected(true);
+            JOptionPane.showMessageDialog(this, "Existem nós com o mesmo nome", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             try {
                 if (grafo.getMatrizAdj() != null) {
-                        grafo = new Grafo();
+                    grafo = new Grafo();
                 }
-                
+
                 grafo.setNos(capturarNos(entradaNos.getText()));
                 if (!grafo.noIsEmpty()) {
                     grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
@@ -502,6 +506,8 @@ public class EntradaDados extends javax.swing.JFrame {
         jlInfoMessage.setText("");
         if (entradaArestas.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Informe as Arestas para definir o grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else if (arestasRepetidas()) {
+            JOptionPane.showMessageDialog(this, "Existem arestas com o mesmo nome", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
             try {
                 grafo.setArestas(capturarArestas(entradaArestas.getText()));
@@ -624,6 +630,30 @@ public class EntradaDados extends javax.swing.JFrame {
     private void entradaArestasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusGained
         jlInfoMessage.setText("Exemplo: A = {a1, a2, a3}");
     }//GEN-LAST:event_entradaArestasFocusGained
+
+    private boolean nosRepetidos() {
+        String[] n = capturarNos(entradaNos.getText());
+        for (int i = 0; i < n.length; i++) {
+            for (int j = 0; j < n.length; j++) {
+                if (n[i].equals(n[j]) && i != j) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean arestasRepetidas() {
+        String[] a = capturarArestas(entradaArestas.getText());
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                if (a[i].equals(a[j]) && i != j) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     private int posicaoNoInicialSelecionado() {
         String tempNoInicialSelected = cBoxNoInicial.getItemAt(cBoxNoInicial.getSelectedIndex());
