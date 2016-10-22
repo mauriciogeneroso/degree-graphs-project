@@ -3,6 +3,7 @@ package Principal;
 import Objetos.Armazenamento.MatrizAdj;
 import Objetos.Armazenamento.MatrizInc;
 import Objetos.Grafo;
+import Util.MensagemCtrl;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -429,11 +430,11 @@ public class EntradaDados extends javax.swing.JFrame {
         if (entradaNos.getText().equals("")) {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
-            JOptionPane.showMessageDialog(this, "Informe os Nós para definir", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Informe os Nós para definir", "Aviso", 2);
         } else if (nosRepetidos()) {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
-            JOptionPane.showMessageDialog(this, "Existem nós com o mesmo nome", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
         } else {
             try {
                 if (grafo.getMatrizAdj() != null) {
