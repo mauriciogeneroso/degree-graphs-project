@@ -2,7 +2,6 @@ package Principal;
 
 import Util.CarregaConfiguracoes;
 import View.Login.Login;
-import java.io.IOException;
 
 /**
  * Classe comnm objetivo de controlar a inicialização do software.
@@ -21,7 +20,8 @@ import java.io.IOException;
 
 public class Principal {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws java.io.IOException {
+        
         if (!CarregaConfiguracoes.isUsernameSave()) {
             Login fm = new Login();
             fm.setVisible(true);
@@ -31,4 +31,3 @@ public class Principal {
         }
     }
 }
-
