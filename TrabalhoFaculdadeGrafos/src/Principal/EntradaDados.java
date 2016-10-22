@@ -30,7 +30,7 @@ public class EntradaDados extends javax.swing.JFrame {
     private ButtonGroup buttonGroup1;
     private ButtonGroup buttonGroup2;
 
-    public EntradaDados(Grafo grafo) {
+    EntradaDados(Grafo grafo) {
         initComponents();
         this.grafo = grafo;
         if (grafo.getMatrizAdj() != null) {
@@ -577,6 +577,8 @@ public class EntradaDados extends javax.swing.JFrame {
             if (grafo.quantidadeNos() == 1){
                 JOptionPane.showMessageDialog(this, "Não é posśivel criar um grafo completo com apenas um nó", 
                                               "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            } else if (nosRepetidos()){
+                MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
             } else {
                             
                 int contArestas = 0;
@@ -777,4 +779,20 @@ public class EntradaDados extends javax.swing.JFrame {
     private javax.swing.JRadioButton rButtonDirecionado;
     private javax.swing.JRadioButton rButtonNaoDirecionado;
     // End of variables declaration//GEN-END:variables
+}
+
+class SingleStanceDados {
+    private static EntradaDados janelaDados = null;
+    
+    private SingleStanceDados() {}
+
+    public static EntradaDados getStance(Grafo grafo) {
+        if (janelaDados == null) {
+            janelaDados = new EntradaDados(grafo);
+            janelaDados.setVisible(true);
+        } else {
+            // A janela já está aberta
+        }
+        return janelaDados;
+    }
 }

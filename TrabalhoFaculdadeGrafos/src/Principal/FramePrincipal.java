@@ -420,7 +420,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntradaDadosActionPerformed
-        EntradaDados entrada = new EntradaDados(grafo);
+        EntradaDados entrada = SingleStanceDados.getStance(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
     }//GEN-LAST:event_btEntradaDadosActionPerformed
