@@ -10,25 +10,42 @@ package Objetos.Armazenamento;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- * 
+ *
  * @since 15/10/2016
  * @version 1.7
  */
 public class ElementoInc implements java.io.Serializable {
+
     private static final long serialVersionUID = 1L;
 
     private String no;
     private String aresta;
 
+    /**
+     * Retorna o Objeto em String
+     *
+     * @param no String - Nome do n[o
+     */
     public ElementoInc(String no) {
         this.no = no;
     }
 
+    /**
+     * Retorna o Objeto em String
+     *
+     * @param no String - Nome do n[o
+     * @param aresta String - Nome da aresta
+     */
     public ElementoInc(String no, String aresta) {
         this.no = no;
         this.aresta = aresta;
     }
 
+    /**
+     * Retorna o Objeto em String
+     *
+     * @return String - Conteúdo do objeto para String
+     */
     @Override
     public String toString() {
         return "{" + "No = " + no + ", Aresta = " + aresta + '}';
