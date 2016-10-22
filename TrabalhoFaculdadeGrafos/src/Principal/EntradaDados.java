@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
  * 
  * @since 15/10/2016
  * @version 1.7
- * @release 22/10/2016
  */
 public class EntradaDados extends javax.swing.JFrame {
 

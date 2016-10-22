@@ -12,7 +12,6 @@ package Util;
  * 
  * @since 15/10/2016
  * @version 1.2
- * @release 19/10/2016
  */
 
 public final class Strings {

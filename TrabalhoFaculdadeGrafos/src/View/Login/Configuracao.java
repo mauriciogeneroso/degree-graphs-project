@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
  * 
  * @since 15/10/2016
  * @version 1.3
- * @release 19/10/2016
  */
 
 public class Configuracao extends javax.swing.JFrame {
