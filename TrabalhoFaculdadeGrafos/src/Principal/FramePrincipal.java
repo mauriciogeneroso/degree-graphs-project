@@ -6,8 +6,6 @@ import Objetos.Armazenamento.Lista;
 import Objetos.Grafo;
 import View.Login.Configuracao;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 

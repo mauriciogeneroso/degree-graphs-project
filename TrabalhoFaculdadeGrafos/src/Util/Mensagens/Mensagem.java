@@ -1,5 +1,6 @@
 package Util.Mensagens;
 
+import java.awt.Color;
 import javax.swing.ImageIcon;
 
 /**
@@ -25,27 +26,35 @@ public class Mensagem extends javax.swing.JDialog {
         switch(icon){
             case 1: //info
                 image = new ImageIcon(getClass().getResource("/Util/Icons/info.png"));
+                jpBackground.setBackground(Color.blue);
                 break;
             case 2: //warn
                 image = new ImageIcon(getClass().getResource("/Util/Icons/warning.png"));
+                jpBackground.setBackground(Color.orange);
                 break;
             case 3: //settings
                 image = new ImageIcon(getClass().getResource("/Util/Icons/settings.png"));
+                jpBackground.setBackground(Color.blue);
                 break;
             case 4: //plus
                 image = new ImageIcon(getClass().getResource("/Util/Icons/plus.png"));
+                jpBackground.setBackground(Color.blue);
                 break;
             case 5:
                 image = new ImageIcon(getClass().getResource("/Util/Icons/export.png"));
+                jpBackground.setBackground(Color.green);
                 break;
             case 6:
                 image = new ImageIcon(getClass().getResource("/Util/Icons/import.png"));
+                jpBackground.setBackground(Color.green);
                 break;
             case 7:
                 image = new ImageIcon(getClass().getResource("/Util/Icons/like.png"));
+                jpBackground.setBackground(Color.green);
                 break;
             case 8:
                 image = new ImageIcon(getClass().getResource("/Util/Icons/error.png"));
+                jpBackground.setBackground(Color.red);
                 break;
             default:
         }
@@ -59,15 +68,22 @@ public class Mensagem extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpBackground = new javax.swing.JPanel();
+        jlMessage = new javax.swing.JLabel();
         jlTitle = new javax.swing.JLabel();
         jlIcon = new javax.swing.JLabel();
         jlOk = new javax.swing.JLabel();
-        jlMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 0, 0));
         setUndecorated(true);
-        setOpacity(0.7F);
+        setOpacity(0.9F);
+
+        jpBackground.setBackground(new java.awt.Color(255, 255, 255));
+        jpBackground.setPreferredSize(new java.awt.Dimension(770, 151));
+
+        jlMessage.setBackground(new java.awt.Color(255, 255, 255));
+        jlMessage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jlTitle.setBackground(new java.awt.Color(255, 255, 255));
         jlTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -83,45 +99,47 @@ public class Mensagem extends javax.swing.JDialog {
             }
         });
 
-        jlMessage.setBackground(new java.awt.Color(255, 255, 255));
-        jlMessage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        javax.swing.GroupLayout jpBackgroundLayout = new javax.swing.GroupLayout(jpBackground);
+        jpBackground.setLayout(jpBackgroundLayout);
+        jpBackgroundLayout.setHorizontalGroup(
+            jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpBackgroundLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jlIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jlOk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 30, Short.MAX_VALUE))
+        );
+        jpBackgroundLayout.setVerticalGroup(
+            jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpBackgroundLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jlOk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBackgroundLayout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpBackgroundLayout.createSequentialGroup()
+                        .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jlMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jlIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addComponent(jlOk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+            .addComponent(jpBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jlOk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jlMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jlIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12))
+            .addComponent(jpBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -137,5 +155,6 @@ public class Mensagem extends javax.swing.JDialog {
     private javax.swing.JLabel jlMessage;
     private javax.swing.JLabel jlOk;
     private javax.swing.JLabel jlTitle;
+    private javax.swing.JPanel jpBackground;
     // End of variables declaration//GEN-END:variables
 }
