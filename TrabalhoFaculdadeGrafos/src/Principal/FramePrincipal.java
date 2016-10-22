@@ -510,7 +510,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btSairActionPerformed
 
     private void btCarrregarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarrregarGrafoActionPerformed
-        jmiImportar.doClick();
+        //jmiImportar.doClick();
         importar();
     }//GEN-LAST:event_btCarrregarGrafoActionPerformed
 
@@ -531,10 +531,10 @@ public class FramePrincipal extends javax.swing.JFrame {
             grafo = Arquivo.importarGrafo(this);
             verificaSeIraExibirOsDados();
         } catch (IOException ex) {
-            Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Erro ao abrir arquivo", "Erro", JOptionPane.ERROR_MESSAGE);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(FramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "O arquivo não contém um Grafo", "Erro", JOptionPane.ERROR_MESSAGE);
         } catch (NullPointerException exx){
             // Não faz nada pois foi clicado em cancelar
