@@ -96,6 +96,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jmiSair = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Grafos");
@@ -398,6 +399,16 @@ public class FramePrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuArquivo);
 
         menuSobre.setText("Sobre");
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Sobre");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuSobre.add(jMenuItem1);
+
         jMenuBar1.add(menuSobre);
 
         setJMenuBar(jMenuBar1);
@@ -501,7 +512,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btConfigActionPerformed
 
     private void jmiNovoGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNovoGrafoActionPerformed
-        EntradaDados entrada = new EntradaDados(grafo);
+        EntradaDados entrada = SingleStanceDados.getStance(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
     }//GEN-LAST:event_jmiNovoGrafoActionPerformed
@@ -530,6 +541,12 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void jmiExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiExportarActionPerformed
         exportar();
     }//GEN-LAST:event_jmiExportarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        JSobre jSobre = SingleStanceSobre.getStance();
+        jSobre.setLocationRelativeTo(this);
+        jSobre.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void importar() {
         try {
@@ -648,6 +665,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btSimples;
     private javax.swing.JButton btVisualizar;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
