@@ -33,14 +33,12 @@ public class Arquivo {
     public static Grafo importarGrafo(JFrame frame) throws FileNotFoundException, IOException, ClassNotFoundException {
         JFileChooser fc = new JFileChooser();
         fc.showOpenDialog(frame);
-        File arq = fc.getSelectedFile();
-        return lerArquivo(frame, arq);
+        return lerArquivo(frame, fc.getSelectedFile());
     }
 
     public static void exportarGrafo(JFrame frame, Grafo grafo) {
         JFileChooser fc = new JFileChooser();
         fc.showSaveDialog(frame);
-
         java.io.File sFile = fc.getSelectedFile();
         gravarArquivo(frame, sFile.getAbsolutePath(), grafo);
     }
