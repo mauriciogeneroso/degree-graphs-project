@@ -15,9 +15,10 @@ import javax.swing.JOptionPane;
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
- * @author Luan Darabas - Implementações adicionais
+ * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
+ * 
  * @since 15/10/2016
  * @version 1.7
  * @release 22/10/2016

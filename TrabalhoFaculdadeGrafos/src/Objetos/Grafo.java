@@ -19,7 +19,8 @@ import Objetos.Armazenamento.Matriz;
  * @author Gustavo Souza
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
- * @author Maurício Generoso - Classe implementada por Maurício
+ * @author Maurício Generoso
+ * 
  * @since 15/10/2016
  * @version 1.7
  * @release 22/10/2016
