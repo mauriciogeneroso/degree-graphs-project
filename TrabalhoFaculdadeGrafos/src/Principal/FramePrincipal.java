@@ -15,9 +15,10 @@ import javax.swing.JOptionPane;
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
- * @author Luan Darabas - Implementações adicionais
+ * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
+ * 
  * @since 15/10/2016
  * @version 1.7
  */
@@ -435,7 +436,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         if (grafo.getMatrizAdj() == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Simples", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            ident.VerifGrafoSimples(grafo);
+            if (ident.VerifGrafoSimples(grafo)){
+               JOptionPane.showMessageDialog(this, "O grafo é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "O grafo não é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btSimplesActionPerformed
 

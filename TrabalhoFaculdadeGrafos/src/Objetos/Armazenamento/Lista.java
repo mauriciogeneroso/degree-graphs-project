@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
  * @since 15/10/2016
+ * 
  * @version 1.7
  */
 public class Lista<T> implements java.io.Serializable {

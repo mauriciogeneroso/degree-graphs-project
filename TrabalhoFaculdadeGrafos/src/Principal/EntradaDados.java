@@ -563,6 +563,7 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
         if (rButtonDefinir.isSelected()) {
+            old = null;
             this.dispose();
         } else if (entradaNos.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "É necessário informar os nós para criar o Grafo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
@@ -570,56 +571,62 @@ public class EntradaDados extends javax.swing.JFrame {
             // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
             grafo.setNos(capturarNos(entradaNos.getText()));
 
-            int contArestas = 0;
-            for (int i = 0; i < grafo.quantidadeNos(); i++) {
-                for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
-                    contArestas++;
-                }
-            }
-
-            grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos()); // Adjacência
-            grafo.iniciarListas();
-            if (rButtonNaoDirecionado.isSelected()) {
-                // Não direcionado
-                String[] arestasNaoDirecionado = new String[contArestas];
-                for (int i = 0; i < contArestas; i++) {
-                    arestasNaoDirecionado[i] = String.valueOf(i);
-                }
-
-                grafo.setArestas(arestasNaoDirecionado);
-                grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
-                contArestas = 0;
+            if (grafo.quantidadeNos() == 1){
+                JOptionPane.showMessageDialog(this, "Não é posśivel criar um grafo completo com apenas um nó", 
+                                              "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                            
+                int contArestas = 0;
                 for (int i = 0; i < grafo.quantidadeNos(); i++) {
                     for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
-                        grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizAdj(), i, j, contArestas);
-                        grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizInc(), i, j, contArestas);
-                        grafo.alterarListaGrafoNaoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas++));
+                        contArestas++;
                     }
                 }
-            } else {
-                // Direcionado
-                String[] arestasDirecionado = new String[2 * contArestas];
-                for (int i = 0; i < 2 * contArestas; i++) {
-                    arestasDirecionado[i] = String.valueOf(i);
-                }
 
-                grafo.setArestas(arestasDirecionado);
-                grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
-                contArestas = 0;
-                for (int i = 0; i < grafo.quantidadeNos(); i++) {
-                    for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
-                        grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), i, j, contArestas); // Matriz Adj Direcionado
-                        grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), j, i, contArestas); // Matriz Adj direcionado, com os nós invertidos para ficar completo
-                        grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), i, j, contArestas); // Matriz Inc, mesmo do item acima, a linha abaixo é a volta da aresta direcionada
-                        grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), j, i, contArestas + 1);
-                        grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas));
-                        grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(j), grafo.getNoPosicao(i), grafo.getArestaPosicao(contArestas + 1));
-                        contArestas += 2;
+                grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos()); // Adjacência
+                grafo.iniciarListas();
+                if (rButtonNaoDirecionado.isSelected()) {
+                    // Não direcionado
+                    String[] arestasNaoDirecionado = new String[contArestas];
+                    for (int i = 0; i < contArestas; i++) {
+                        arestasNaoDirecionado[i] = String.valueOf(i);
+                    }
+
+                    grafo.setArestas(arestasNaoDirecionado);
+                    grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                    contArestas = 0;
+                    for (int i = 0; i < grafo.quantidadeNos(); i++) {
+                        for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
+                            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizAdj(), i, j, contArestas);
+                            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizInc(), i, j, contArestas);
+                            grafo.alterarListaGrafoNaoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas++));
+                        }
+                    }
+                } else {
+                    // Direcionado
+                    String[] arestasDirecionado = new String[2 * contArestas];
+                    for (int i = 0; i < 2 * contArestas; i++) {
+                        arestasDirecionado[i] = String.valueOf(i);
+                    }
+
+                    grafo.setArestas(arestasDirecionado);
+                    grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                    contArestas = 0;
+                    for (int i = 0; i < grafo.quantidadeNos(); i++) {
+                        for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
+                            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), i, j, contArestas); // Matriz Adj Direcionado
+                            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), j, i, contArestas); // Matriz Adj direcionado, com os nós invertidos para ficar completo
+                            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), i, j, contArestas); // Matriz Inc, mesmo do item acima, a linha abaixo é a volta da aresta direcionada
+                            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), j, i, contArestas + 1);
+                            grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas));
+                            grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(j), grafo.getNoPosicao(i), grafo.getArestaPosicao(contArestas + 1));
+                            contArestas += 2;
+                        } // fim do for
                     } // fim do for
-                } // fim do for
+                } // fim do else
+                this.dispose();
             } // fim do else
-            this.dispose();
-        } // fim do else // fim do else
+        } // fim do else
     }//GEN-LAST:event_buttonCriarGrafoActionPerformed
 
     private void entradaNosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNosFocusGained
@@ -695,11 +702,11 @@ public class EntradaDados extends javax.swing.JFrame {
     }
 
     private String[] capturarNos(String entradaNos) {
-        return entradaNos.split(",");
+        return entradaNos.trim().split(",");
     }
 
     private String[] capturarArestas(String entradaArestas) {
-        return entradaArestas.split(",");
+        return entradaArestas.trim().split(",");
     }
 
     private void resetarJanela() {

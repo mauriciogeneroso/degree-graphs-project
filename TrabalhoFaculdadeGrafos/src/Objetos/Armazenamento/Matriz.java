@@ -1,7 +1,5 @@
 package Objetos.Armazenamento;
 
-import java.io.Serializable;
-
 /**
  * Matriz para armazenar os grafos, nesta classe está implementado
  * caracteristicas e métodos comuns das matrizes de Adjacência e Incidência,
@@ -15,6 +13,7 @@ import java.io.Serializable;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
+ * 
  * @since 15/10/2016
  * @version 1.7
  */
