@@ -463,6 +463,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     buttonCriarGrafo.setEnabled(false);
                 }
             } catch (Exception e) {
+                MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
                 JOptionPane.showMessageDialog(this, "Valores inválidos para os Nós informados", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             }
         }

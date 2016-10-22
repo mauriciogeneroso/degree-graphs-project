@@ -44,6 +44,9 @@ public class Mensagem extends javax.swing.JDialog {
             case 7:
                 image = new ImageIcon(getClass().getResource("/Util/Icons/like.png"));
                 break;
+            case 8:
+                image = new ImageIcon(getClass().getResource("/Util/Icons/error.png"));
+                break;
             default:
         }
         

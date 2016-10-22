@@ -23,12 +23,11 @@ import java.util.logging.Logger;
 public final class MensagemCtrl {
     private MensagemCtrl() {
     }
-    
-    
+        
      /**Método para chamar classe de mensagem
      * @param  mensagem String - Mensagem para ser exibida
      * @param  titulo String - Título da mensagem
-     * @param iconType int - 1 - Código do ícone: <br>1 - Informação<br>2 - Aviso<br>3 - Configurações<br>4 - Adicionar<br>5 - Exportar<br>6 - Importar<br>7 - Sucesso
+     * @param iconType int - 1 - Código do ícone: <br>1 - Informação<br>2 - Aviso<br>3 - Configurações<br>4 - Adicionar<br>5 - Exportar<br>6 - Importar<br>7 - Sucesso<br>8 - Erro
      */
     
     
