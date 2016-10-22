@@ -437,7 +437,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         if (grafo.getMatrizAdj() == null) {
             JOptionPane.showMessageDialog(this, "Não existe um Grafo para verificar se é Simples", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            ident.VerifGrafoSimples(grafo);
+            if (ident.VerifGrafoSimples(grafo)){
+               JOptionPane.showMessageDialog(this, "O grafo é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "O grafo não é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btSimplesActionPerformed
 

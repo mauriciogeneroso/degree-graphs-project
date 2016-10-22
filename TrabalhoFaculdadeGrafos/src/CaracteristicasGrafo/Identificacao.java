@@ -14,36 +14,27 @@ import Objetos.Grafo;
  * @author Maurício Generoso
  *
  * @since 19/10/2016
- * @version 1.2
+ * @version 1.3
  * @release 19/10/2016
  */
 public class Identificacao {
     private static final long serialVersionUID = 1L;
-    public int VerifGrafoSimples(Grafo grafo) {
-        int v = 0;
-
+    
+    public boolean VerifGrafoSimples(Grafo grafo) {
         Matriz mt = grafo.getMatrizAdj();
-
-        mt.imprimirMatriz();
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
                 if (mt.getMatriz()[i][j] > 1) {
-                    v = 1;
-                    break;
+                    // Existe aresta paralela, não é simples
+                    return false;
                 }
                 if (i == j && mt.getMatriz()[i][j] > 0) {
-                    v = 1;
-                    break;
+                    // Existe laço, não é simples
+                    return false;
                 }
             }
         }
-
-        if (v == 1) {
-            System.out.println("O Grafo não é Simples");
-        } else {
-            System.out.println("O Grafo é Simples");
-        }
-        return v;
+        return true;
     }
 
     public int VerifGrafoPlanar(Grafo grafo) {
