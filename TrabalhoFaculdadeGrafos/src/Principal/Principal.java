@@ -20,6 +20,7 @@ import View.Login.Login;
 public class Principal {
 
     public static void main(String[] args) throws java.io.IOException {
+        Util.MensagemCtrl.callMessage("dasdasd", "asdsadas", 1);
         if (!CarregaConfiguracoes.isUsernameSave()) {
             Login fm = new Login();
             fm.setVisible(true);

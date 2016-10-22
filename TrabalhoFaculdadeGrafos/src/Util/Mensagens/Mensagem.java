@@ -60,6 +60,10 @@ public class Mensagem extends javax.swing.JDialog {
         }
         
         jlOk.setIcon(new ImageIcon(getClass().getResource("/Util/Icons/check64.png")));
+        if(jpBackground.getBackground() == Color.blue){
+            jlMessage.setForeground(Color.white);
+            jlTitle.setForeground(Color.white);
+        }
         jlMessage.setText(message);
         jlTitle.setText(title);
         jlIcon.setIcon(image);
@@ -77,7 +81,6 @@ public class Mensagem extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         setUndecorated(true);
-        setOpacity(0.9F);
 
         jpBackground.setBackground(new java.awt.Color(255, 255, 255));
         jpBackground.setPreferredSize(new java.awt.Dimension(770, 151));
