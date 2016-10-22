@@ -203,11 +203,7 @@ public class Login extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
                                      
-        try {
-            jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
-        } catch (IOException ex) {
-            System.err.println("[CONFIGURACAO.JAVA][FORMWINDOOPENED][1]: " + ex.getMessage());
-        }
+        jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
         try {  
             if(CarregaConfiguracoes.isUsernameSave()){
                 jcbSave.setSelected(true);
