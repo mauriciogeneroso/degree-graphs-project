@@ -10,19 +10,32 @@ package Objetos.Armazenamento;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- * 
+ *
  * @since 15/10/2016
  * @version 1.7
  */
 public class MatrizAdj extends Matriz implements java.io.Serializable {
+
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Altera a matriz do grafo direcionado
+     *
+     * @param noInicial - Nó inicial
+     * @param noFinal - Nó final
+     */
     public void alterarMatrizGrafoDirecionado(int noInicial, int noFinal) {
         matriz[noInicial][noFinal] += 1;
         System.out.println("Matriz de adjacência - Grafo direcionado: ");
         this.imprimirMatriz();
     }
 
+    /**
+     * Altera a matriz do grafo não direcionado
+     *
+     * @param noInicial - Nó inicial
+     * @param noFinal - Nó final
+     */
     public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal) {
         if (noInicial == noFinal) {
             // Se houver laço só irá armazenar uma vez
