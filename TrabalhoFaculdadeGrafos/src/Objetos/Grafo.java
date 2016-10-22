@@ -22,7 +22,6 @@ import Objetos.Armazenamento.Matriz;
  * @author Maurício Generoso - Classe implementada por Maurício
  * @since 15/10/2016
  * @version 1.7
- * @release 22/10/2016
  */
 public class Grafo implements java.io.Serializable {
     private static final long serialVersionUID = 1L;

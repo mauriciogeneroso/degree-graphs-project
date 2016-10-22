@@ -14,7 +14,6 @@ import javax.swing.ImageIcon;
  * 
  * @since 22/10/2016
  * @version 1.2
- * @release 22/10/2016
  */
 
 public class Mensagem extends javax.swing.JDialog {

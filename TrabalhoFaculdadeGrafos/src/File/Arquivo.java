@@ -23,7 +23,6 @@ import javax.swing.JOptionPane;
  * @author Maurício Generoso
  * @since 22/10/2016
  * @version 1.1
- * @release 22/10/2016
  */
 
 public class Arquivo {

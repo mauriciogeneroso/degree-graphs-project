@@ -20,7 +20,6 @@ import javax.swing.JOptionPane;
  * @author Maurício Generoso
  * @since 15/10/2016
  * @version 1.7
- * @release 22/10/2016
  */
 public class FramePrincipal extends javax.swing.JFrame {
 

@@ -12,7 +12,6 @@ package Objetos.Armazenamento;
  * @author Maurício Generoso
  * @since 15/10/2016
  * @version 1.7
- * @release 22/10/2016
  */
 public class ElementoAdj implements java.io.Serializable {
     private static final long serialVersionUID = 1L;

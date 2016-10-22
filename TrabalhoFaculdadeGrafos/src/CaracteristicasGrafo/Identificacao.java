@@ -15,7 +15,6 @@ import Objetos.Grafo;
  *
  * @since 19/10/2016
  * @version 1.2
- * @release 19/10/2016
  */
 public class Identificacao {
     private static final long serialVersionUID = 1L;

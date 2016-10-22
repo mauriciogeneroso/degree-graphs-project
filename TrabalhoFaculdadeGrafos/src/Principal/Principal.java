@@ -15,13 +15,11 @@ import View.Login.Login;
  * 
  * @since 19/10/2016
  * @version 1
- * @release 22/10/2016
  */
 
 public class Principal {
 
     public static void main(String[] args) throws java.io.IOException {
-        
         if (!CarregaConfiguracoes.isUsernameSave()) {
             Login fm = new Login();
             fm.setVisible(true);
