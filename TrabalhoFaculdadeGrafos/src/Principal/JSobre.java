@@ -5,6 +5,11 @@
  */
 package Principal;
 
+import static java.awt.Component.CENTER_ALIGNMENT;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
+
 /**
  *
  * @author pigo
@@ -84,7 +89,9 @@ public class JSobre extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("             Projeto interdisciplinar realizado com as disciplinas:               \n\n                                   1. Estruturas de Dados II                                   \n                     2. Projeto interdisciplinar da Computação II                   \n                                       3. Teoria dos Grafos                                  \n                             ---------------------------------------------------\n                             Graduandos autores do projeto:                             \n\n                                         1. Gustavo Souza                                        \n                                          2. Luan Darabas\n                                      3. Luiz Alexandre da Luz                                  \n                                       4. Maurício Generoso\n\n                             ---------------------------------------------------\n                                            Professores:\n\n                                       1. Christine Vieira\n                                  2. Gilberto Vieira da Silva\n                                    3. Leila Laís Gonçalves\n\n\n\n\n       22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE");
+        jTextArea1.setAutoscrolls(false);
         jTextArea1.setFocusable(false);
+        jTextArea1.setOpaque(false);
         jTextArea1.setRequestFocusEnabled(false);
         jTextArea1.setVerifyInputWhenFocusTarget(false);
         jScrollPane1.setViewportView(jTextArea1);
@@ -105,9 +112,9 @@ public class JSobre extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(6, 6, 6))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -159,6 +166,7 @@ class SingleStanceSobre {
 
     public static JSobre getStance( ) {
         if (jSobre == null) {
+
             jSobre = new JSobre();
             jSobre.setVisible(true);
         } else {
