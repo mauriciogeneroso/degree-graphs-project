@@ -178,11 +178,8 @@ public class Login extends javax.swing.JFrame {
                 Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
             }
             if (jcbSave.isSelected()) {
-                try {
-                    CarregaConfiguracoes.setSaveUsername(true);
-                } catch (IOException ex) {
-                    Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
-                }
+                CarregaConfiguracoes.setSaveUsername(true);
+
             }
             FramePrincipal fm = new FramePrincipal();
             fm.setVisible(true);
@@ -199,12 +196,9 @@ public class Login extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
-        try {
-            if (CarregaConfiguracoes.isUsernameSave()) {
-                jcbSave.setSelected(true);
-            }
-        } catch (IOException ex) {
-            Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
+
+        if (CarregaConfiguracoes.isUsernameSave()) {
+            jcbSave.setSelected(true);
         }
     }//GEN-LAST:event_formWindowOpened
 

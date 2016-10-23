@@ -72,7 +72,7 @@ public final class CarregaConfiguracoes {
      *
      * @return boolean
      */
-    public static boolean isUsernameSave() throws IOException {
+    public static boolean isUsernameSave() {
         Properties prop = getProperties();
         return prop.getProperty(Strings.USERNAME_SAVE_NAME).equals("true");
     }
@@ -80,11 +80,15 @@ public final class CarregaConfiguracoes {
     /**
      * Reatribui nome de usuário e é salvo ultimo login para valores default
      */
-    public static void resetUsername() throws IOException {
+    public static void resetUsername() {
         Properties prop = getProperties();
         prop.setProperty(Strings.USERNAME_SAVE_NAME, Strings.USERNAME_PROPERTIES_DEFAULT_SAVE); //false
         prop.setProperty(Strings.USERNAME_PROPERTIES_NAME, Strings.USERNAME_PROPERTIES_DEFAULT_NAME);
-        prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
+        try {
+            prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
+        } catch (IOException ex) {
+            Logger.getLogger(CarregaConfiguracoes.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -92,14 +96,18 @@ public final class CarregaConfiguracoes {
      *
      * @param opcao boolean - Valor para atrubiur opção de salvar login
      */
-    public static void setSaveUsername(boolean opcao) throws IOException {
+    public static void setSaveUsername(boolean opcao) {
         Properties prop = getProperties();
         if (opcao) {
             prop.setProperty(Strings.USERNAME_SAVE_NAME, Strings.USERNAME_SAVE_SAVED);
         } else {
             prop.setProperty(Strings.USERNAME_SAVE_NAME, Strings.USERNAME_PROPERTIES_DEFAULT_SAVE);//false
         }
-        prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
+        try {
+            prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
+        } catch (IOException ex) {
+            Logger.getLogger(CarregaConfiguracoes.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

@@ -186,15 +186,10 @@ public class Configuracao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        try {
-            jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
-            if (CarregaConfiguracoes.isUsernameSave()) {
-                jbcSave.setSelected(true);
-            }
-        } catch (IOException ex) {
-            jtxtUsername.setText("Usuário");
-            Util.MensagemCtrl.callMessage("Um erro ocorreu!. Contate os administradores.", "Erro!", 8);
-            System.err.println("[CONFIGURACAO.JAVA][FORMWINDOOPENED]: " + ex.getMessage());
+
+        jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
+        if (CarregaConfiguracoes.isUsernameSave()) {
+            jbcSave.setSelected(true);
         }
     }//GEN-LAST:event_formWindowOpened
 
@@ -204,13 +199,10 @@ public class Configuracao extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void jbRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRemoverActionPerformed
-        try {
-            CarregaConfiguracoes.resetUsername();
-            Util.MensagemCtrl.callMessage("Usuário resetado com sucesso!", "Sucesso!", 7);
-        } catch (IOException ex) {
-            Util.MensagemCtrl.callMessage("Um erro ocorreu!. Contate os administradores.", "Erro!", 8);
-            System.err.println("[CONFIGURACAO.JAVA][JBREMOVER]: " + ex.getMessage());
-        }
+
+        CarregaConfiguracoes.resetUsername();
+        Util.MensagemCtrl.callMessage("Usuário resetado com sucesso!", "Sucesso!", 7);
+
     }//GEN-LAST:event_jbRemoverActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
