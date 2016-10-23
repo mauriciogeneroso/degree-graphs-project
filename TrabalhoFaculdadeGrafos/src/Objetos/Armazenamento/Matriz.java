@@ -13,36 +13,67 @@ package Objetos.Armazenamento;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- * 
+ *
  * @since 15/10/2016
  * @version 1.7
  */
 public abstract class Matriz implements java.io.Serializable {
+
     private static final long serialVersionUID = 1L;
 
     int[][] matriz;
     int linhas;
     int colunas;
 
+    /**
+     * Retorna a matriz
+     *
+     * @return int[][] - Matriz
+     */
     public int[][] getMatriz() {
         return matriz;
     }
 
+    /**
+     * Retorna as linhas
+     *
+     * @return int - Linhas
+     */
     public int getLinhas() {
         return linhas;
     }
 
+    /**
+     * Atribui Linhas
+     *
+     * @param linhas int - Valor para linhas
+     */
     private void setLinhas(int linhas) {
         this.linhas = linhas;
     }
+
+    /**
+     * Retorna as colunas
+     *
+     * @return int - Colunas
+     */
 
     public int getColunas() {
         return colunas;
     }
 
+    /**
+     * Atribui Linhas
+     *
+     * @param colunas int - Valor para colunas
+     */
     private void setColunas(int colunas) {
         this.colunas = colunas;
     }
+
+    /**
+     * Limpa a matriz
+     */
 
     public void limparMatriz() {
         for (int[] mt : matriz) {
@@ -52,10 +83,20 @@ public abstract class Matriz implements java.io.Serializable {
         }
     }
 
+    /**
+     * Imprimi a matriz
+     */
+
     public void imprimirMatriz() {
         System.out.print(this); // Iŕa chamar o toString();
     }
 
+    /**
+     * Retorna as linhas
+     *
+     * @param linhas int - Linhas
+     * @param colunas int - Colunas
+     */
     public void iniciarMatriz(int linhas, int colunas) {
         /// Cuidar, a classe possui dois atributos com o mesmo nome linhas e colunas
         this.setLinhas(linhas);
@@ -68,6 +109,11 @@ public abstract class Matriz implements java.io.Serializable {
         }
     }
 
+    /**
+     * Retorna o Objeto em String
+     *
+     * @return String - Conteúdo do objeto para String
+     */
     @Override
     public String toString() {
         String imprimir = "";
