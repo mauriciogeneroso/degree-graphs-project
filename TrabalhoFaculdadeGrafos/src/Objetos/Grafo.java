@@ -119,7 +119,7 @@ public class Grafo implements java.io.Serializable {
     /**
      * Atrubui arestas.
      *
-     * @param nos String[] - Array de strings para setar arestas
+     * @param arestas String[] - Array de strings para setar arestas
      */
     public void setArestas(String[] arestas) {
         this.arestas = arestas;
