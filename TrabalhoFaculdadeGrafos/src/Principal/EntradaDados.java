@@ -814,13 +814,7 @@ public class EntradaDados extends javax.swing.JFrame {
     private void cancelarCriacaoGrafo() {
         if (grafo.getMatrizAdj() == null) {
             grafo.destruirGrafo();
-            grafo.iniciarListas();
-
-            System.err.println("ok");
         }
-        grafo.iniciarMatriz(grafo.getMatrizAdj(), grafo.getMatrizAdj().getLinhas(), grafo.getMatrizAdj().getColunas());
-        grafo.iniciarMatriz(grafo.getMatrizInc(), grafo.getMatrizInc().getLinhas(), grafo.getMatrizInc().getColunas());
-        System.err.println("ok2");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
