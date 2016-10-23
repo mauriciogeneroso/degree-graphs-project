@@ -18,7 +18,6 @@ import View.Login.Login;
  */
 
 public class Principal {
-
     public static void main(String[] args) throws java.io.IOException {
         if (!CarregaConfiguracoes.isUsernameSave()) {
             Login fm = new Login();

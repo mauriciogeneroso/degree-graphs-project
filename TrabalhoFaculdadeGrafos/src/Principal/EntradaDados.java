@@ -568,7 +568,7 @@ public class EntradaDados extends javax.swing.JFrame {
             old = null;
             this.dispose();
         } else if (entradaNos.getText().trim().equals("")) {
-            MensagemCtrl.callMessage("É necessário informar os nós para criar o Grafo", "Aviso", 2);
+            MensagemCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
         } else {
             // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
             grafo.setNos(capturarNos(entradaNos.getText()));

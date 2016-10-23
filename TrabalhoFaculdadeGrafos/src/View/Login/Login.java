@@ -5,8 +5,6 @@ import Util.CarregaConfiguracoes;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Classe responsável pela identificação do usuário.
@@ -178,13 +176,13 @@ public class Login extends javax.swing.JFrame {
                     }
                 }
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
             }
                 if(jcbSave.isSelected()){
                     try {
                         CarregaConfiguracoes.setSaveUsername(true);
                     } catch (IOException ex) {
-                        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                        Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
                     }
                 }
                 FramePrincipal fm = new FramePrincipal();
@@ -202,14 +200,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxtUsernameKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-                                     
-        jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
+    jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
         try {  
             if(CarregaConfiguracoes.isUsernameSave()){
                 jcbSave.setSelected(true);
             }
         } catch (IOException ex) {
-        System.err.println("[LOGIN.JAVA][FORMWINDOOPENED][2]: " + ex.getMessage());
+            Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
         }
     }//GEN-LAST:event_formWindowOpened
 
