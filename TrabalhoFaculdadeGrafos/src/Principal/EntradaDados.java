@@ -27,7 +27,7 @@ public class EntradaDados extends javax.swing.JFrame {
     private static final long serialVersionUID = 1L;
 
     private Grafo grafo;
-    javax.swing.JFrame frame;
+    private javax.swing.JFrame frame;
     private Grafo old = null;
     private boolean desabilitar = true;
     private ButtonGroup buttonGroup1;
@@ -37,10 +37,8 @@ public class EntradaDados extends javax.swing.JFrame {
         initComponents();
         this.frame = frame;
         this.grafo = grafo;
-        if (grafo.getMatrizAdj() != null) {
-            old = grafo;
-        }
-
+        old = grafo;
+        
         // Grupo de botões para os JRadioButton direcionado e não direcionado
         buttonGroup1 = new ButtonGroup();
         buttonGroup1.add(rButtonNaoDirecionado);
@@ -486,8 +484,6 @@ public class EntradaDados extends javax.swing.JFrame {
         if (old != null) {
             grafo = old;
             old = null;
-        } else {
-            cancelarCriacaoGrafo();
         }
         exit();
     }//GEN-LAST:event_buttonCancelarActionPerformed
@@ -862,7 +858,6 @@ public class EntradaDados extends javax.swing.JFrame {
                     .getName()).log(Level.SEVERE, null, ex);
         }
         this.dispose();
-
     }
 }
 
