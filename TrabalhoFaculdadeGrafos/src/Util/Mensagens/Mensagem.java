@@ -1,5 +1,6 @@
 package Util.Mensagens;
 
+import Util.Strings;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -21,46 +22,45 @@ public class Mensagem extends javax.swing.JDialog {
     private static final long serialVersionUID = 1L;
     
     public Mensagem(String message, String title, int icon) throws java.io.IOException{
-        setModal(true);
         initComponents();
         ImageIcon image = null;
         switch(icon){
             case 1: //info
-                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "info.png"));
+                image = new ImageIcon(getClass().getResource("/Util/Icons/info.png"));
                 jpBackground.setBackground(Color.blue);
                 break;
             case 2: //warn
-                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "warning.png"));
+                image = new ImageIcon(getClass().getResource(Strings.PATH_TO_ICON_FOLDER + "warning.png"));
                 jpBackground.setBackground(Color.orange);
                 break;
             case 3: //settings
-                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "settings.png"));
+                image = new ImageIcon(getClass().getResource(Strings.PATH_TO_ICON_FOLDER + "settings.png"));
                 jpBackground.setBackground(Color.blue);
                 break;
             case 4: //plus
-                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "plus.png"));
+                image = new ImageIcon(getClass().getResource(Strings.PATH_TO_ICON_FOLDER + "plus.png"));
                 jpBackground.setBackground(Color.blue);
                 break;
             case 5:
-                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "export.png"));
+                image = new ImageIcon(getClass().getResource(Strings.PATH_TO_ICON_FOLDER + "export.png"));
                 jpBackground.setBackground(Color.green);
                 break;
             case 6:
-                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "import.png"));
+                image = new ImageIcon(getClass().getResource(Strings.PATH_TO_ICON_FOLDER + "/import.png"));
                 jpBackground.setBackground(Color.green);
                 break;
             case 7:
-                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "like.png"));
+                image = new ImageIcon(getClass().getResource(Strings.PATH_TO_ICON_FOLDER + "like.png"));
                 jpBackground.setBackground(Color.green);
                 break;
             case 8:
-                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "error.png"));
+                image = new ImageIcon(getClass().getResource(Strings.PATH_TO_ICON_FOLDER + "error.png"));
                 jpBackground.setBackground(Color.red);
                 break;
             default:
         }
         
-        jlOk.setIcon(new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "check64.png")));
+        jlOk.setIcon(new ImageIcon(getClass().getResource("/Util/Icons/check64.png")));
         if(jpBackground.getBackground() == Color.blue){
             jlMessage.setForeground(Color.white);
             jlTitle.setForeground(Color.white);
@@ -82,13 +82,6 @@ public class Mensagem extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         setUndecorated(true);
-        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
-            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
-            }
-            public void windowLostFocus(java.awt.event.WindowEvent evt) {
-                formWindowLostFocus(evt);
-            }
-        });
 
         jpBackground.setBackground(new java.awt.Color(255, 255, 255));
         jpBackground.setPreferredSize(new java.awt.Dimension(770, 151));
@@ -137,8 +130,8 @@ public class Mensagem extends javax.swing.JDialog {
                     .addComponent(jlIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpBackgroundLayout.createSequentialGroup()
                         .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jlMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jlMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -160,10 +153,6 @@ public class Mensagem extends javax.swing.JDialog {
     private void jlOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlOkMouseClicked
         this.dispose();
     }//GEN-LAST:event_jlOkMouseClicked
-
-    private void formWindowLostFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowLostFocus
-        
-    }//GEN-LAST:event_formWindowLostFocus
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jlIcon;
