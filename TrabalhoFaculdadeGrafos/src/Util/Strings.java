@@ -22,6 +22,7 @@ public final class Strings {
     protected static final String USERNAME_SAVE_SAVED = "true";
     protected static final String USERNAME_PROPERTIES_DEFAULT_NAME = "Usuário";
     public static final String PATH_TO_ICON_FOLDER = "/Util/Icons/";
+    public static final String PATH_TO_IMAGES_FOLDER = "/Util/Images/";
 
     private Strings() {
     }
