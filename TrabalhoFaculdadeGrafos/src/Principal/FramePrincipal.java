@@ -7,6 +7,7 @@ import Objetos.Grafo;
 import Util.MensagemCtrl;
 import View.Login.Configuracao;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 
 /**
  * Estudantes de Ciência da Computação - 4 fase.
@@ -51,8 +52,9 @@ public class FramePrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         initComponents();
+        ImageIcon img = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
+        this.setIconImage(img.getImage());
         ident = new Identificacao();
         grafo = new Grafo();
         buttonGroup = new ButtonGroup();
@@ -401,7 +403,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         menuSobre.setText("Sobre");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Sobre");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -430,9 +432,10 @@ public class FramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntradaDadosActionPerformed
-        entrada = SingleStanceDados.getStance(grafo);
+        entrada = SingleStanceDados.getStance(grafo, this);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btEntradaDadosActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
@@ -510,7 +513,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btConfigActionPerformed
 
     private void jmiNovoGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNovoGrafoActionPerformed
-        entrada = SingleStanceDados.getStance(grafo);
+        entrada = SingleStanceDados.getStance(grafo, this);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
     }//GEN-LAST:event_jmiNovoGrafoActionPerformed

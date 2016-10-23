@@ -32,6 +32,7 @@ public final class MensagemCtrl {
      * @param iconType int - 1 - Código do ícone: <br>1 - Informação<br>2 -
      * Aviso<br>3 - Configurações<br>4 - Adicionar<br>5 - Exportar<br>6 -
      * Importar<br>7 - Sucesso<br>8 - Erro
+     * @see Mensagem
      */
     public static void callMessage(String mensagem, String titulo, int iconType) {
         try {

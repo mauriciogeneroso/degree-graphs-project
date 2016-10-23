@@ -4,7 +4,6 @@ import Util.CarregaConfiguracoes;
 import View.Login.Login;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -29,7 +28,7 @@ import org.netbeans.lib.awtextra.*;
 public class Principal extends JWindow {
 
     private static final long serialVersionUID = 1L;
-
+    
     int i = 0;
     final String zero = " ", um = ".", dois = "..", tres = "...";
     AbsoluteLayout absoluto;
@@ -46,7 +45,6 @@ public class Principal extends JWindow {
         absimage = new AbsoluteConstraints(10, 10);
         absbarra = new AbsoluteConstraints(0, 520);
         jlabel = new JLabel();
-        System.err.println((Util.Strings.PATH_TO_ICON_FOLDER + "import.png"));
         image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_IMAGES_FOLDER + "splash.png"));
         jlabel.setIcon(image);
         jlabel.setBackground(Color.red);
@@ -71,7 +69,7 @@ public class Principal extends JWindow {
                     barra.setValue(i);
                     i++;
                     try {
-                        sleep(60);
+                        sleep(1);
                     } catch (InterruptedException ex) {
                         javax.swing.JOptionPane.showMessageDialog(null, "Erro ao carregar a barra de progresso!");
                     }

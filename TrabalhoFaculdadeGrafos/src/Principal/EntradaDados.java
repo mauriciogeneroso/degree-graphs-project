@@ -4,6 +4,8 @@ import Objetos.Armazenamento.MatrizAdj;
 import Objetos.Armazenamento.MatrizInc;
 import Objetos.Grafo;
 import Util.MensagemCtrl;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 
 /**
@@ -25,13 +27,15 @@ public class EntradaDados extends javax.swing.JFrame {
     private static final long serialVersionUID = 1L;
 
     private Grafo grafo;
+    javax.swing.JFrame frame;
     private Grafo old = null;
     private boolean desabilitar = true;
     private ButtonGroup buttonGroup1;
     private ButtonGroup buttonGroup2;
 
-    EntradaDados(Grafo grafo) {
+    public EntradaDados(Grafo grafo, javax.swing.JFrame frame) {
         initComponents();
+        this.frame = frame;
         this.grafo = grafo;
         if (grafo.getMatrizAdj() != null) {
             old = grafo;
@@ -75,13 +79,13 @@ public class EntradaDados extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         rButtonCompleto = new javax.swing.JRadioButton();
         rButtonDefinir = new javax.swing.JRadioButton();
-        cBoxNoInicial = new javax.swing.JComboBox<>();
+        cBoxNoInicial = new javax.swing.JComboBox<String>();
         labelDefinirNo = new javax.swing.JLabel();
         labelDefinirNo2 = new javax.swing.JLabel();
-        cBoxNoFinal = new javax.swing.JComboBox<>();
+        cBoxNoFinal = new javax.swing.JComboBox<String>();
         buttonDefinirAdjacencia = new javax.swing.JButton();
         labelDefinirAresta = new javax.swing.JLabel();
-        cBoxAresta = new javax.swing.JComboBox<>();
+        cBoxAresta = new javax.swing.JComboBox<String>();
         buttonCriarGrafo = new javax.swing.JButton();
         buttonCancelar = new javax.swing.JButton();
         buttonLimpar = new javax.swing.JButton();
@@ -89,6 +93,11 @@ public class EntradaDados extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Definição formal do Grafo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
 
@@ -504,7 +513,7 @@ public class EntradaDados extends javax.swing.JFrame {
         } else {
             cancelarCriacaoGrafo();
         }
-        this.dispose();
+        exit();
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
     private void entradaArestasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusLost
@@ -567,7 +576,7 @@ public class EntradaDados extends javax.swing.JFrame {
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
         if (rButtonDefinir.isSelected()) {
             old = null;
-            this.dispose();
+            exit();
         } else if (entradaNos.getText().trim().equals("")) {
             MensagemCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
         } else {
@@ -629,7 +638,14 @@ public class EntradaDados extends javax.swing.JFrame {
                         } // fim do for
                     } // fim do for
                 } // fim do else
-                this.dispose();
+                frame.setVisible(true);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(EntradaDados.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                exit();
+
             } // fim do else
         } // fim do else
     }//GEN-LAST:event_buttonCriarGrafoActionPerformed
@@ -645,6 +661,10 @@ public class EntradaDados extends javax.swing.JFrame {
     private void entradaArestasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusGained
         jlInfoMessage.setText("Exemplo: A = {a1, a2, a3}");
     }//GEN-LAST:event_entradaArestasFocusGained
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        frame.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * Verifica se há nós repetidos digitado pelo usuário
@@ -827,6 +847,17 @@ public class EntradaDados extends javax.swing.JFrame {
     private javax.swing.JRadioButton rButtonDirecionado;
     private javax.swing.JRadioButton rButtonNaoDirecionado;
     // End of variables declaration//GEN-END:variables
+
+    private void exit() {
+        frame.setVisible(true);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(EntradaDados.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
+        
+    }
 }
 
 /**
@@ -842,9 +873,9 @@ class SingleStanceDados {
     /**
      * Método para permitir que seja aberto somente uma janela por vez
      */
-    public static EntradaDados getStance(Grafo grafo) {
+    public static EntradaDados getStance(Grafo grafo, javax.swing.JFrame frame) {
         if (janelaDados == null) {
-            janelaDados = new EntradaDados(grafo);
+            janelaDados = new EntradaDados(grafo, frame);
             janelaDados.setVisible(true);
         } else {
             janelaDados.resetarJanela();
