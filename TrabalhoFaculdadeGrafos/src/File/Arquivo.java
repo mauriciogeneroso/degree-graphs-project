@@ -3,6 +3,7 @@ package File;
 import Objetos.Grafo;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -34,7 +35,7 @@ public class Arquivo {
      * @param frame JFrame - Para poder retornar
      * @return Grafo - Retorna o grafo importado
      */
-    public static Grafo importarGrafo(JFrame frame) {
+    public static Grafo importarGrafo(JFrame frame) throws IOException, FileNotFoundException, ClassNotFoundException {
         JFileChooser fc = new JFileChooser();
         fc.showOpenDialog(frame);
         return lerArquivo(frame, fc.getSelectedFile());
@@ -85,21 +86,17 @@ public class Arquivo {
     /**
      * Lê arquivo
      *
-     * @param frame JFrame - Para poder retornar.
+     * @param frame JFrame - Para poder retornarz.
      * @param arq File - Arquivo para leitura
      * @return Grafo - Grafo da leitura realizada no arquivo solicitado
      */
-    private static Grafo lerArquivo(JFrame frame, File arq) {
+    private static Grafo lerArquivo(JFrame frame, File arq) throws FileNotFoundException, IOException, ClassNotFoundException {
         Grafo grafo = null;
         FileInputStream input;
         ObjectInputStream objInput;
-        try {
-            input = new FileInputStream(arq);
-            objInput = new ObjectInputStream(input);
-            grafo = (Grafo) objInput.readObject();
-        } catch (IOException | ClassNotFoundException ex) {
-            Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro ao ler o arquivo!", 8);
-        }
+        input = new FileInputStream(arq);
+        objInput = new ObjectInputStream(input);
+        grafo = (Grafo) objInput.readObject();
         return grafo;
     }
 

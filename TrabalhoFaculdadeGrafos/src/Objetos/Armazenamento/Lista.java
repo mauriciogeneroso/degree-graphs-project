@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
+ * @param <T> Parametrização da lista
  * @since 15/10/2016
  *
  * @version 1.7
