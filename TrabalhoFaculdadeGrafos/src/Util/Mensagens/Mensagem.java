@@ -25,41 +25,41 @@ public class Mensagem extends javax.swing.JDialog {
         ImageIcon image = null;
         switch(icon){
             case 1: //info
-                image = new ImageIcon(getClass().getResource("/Util/Icons/info.png"));
+                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "info.png"));
                 jpBackground.setBackground(Color.blue);
                 break;
             case 2: //warn
-                image = new ImageIcon(getClass().getResource("/Util/Icons/warning.png"));
+                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "warning.png"));
                 jpBackground.setBackground(Color.orange);
                 break;
             case 3: //settings
-                image = new ImageIcon(getClass().getResource("/Util/Icons/settings.png"));
+                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "settings.png"));
                 jpBackground.setBackground(Color.blue);
                 break;
             case 4: //plus
-                image = new ImageIcon(getClass().getResource("/Util/Icons/plus.png"));
+                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "plus.png"));
                 jpBackground.setBackground(Color.blue);
                 break;
             case 5:
-                image = new ImageIcon(getClass().getResource("/Util/Icons/export.png"));
+                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "export.png"));
                 jpBackground.setBackground(Color.green);
                 break;
             case 6:
-                image = new ImageIcon(getClass().getResource("/Util/Icons/import.png"));
+                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "import.png"));
                 jpBackground.setBackground(Color.green);
                 break;
             case 7:
-                image = new ImageIcon(getClass().getResource("/Util/Icons/like.png"));
+                image = new ImageIcon(getClass().getResource("Util.Strings.PATH_TO_ICON_FOLDER + \"like.png"));
                 jpBackground.setBackground(Color.green);
                 break;
             case 8:
-                image = new ImageIcon(getClass().getResource("/Util/Icons/error.png"));
+                image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "error.png"));
                 jpBackground.setBackground(Color.red);
                 break;
             default:
         }
         
-        jlOk.setIcon(new ImageIcon(getClass().getResource("/Util/Icons/check64.png")));
+        jlOk.setIcon(new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "check64.png")));
         if(jpBackground.getBackground() == Color.blue){
             jlMessage.setForeground(Color.white);
             jlTitle.setForeground(Color.white);
