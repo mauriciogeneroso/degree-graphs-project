@@ -51,7 +51,7 @@ public class Lista<T> implements java.io.Serializable {
     /**
      * Retorna o Objeto em String
      *
-     * @return String - Conteúdo do objeto para String
+     * @return String - Conteúdo do objeto para String.
      */
     @Override
     public String toString() {

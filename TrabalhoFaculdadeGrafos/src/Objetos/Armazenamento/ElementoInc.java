@@ -22,7 +22,7 @@ public class ElementoInc implements java.io.Serializable {
     private String aresta;
 
     /**
-     * Retorna o Objeto em String
+     * Retorna o Objeto em String.
      *
      * @param no String - Nome do n[o
      */
@@ -31,7 +31,7 @@ public class ElementoInc implements java.io.Serializable {
     }
 
     /**
-     * Retorna o Objeto em String
+     * Retorna o Objeto em String.
      *
      * @param no String - Nome do n[o
      * @param aresta String - Nome da aresta
@@ -44,7 +44,7 @@ public class ElementoInc implements java.io.Serializable {
     /**
      * Retorna o Objeto em String
      *
-     * @return String - Conteúdo do objeto para String
+     * @return String - Conteúdo do objeto para String.
      */
     @Override
     public String toString() {
