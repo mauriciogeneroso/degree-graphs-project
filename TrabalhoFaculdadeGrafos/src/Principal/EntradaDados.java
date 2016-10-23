@@ -481,10 +481,10 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_rButtonCompletoActionPerformed
 
     private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
-        if (old != null) {
-            grafo = old;
-            old = null;
-        }
+//        if (old != null) {
+//            grafo = old;
+//            old = null;
+//        }
         exit();
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
@@ -631,7 +631,6 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private void entradaNosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNosFocusLost
         jlInfoMessage.setText("");
-        grafo.setNos(capturarNos(entradaNos.getText()));
     }//GEN-LAST:event_entradaNosFocusLost
 
     private void entradaArestasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusGained
@@ -851,7 +850,7 @@ public class EntradaDados extends javax.swing.JFrame {
     private void exit() {
         frame.setVisible(true);
         try {
-            Thread.sleep(100);
+            Thread.sleep(10);
 
         } catch (InterruptedException ex) {
             Logger.getLogger(EntradaDados.class
