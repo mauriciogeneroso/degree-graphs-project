@@ -7,6 +7,8 @@ import Objetos.Grafo;
 import Util.MensagemCtrl;
 import View.Login.Configuracao;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 
 /**
@@ -444,44 +446,50 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimplesActionPerformed
         if (grafo.getMatrizAdj() == null) {
-            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é simples", "Grafo Simples", 2);
+            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é Simples", "Grafo Simples", 2);
 
         } else {
             if (ident.VerifGrafoSimples(grafo)) {
-                MensagemCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
+                MensagemCtrl.callMessage("O grafo é Simples!", "Grafo Simples", 1);
             } else {
-                MensagemCtrl.callMessage("O grafo não é simples!", "Grafo Simples", 1);
+                MensagemCtrl.callMessage("O grafo não é Simples!", "Grafo Simples", 1);
             }
         }
     }//GEN-LAST:event_btSimplesActionPerformed
 
     private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
         if (grafo.getMatrizAdj() == null) {
-            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é completo.", "Grafo Completo", 2);
+            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é Completo.", "Grafo Completo", 2);
         } else {
             if (ident.VerifGrafoCompleto(grafo)) {
-                MensagemCtrl.callMessage("Grafo completo", "O grafo é completo", 1);
-                //JOptionPane.showMessageDialog(this, "O grafo é simples", "Grafo Simples", JOptionPane.INFORMATION_MESSAGE);
+                MensagemCtrl.callMessage("Grafo Completo", "O grafo é Completo", 1);
             } else {
-                MensagemCtrl.callMessage("O grafo não é simples", "Grafo Simples", 1);
+                MensagemCtrl.callMessage("O grafo não é Completo", "Grafo Completo", 1);
             }
         }
     }//GEN-LAST:event_btCompletoActionPerformed
 
     private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
         if (grafo.getListaAdj() == null) {
-            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é completo", "Grafo Conexo", 2);
+            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é Conexo", "Grafo Conexo", 2);
         } else {
-            ident.VerifGrafoConexo(grafo);
+            if (ident.VerifGrafoConexo(grafo)) {
+                MensagemCtrl.callMessage("Grafo Conexo", "O grafo é Conexo", 1);
+            } else {
+                MensagemCtrl.callMessage("O grafo não é Conexo", "Grafo Conexo", 1);
+            }
         }
     }//GEN-LAST:event_btConexoActionPerformed
 
     private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
         if (grafo.getListaAdj() == null) {
-            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é planar", "Grafo Planar", 2);
-
+            MensagemCtrl.callMessage("Não existe um Grafo para verificar se é Planar", "Grafo Planar", 2);
         } else {
-            ident.VerifGrafoPlanar(grafo);
+            if (ident.VerifGrafoPlanar(grafo)) {
+                MensagemCtrl.callMessage("Grafo Planar", "O grafo é Planar", 1);
+            } else {
+                MensagemCtrl.callMessage("O grafo não é Planar", "Grafo Planar", 1);
+            }
         }
     }//GEN-LAST:event_btPlanarActionPerformed
 
@@ -554,6 +562,8 @@ public class FramePrincipal extends javax.swing.JFrame {
             verificaSeIraExibirOsDados();
         } catch (NullPointerException ex) {
             // Não faz nada pois foi clicado em cancelar
+        } catch (IOException | ClassNotFoundException ex) {
+            Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro ao ler o arquivo!", 8);
         }
     }
 
