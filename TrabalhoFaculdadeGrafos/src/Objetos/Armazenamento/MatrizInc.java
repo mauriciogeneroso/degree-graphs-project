@@ -19,11 +19,11 @@ public class MatrizInc extends Matriz implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Altera a matriz Incidente do grafo direcionado.
+     * Altera a Matriz de Incidência (para Grafo Direcionado) de acordo com os nós informados
      *
-     * @param noInicial int - Nó inicial
-     * @param noFinal int - Nó final
-     * @param aresta int Aresta
+     * @param noInicial - nó de saída da adjacência
+     * @param noFinal - nó de chegada da adjacência
+     * @param aresta - Aresta que está ligando os dois nós
      */
     public void alterarMatrizGrafoDirecionado(int noInicial, int noFinal, int aresta) {
         if (noInicial == noFinal) {
@@ -35,13 +35,13 @@ public class MatrizInc extends Matriz implements java.io.Serializable {
         System.out.println("Matriz de incidência - Grafo direcionado: ");
         this.imprimirMatriz();
     }
-
+    
     /**
-     * Altera a matriz Incidente do grafo não direcionado.
+     * Altera a Matriz de Incidência (para Grafo Não Direcionado) de acordo com os nós informados
      *
-     * @param noInicial int - Nó inicial
-     * @param noFinal int - Nó final
-     * @param aresta int Aresta
+     * @param noInicial - primeiro nó da adjacência
+     * @param noFinal - segundo nó da adjacência
+     * @param aresta - Aresta que está ligando os dois nós
      */
     public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal, int aresta) {
         if (noInicial == noFinal) {
