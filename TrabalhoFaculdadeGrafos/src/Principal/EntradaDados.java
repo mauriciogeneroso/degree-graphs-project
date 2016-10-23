@@ -635,6 +635,7 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private void entradaNosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNosFocusLost
         jlInfoMessage.setText("");
+        grafo.setNos(capturarNos(entradaNos.getText()));
     }//GEN-LAST:event_entradaNosFocusLost
 
     private void entradaArestasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusGained
@@ -758,7 +759,7 @@ public class EntradaDados extends javax.swing.JFrame {
         grafo.setNos(capturarNos(entradaNos.getText()));
         if (!grafo.noIsEmpty()) {
             grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
-                    // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
+            // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
             // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
             grafo.iniciarListas();
             cBoxNoInicial.removeAllItems();
@@ -813,7 +814,13 @@ public class EntradaDados extends javax.swing.JFrame {
     private void cancelarCriacaoGrafo() {
         if (grafo.getMatrizAdj() == null) {
             grafo.destruirGrafo();
+            grafo.iniciarListas();
+
+            System.err.println("ok");
         }
+        grafo.iniciarMatriz(grafo.getMatrizAdj(), grafo.getMatrizAdj().getLinhas(), grafo.getMatrizAdj().getColunas());
+        grafo.iniciarMatriz(grafo.getMatrizInc(), grafo.getMatrizInc().getLinhas(), grafo.getMatrizInc().getColunas());
+        System.err.println("ok2");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
