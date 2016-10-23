@@ -24,6 +24,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private static final long serialVersionUID = 1L;
 
     private Grafo grafo;
+    private EntradaDados entrada;
     private Identificacao ident;
     private ButtonGroup buttonGroup;
 
@@ -327,9 +328,9 @@ public class FramePrincipal extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btConfig)
+                        .addComponent(btConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btEntradaDados)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -429,7 +430,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntradaDadosActionPerformed
-        EntradaDados entrada = SingleStanceDados.getStance(grafo);
+        entrada = SingleStanceDados.getStance(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
     }//GEN-LAST:event_btEntradaDadosActionPerformed
@@ -509,7 +510,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btConfigActionPerformed
 
     private void jmiNovoGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNovoGrafoActionPerformed
-        EntradaDados entrada = SingleStanceDados.getStance(grafo);
+        entrada = SingleStanceDados.getStance(grafo);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
     }//GEN-LAST:event_jmiNovoGrafoActionPerformed

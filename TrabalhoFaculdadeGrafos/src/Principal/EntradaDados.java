@@ -742,7 +742,7 @@ public class EntradaDados extends javax.swing.JFrame {
      * @return String[] - retorna um array com os nós informados pelo usuário
      */
     private String[] capturarNos(String entradaNos) {
-        return entradaNos.trim().split(",");
+        return entradaNos.replace(" ", "").split(",");
     }
 
     /**
@@ -752,14 +752,14 @@ public class EntradaDados extends javax.swing.JFrame {
      * usuário
      */
     private String[] capturarArestas(String entradaArestas) {
-        return entradaArestas.trim().split(",");
+        return entradaArestas.replace(" ", "").split(",");
     }
 
     /**
      * Método para voltar a janela ao estado inicial a sua abertura
      *
      */
-    private void resetarJanela() {
+    protected void resetarJanela() {
         entradaNos.setEnabled(true);
         entradaNos.setText("");
         entradaArestas.setEnabled(false);
@@ -847,7 +847,7 @@ class SingleStanceDados {
             janelaDados = new EntradaDados(grafo);
             janelaDados.setVisible(true);
         } else {
-            // A janela já está aberta
+            janelaDados.resetarJanela();
         }
         return janelaDados;
     }
