@@ -517,6 +517,7 @@ public class EntradaDados extends javax.swing.JFrame {
             try {
                 grafo.setArestas(capturarArestas(entradaArestas.getText()));
                 grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                grafo.iniciarListas();
                 cBoxAresta.removeAllItems();
                 for (String arestaa : grafo.getArestas()) {
                     cBoxAresta.addItem(arestaa);
