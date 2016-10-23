@@ -21,7 +21,7 @@ public class ElementoAdj implements java.io.Serializable {
     private String no;
 
     /**
-     * Elemento Adjacente
+     * Elemento Adjacente.
      *
      * @param no String - Nome do nó
      */
@@ -30,7 +30,7 @@ public class ElementoAdj implements java.io.Serializable {
     }
 
     /**
-     * Retorna o Objeto em String
+     * Retorna o Objeto em String.
      *
      * @return String - Conteúdo do objeto para String
      */

@@ -41,7 +41,7 @@ public class Lista<T> implements java.io.Serializable {
     /**
      * Verifica se a lista está vazia
      *
-     * @return boolean - Verdadeiro se esitver vazio, caso contrário falso
+     * @return boolean - Verdadeiro se esitver vazio, caso contrário falso.
      */
     public boolean isEmpty() {
         return lista.isEmpty();
@@ -50,7 +50,7 @@ public class Lista<T> implements java.io.Serializable {
     /**
      * Retorna o Objeto em String
      *
-     * @return String - Conteúdo do objeto para String
+     * @return String - Conteúdo do objeto para String.
      */
     @Override
     public String toString() {

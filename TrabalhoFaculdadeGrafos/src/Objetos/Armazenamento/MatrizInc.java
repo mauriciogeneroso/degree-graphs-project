@@ -10,13 +10,21 @@ package Objetos.Armazenamento;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- * 
+ *
  * @since 15/10/2016
  * @version 1.7
  */
 public class MatrizInc extends Matriz implements java.io.Serializable {
+
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Altera a matriz Incidente do grafo direcionado.
+     *
+     * @param noInicial int - Nó inicial
+     * @param noFinal int - Nó final
+     * @param aresta int Aresta
+     */
     public void alterarMatrizGrafoDirecionado(int noInicial, int noFinal, int aresta) {
         if (noInicial == noFinal) {
             matriz[noInicial][aresta] += 1;
@@ -28,6 +36,13 @@ public class MatrizInc extends Matriz implements java.io.Serializable {
         this.imprimirMatriz();
     }
 
+    /**
+     * Altera a matriz Incidente do grafo não direcionado.
+     *
+     * @param noInicial int - Nó inicial
+     * @param noFinal int - Nó final
+     * @param aresta int Aresta
+     */
     public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal, int aresta) {
         if (noInicial == noFinal) {
             // Se houver laço só irá armazenar uma vez

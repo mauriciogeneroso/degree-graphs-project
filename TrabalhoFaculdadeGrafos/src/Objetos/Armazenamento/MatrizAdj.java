@@ -19,10 +19,10 @@ public class MatrizAdj extends Matriz implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Altera a matriz do grafo direcionado
+     * Altera a matriz adjacente do grafo direcionado.
      *
-     * @param noInicial - Nó inicial
-     * @param noFinal - Nó final
+     * @param noInicial int - Nó inicial
+     * @param noFinal int - Nó final
      */
     public void alterarMatrizGrafoDirecionado(int noInicial, int noFinal) {
         matriz[noInicial][noFinal] += 1;
@@ -31,10 +31,10 @@ public class MatrizAdj extends Matriz implements java.io.Serializable {
     }
 
     /**
-     * Altera a matriz do grafo não direcionado
+     * Altera a matriz adjacente do grafo não direcionado.
      *
-     * @param noInicial - Nó inicial
-     * @param noFinal - Nó final
+     * @param noInicial int - Nó inicial
+     * @param noFinal int - Nó final
      */
     public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal) {
         if (noInicial == noFinal) {

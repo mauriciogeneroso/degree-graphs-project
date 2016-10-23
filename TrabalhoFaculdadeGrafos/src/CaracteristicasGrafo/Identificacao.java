@@ -22,7 +22,7 @@ public class Identificacao {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Verifica se um grafo é simples
+     * Verifica se um grafo é simples.
      *
      * @param grafo Grafo - Entrada de um Grafo
      * @return boolean - Verdadiro caso seja um grafo simples, caso contrário,
@@ -46,7 +46,7 @@ public class Identificacao {
     }
 
     /**
-     * Verifica se um grafo é planar
+     * Verifica se um grafo é planar.
      *
      * @param grafo Grafo - Entrada de um Grafo
      * @return boolean - Verdadiro caso seja um grafo planar, caso contrário,
@@ -61,7 +61,7 @@ public class Identificacao {
     }
 
     /**
-     * Verifica se um grafo é completo
+     * Verifica se um grafo é completo.
      *
      * @param grafo Grafo - Entrada de um Grafo
      * @return boolean - Verdadiro caso seja um grafo completo, caso contrário,
@@ -85,7 +85,7 @@ public class Identificacao {
     }
 
     /**
-     * Verifica se um grafo é conexo
+     * Verifica se um grafo é conexo.
      *
      * @param grafo Grafo - Entrada de um Grafo
      * @return boolean - Verdadiro caso seja um grafo conexo, caso contrário,
