@@ -42,7 +42,7 @@ public class Lista<T> implements java.io.Serializable {
     /**
      * Verifica se a lista está vazia
      *
-     * @return boolean - Verdadeiro se esitver vazio, caso contrário falso
+     * @return boolean - Verdadeiro se estiver vazio, caso contrário falso
      */
     public boolean isEmpty() {
         return lista.isEmpty();
