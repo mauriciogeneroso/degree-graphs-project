@@ -17,6 +17,13 @@ package Objetos.Armazenamento;
 public class MatrizInc extends Matriz implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Altera a Matriz de Incidência (para Grafo Direcionado) de acordo com os nós informados
+     *
+     * @param noInicial - nó de saída da adjacência
+     * @param noFinal - nó de chegada da adjacência
+     * @param aresta - Aresta que está ligando os dois nós
+     */
     public void alterarMatrizGrafoDirecionado(int noInicial, int noFinal, int aresta) {
         if (noInicial == noFinal) {
             matriz[noInicial][aresta] += 1;
@@ -27,7 +34,14 @@ public class MatrizInc extends Matriz implements java.io.Serializable {
         System.out.println("Matriz de incidência - Grafo direcionado: ");
         this.imprimirMatriz();
     }
-
+    
+    /**
+     * Altera a Matriz de Incidência (para Grafo Não Direcionado) de acordo com os nós informados
+     *
+     * @param noInicial - primeiro nó da adjacência
+     * @param noFinal - segundo nó da adjacência
+     * @param aresta - Aresta que está ligando os dois nós
+     */
     public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal, int aresta) {
         if (noInicial == noFinal) {
             // Se houver laço só irá armazenar uma vez
