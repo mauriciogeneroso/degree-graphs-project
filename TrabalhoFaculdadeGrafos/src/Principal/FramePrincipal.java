@@ -440,7 +440,6 @@ public class FramePrincipal extends javax.swing.JFrame {
         if (grafo.getMatrizAdj() != null) {
             textArea.setText("");
             grafo.destruirGrafo();
-            grafo = null;
         }
     }//GEN-LAST:event_btLimparActionPerformed
 
