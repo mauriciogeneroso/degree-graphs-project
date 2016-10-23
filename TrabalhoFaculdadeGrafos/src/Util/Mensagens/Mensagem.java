@@ -2,6 +2,7 @@ package Util.Mensagens;
 
 import Util.Strings;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
 /**
@@ -13,18 +14,18 @@ import javax.swing.ImageIcon;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- * 
+ *
  * @since 22/10/2016
  * @version 1.2
  */
-
 public class Mensagem extends javax.swing.JDialog {
+
     private static final long serialVersionUID = 1L;
-    
-    public Mensagem(String message, String title, int icon) throws java.io.IOException{
+
+    public Mensagem(String message, String title, int icon) throws java.io.IOException {
         initComponents();
         ImageIcon image = null;
-        switch(icon){
+        switch (icon) {
             case 1: //info
                 image = new ImageIcon(getClass().getResource("/Util/Icons/info.png"));
                 jpBackground.setBackground(Color.blue);
@@ -59,9 +60,9 @@ public class Mensagem extends javax.swing.JDialog {
                 break;
             default:
         }
-        
+
         jlOk.setIcon(new ImageIcon(getClass().getResource("/Util/Icons/check64.png")));
-        if(jpBackground.getBackground() == Color.blue){
+        if (jpBackground.getBackground() == Color.blue) {
             jlMessage.setForeground(Color.white);
             jlTitle.setForeground(Color.white);
         }
@@ -82,6 +83,11 @@ public class Mensagem extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         setUndecorated(true);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         jpBackground.setBackground(new java.awt.Color(255, 255, 255));
         jpBackground.setPreferredSize(new java.awt.Dimension(770, 151));
@@ -153,6 +159,12 @@ public class Mensagem extends javax.swing.JDialog {
     private void jlOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlOkMouseClicked
         this.dispose();
     }//GEN-LAST:event_jlOkMouseClicked
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            this.dispose();
+        }
+    }//GEN-LAST:event_formKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jlIcon;
