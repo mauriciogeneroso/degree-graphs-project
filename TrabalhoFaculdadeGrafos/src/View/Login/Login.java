@@ -15,12 +15,12 @@ import java.io.IOException;
  * @author Luan Darabas
  * @author Luiz Alexandre da Luz
  * @author Maurício Generoso
- * 
+ *
  * @since 15/10/2016
  * @version 1.2
  */
-
 public class Login extends javax.swing.JFrame {
+
     private static final long serialVersionUID = 1L;
 
     public Login() {
@@ -47,7 +47,7 @@ public class Login extends javax.swing.JFrame {
         }
         //</editor-fold>
         initComponents();
-    }        
+    }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -159,15 +159,14 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEntrarActionPerformed
-        if(jtxtUsername.getText().trim().equals("")){
+        if (jtxtUsername.getText().trim().equals("")) {
             jlErrorMessage.setText("<html><body><pre>  Ei, informe corretamente</pre></body></html>");
             jlErrorMessage.setForeground(Color.red);
-        }else{
-            if(jtxtUsername.getText().length() < 3){
-                jlErrorMessage.setText("<html><body><pre>  Ei, informe corretamente</pre></body></html>");
-                jlErrorMessage.setForeground(Color.red);
-            }else{
-                CarregaConfiguracoes.setUsuario(jtxtUsername.getText());                
+        } else if (jtxtUsername.getText().length() < 3) {
+            jlErrorMessage.setText("<html><body><pre>  Ei, informe corretamente</pre></body></html>");
+            jlErrorMessage.setForeground(Color.red);
+        } else {
+            CarregaConfiguracoes.setUsuario(jtxtUsername.getText());
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                     if ("Nimbus".equals(info.getName())) {
@@ -178,31 +177,30 @@ public class Login extends javax.swing.JFrame {
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
                 Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
             }
-                if(jcbSave.isSelected()){
-                    try {
-                        CarregaConfiguracoes.setSaveUsername(true);
-                    } catch (IOException ex) {
-                        Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
-                    }
+            if (jcbSave.isSelected()) {
+                try {
+                    CarregaConfiguracoes.setSaveUsername(true);
+                } catch (IOException ex) {
+                    Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
                 }
-                FramePrincipal fm = new FramePrincipal();
-                fm.setVisible(true);
-                this.dispose();
             }
+            FramePrincipal fm = new FramePrincipal();
+            fm.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jbEntrarActionPerformed
 
     private void jtxtUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtUsernameKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             jbEntrar.doClick();
             jtxtUsername.requestFocus();
         }
     }//GEN-LAST:event_jtxtUsernameKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-    jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
-        try {  
-            if(CarregaConfiguracoes.isUsernameSave()){
+        jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
+        try {
+            if (CarregaConfiguracoes.isUsernameSave()) {
                 jcbSave.setSelected(true);
             }
         } catch (IOException ex) {

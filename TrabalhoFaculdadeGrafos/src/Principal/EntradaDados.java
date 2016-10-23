@@ -574,10 +574,10 @@ public class EntradaDados extends javax.swing.JFrame {
             // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
             grafo.setNos(capturarNos(entradaNos.getText()));
 
-            if (grafo.quantidadeNos() == 1){
+            if (grafo.quantidadeNos() == 1) {
                 MensagemCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
-                                              
-            } else if (nosRepetidos()){
+
+            } else if (nosRepetidos()) {
                 MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
             } else {
 
@@ -646,6 +646,12 @@ public class EntradaDados extends javax.swing.JFrame {
         jlInfoMessage.setText("Exemplo: A = {a1, a2, a3}");
     }//GEN-LAST:event_entradaArestasFocusGained
 
+    /**
+     * Verifica se há nós repetidos digitado pelo usuário
+     *
+     * @return boolean - Retorna true se existir nó repetido e false se não
+     * existir
+     */
     private boolean nosRepetidos() {
         String[] n = capturarNos(entradaNos.getText());
         for (int i = 0; i < n.length; i++) {
@@ -658,6 +664,12 @@ public class EntradaDados extends javax.swing.JFrame {
         return false;
     }
 
+    /**
+     * Verifica se há arestas repetidas digitada pelo usuário
+     *
+     * @return boolean - Retorna true se existir aresta repetida e false se não
+     * existir
+     */
     private boolean arestasRepetidas() {
         String[] a = capturarArestas(entradaArestas.getText());
         for (int i = 0; i < a.length; i++) {
@@ -670,6 +682,12 @@ public class EntradaDados extends javax.swing.JFrame {
         return false;
     }
 
+    /**
+     * Retorna a posição do primeiro nó no array de acordo com o que o usuário
+     * selecionou no JComboBox
+     *
+     * @return int - retorna a posição do nó selecionado
+     */
     private int posicaoNoInicialSelecionado() {
         String tempNoInicialSelected = cBoxNoInicial.getItemAt(cBoxNoInicial.getSelectedIndex());
         int posicaoLinhaNo = 0;
@@ -682,6 +700,12 @@ public class EntradaDados extends javax.swing.JFrame {
         return posicaoLinhaNo;
     }
 
+    /**
+     * Retorna a posição do segundo nó no array de acordo com o que o usuário
+     * selecionou no JComboBox
+     *
+     * @return int - retorna a posição do nó selecionado
+     */
     private int posicaoNoFinalSelecionado() {
         String tempNoFinalSelected = cBoxNoFinal.getItemAt(cBoxNoFinal.getSelectedIndex());
         int posicaoColunaNo = 0;
@@ -694,6 +718,12 @@ public class EntradaDados extends javax.swing.JFrame {
         return posicaoColunaNo;
     }
 
+    /**
+     * Retorna a posição da aresta no array de acordo com o que o usuário
+     * selecionou no JComboBox
+     *
+     * @return int - retorna a posição da aresta selecionado
+     */
     private int posicaoArestaSelecionada() {
         String tempArestaSelected = cBoxAresta.getItemAt(cBoxAresta.getSelectedIndex());
         int posicaoAresta = 0;
@@ -706,14 +736,29 @@ public class EntradaDados extends javax.swing.JFrame {
         return posicaoAresta;
     }
 
+    /**
+     * Método para capturar os nós informandos pelo usuário
+     *
+     * @return String[] - retorna um array com os nós informados pelo usuário
+     */
     private String[] capturarNos(String entradaNos) {
         return entradaNos.trim().split(",");
     }
 
+    /**
+     * Método para capturar as arestas informandas pelo usuário
+     *
+     * @return String[] - retorna um array com as arestas informadas pelo
+     * usuário
+     */
     private String[] capturarArestas(String entradaArestas) {
         return entradaArestas.trim().split(",");
     }
 
+    /**
+     * Método para voltar a janela ao estado inicial a sua abertura
+     *
+     */
     private void resetarJanela() {
         entradaNos.setEnabled(true);
         entradaNos.setText("");
@@ -739,6 +784,9 @@ public class EntradaDados extends javax.swing.JFrame {
         cancelarCriacaoGrafo();
     }
 
+    /**
+     * Método para cancelar a criação do grafo
+     */
     private void cancelarCriacaoGrafo() {
         if (grafo.getMatrizAdj() == null) {
             grafo.destruirGrafo();
@@ -781,11 +829,19 @@ public class EntradaDados extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 }
 
+/**
+ * Classe para instânciar o JFrame
+ */
 class SingleStanceDados {
-    private static EntradaDados janelaDados = null;
-    
-    private SingleStanceDados() {}
 
+    private static EntradaDados janelaDados = null;
+
+    private SingleStanceDados() {
+    }
+
+    /**
+     * Método para permitir que seja aberto somente uma janela por vez
+     */
     public static EntradaDados getStance(Grafo grafo) {
         if (janelaDados == null) {
             janelaDados = new EntradaDados(grafo);

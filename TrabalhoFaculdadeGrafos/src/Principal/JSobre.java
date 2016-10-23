@@ -5,14 +5,18 @@
  */
 package Principal;
 
-import static java.awt.Component.CENTER_ALIGNMENT;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
-
 /**
+ * Frame para exibição das informações do Projeto
  *
- * @author pigo
+ * Estudantes de Ciência da Computação - 4 fase.
+ *
+ * @author Gustavo Souza
+ * @author Luan Darabas
+ * @author Luiz Alexandre da Luz
+ * @author Maurício Generoso
+ *
+ * @since 22/10/2016
+ * @version 1.7
  */
 public class JSobre extends javax.swing.JFrame {
 
@@ -159,12 +163,23 @@ public class JSobre extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 }
 
+/**
+ * Classe para garantir que a janela Sobre não seja aberta mais de uma vez ao
+ * mesmo tempo
+ */
 class SingleStanceSobre {
-    private static JSobre jSobre = null;
-    
-    private SingleStanceSobre() {}
 
-    public static JSobre getStance( ) {
+    private static JSobre jSobre = null;
+
+    private SingleStanceSobre() {
+    }
+
+    /**
+     * Método que retorna a instância da janela Sobre
+     *
+     * @return JSobre - Retorna a instância da janela Sobre
+     */
+    public static JSobre getStance() {
         if (jSobre == null) {
 
             jSobre = new JSobre();

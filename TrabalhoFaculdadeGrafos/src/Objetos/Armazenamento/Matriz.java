@@ -57,7 +57,6 @@ public abstract class Matriz implements java.io.Serializable {
      *
      * @return int - Colunas
      */
-
     public int getColunas() {
         return colunas;
     }
@@ -74,7 +73,6 @@ public abstract class Matriz implements java.io.Serializable {
     /**
      * Limpa a matriz
      */
-
     public void limparMatriz() {
         for (int[] mt : matriz) {
             for (int j = 0; j < mt.length; j++) {
@@ -86,7 +84,6 @@ public abstract class Matriz implements java.io.Serializable {
     /**
      * Imprimi a matriz
      */
-
     public void imprimirMatriz() {
         System.out.print(this); // Iŕa chamar o toString();
     }

@@ -287,7 +287,6 @@ public class Grafo implements java.io.Serializable {
      * @param noFinal int - Nó final
      * @param aresta int - Aresta
      */
-
     public void alterarListaGrafoNaoDirecionado(String noInicial, String noFinal, String aresta) {
         if (noInicial.equals(noFinal)) {
             listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));

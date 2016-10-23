@@ -216,13 +216,11 @@ public class Configuracao extends javax.swing.JFrame {
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         if (jtxtUsername.getText().trim().equals("")) {
             Util.MensagemCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
+        } else if (jtxtUsername.getText().length() < 3) {
+            Util.MensagemCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
         } else {
-            if (jtxtUsername.getText().length() < 3) {
-                Util.MensagemCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
-            } else {
-                CarregaConfiguracoes.setUsuario(jtxtUsername.getText());
-                Util.MensagemCtrl.callMessage("Usuário salvo com sucesso!", "Sucesso!", 7);
-            }
+            CarregaConfiguracoes.setUsuario(jtxtUsername.getText());
+            Util.MensagemCtrl.callMessage("Usuário salvo com sucesso!", "Sucesso!", 7);
         }
     }//GEN-LAST:event_jbSalvarActionPerformed
 

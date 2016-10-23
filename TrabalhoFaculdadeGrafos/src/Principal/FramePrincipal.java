@@ -6,7 +6,6 @@ import Objetos.Armazenamento.Lista;
 import Objetos.Grafo;
 import Util.MensagemCtrl;
 import View.Login.Configuracao;
-import java.io.IOException;
 import javax.swing.ButtonGroup;
 
 /**
@@ -21,6 +20,7 @@ import javax.swing.ButtonGroup;
  * @version 1.7
  */
 public class FramePrincipal extends javax.swing.JFrame {
+
     private static final long serialVersionUID = 1L;
 
     private Grafo grafo;
@@ -445,48 +445,40 @@ public class FramePrincipal extends javax.swing.JFrame {
         if (grafo.getMatrizAdj() == null) {
             MensagemCtrl.callMessage("Não existe um grafo para verificar se é simples", "Grafo Simples", 2);
 
+        } else if (ident.VerifGrafoSimples(grafo)) {
+            MensagemCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
         } else {
-            if (ident.VerifGrafoSimples(grafo)) {
-                MensagemCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
-            } else {
-                MensagemCtrl.callMessage("O grafo não é simples!", "Grafo Simples", 1);
-            }
+            MensagemCtrl.callMessage("O grafo não é simples!", "Grafo Simples", 1);
         }
     }//GEN-LAST:event_btSimplesActionPerformed
 
     private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
         if (grafo.getMatrizAdj() == null) {
             MensagemCtrl.callMessage("Não existe um grafo para verificar se é completo.", "Grafo completo", 2);
+        } else if (ident.VerifGrafoCompleto(grafo)) {
+            MensagemCtrl.callMessage("Grafo completo", "O grafo é completo", 1);
         } else {
-            if (ident.VerifGrafoCompleto(grafo)) {
-                MensagemCtrl.callMessage("Grafo completo", "O grafo é completo", 1);
-            } else {
-                MensagemCtrl.callMessage("O grafo não é completo", "Grafo Completo", 1);
-            }
+            MensagemCtrl.callMessage("O grafo não é completo", "Grafo Completo", 1);
         }
     }//GEN-LAST:event_btCompletoActionPerformed
 
     private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
         if (grafo.getListaAdj() == null) {
             MensagemCtrl.callMessage("Não existe um grafo para verificar se é conexo", "Grafo Conexo", 2);
+        } else if (ident.VerifGrafoConexo(grafo)) {
+            MensagemCtrl.callMessage("O grafo é conexo", "Grafo Conexo", 1);
         } else {
-            if (ident.VerifGrafoConexo(grafo)) {
-                MensagemCtrl.callMessage("O grafo é conexo", "Grafo Conexo", 1);
-            } else {
-                MensagemCtrl.callMessage("O grafo não é conexo", "Grafo Conexo", 1);
-            }
+            MensagemCtrl.callMessage("O grafo não é conexo", "Grafo Conexo", 1);
         }
     }//GEN-LAST:event_btConexoActionPerformed
 
     private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
         if (grafo.getListaAdj() == null) {
             MensagemCtrl.callMessage("Não existe um grafo para verificar se é planar", "Grafo Planar", 2);
+        } else if (ident.VerifGrafoPlanar(grafo)) {
+            MensagemCtrl.callMessage("O grafo é Planar", "Grafo Planar", 1);
         } else {
-            if (ident.VerifGrafoPlanar(grafo)) {
-                MensagemCtrl.callMessage("O grafo é Planar", "Grafo Planar", 1);
-            } else {
-                MensagemCtrl.callMessage("O grafo não é planar", "Grafo Planar", 1);
-            }
+            MensagemCtrl.callMessage("O grafo não é planar", "Grafo Planar", 1);
         }
     }//GEN-LAST:event_btPlanarActionPerformed
 
@@ -553,6 +545,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         jSobre.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    /**
+     * Método para importar um grafo
+     */
     private void importar() {
         try {
             grafo = Arquivo.importarGrafo(this);
@@ -562,6 +557,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Método para exportar o Grafo
+     */
     private void exportar() {
         if (grafo.getListaInc() == null) {
             MensagemCtrl.callMessage("Não existe um grafo para ser exportado!", "Exportar", 8);
@@ -574,6 +572,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Método para verificar se os dados do Grafo serão exibidos em tela
+     */
     private void verificaSeIraExibirOsDados() {
         if (grafo.getListaAdj() != null) {
             if (rButtonMatrizAdj.isSelected()) {
@@ -588,6 +589,10 @@ public class FramePrincipal extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Método que imprime as informações em tela de acordo com a opção que
+     * estiver selecionada no momento
+     */
     private void imprimirInformacoes() {
         // Imprime os Nós
         String nosFormal = "Nós = {";
@@ -608,6 +613,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         textArea.setText(textArea.getText() + arestasFormal);
     }
 
+    /**
+     * Método para exibir a Matriz de Adjacência em tela
+     */
     private void exibirMatrizAdj() {
         textArea.setText("");
         imprimirInformacoes();
@@ -616,6 +624,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         textArea.setText(textArea.getText() + grafo.getMatrizAdj());
     }
 
+    /**
+     * Método para exibir a Matriz de Incidência em tela
+     */
     private void exibirMatrizInc() {
         textArea.setText("");
         imprimirInformacoes();
@@ -624,6 +635,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         textArea.setText(textArea.getText() + grafo.getMatrizInc());
     }
 
+    /**
+     * Método para exibir a Lista de Adjacência em tela
+     */
     private void exibirListaAdc() {
         textArea.setText("");
         imprimirInformacoes();
@@ -637,6 +651,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Método para exibir a Lista de Incidẽncia em tela
+     */
     private void exibirListaInc() {
         textArea.setText("");
         imprimirInformacoes();
