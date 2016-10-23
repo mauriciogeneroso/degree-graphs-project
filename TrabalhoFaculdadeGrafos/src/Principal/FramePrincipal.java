@@ -456,7 +456,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         if (grafo.getMatrizAdj() == null) {
             MensagemCtrl.callMessage("Não existe um grafo para verificar se é completo.", "Grafo completo", 2);
         } else if (ident.VerifGrafoCompleto(grafo)) {
-            MensagemCtrl.callMessage("Grafo completo", "O grafo é completo", 1);
+            MensagemCtrl.callMessage("O grafo é completo", "Grafo Completo", 1);
         } else {
             MensagemCtrl.callMessage("O grafo não é completo", "Grafo Completo", 1);
         }
@@ -476,7 +476,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         if (grafo.getListaAdj() == null) {
             MensagemCtrl.callMessage("Não existe um grafo para verificar se é planar", "Grafo Planar", 2);
         } else if (ident.VerifGrafoPlanar(grafo)) {
-            MensagemCtrl.callMessage("O grafo é Planar", "Grafo Planar", 1);
+            MensagemCtrl.callMessage("O grafo é planar", "Grafo Planar", 1);
         } else {
             MensagemCtrl.callMessage("O grafo não é planar", "Grafo Planar", 1);
         }
