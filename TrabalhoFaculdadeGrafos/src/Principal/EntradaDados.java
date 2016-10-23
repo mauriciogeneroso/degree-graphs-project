@@ -445,35 +445,11 @@ public class EntradaDados extends javax.swing.JFrame {
             rButtonCompleto.setSelected(true);
             MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
         } else {
-            try {
-                if (grafo.getMatrizAdj() != null) {
-                    grafo = new Grafo();
-                }
 
-                grafo.setNos(capturarNos(entradaNos.getText()));
-                if (!grafo.noIsEmpty()) {
-                    grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
-                    // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
-                    // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
-                    grafo.iniciarListas();
-                    cBoxNoInicial.removeAllItems();
-                    cBoxNoFinal.removeAllItems();
-                    for (String no : grafo.getNos()) {
-                        cBoxNoInicial.addItem(no);
-                        cBoxNoFinal.addItem(no);
-                    }
-                    entradaArestas.setEnabled(true);
-                    labelDefinirNo.setEnabled(true);
-                    labelDefinirNo2.setEnabled(true);
-                    labelDefinirAresta.setEnabled(true);
-                    cBoxNoInicial.setEnabled(true);
-                    cBoxNoFinal.setEnabled(true);
-                    cBoxAresta.setEnabled(true);
-                    buttonCriarGrafo.setEnabled(false);
-                }
-            } catch (Exception e) {
-                MensagemCtrl.callMessage("Valores inválidos para os Nós informados", "Erro!", 8);
+            if (grafo.getMatrizAdj() != null) {
+                grafo = new Grafo();
             }
+            botaoDefinir();
         }
     }//GEN-LAST:event_rButtonDefinirActionPerformed
 
@@ -528,6 +504,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
                 grafo.iniciarListas();
                 cBoxAresta.removeAllItems();
+                botaoDefinir();
                 for (String arestaa : grafo.getArestas()) {
                     cBoxAresta.addItem(arestaa);
                 }
@@ -641,8 +618,10 @@ public class EntradaDados extends javax.swing.JFrame {
                 frame.setVisible(true);
                 try {
                     Thread.sleep(500);
+
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(EntradaDados.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(EntradaDados.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
                 exit();
 
@@ -775,6 +754,30 @@ public class EntradaDados extends javax.swing.JFrame {
         return entradaArestas.replace(" ", "").split(",");
     }
 
+    private void botaoDefinir() {
+        grafo.setNos(capturarNos(entradaNos.getText()));
+        if (!grafo.noIsEmpty()) {
+            grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
+                    // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
+            // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
+            grafo.iniciarListas();
+            cBoxNoInicial.removeAllItems();
+            cBoxNoFinal.removeAllItems();
+            for (String no : grafo.getNos()) {
+                cBoxNoInicial.addItem(no);
+                cBoxNoFinal.addItem(no);
+            }
+            entradaArestas.setEnabled(true);
+            labelDefinirNo.setEnabled(true);
+            labelDefinirNo2.setEnabled(true);
+            labelDefinirAresta.setEnabled(true);
+            cBoxNoInicial.setEnabled(true);
+            cBoxNoFinal.setEnabled(true);
+            cBoxAresta.setEnabled(true);
+            buttonCriarGrafo.setEnabled(false);
+        }
+    }
+
     /**
      * Método para voltar a janela ao estado inicial a sua abertura
      *
@@ -852,11 +855,13 @@ public class EntradaDados extends javax.swing.JFrame {
         frame.setVisible(true);
         try {
             Thread.sleep(100);
+
         } catch (InterruptedException ex) {
-            Logger.getLogger(EntradaDados.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EntradaDados.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         this.dispose();
-        
+
     }
 }
 
