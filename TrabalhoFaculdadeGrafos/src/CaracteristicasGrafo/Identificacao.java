@@ -142,12 +142,20 @@ public class Identificacao {
 
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
-                if (i == j || mt.getMatriz()[i][j] > 0) {
+                if (i != j & mt.getMatriz()[i][j] == 0) {
                     v = 1;
                     break;
                 }
+                else {
+                    v=0;
+                }
+               
             }
+           if(v==1){
+               break;
+           }
         }
+        
         if (v == 0) {
             int n = 0;
             int cont = 1;
@@ -182,13 +190,14 @@ public class Identificacao {
                 vetorsomado++;
                 cont = 1;
 
-                for (int i = n; i < mt.getLinhas(); i++) {
+                for (int i = n; i < mt.getLinhas();) {
                     for (int j = 0; j < mt.getColunas(); j++) {
                         if (i != j && mt.getMatriz()[i][j] > 0) {
                             for (int f = 0; f < grafo.quantidadeNos(); f++) {
                                 if (vetor[f] == j && cont == 1) {
                                     cont = 20;
                                 }
+                                
                             }
                             for (int f = 0; f < grafo.quantidadeNos(); f++){
                             if(vetor[f] != j && cont!= 1){
@@ -200,11 +209,11 @@ public class Identificacao {
                         }
 
                     }
-
-                }
+                 
+                
                 it++;
 
-            } while (it <= nos*nos);
+            }} while (it <= nos);
         
         int som=0;
         for(int f=0; f < grafo.quantidadeNos();f++){
@@ -212,12 +221,20 @@ public class Identificacao {
               som++;
           }
         }
+        /*Verifica o numero de valores no Vetor*/
+        if (som == grafo.quantidadeNos()) {
+            System.out.println("O Grafo é Conexo");
+            return true;
+        } else {
+            System.out.println("O Grafo não é Conexo");
+            return false;
+        }
     }
         if (v == 1) {
             System.out.println("O Grafo não é Conexo");
-        } else {
-            System.out.println("O Grafo é Conexo");
-        }
-        return true;
+            return false;
+        } 
+        
+    return false;
     }
 }
