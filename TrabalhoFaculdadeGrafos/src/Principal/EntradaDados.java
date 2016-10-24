@@ -443,10 +443,6 @@ public class EntradaDados extends javax.swing.JFrame {
             rButtonCompleto.setSelected(true);
             MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
         } else {
-
-            if (grafo.getMatrizAdj() != null) {
-                grafo = new Grafo();
-            }
             botaoDefinir();
         }
     }//GEN-LAST:event_rButtonDefinirActionPerformed
@@ -548,7 +544,6 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
         if (rButtonDefinir.isSelected()) {
-            old = null;
             exit();
         } else if (entradaNos.getText().trim().equals("")) {
             MensagemCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
