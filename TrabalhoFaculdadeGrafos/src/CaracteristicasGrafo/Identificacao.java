@@ -190,7 +190,7 @@ public class Identificacao {
                 vetorsomado++;
                 cont = 1;
 
-                for (int i = n; i < mt.getLinhas();) {
+                for (int i = n; i < mt.getLinhas();i++) {
                     for (int j = 0; j < mt.getColunas(); j++) {
                         if (i != j && mt.getMatriz()[i][j] > 0) {
                             for (int f = 0; f < grafo.quantidadeNos(); f++) {
@@ -203,6 +203,7 @@ public class Identificacao {
                             if(vetor[f] != j && cont!= 1){
                                 vetor[vetorsomado] = j;
                                 n = j;
+                                break;
                             }
                             }
                             
