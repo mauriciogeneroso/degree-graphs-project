@@ -133,27 +133,39 @@ public class Identificacao {
      */
     public boolean VerifGrafoConexo(Grafo grafo) {
         // Fazer a validação e retornar false se não for conexo
-        int v = 0;
-        int soma = 0;
+        int v = 0; //Verifica
         int it = 1;
+        int ar=0;
         Matriz mt = grafo.getMatrizAdj();
 
         mt.imprimirMatriz();
 
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
-                if (i != j & mt.getMatriz()[i][j] == 0) {
-                    v = 1;
+                if (i != j && mt.getMatriz()[i][j] != 0) {
+                    v = 0;
                     break;
                 }
                 else {
-                    v=0;
+                    v=1;
                 }
                
             }
            if(v==1){
                break;
            }
+        }
+        
+        for (int i=0; i < mt.getLinhas();i++){
+        for(int j=0; j< mt.getColunas();j++){
+            if(i != j && mt.getMatriz()[i][j] > 0){
+            ar++;
+        }
+        }
+    }
+        ar = ar/2;
+        if(ar < grafo.quantidadeNos()){
+            v=1;
         }
         
         if (v == 0) {
@@ -169,40 +181,28 @@ public class Identificacao {
             
             int vetorsomado = 0;
             vetor[vetorsomado] = 0;
+            System.out.println("" + vetor[vetorsomado] + "alow");
             vetorsomado++;
+           
             
-            for (int i = 0; i < mt.getLinhas(); i++) {
-                for (int j = 0; j < mt.getColunas(); j++) {
-
-                        if (j != i && mt.getMatriz()[i][j] > 0 && cont == 1) {
-                        cont = 20;
-                        n = j;
-                        System.out.println("" + n + "alow");
-                        break;
-                    }
-                }
-            }
-
-            vetor[vetorsomado] = n;
-            System.out.println("" + vetor[vetorsomado] + "");
-
-            do {
-                vetorsomado++;
-                cont = 1;
-
-                for (int i = n; i < mt.getLinhas();i++) {
+                    
+             for (int i = 0; i < mt.getLinhas();i++) {
+                    cont = 1;
                     for (int j = 0; j < mt.getColunas(); j++) {
-                        if (i != j && mt.getMatriz()[i][j] > 0) {
+                        if (j != i && mt.getMatriz()[i][j] > 0) {
+                            cont=1;
                             for (int f = 0; f < grafo.quantidadeNos(); f++) {
+                                
                                 if (vetor[f] == j && cont == 1) {
                                     cont = 20;
                                 }
                                 
                             }
                             for (int f = 0; f < grafo.quantidadeNos(); f++){
-                            if(vetor[f] != j && cont!= 1){
+                            if(vetor[f] != j && cont== 1){
                                 vetor[vetorsomado] = j;
-                                n = j;
+                                 System.out.println("" + vetor[vetorsomado] + "alowzim");
+                                vetorsomado++;
                                 break;
                             }
                             }
@@ -210,12 +210,8 @@ public class Identificacao {
                         }
 
                     }
-                 
-                
-                it++;
-
-            }} while (it <= nos);
-        
+             }
+          
         int som=0;
         for(int f=0; f < grafo.quantidadeNos();f++){
           if(vetor[f]!=-1){
