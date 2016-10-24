@@ -57,6 +57,46 @@ public class Identificacao {
         Matriz mt = grafo.getMatrizAdj();
         int nos = grafo.quantidadeNos();
         int aresta = grafo.quantidadeArestas();
+        int vetor[] = new int[grafo.quantidadeNos()];
+        int cont =1;
+        int vetorsomado=0;
+        int n=0;
+        int it=0;
+        int soma=0;
+        /* Verifica o Maior Ciclo */
+        do {
+                
+              
+
+                for (int i = n; i < mt.getLinhas();) {
+                    for (int j = 0; j < mt.getColunas(); j++) {
+                        if (i != j && mt.getMatriz()[i][j] > 0) {
+                            for (int f = 0; f < grafo.quantidadeNos(); f++) {
+                                if (vetor[f] == j && cont == 1) {
+                                    cont = 20;
+                                }
+                            }
+                            for (int f = 0; f < grafo.quantidadeNos(); f++){
+                            if(vetor[f] != j && cont!= 1){
+                                soma++;
+                                vetor[vetorsomado] = soma;
+                                }
+                            }
+                            
+                        }
+
+                    }
+
+                }
+                n++;
+                vetorsomado++;
+                soma=0;
+                cont=1;
+
+            } while (it <= nos*nos);
+        
+        
+        
         return true;
     }
 
@@ -102,7 +142,7 @@ public class Identificacao {
 
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
-                if (!(i == j || mt.getMatriz()[i][j] > 0)) {
+                if (i == j || mt.getMatriz()[i][j] > 0) {
                     v = 1;
                     break;
                 }
@@ -114,16 +154,19 @@ public class Identificacao {
             int nos = grafo.quantidadeNos();
 
             int vetor[] = new int[grafo.quantidadeNos()];
+            
             for (int a = 0; a < grafo.quantidadeNos(); a++) {
                 vetor[a] = -1;
             }
+            
             int vetorsomado = 0;
             vetor[vetorsomado] = 0;
             vetorsomado++;
+            
             for (int i = 0; i < mt.getLinhas(); i++) {
                 for (int j = 0; j < mt.getColunas(); j++) {
 
-                    if (j != i && mt.getMatriz()[i][j] > 0 && cont == 1) {
+                        if (j != i && mt.getMatriz()[i][j] > 0 && cont == 1) {
                         cont = 20;
                         n = j;
                         System.out.println("" + n + "alow");
@@ -147,21 +190,29 @@ public class Identificacao {
                                     cont = 20;
                                 }
                             }
-                            if (cont == 1) {
+                            for (int f = 0; f < grafo.quantidadeNos(); f++){
+                            if(vetor[f] != j && cont!= 1){
+                                vetor[vetorsomado] = j;
                                 n = j;
-
                             }
+                            }
+                            
                         }
 
                     }
 
                 }
-                vetor[vetorsomado] = n;
                 it++;
 
-            } while (it <= nos);
+            } while (it <= nos*nos);
+        
+        int som=0;
+        for(int f=0; f < grafo.quantidadeNos();f++){
+          if(vetor[f]!=-1){
+              som++;
+          }
         }
-
+    }
         if (v == 1) {
             System.out.println("O Grafo não é Conexo");
         } else {
