@@ -235,22 +235,6 @@ public class Grafo implements java.io.Serializable {
     }
 
     /**
-     * Altera a matriz do grafo direcionado.
-     *
-     * @param mt Matriz - Matriz a ser alterada
-     * @param noInicial int - Nó inicial
-     * @param noFinal int - Nó final
-     * @param aresta int - Aresta
-     */
-    public void alterarMatrizGrafoDirecionado(Matriz mt, int noInicial, int noFinal, int aresta) {
-        if (mt instanceof MatrizAdj) {
-            ((MatrizAdj) mt).alterarMatrizGrafoDirecionado(noInicial, noFinal);
-        } else if (mt instanceof MatrizInc) {
-            ((MatrizInc) mt).alterarMatrizGrafoDirecionado(noInicial, noFinal, aresta);
-        }
-    }
-
-    /**
      * Imprimi a lista Este método iŕá chamar o toString() da classe "Lista"
      * para cada posição do array(listaInc[i]). O toString() da classe Lista irá
      * imprimir cada elemento presente em tal posição do vetor, ou seja, a outra
@@ -306,21 +290,4 @@ public class Grafo implements java.io.Serializable {
         imprimirLista(listaInc);
     }
 
-    /**
-     * Altera a matriz do grafo direcionado.
-     *
-     *
-     * @param noInicial int - Nó inicial
-     * @param noFinal int - Nó final
-     * @param aresta int - Aresta
-     */
-    public void alterarListaGrafoDirecionado(String noInicial, String noFinal, String aresta) {
-        listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
-        System.out.println("Lista de Adjacência direcionada: ");
-        imprimirLista(listaAdj);
-
-        listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
-        System.out.println("Lista de Incidência direcionada: ");
-        imprimirLista(listaInc);
-    }
 }

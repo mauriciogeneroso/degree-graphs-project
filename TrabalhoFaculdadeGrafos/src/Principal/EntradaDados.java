@@ -20,7 +20,7 @@ import javax.swing.ButtonGroup;
  * @author Maurício Generoso
  *
  * @since 15/10/2016
- * @version 1.7
+ * @version 2.0
  */
 public class EntradaDados extends javax.swing.JFrame {
 
@@ -28,25 +28,17 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private Grafo grafo2;
     private FramePrincipal frame;
-    private boolean desabilitar = true;
-    private ButtonGroup buttonGroup1;
-    private ButtonGroup buttonGroup2;
+    private ButtonGroup buttonGroup;
 
     public EntradaDados(FramePrincipal frame) {
         initComponents();
         this.frame = frame;
         this.grafo2 = new Grafo();
-        
-        // Grupo de botões para os JRadioButton direcionado e não direcionado
-        buttonGroup1 = new ButtonGroup();
-        buttonGroup1.add(rButtonNaoDirecionado);
-        buttonGroup1.add(rButtonDirecionado);
-        // Fim do grupo de botões da direção das arestas
 
         // Grupo de botões para informar se o grafo é completo ou se o usuário definirá as adjacências
-        buttonGroup2 = new ButtonGroup();
-        buttonGroup2.add(rButtonCompleto);
-        buttonGroup2.add(rButtonDefinir);
+        buttonGroup = new ButtonGroup();
+        buttonGroup.add(rButtonCompleto);
+        buttonGroup.add(rButtonDefinir);
         // Fim do grupo de botões da direção das arestas
     }
 
@@ -69,25 +61,23 @@ public class EntradaDados extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        rButtonDirecionado = new javax.swing.JRadioButton();
-        rButtonNaoDirecionado = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
         rButtonCompleto = new javax.swing.JRadioButton();
         rButtonDefinir = new javax.swing.JRadioButton();
-        cBoxNoInicial = new javax.swing.JComboBox<String>();
+        cBoxNoInicial = new javax.swing.JComboBox<>();
         labelDefinirNo = new javax.swing.JLabel();
         labelDefinirNo2 = new javax.swing.JLabel();
-        cBoxNoFinal = new javax.swing.JComboBox<String>();
+        cBoxNoFinal = new javax.swing.JComboBox<>();
         buttonDefinirAdjacencia = new javax.swing.JButton();
         labelDefinirAresta = new javax.swing.JLabel();
-        cBoxAresta = new javax.swing.JComboBox<String>();
+        cBoxAresta = new javax.swing.JComboBox<>();
         buttonCriarGrafo = new javax.swing.JButton();
         buttonCancelar = new javax.swing.JButton();
         buttonLimpar = new javax.swing.JButton();
         jlInfoMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Novo Grafo");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -97,7 +87,7 @@ public class EntradaDados extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Definição formal do Grafo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Principal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
 
         jLabel1.setText("Grafo = (N, A, G);");
 
@@ -199,50 +189,20 @@ public class EntradaDados extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Definição", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        rButtonDirecionado.setText("Direcionado");
-
-        rButtonNaoDirecionado.setSelected(true);
-        rButtonNaoDirecionado.setText("Não direcionado");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rButtonDirecionado)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rButtonNaoDirecionado)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rButtonDirecionado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rButtonNaoDirecionado)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Forma de Criação", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
 
         rButtonCompleto.setSelected(true);
-        rButtonCompleto.setText("Completo");
-        rButtonCompleto.setToolTipText("Grafo simples onde todos os nós são adjacêntes a todos os nós");
+        rButtonCompleto.setText("Automático");
+        rButtonCompleto.setToolTipText("Definir o grafo de forma completa");
         rButtonCompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rButtonCompletoActionPerformed(evt);
             }
         });
 
-        rButtonDefinir.setText("Definir:");
+        rButtonDefinir.setText("Manual");
         rButtonDefinir.setToolTipText("Definir a adjcência dos nós");
         rButtonDefinir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,19 +216,19 @@ public class EntradaDados extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rButtonCompleto)
-                    .addComponent(rButtonDefinir))
+                .addComponent(rButtonCompleto)
+                .addGap(18, 18, 18)
+                .addComponent(rButtonDefinir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rButtonCompleto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rButtonDefinir)
-                .addContainerGap())
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rButtonCompleto)
+                    .addComponent(rButtonDefinir))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         cBoxNoInicial.setToolTipText("");
@@ -302,25 +262,20 @@ public class EntradaDados extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(buttonDefinirAdjacencia))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelDefinirNo2)
-                                    .addComponent(labelDefinirNo)
-                                    .addComponent(labelDefinirAresta))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cBoxNoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cBoxNoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cBoxAresta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(labelDefinirNo2)
+                            .addComponent(labelDefinirNo)
+                            .addComponent(labelDefinirAresta))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cBoxNoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cBoxNoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cBoxAresta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -328,10 +283,8 @@ public class EntradaDados extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(13, 13, 13)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDefinirNo)
                     .addComponent(cBoxNoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -397,21 +350,18 @@ public class EntradaDados extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 3, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jlInfoMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonCriarGrafo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlInfoMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonCriarGrafo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,20 +412,10 @@ public class EntradaDados extends javax.swing.JFrame {
         buttonCriarGrafo.setEnabled(true);
         cancelarCriacaoGrafo();
 
-        if (!desabilitar) {
-            if (rButtonDirecionado.isSelected()) {
-                rButtonNaoDirecionado.setEnabled(true);
-                rButtonNaoDirecionado.setToolTipText(null);
-            } else {
-                rButtonDirecionado.setEnabled(true);
-                rButtonDirecionado.setToolTipText(null);
-            }
-            desabilitar = !desabilitar;
-        }
     }//GEN-LAST:event_rButtonCompletoActionPerformed
 
     private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
-        
+
         exit();
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
@@ -504,33 +444,16 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_entradaArestasFocusLost
 
     private void buttonDefinirAdjacenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDefinirAdjacenciaActionPerformed
-        if (rButtonNaoDirecionado.isSelected() && rButtonDefinir.isSelected()) {
-            grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo2.alterarListaGrafoNaoDirecionado(grafo2.getNoPosicao(posicaoNoInicialSelecionado()), grafo2.getNoPosicao(posicaoNoFinalSelecionado()), grafo2.getArestaPosicao(posicaoArestaSelecionada()));
-        } else if (rButtonDirecionado.isSelected() && rButtonDefinir.isSelected()) {
-            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo2.alterarListaGrafoDirecionado(grafo2.getNoPosicao(posicaoNoInicialSelecionado()), grafo2.getNoPosicao(posicaoNoFinalSelecionado()), grafo2.getArestaPosicao(posicaoArestaSelecionada()));
-        }
+        grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+        grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+        grafo2.alterarListaGrafoNaoDirecionado(grafo2.getNoPosicao(posicaoNoInicialSelecionado()), grafo2.getNoPosicao(posicaoNoFinalSelecionado()), grafo2.getArestaPosicao(posicaoArestaSelecionada()));
+
         //Após definir remove a aresta da seleção de acordo com o index
         cBoxAresta.removeItemAt(cBoxAresta.getSelectedIndex());
         if (cBoxAresta.getSelectedIndex() == -1) {
             buttonDefinirAdjacencia.setEnabled(false);
             buttonCriarGrafo.setEnabled(true);
         }
-
-        if (desabilitar) {
-            if (rButtonDirecionado.isSelected()) {
-                rButtonNaoDirecionado.setEnabled(false);
-                rButtonNaoDirecionado.setToolTipText("Para marcar esta opção deve estar selecionado a opção \"Completo\"");
-            } else {
-                rButtonDirecionado.setEnabled(false);
-                rButtonDirecionado.setToolTipText("Para marcar esta opção deve estar selecionado a opção \"Completo\"");
-            }
-            desabilitar = !desabilitar;
-        }
-
     }//GEN-LAST:event_buttonDefinirAdjacenciaActionPerformed
 
     private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
@@ -563,52 +486,27 @@ public class EntradaDados extends javax.swing.JFrame {
 
                 grafo2.iniciarMatriz(new MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos()); // Adjacência
                 grafo2.iniciarListas();
-                if (rButtonNaoDirecionado.isSelected()) {
-                    // Não direcionado
-                    String[] arestasNaoDirecionado = new String[contArestas];
-                    for (int i = 0; i < contArestas; i++) {
-                        arestasNaoDirecionado[i] = String.valueOf(i);
-                    }
 
-                    grafo2.setArestas(arestasNaoDirecionado);
-                    grafo2.iniciarMatriz(new MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
-                    contArestas = 0;
-                    for (int i = 0; i < grafo2.quantidadeNos(); i++) {
-                        for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
-                            grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizAdj(), i, j, contArestas);
-                            grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizInc(), i, j, contArestas);
-                            grafo2.alterarListaGrafoNaoDirecionado(grafo2.getNoPosicao(i), grafo2.getNoPosicao(j), grafo2.getArestaPosicao(contArestas++));
-                        }
-                    }
-                } else {
-                    // Direcionado
-                    String[] arestasDirecionado = new String[2 * contArestas];
-                    for (int i = 0; i < 2 * contArestas; i++) {
-                        arestasDirecionado[i] = String.valueOf(i);
-                    }
+                String[] arestasNaoDirecionado = new String[contArestas];
+                for (int i = 0; i < contArestas; i++) {
+                    arestasNaoDirecionado[i] = String.valueOf(i);
+                }
 
-                    grafo2.setArestas(arestasDirecionado);
-                    grafo2.iniciarMatriz(new MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
-                    contArestas = 0;
-                    for (int i = 0; i < grafo2.quantidadeNos(); i++) {
-                        for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
-                            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizAdj(), i, j, contArestas); // Matriz Adj Direcionado
-                            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizAdj(), j, i, contArestas); // Matriz Adj direcionado, com os nós invertidos para ficar completo
-                            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizInc(), i, j, contArestas); // Matriz Inc, mesmo do item acima, a linha abaixo é a volta da aresta direcionada
-                            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizInc(), j, i, contArestas + 1);
-                            grafo2.alterarListaGrafoDirecionado(grafo2.getNoPosicao(i), grafo2.getNoPosicao(j), grafo2.getArestaPosicao(contArestas));
-                            grafo2.alterarListaGrafoDirecionado(grafo2.getNoPosicao(j), grafo2.getNoPosicao(i), grafo2.getArestaPosicao(contArestas + 1));
-                            contArestas += 2;
-                        } // fim do for
-                    } // fim do for
-                } // fim do else
+                grafo2.setArestas(arestasNaoDirecionado);
+                grafo2.iniciarMatriz(new MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
+                contArestas = 0;
+                for (int i = 0; i < grafo2.quantidadeNos(); i++) {
+                    for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
+                        grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizAdj(), i, j, contArestas);
+                        grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizInc(), i, j, contArestas);
+                        grafo2.alterarListaGrafoNaoDirecionado(grafo2.getNoPosicao(i), grafo2.getNoPosicao(j), grafo2.getArestaPosicao(contArestas++));
+                    }
+                }
                 frame.setVisible(true);
                 try {
                     Thread.sleep(500);
-
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(EntradaDados.class
-                            .getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(EntradaDados.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 frame.setGrafo(grafo2);
                 exit();
@@ -776,10 +674,6 @@ public class EntradaDados extends javax.swing.JFrame {
         entradaArestas.setText("");
         rButtonCompleto.setSelected(true);
         rButtonDefinir.setSelected(false);
-        rButtonDirecionado.setSelected(false);
-        rButtonDirecionado.setEnabled(true);
-        rButtonNaoDirecionado.setSelected(true);
-        rButtonNaoDirecionado.setEnabled(true);
         labelDefinirNo.setEnabled(false);
         labelDefinirNo2.setEnabled(false);
         labelDefinirAresta.setEnabled(false);
@@ -824,7 +718,6 @@ public class EntradaDados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
@@ -834,8 +727,6 @@ public class EntradaDados extends javax.swing.JFrame {
     private javax.swing.JLabel labelDefinirNo2;
     private javax.swing.JRadioButton rButtonCompleto;
     private javax.swing.JRadioButton rButtonDefinir;
-    private javax.swing.JRadioButton rButtonDirecionado;
-    private javax.swing.JRadioButton rButtonNaoDirecionado;
     // End of variables declaration//GEN-END:variables
 
     private void exit() {
