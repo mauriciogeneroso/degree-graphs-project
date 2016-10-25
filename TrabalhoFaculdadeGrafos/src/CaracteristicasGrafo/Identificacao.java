@@ -2,6 +2,7 @@ package CaracteristicasGrafo;
 
 import Objetos.Armazenamento.Matriz;
 import Objetos.Grafo;
+import java.awt.List;
 
 /**
  * Essa classe implementa todas as funções de identificações de um grafo.
@@ -45,6 +46,24 @@ public class Identificacao {
         return true;
     }
 
+    //JAVADOC
+    public int profundidade(int matriz[][], int qtdN, int raiz, boolean visitados[][], int caminho) {
+
+        for (int i = 0; i < qtdN; i++) {
+            for (int j = 0; j < qtdN; j++) {
+                if (matriz[raiz][i] != 0) {
+                    if (visitados[i][j] == false) {
+                        visitados[i][j] = true;
+                        caminho += 1;
+                        profundidade(matriz, qtdN, i, visitados, caminho);
+                    }
+                }
+            }
+
+        }
+        return caminho;
+    }
+
     /**
      * Verifica se um grafo é planar.
      *
@@ -53,51 +72,77 @@ public class Identificacao {
      * falso.
      */
     public boolean VerifGrafoPlanar(Grafo grafo) {
-        // Fazer a validação e retornar false se não for planar
-        Matriz mt = grafo.getMatrizAdj();
-        int nos = grafo.quantidadeNos();
-        int aresta = grafo.quantidadeArestas();
-        int vetor[] = new int[grafo.quantidadeNos()];
-        int cont =1;
-        int vetorsomado=0;
-        int n=0;
-        int it=0;
-        int soma=0;
-        /* Verifica o Maior Ciclo */
-        do {
-                
-              
+        int qtdN = grafo.quantidadeNos();
+        int qtdA = grafo.quantidadeArestas();
+        boolean visitados[][] = new boolean[grafo.getMatrizAdj().getLinhas()][grafo.getMatrizAdj().getColunas()];
+        for (int i = 0; i < grafo.getMatrizAdj().getLinhas(); i++) {
+            for (int j = 0; j < grafo.getMatrizAdj().getColunas(); j++) {
+                visitados[i][j] = false;
+            }
+        }
+        //int p[] = new int[qtdN];//peso
+        int regioes = 2 - qtdN + qtdA;
+        int menorCiclo = 0;
+        //fazer dijkstra aqui atualizar valor de menorCiclo para resultado dijkstra djrodrigocamposkstra
 
-                for (int i = n; i < mt.getLinhas();) {
-                    for (int j = 0; j < mt.getColunas(); j++) {
-                        if (i != j && mt.getMatriz()[i][j] > 0) {
-                            for (int f = 0; f < grafo.quantidadeNos(); f++) {
-                                if (vetor[f] == j && cont == 1) {
-                                    cont = 20;
-                                }
-                            }
-                            for (int f = 0; f < grafo.quantidadeNos(); f++){
-                            if(vetor[f] != j && cont!= 1){
-                                soma++;
-                                vetor[vetorsomado] = soma;
-                                }
-                            }
-                            
-                        }
+        int raiz = 0;
+        int caminho = 0;
+        int matriz[][] = new int[grafo.getMatrizAdj().getLinhas()][grafo.getMatrizAdj().getColunas()];
+        matriz = grafo.getMatrizAdj().getMatriz();
+        caminho = profundidade(matriz, qtdN, raiz, visitados, caminho);
 
-                    }
+        System.err.println("CAMINHO>" + caminho);
 
-                }
-                n++;
-                vetorsomado++;
-                soma=0;
-                cont=1;
-
-            } while (it <= nos*nos);
-        
-        
-        
-        return true;
+        if (menorCiclo <= 3) {
+            return qtdA <= ((3 * qtdN) - 6); //returna true se for <= solucao
+        } else {
+            return qtdA <= ((2 * qtdN) - 4); //returna true se for <= solucao
+        }
+//        // Fazer a validação e retornar false se não for planar
+//        Matriz mt = grafo.getMatrizAdj();
+//        int nos = grafo.quantidadeNos();
+//        int aresta = grafo.quantidadeArestas();
+//        int vetor[] = new int[grafo.quantidadeNos()];
+//        int cont =1;
+//        int vetorsomado=0;
+//        int n=0;
+//        int it=0;
+//        int soma=0;
+//        /* Verifica o Maior Ciclo */
+//        do {
+//                
+//              
+//
+//                for (int i = n; i < mt.getLinhas();) {
+//                    for (int j = 0; j < mt.getColunas(); j++) {
+//                        if (i != j && mt.getMatriz()[i][j] > 0) {
+//                            for (int f = 0; f < grafo.quantidadeNos(); f++) {
+//                                if (vetor[f] == j && cont == 1) {
+//                                    cont = 20;
+//                                }
+//                            }
+//                            for (int f = 0; f < grafo.quantidadeNos(); f++){
+//                            if(vetor[f] != j && cont!= 1){
+//                                soma++;
+//                                vetor[vetorsomado] = soma;
+//                                }
+//                            }
+//                            
+//                        }
+//
+//                    }
+//
+//                }
+//                n++;
+//                vetorsomado++;
+//                soma=0;
+//                cont=1;
+//
+//            } while (it <= nos*nos);
+//        
+//        
+//        
+//        return true;
     }
 
     /**
@@ -135,7 +180,7 @@ public class Identificacao {
         // Fazer a validação e retornar false se não for conexo
         int v = 0; //Verifica
         int it = 1;
-        int ar=0;
+        int ar = 0;
         Matriz mt = grafo.getMatrizAdj();
 
         mt.imprimirMatriz();
@@ -145,93 +190,90 @@ public class Identificacao {
                 if (i != j && mt.getMatriz()[i][j] != 0) {
                     v = 0;
                     break;
+                } else {
+                    v = 1;
                 }
-                else {
-                    v=1;
-                }
-               
+
             }
-           if(v==1){
-               break;
-           }
+            if (v == 1) {
+                break;
+            }
         }
-        
-        for (int i=0; i < mt.getLinhas();i++){
-        for(int j=0; j< mt.getColunas();j++){
-            if(i != j && mt.getMatriz()[i][j] > 0){
-            ar++;
+
+        for (int i = 0; i < mt.getLinhas(); i++) {
+            for (int j = 0; j < mt.getColunas(); j++) {
+                if (i != j && mt.getMatriz()[i][j] > 0) {
+                    ar++;
+                }
+            }
         }
+        ar = ar / 2;
+        if (ar < grafo.quantidadeNos()) {
+            v = 1;
         }
-    }
-        ar = ar/2;
-        if(ar < grafo.quantidadeNos()){
-            v=1;
-        }
-        
+
         if (v == 0) {
             int n = 0;
             int cont = 1;
             int nos = grafo.quantidadeNos();
 
             int vetor[] = new int[grafo.quantidadeNos()];
-            
+
             for (int a = 0; a < grafo.quantidadeNos(); a++) {
                 vetor[a] = -1;
             }
-            
+
             int vetorsomado = 0;
             vetor[vetorsomado] = 0;
             System.out.println("" + vetor[vetorsomado] + "alow");
             vetorsomado++;
-           
-            
-                    
-             for (int i = 0; i < mt.getLinhas();i++) {
-                    cont = 1;
-                    for (int j = 0; j < mt.getColunas(); j++) {
-                        if (j != i && mt.getMatriz()[i][j] > 0) {
-                            cont=1;
-                            for (int f = 0; f < grafo.quantidadeNos(); f++) {
-                                
-                                if (vetor[f] == j && cont == 1) {
-                                    cont = 20;
-                                }
-                                
+
+            for (int i = 0; i < mt.getLinhas(); i++) {
+                cont = 1;
+                for (int j = 0; j < mt.getColunas(); j++) {
+                    if (j != i && mt.getMatriz()[i][j] > 0) {
+                        cont = 1;
+                        for (int f = 0; f < grafo.quantidadeNos(); f++) {
+
+                            if (vetor[f] == j && cont == 1) {
+                                cont = 20;
                             }
-                            for (int f = 0; f < grafo.quantidadeNos(); f++){
-                            if(vetor[f] != j && cont== 1){
+
+                        }
+                        for (int f = 0; f < grafo.quantidadeNos(); f++) {
+                            if (vetor[f] != j && cont == 1) {
                                 vetor[vetorsomado] = j;
-                                 System.out.println("" + vetor[vetorsomado] + "alowzim");
+                                System.out.println("" + vetor[vetorsomado] + "alowzim");
                                 vetorsomado++;
                                 break;
                             }
-                            }
-                            
                         }
 
                     }
-             }
-          
-        int som=0;
-        for(int f=0; f < grafo.quantidadeNos();f++){
-          if(vetor[f]!=-1){
-              som++;
-          }
+
+                }
+            }
+
+            int som = 0;
+            for (int f = 0; f < grafo.quantidadeNos(); f++) {
+                if (vetor[f] != -1) {
+                    som++;
+                }
+            }
+            /*Verifica o numero de valores no Vetor*/
+            if (som == grafo.quantidadeNos()) {
+                System.out.println("O Grafo é Conexo");
+                return true;
+            } else {
+                System.out.println("O Grafo não é Conexo");
+                return false;
+            }
         }
-        /*Verifica o numero de valores no Vetor*/
-        if (som == grafo.quantidadeNos()) {
-            System.out.println("O Grafo é Conexo");
-            return true;
-        } else {
-            System.out.println("O Grafo não é Conexo");
-            return false;
-        }
-    }
         if (v == 1) {
             System.out.println("O Grafo não é Conexo");
             return false;
-        } 
-        
-    return false;
+        }
+
+        return false;
     }
 }
