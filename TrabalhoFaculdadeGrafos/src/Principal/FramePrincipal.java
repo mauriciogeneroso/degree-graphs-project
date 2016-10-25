@@ -124,6 +124,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         rButtonMatrizAdj.setSelected(true);
         rButtonMatrizAdj.setText("Matriz de Adjacência");
+        rButtonMatrizAdj.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rButtonMatrizAdj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rButtonMatrizAdjActionPerformed(evt);
@@ -131,6 +132,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         rButtonMatrizInc.setText("Matriz de Incidência");
+        rButtonMatrizInc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rButtonMatrizInc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rButtonMatrizIncActionPerformed(evt);
@@ -138,6 +140,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         rButtonListaAdj.setText("Lista de Adjacência");
+        rButtonListaAdj.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rButtonListaAdj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rButtonListaAdjActionPerformed(evt);
@@ -145,6 +148,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         rButtonListaInc.setText("Lista de Incidência");
+        rButtonListaInc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rButtonListaInc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rButtonListaIncActionPerformed(evt);
@@ -180,6 +184,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btSimples.setText("O grafo é simples?");
+        btSimples.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btSimples.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSimplesActionPerformed(evt);
@@ -187,6 +192,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btCompleto.setText("O grafo é completo?");
+        btCompleto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btCompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCompletoActionPerformed(evt);
@@ -194,6 +200,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btConexo.setText("O grafo é conexo?");
+        btConexo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btConexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btConexoActionPerformed(evt);
@@ -201,6 +208,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btPlanar.setText("O grafo é planar?");
+        btPlanar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btPlanar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btPlanarActionPerformed(evt);
@@ -237,6 +245,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btCarrregarGrafo.setText("Importar Grafo");
+        btCarrregarGrafo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btCarrregarGrafo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCarrregarGrafoActionPerformed(evt);
@@ -244,6 +253,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btSalvarGrafo.setText("Exportar Grafo");
+        btSalvarGrafo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btSalvarGrafo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSalvarGrafoActionPerformed(evt);
@@ -294,30 +304,35 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        btSair.setText("Sair");
+        btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Util/Images/ic_exit.png"))); // NOI18N
+        btSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSairActionPerformed(evt);
             }
         });
 
-        btLimpar.setText("Limpar dados");
+        btLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Util/Images/ic_clear.png"))); // NOI18N
+        btLimpar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btLimparActionPerformed(evt);
             }
         });
 
-        btVisualizar.setText("Visualizar");
+        btVisualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Util/Images/ic_view.png"))); // NOI18N
+        btVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        btEntradaDados.setText("Inserir novo");
+        btEntradaDados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Util/Images/ic_add.png"))); // NOI18N
+        btEntradaDados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btEntradaDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEntradaDadosActionPerformed(evt);
             }
         });
 
-        btConfig.setText("Usuário");
+        btConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Util/Images/ic_settings.png"))); // NOI18N
+        btConfig.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btConfig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btConfigActionPerformed(evt);
@@ -329,34 +344,35 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btEntradaDados)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btVisualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btLimpar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(btConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btEntradaDados, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btSair)
-                    .addComponent(btLimpar)
-                    .addComponent(btVisualizar)
-                    .addComponent(btEntradaDados)
-                    .addComponent(btConfig))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(btVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10))
+                    .addComponent(btEntradaDados, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         menuArquivo.setText("Arquivo");

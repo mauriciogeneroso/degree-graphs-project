@@ -27,7 +27,7 @@ public class Mensagem extends javax.swing.JDialog {
         ImageIcon image = null;
         switch (icon) {
             case 1: //info
-                image = new ImageIcon(getClass().getResource("/Util/Icons/info.png"));
+                image = new ImageIcon(getClass().getResource(Strings.PATH_TO_ICON_FOLDER + "info.png"));
                 jpBackground.setBackground(Color.blue);
                 break;
             case 2: //warn
@@ -96,12 +96,13 @@ public class Mensagem extends javax.swing.JDialog {
         jlMessage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jlTitle.setBackground(new java.awt.Color(255, 255, 255));
-        jlTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jlTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
 
         jlIcon.setBackground(new java.awt.Color(255, 255, 255));
         jlIcon.setPreferredSize(new java.awt.Dimension(128, 128));
 
         jlOk.setBackground(new java.awt.Color(244, 244, 244));
+        jlOk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jlOk.setPreferredSize(new java.awt.Dimension(64, 64));
         jlOk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
