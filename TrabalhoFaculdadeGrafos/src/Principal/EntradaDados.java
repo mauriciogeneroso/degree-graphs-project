@@ -26,18 +26,16 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
 
-    private Grafo grafo;
-    private javax.swing.JFrame frame;
-    private Grafo old = null;
+    private Grafo grafo2;
+    private FramePrincipal frame;
     private boolean desabilitar = true;
     private ButtonGroup buttonGroup1;
     private ButtonGroup buttonGroup2;
 
-    public EntradaDados(Grafo grafo, javax.swing.JFrame frame) {
+    public EntradaDados(FramePrincipal frame) {
         initComponents();
         this.frame = frame;
-        this.grafo = grafo;
-        old = grafo;
+        this.grafo2 = new Grafo();
         
         // Grupo de botões para os JRadioButton direcionado e não direcionado
         buttonGroup1 = new ButtonGroup();
@@ -443,10 +441,6 @@ public class EntradaDados extends javax.swing.JFrame {
             rButtonCompleto.setSelected(true);
             MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
         } else {
-
-            if (grafo.getMatrizAdj() != null) {
-                grafo = new Grafo();
-            }
             botaoDefinir();
         }
     }//GEN-LAST:event_rButtonDefinirActionPerformed
@@ -481,10 +475,7 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_rButtonCompletoActionPerformed
 
     private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
-//        if (old != null) {
-//            grafo = old;
-//            old = null;
-//        }
+        
         exit();
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
@@ -496,12 +487,12 @@ public class EntradaDados extends javax.swing.JFrame {
             MensagemCtrl.callMessage("Existem arestas com o mesmo nome", "Aviso", 2);
         } else {
             try {
-                grafo.setArestas(capturarArestas(entradaArestas.getText()));
-                grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
-                grafo.iniciarListas();
+                grafo2.setArestas(capturarArestas(entradaArestas.getText()));
+                grafo2.iniciarMatriz(new MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
+                grafo2.iniciarListas();
                 cBoxAresta.removeAllItems();
                 botaoDefinir();
-                for (String arestaa : grafo.getArestas()) {
+                for (String arestaa : grafo2.getArestas()) {
                     cBoxAresta.addItem(arestaa);
                 }
                 buttonDefinirAdjacencia.setEnabled(true);
@@ -514,13 +505,13 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private void buttonDefinirAdjacenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDefinirAdjacenciaActionPerformed
         if (rButtonNaoDirecionado.isSelected() && rButtonDefinir.isSelected()) {
-            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo.alterarListaGrafoNaoDirecionado(grafo.getNoPosicao(posicaoNoInicialSelecionado()), grafo.getNoPosicao(posicaoNoFinalSelecionado()), grafo.getArestaPosicao(posicaoArestaSelecionada()));
+            grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+            grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+            grafo2.alterarListaGrafoNaoDirecionado(grafo2.getNoPosicao(posicaoNoInicialSelecionado()), grafo2.getNoPosicao(posicaoNoFinalSelecionado()), grafo2.getArestaPosicao(posicaoArestaSelecionada()));
         } else if (rButtonDirecionado.isSelected() && rButtonDefinir.isSelected()) {
-            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-            grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(posicaoNoInicialSelecionado()), grafo.getNoPosicao(posicaoNoFinalSelecionado()), grafo.getArestaPosicao(posicaoArestaSelecionada()));
+            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+            grafo2.alterarListaGrafoDirecionado(grafo2.getNoPosicao(posicaoNoInicialSelecionado()), grafo2.getNoPosicao(posicaoNoFinalSelecionado()), grafo2.getArestaPosicao(posicaoArestaSelecionada()));
         }
         //Após definir remove a aresta da seleção de acordo com o index
         cBoxAresta.removeItemAt(cBoxAresta.getSelectedIndex());
@@ -548,15 +539,15 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
         if (rButtonDefinir.isSelected()) {
-            old = null;
+            frame.setGrafo(grafo2);
             exit();
         } else if (entradaNos.getText().trim().equals("")) {
             MensagemCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
         } else {
             // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
-            grafo.setNos(capturarNos(entradaNos.getText()));
+            grafo2.setNos(capturarNos(entradaNos.getText()));
 
-            if (grafo.quantidadeNos() == 1) {
+            if (grafo2.quantidadeNos() == 1) {
                 MensagemCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
 
             } else if (nosRepetidos()) {
@@ -564,14 +555,14 @@ public class EntradaDados extends javax.swing.JFrame {
             } else {
 
                 int contArestas = 0;
-                for (int i = 0; i < grafo.quantidadeNos(); i++) {
-                    for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
+                for (int i = 0; i < grafo2.quantidadeNos(); i++) {
+                    for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
                         contArestas++;
                     }
                 }
 
-                grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos()); // Adjacência
-                grafo.iniciarListas();
+                grafo2.iniciarMatriz(new MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos()); // Adjacência
+                grafo2.iniciarListas();
                 if (rButtonNaoDirecionado.isSelected()) {
                     // Não direcionado
                     String[] arestasNaoDirecionado = new String[contArestas];
@@ -579,14 +570,14 @@ public class EntradaDados extends javax.swing.JFrame {
                         arestasNaoDirecionado[i] = String.valueOf(i);
                     }
 
-                    grafo.setArestas(arestasNaoDirecionado);
-                    grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                    grafo2.setArestas(arestasNaoDirecionado);
+                    grafo2.iniciarMatriz(new MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
                     contArestas = 0;
-                    for (int i = 0; i < grafo.quantidadeNos(); i++) {
-                        for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
-                            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizAdj(), i, j, contArestas);
-                            grafo.alterarMatrizGrafoNaoDirecionado(grafo.getMatrizInc(), i, j, contArestas);
-                            grafo.alterarListaGrafoNaoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas++));
+                    for (int i = 0; i < grafo2.quantidadeNos(); i++) {
+                        for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
+                            grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizAdj(), i, j, contArestas);
+                            grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizInc(), i, j, contArestas);
+                            grafo2.alterarListaGrafoNaoDirecionado(grafo2.getNoPosicao(i), grafo2.getNoPosicao(j), grafo2.getArestaPosicao(contArestas++));
                         }
                     }
                 } else {
@@ -596,17 +587,17 @@ public class EntradaDados extends javax.swing.JFrame {
                         arestasDirecionado[i] = String.valueOf(i);
                     }
 
-                    grafo.setArestas(arestasDirecionado);
-                    grafo.iniciarMatriz(new MatrizInc(), grafo.quantidadeNos(), grafo.quantidadeArestas());
+                    grafo2.setArestas(arestasDirecionado);
+                    grafo2.iniciarMatriz(new MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
                     contArestas = 0;
-                    for (int i = 0; i < grafo.quantidadeNos(); i++) {
-                        for (int j = i + 1; j < grafo.quantidadeNos(); j++) {
-                            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), i, j, contArestas); // Matriz Adj Direcionado
-                            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizAdj(), j, i, contArestas); // Matriz Adj direcionado, com os nós invertidos para ficar completo
-                            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), i, j, contArestas); // Matriz Inc, mesmo do item acima, a linha abaixo é a volta da aresta direcionada
-                            grafo.alterarMatrizGrafoDirecionado(grafo.getMatrizInc(), j, i, contArestas + 1);
-                            grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(i), grafo.getNoPosicao(j), grafo.getArestaPosicao(contArestas));
-                            grafo.alterarListaGrafoDirecionado(grafo.getNoPosicao(j), grafo.getNoPosicao(i), grafo.getArestaPosicao(contArestas + 1));
+                    for (int i = 0; i < grafo2.quantidadeNos(); i++) {
+                        for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
+                            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizAdj(), i, j, contArestas); // Matriz Adj Direcionado
+                            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizAdj(), j, i, contArestas); // Matriz Adj direcionado, com os nós invertidos para ficar completo
+                            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizInc(), i, j, contArestas); // Matriz Inc, mesmo do item acima, a linha abaixo é a volta da aresta direcionada
+                            grafo2.alterarMatrizGrafoDirecionado(grafo2.getMatrizInc(), j, i, contArestas + 1);
+                            grafo2.alterarListaGrafoDirecionado(grafo2.getNoPosicao(i), grafo2.getNoPosicao(j), grafo2.getArestaPosicao(contArestas));
+                            grafo2.alterarListaGrafoDirecionado(grafo2.getNoPosicao(j), grafo2.getNoPosicao(i), grafo2.getArestaPosicao(contArestas + 1));
                             contArestas += 2;
                         } // fim do for
                     } // fim do for
@@ -619,9 +610,9 @@ public class EntradaDados extends javax.swing.JFrame {
                     Logger.getLogger(EntradaDados.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
+                frame.setGrafo(grafo2);
                 exit();
-
-            } // fim do else
+            } // fim do else            
         } // fim do else
     }//GEN-LAST:event_buttonCriarGrafoActionPerformed
 
@@ -686,8 +677,8 @@ public class EntradaDados extends javax.swing.JFrame {
     private int posicaoNoInicialSelecionado() {
         String tempNoInicialSelected = cBoxNoInicial.getItemAt(cBoxNoInicial.getSelectedIndex());
         int posicaoLinhaNo = 0;
-        for (int i = 0; i < grafo.quantidadeNos(); i++) {
-            if (grafo.getNos()[i].equals(tempNoInicialSelected)) {
+        for (int i = 0; i < grafo2.quantidadeNos(); i++) {
+            if (grafo2.getNos()[i].equals(tempNoInicialSelected)) {
                 posicaoLinhaNo = i;
                 break;
             }
@@ -704,8 +695,8 @@ public class EntradaDados extends javax.swing.JFrame {
     private int posicaoNoFinalSelecionado() {
         String tempNoFinalSelected = cBoxNoFinal.getItemAt(cBoxNoFinal.getSelectedIndex());
         int posicaoColunaNo = 0;
-        for (int i = 0; i < grafo.quantidadeNos(); i++) {
-            if (grafo.getNos()[i].equals(tempNoFinalSelected)) {
+        for (int i = 0; i < grafo2.quantidadeNos(); i++) {
+            if (grafo2.getNos()[i].equals(tempNoFinalSelected)) {
                 posicaoColunaNo = i;
                 break;
             }
@@ -722,8 +713,8 @@ public class EntradaDados extends javax.swing.JFrame {
     private int posicaoArestaSelecionada() {
         String tempArestaSelected = cBoxAresta.getItemAt(cBoxAresta.getSelectedIndex());
         int posicaoAresta = 0;
-        for (int i = 0; i < grafo.quantidadeArestas(); i++) {
-            if (grafo.getArestas()[i].equals(tempArestaSelected)) {
+        for (int i = 0; i < grafo2.quantidadeArestas(); i++) {
+            if (grafo2.getArestas()[i].equals(tempArestaSelected)) {
                 posicaoAresta = i;
                 break;
             }
@@ -751,15 +742,15 @@ public class EntradaDados extends javax.swing.JFrame {
     }
 
     private void botaoDefinir() {
-        grafo.setNos(capturarNos(entradaNos.getText()));
-        if (!grafo.noIsEmpty()) {
-            grafo.iniciarMatriz(new MatrizAdj(), grafo.quantidadeNos(), grafo.quantidadeNos());
+        grafo2.setNos(capturarNos(entradaNos.getText()));
+        if (!grafo2.noIsEmpty()) {
+            grafo2.iniciarMatriz(new MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos());
             // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
             // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
-            grafo.iniciarListas();
+            grafo2.iniciarListas();
             cBoxNoInicial.removeAllItems();
             cBoxNoFinal.removeAllItems();
-            for (String no : grafo.getNos()) {
+            for (String no : grafo2.getNos()) {
                 cBoxNoInicial.addItem(no);
                 cBoxNoFinal.addItem(no);
             }
@@ -807,8 +798,8 @@ public class EntradaDados extends javax.swing.JFrame {
      * Método para cancelar a criação do grafo
      */
     private void cancelarCriacaoGrafo() {
-        if (grafo.getMatrizAdj() == null) {
-            grafo.destruirGrafo();
+        if (grafo2.getMatrizAdj() == null) {
+            grafo2.destruirGrafo();
         }
     }
 
@@ -857,29 +848,5 @@ public class EntradaDados extends javax.swing.JFrame {
                     .getName()).log(Level.SEVERE, null, ex);
         }
         this.dispose();
-    }
-}
-
-/**
- * Classe para instânciar o JFrame
- */
-class SingleStanceDados {
-
-    private static EntradaDados janelaDados = null;
-
-    private SingleStanceDados() {
-    }
-
-    /**
-     * Método para permitir que seja aberto somente uma janela por vez
-     */
-    public static EntradaDados getStance(Grafo grafo, javax.swing.JFrame frame) {
-        if (janelaDados == null) {
-            janelaDados = new EntradaDados(grafo, frame);
-            janelaDados.setVisible(true);
-        } else {
-            janelaDados.resetarJanela();
-        }
-        return janelaDados;
     }
 }

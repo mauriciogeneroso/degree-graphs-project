@@ -432,7 +432,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntradaDadosActionPerformed
-        entrada = SingleStanceDados.getStance(grafo, this);
+        EntradaDados entrada = new EntradaDados(this);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
         this.setVisible(false);
@@ -513,7 +513,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btConfigActionPerformed
 
     private void jmiNovoGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNovoGrafoActionPerformed
-        entrada = SingleStanceDados.getStance(grafo, this);
+        EntradaDados entrada = new EntradaDados(this);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
     }//GEN-LAST:event_jmiNovoGrafoActionPerformed
@@ -669,6 +669,10 @@ public class FramePrincipal extends javax.swing.JFrame {
         for (int i = 0; i < grafo.quantidadeNos(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
         }
+    }
+
+    public void setGrafo(Grafo grafo) {
+        this.grafo = grafo;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
