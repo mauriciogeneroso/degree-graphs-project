@@ -72,32 +72,39 @@ public class Identificacao {
      * falso.
      */
     public boolean VerifGrafoPlanar(Grafo grafo) {
-        int qtdN = grafo.quantidadeNos();
-        int qtdA = grafo.quantidadeArestas();
-        boolean visitados[][] = new boolean[grafo.getMatrizAdj().getLinhas()][grafo.getMatrizAdj().getColunas()];
-        for (int i = 0; i < grafo.getMatrizAdj().getLinhas(); i++) {
-            for (int j = 0; j < grafo.getMatrizAdj().getColunas(); j++) {
-                visitados[i][j] = false;
+        int v = 1;
+        if (VerifGrafoSimples(grafo) == false || VerifGrafoConexo(grafo)  == false) {
+            v = 0;
+            //Chama as funções Grafo Simples e Grafo Conexo para Verificar a possibilidade de Calculo Planar
+        }
+
+        if (v == 1) {
+            int qtdN = grafo.quantidadeNos();
+            int qtdA = grafo.quantidadeArestas();
+            boolean visitados[][] = new boolean[grafo.getMatrizAdj().getLinhas()][grafo.getMatrizAdj().getColunas()];
+            for (int i = 0; i < grafo.getMatrizAdj().getLinhas(); i++) {
+                for (int j = 0; j < grafo.getMatrizAdj().getColunas(); j++) {
+                    visitados[i][j] = false;
+                }
             }
-        }
-        //int p[] = new int[qtdN];//peso
-        int regioes = 2 - qtdN + qtdA;
-        int menorCiclo = 0;
-        //fazer dijkstra aqui atualizar valor de menorCiclo para resultado dijkstra djrodrigocamposkstra
+            //int p[] = new int[qtdN];//peso
+            int regioes = 2 - qtdN + qtdA;
+            int menorCiclo = 0;
+            //fazer dijkstra aqui atualizar valor de menorCiclo para resultado dijkstra djrodrigocamposkstra
 
-        int raiz = 0;
-        int caminho = 0;
-        int matriz[][] = new int[grafo.getMatrizAdj().getLinhas()][grafo.getMatrizAdj().getColunas()];
-        matriz = grafo.getMatrizAdj().getMatriz();
-        caminho = profundidade(matriz, qtdN, raiz, visitados, caminho);
+            int raiz = 0;
+            int caminho = 0;
+            int matriz[][] = new int[grafo.getMatrizAdj().getLinhas()][grafo.getMatrizAdj().getColunas()];
+            matriz = grafo.getMatrizAdj().getMatriz();
+            caminho = profundidade(matriz, qtdN, raiz, visitados, caminho);
 
-        System.err.println("CAMINHO>" + caminho);
+            System.err.println("CAMINHO>" + caminho);
 
-        if (menorCiclo <= 3) {
-            return qtdA <= ((3 * qtdN) - 6); //returna true se for <= solucao
-        } else {
-            return qtdA <= ((2 * qtdN) - 4); //returna true se for <= solucao
-        }
+            if (menorCiclo <= 3) {
+                return qtdA <= ((3 * qtdN) - 6); //returna true se for <= solucao
+            } else {
+                return qtdA <= ((2 * qtdN) - 4); //returna true se for <= solucao
+            }
 //        // Fazer a validação e retornar false se não for planar
 //        Matriz mt = grafo.getMatrizAdj();
 //        int nos = grafo.quantidadeNos();
@@ -143,6 +150,8 @@ public class Identificacao {
 //        
 //        
 //        return true;
+        }
+        return false;
     }
 
     /**
