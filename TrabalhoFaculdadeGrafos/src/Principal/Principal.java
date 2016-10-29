@@ -42,8 +42,8 @@ public class Principal extends JWindow {
      */
     public Principal() {
         absoluto = new AbsoluteLayout();
-        absimage = new AbsoluteConstraints(10, 10);
-        absbarra = new AbsoluteConstraints(0, 520);
+        absimage = new AbsoluteConstraints(0, 0);
+        absbarra = new AbsoluteConstraints(0, 500);
         jlabel = new JLabel();
         image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_IMAGES_FOLDER + "splash.png"));
         jlabel.setIcon(image);
@@ -69,7 +69,7 @@ public class Principal extends JWindow {
                     barra.setValue(i);
                     i++;
                     try {
-                        sleep(1);
+                        sleep(100);
                     } catch (InterruptedException ex) {
                         javax.swing.JOptionPane.showMessageDialog(null, "Erro ao carregar a barra de progresso!");
                     }
