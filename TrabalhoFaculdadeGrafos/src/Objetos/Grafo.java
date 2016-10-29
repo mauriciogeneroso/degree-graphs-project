@@ -2,10 +2,10 @@ package Objetos;
 
 import Objetos.Armazenamento.ElementoAdj;
 import Objetos.Armazenamento.ElementoInc;
-import Objetos.Armazenamento.Lista;
 import Objetos.Armazenamento.MatrizInc;
 import Objetos.Armazenamento.MatrizAdj;
 import Objetos.Armazenamento.Matriz;
+import java.util.LinkedList;
 
 /**
  * Classe para armazenar a Matriz e lista de Adjacência e Incidência. O
@@ -32,8 +32,8 @@ public class Grafo implements java.io.Serializable {
     private Matriz matrizInc;
 
     // Listas
-    private Lista<ElementoAdj>[] listaAdj;
-    private Lista<ElementoInc>[] listaInc;
+    private LinkedList<ElementoAdj>[] listaAdj;
+    private LinkedList<ElementoInc>[] listaInc;
 
     // Nós e arestas
     private String[] nos;
@@ -76,7 +76,7 @@ public class Grafo implements java.io.Serializable {
      *
      * @return Lista de elementos da lista de adjacencia
      */
-    public Lista<ElementoAdj>[] getListaAdj() {
+    public LinkedList<ElementoAdj>[] getListaAdj() {
         return listaAdj;
     }
 
@@ -85,7 +85,7 @@ public class Grafo implements java.io.Serializable {
      *
      * @return Lista de elementos da lista de incidência
      */
-    public Lista<ElementoInc>[] getListaInc() {
+    public LinkedList<ElementoInc>[] getListaInc() {
         return listaInc;
     }
 
@@ -195,14 +195,14 @@ public class Grafo implements java.io.Serializable {
      * Inicia as listas.
      */
     public void iniciarListas() {
-        listaAdj = new Lista[quantidadeNos()];
+        listaAdj = new LinkedList[quantidadeNos()];
         for (int i = 0; i < quantidadeNos(); i++) {
-            listaAdj[i] = new Lista<>();
+            listaAdj[i] = new LinkedList<>();
         }
 
-        listaInc = new Lista[quantidadeNos()];
+        listaInc = new LinkedList[quantidadeNos()];
         for (int i = 0; i < quantidadeNos(); i++) {
-            listaInc[i] = new Lista<>();
+            listaInc[i] = new LinkedList<>();
         }
     }
 
@@ -242,7 +242,7 @@ public class Grafo implements java.io.Serializable {
      *
      * @param lt Lista - Lista a ser impressa
      */
-    public void imprimirLista(Lista[] lt) {
+    public void imprimirLista(LinkedList[] lt) {
         for (int i = 0; i < quantidadeNos(); i++) {
             System.out.println(nos[i] + " -> " + lt[i]);
         }
@@ -273,15 +273,15 @@ public class Grafo implements java.io.Serializable {
      */
     public void alterarListaGrafoNaoDirecionado(String noInicial, String noFinal, String aresta) {
         if (noInicial.equals(noFinal)) {
-            listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
+            listaAdj[posicaoLista(noInicial)].add(new ElementoAdj(noFinal));
 
-            listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta)); //uni os dois para não ter 2 ifs com mesmo resultado, desnecessário
+            listaInc[posicaoLista(noInicial)].add(new ElementoInc(noFinal, aresta)); //uni os dois para não ter 2 ifs com mesmo resultado, desnecessário
         } else {
-            listaAdj[posicaoLista(noInicial)].adiciona(new ElementoAdj(noFinal));
-            listaAdj[posicaoLista(noFinal)].adiciona(new ElementoAdj(noInicial));
+            listaAdj[posicaoLista(noInicial)].add(new ElementoAdj(noFinal));
+            listaAdj[posicaoLista(noFinal)].add(new ElementoAdj(noInicial));
 
-            listaInc[posicaoLista(noInicial)].adiciona(new ElementoInc(noFinal, aresta));
-            listaInc[posicaoLista(noFinal)].adiciona(new ElementoInc(noInicial, aresta));
+            listaInc[posicaoLista(noInicial)].add(new ElementoInc(noFinal, aresta));
+            listaInc[posicaoLista(noFinal)].add(new ElementoInc(noInicial, aresta));
         }
         System.out.println("Lista de Adjacência não direcionada: ");
         imprimirLista(listaAdj);

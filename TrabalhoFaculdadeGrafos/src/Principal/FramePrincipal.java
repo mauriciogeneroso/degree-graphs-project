@@ -2,10 +2,10 @@ package Principal;
 
 import CaracteristicasGrafo.Identificacao;
 import File.Arquivo;
-import Objetos.Armazenamento.Lista;
 import Objetos.Grafo;
 import Util.MensagemCtrl;
 import View.Login.Configuracao;
+import java.util.LinkedList;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 
@@ -365,14 +365,13 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10))
-                    .addComponent(btEntradaDados, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btEntradaDados, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10))
         );
 
         menuArquivo.setText("Arquivo");
@@ -664,7 +663,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Lista de Adjacência: \n\n");
         String[] nos = grafo.getNos();
-        Lista[] lt = grafo.getListaAdj();
+        LinkedList[] lt = grafo.getListaAdj();
 
         for (int i = 0; i < grafo.quantidadeNos(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
@@ -680,7 +679,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Lista de Incidência: \n\n");
         String[] nos = grafo.getNos();
-        Lista[] lt = grafo.getListaInc();
+        LinkedList[] lt = grafo.getListaInc();
 
         for (int i = 0; i < grafo.quantidadeNos(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
