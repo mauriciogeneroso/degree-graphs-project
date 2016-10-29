@@ -54,6 +54,7 @@ public class Principal extends JWindow {
         this.getContentPane().setLayout(absoluto);
         this.getContentPane().add(jlabel, absimage);
         this.getContentPane().add(barra, absbarra);
+        this.setAlwaysOnTop(true);
         barra.setForeground(Color.gray);
         barra.setString(zero);
         barra.setStringPainted(true);
