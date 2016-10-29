@@ -179,7 +179,8 @@ public class Login extends javax.swing.JFrame {
             }
             if (jcbSave.isSelected()) {
                 CarregaConfiguracoes.setSaveUsername(true);
-
+            } else {
+                CarregaConfiguracoes.setSaveUsername(false);
             }
             FramePrincipal fm = new FramePrincipal();
             fm.setVisible(true);
