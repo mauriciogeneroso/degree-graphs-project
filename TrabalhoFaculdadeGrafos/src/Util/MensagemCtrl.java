@@ -1,10 +1,5 @@
 package Util;
 
-import Util.Mensagens.Mensagem;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  * Classe responsável controle de exibição de mensagens.
  *
@@ -23,6 +18,7 @@ public final class MensagemCtrl {
 
     private MensagemCtrl() {
     }
+    private static final Util.Log log = new Util.Log();
 
     /**
      * Método para chamar classe de mensagem
@@ -32,14 +28,15 @@ public final class MensagemCtrl {
      * @param iconType int - 1 - Código do ícone: <br>1 - Informação<br>2 -
      * Aviso<br>3 - Configurações<br>4 - Adicionar<br>5 - Exportar<br>6 -
      * Importar<br>7 - Sucesso<br>8 - Erro
-     * @see Mensagem
+     * @see Util.Mensagens.Mensagem
      */
     public static void callMessage(String mensagem, String titulo, int iconType) {
         try {
-            Mensagem message = new Mensagem(mensagem, titulo, iconType);
+            Util.Mensagens.Mensagem message = new Util.Mensagens.Mensagem(mensagem, titulo, iconType);
             message.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(MensagemCtrl.class.getName()).log(Level.SEVERE, null, ex);
+            log.put("MensagemCtrl", "callMessage", 0, "Mensagem :: " + mensagem + "] [Título :: " + titulo + "] [Ícone :: " + Integer.toString(iconType));
+        } catch (java.io.IOException ex) {
+            log.put("MensagemCtrl", "callMessage", 1, ex.getMessage());
         }
     }
 }

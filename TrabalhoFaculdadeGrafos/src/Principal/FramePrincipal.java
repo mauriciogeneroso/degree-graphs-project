@@ -1,13 +1,6 @@
 package Principal;
 
-import CaracteristicasGrafo.Identificacao;
-import File.Arquivo;
 import Objetos.Grafo;
-import Util.MensagemCtrl;
-import View.Login.Configuracao;
-import java.util.LinkedList;
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
 
 /**
  * Estudantes de Ciência da Computação - 4 fase.
@@ -25,10 +18,11 @@ public class FramePrincipal extends javax.swing.JFrame {
     private static final long serialVersionUID = 1L;
     private static final Util.Log log = new Util.Log();
 
-    private Grafo grafo;
+    private Grafo grafo = new Grafo();
     private EntradaDados entrada;
-    private Identificacao ident;
-    private ButtonGroup buttonGroup;
+    private CaracteristicasGrafo.Identificacao ident = new CaracteristicasGrafo.Identificacao();
+    ;
+    private javax.swing.ButtonGroup buttonGroup = new javax.swing.ButtonGroup();
 
     public FramePrincipal() {
         /* Set the Nimbus look and feel */
@@ -54,15 +48,14 @@ public class FramePrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
         initComponents();
-        ImageIcon img = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
+        javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
         this.setIconImage(img.getImage());
-        ident = new Identificacao();
-        grafo = new Grafo();
-        buttonGroup = new ButtonGroup();
         buttonGroup.add(rButtonMatrizAdj);
         buttonGroup.add(rButtonMatrizInc);
         buttonGroup.add(rButtonListaAdj);
         buttonGroup.add(rButtonListaInc);
+        log.put("FramePrincipal", "Construtor", "Construído com sucesso");
+
     }
 
     @SuppressWarnings("unchecked")
@@ -452,53 +445,69 @@ public class FramePrincipal extends javax.swing.JFrame {
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
         this.setVisible(false);
+        log.put("FramePrincipal", "btEntradaDadosActionPerformed", "EntradaDados exibido com sucesso");
     }//GEN-LAST:event_btEntradaDadosActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         if (grafo.getMatrizAdj() != null) {
             textArea.setText("");
             grafo.destruirGrafo();
+            log.put("FramePrincipal", "btLimparActionPerformed", 0, "Grafo destruído");
         }
+        log.put("FramePrincipal", "btLimparActionPerformed", 1, "Sem grafo para destruir");
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimplesActionPerformed
         if (grafo.getMatrizAdj() == null) {
-            MensagemCtrl.callMessage("Não existe um grafo para verificar se é simples", "Grafo Simples", 2);
+            Util.MensagemCtrl.callMessage("Não existe um grafo para verificar se é simples", "Grafo Simples", 2);
+            log.put("FramePrincipal", "btSimplesActionPerformed", 0, "Não existe um grafo para verificar se é simples");
 
         } else if (ident.VerifGrafoSimples(grafo)) {
-            MensagemCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
+            Util.MensagemCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
+            log.put("FramePrincipal", "btSimplesActionPerformed", 1, "O grafo é simples");
         } else {
-            MensagemCtrl.callMessage("O grafo não é simples!", "Grafo Simples", 1);
+            Util.MensagemCtrl.callMessage("O grafo não é simples!", "Grafo Simples", 1);
+            log.put("FramePrincipal", "btSimplesActionPerformed", 2, "O grafo não é simples");
         }
     }//GEN-LAST:event_btSimplesActionPerformed
 
     private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
         if (grafo.getMatrizAdj() == null) {
-            MensagemCtrl.callMessage("Não existe um grafo para verificar se é completo.", "Grafo completo", 2);
+            Util.MensagemCtrl.callMessage("Não existe um grafo para verificar se é completo.", "Grafo completo", 2);
+            log.put("FramePrincipal", "btCompletoActionPerformed", 0, "Não existe um grafo para verificar se é completo");
         } else if (ident.VerifGrafoCompleto(grafo)) {
-            MensagemCtrl.callMessage("O grafo é completo", "Grafo Completo", 1);
+            Util.MensagemCtrl.callMessage("O grafo é completo", "Grafo Completo", 1);
+            log.put("FramePrincipal", "btCompletoActionPerformed", 1, "O grafo é completo");
         } else {
-            MensagemCtrl.callMessage("O grafo não é completo", "Grafo Completo", 1);
+            Util.MensagemCtrl.callMessage("O grafo não é completo", "Grafo Completo", 1);
+            log.put("FramePrincipal", "btCompletoActionPerformed", 2, "O grafo não é completo");
         }
     }//GEN-LAST:event_btCompletoActionPerformed
 
     private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
         if (grafo.getListaAdj() == null) {
-            MensagemCtrl.callMessage("Não existe um grafo para verificar se é conexo", "Grafo Conexo", 2);
+            Util.MensagemCtrl.callMessage("Não existe um grafo para verificar se é conexo", "Grafo Conexo", 2);
+            log.put("FramePrincipal", "btConexoActionPerformed", 0, "Não existe um grafo para verificar se é conexo");
         } else if (ident.VerifGrafoConexo(grafo)) {
-            MensagemCtrl.callMessage("O grafo é conexo", "Grafo Conexo", 1);
+            Util.MensagemCtrl.callMessage("O grafo é conexo", "Grafo Conexo", 1);
+            log.put("FramePrincipal", "btConexoActionPerformed", 1, "O grafo é conexo");
         } else {
-            MensagemCtrl.callMessage("O grafo não é conexo", "Grafo Conexo", 1);
+            Util.MensagemCtrl.callMessage("O grafo não é conexo", "Grafo Conexo", 1);
+            log.put("FramePrincipal", "btConexoActionPerformed", 2, "O grafo não é conexo");
         }
     }//GEN-LAST:event_btConexoActionPerformed
 
     private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
         if (grafo.getListaAdj() == null) {
-            MensagemCtrl.callMessage("Não existe um grafo para verificar se é planar", "Grafo Planar", 2);
+            Util.MensagemCtrl.callMessage("Não existe um grafo para verificar se é planar", "Grafo Planar", 2);
+            log.put("FramePrincipal", "btPlanarActionPerformed", 0, "Não existe um grafo para verificar se é planar");
+
         } else if (ident.VerifGrafoPlanar(grafo)) {
-            MensagemCtrl.callMessage("O grafo é planar", "Grafo Planar", 1);
+            Util.MensagemCtrl.callMessage("O grafo é planar", "Grafo Planar", 1);
+            log.put("FramePrincipal", "btPlanarActionPerformed", 1, "O grafo é planar");
         } else {
-            MensagemCtrl.callMessage("O grafo não é planar", "Grafo Planar", 1);
+            Util.MensagemCtrl.callMessage("O grafo não é planar", "Grafo Planar", 1);
+            log.put("FramePrincipal", "btPlanarActionPerformed", 2, "O grafo não é planar");
         }
     }//GEN-LAST:event_btPlanarActionPerformed
 
@@ -523,22 +532,27 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_rButtonListaIncActionPerformed
 
     private void btConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfigActionPerformed
-        Configuracao cfg = new Configuracao();
+        View.Login.Configuracao cfg = new View.Login.Configuracao();
         cfg.setVisible(true);
         this.dispose();
+        log.put("FramePrincipal", "btConfigActionPerformed", "Configuracao.java chamada com sucesos");
+
     }//GEN-LAST:event_btConfigActionPerformed
 
     private void jmiNovoGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNovoGrafoActionPerformed
         EntradaDados entrada = new EntradaDados(this);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
+        log.put("FramePrincipal", "btConfigActionPerformed", "EntradaDados.java chamada com sucesos");
     }//GEN-LAST:event_jmiNovoGrafoActionPerformed
 
     private void jmiSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSairActionPerformed
+        log.put("FramePrincipal", "jmiSairActionPerformed", "Programa finalizado");
         System.exit(0);
     }//GEN-LAST:event_jmiSairActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
+        log.put("FramePrincipal", "btSairActionPerformed", "Programa finalizado");
         System.exit(0);
     }//GEN-LAST:event_btSairActionPerformed
 
@@ -562,6 +576,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         JSobre jSobre = SingleStanceSobre.getStance();
         jSobre.setLocationRelativeTo(this);
         jSobre.setVisible(true);
+        log.put("FramePrincipal", "btConfigActionPerformed", "JSobre.java chamada com sucesos");
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
@@ -569,10 +585,10 @@ public class FramePrincipal extends javax.swing.JFrame {
      */
     private void importar() {
         try {
-            grafo = Arquivo.importarGrafo(this);
+            grafo = File.Arquivo.importarGrafo(this);
             verificaSeIraExibirOsDados();
         } catch (NullPointerException ex) {
-            log.put("FramePrincipal", "Exportar" , "Cancelado com sucesso!");
+            log.put("FramePrincipal", "Exportar", "Cancelado com sucesso!");
         }
     }
 
@@ -581,13 +597,13 @@ public class FramePrincipal extends javax.swing.JFrame {
      */
     private void exportar() {
         if (grafo.getListaInc() == null) {
-            MensagemCtrl.callMessage("Não existe um grafo para ser exportado!", "Exportar", 8);
-            log.put("FramePrincipal", "Exportar" , "Não existe um grafo para ser exportado!");
+            Util.MensagemCtrl.callMessage("Não existe um grafo para ser exportado!", "Exportar", 8);
+            log.put("FramePrincipal", "Exportar", "Não existe um grafo para ser exportado!");
         } else {
             try {
-                Arquivo.exportarGrafo(this, grafo);
+                File.Arquivo.exportarGrafo(this, grafo);
             } catch (NullPointerException e) {
-                log.put("FramePrincipal", "Exportar" , "Cancelado com sucesso!");
+                log.put("FramePrincipal", "Exportar", "Cancelado com sucesso!");
             }
         }
     }
@@ -664,7 +680,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Lista de Adjacência: \n\n");
         String[] nos = grafo.getNos();
-        LinkedList[] lt = grafo.getListaAdj();
+        java.util.LinkedList[] lt = grafo.getListaAdj();
 
         for (int i = 0; i < grafo.quantidadeNos(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
@@ -680,7 +696,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Lista de Incidência: \n\n");
         String[] nos = grafo.getNos();
-        LinkedList[] lt = grafo.getListaInc();
+        java.util.LinkedList[] lt = grafo.getListaInc();
 
         for (int i = 0; i < grafo.quantidadeNos(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
@@ -688,6 +704,12 @@ public class FramePrincipal extends javax.swing.JFrame {
     }
 
     public void setGrafo(Grafo grafo) {
+        if (this.grafo != grafo) {
+            log.put("FramePrincipal", "setGrafo", 0, "Grafo setado com sucesso");
+        } else {
+            log.put("FramePrincipal", "setGrafo", 1, "Grafo mantido");
+        }
+
         this.grafo = grafo;
     }
 

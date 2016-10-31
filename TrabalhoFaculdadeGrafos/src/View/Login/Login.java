@@ -1,11 +1,5 @@
 package View.Login;
 
-import Principal.FramePrincipal;
-import Util.CarregaConfiguracoes;
-import java.awt.Color;
-import java.awt.event.KeyEvent;
-import java.io.IOException;
-
 /**
  * Classe responsável pela identificação do usuário.
  *
@@ -22,6 +16,7 @@ import java.io.IOException;
 public class Login extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
+    private static final Util.Log log = new Util.Log();
 
     public Login() {
         /* Set the Nimbus look and feel */
@@ -161,12 +156,12 @@ public class Login extends javax.swing.JFrame {
     private void jbEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEntrarActionPerformed
         if (jtxtUsername.getText().trim().equals("")) {
             jlErrorMessage.setText("<html><body><pre>  Ei, informe corretamente</pre></body></html>");
-            jlErrorMessage.setForeground(Color.red);
+            jlErrorMessage.setForeground(java.awt.Color.red);
         } else if (jtxtUsername.getText().length() < 3) {
             jlErrorMessage.setText("<html><body><pre>  Ei, informe corretamente</pre></body></html>");
-            jlErrorMessage.setForeground(Color.red);
+            jlErrorMessage.setForeground(java.awt.Color.red);
         } else {
-            CarregaConfiguracoes.setUsuario(jtxtUsername.getText());
+            Util.CarregaConfiguracoes.setUsuario(jtxtUsername.getText());
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                     if ("Nimbus".equals(info.getName())) {
@@ -178,27 +173,27 @@ public class Login extends javax.swing.JFrame {
                 Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
             }
             if (jcbSave.isSelected()) {
-                CarregaConfiguracoes.setSaveUsername(true);
+                Util.CarregaConfiguracoes.setSaveUsername(true);
             } else {
-                CarregaConfiguracoes.setSaveUsername(false);
+                Util.CarregaConfiguracoes.setSaveUsername(false);
             }
-            FramePrincipal fm = new FramePrincipal();
+            Principal.FramePrincipal fm = new Principal.FramePrincipal();
             fm.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_jbEntrarActionPerformed
 
     private void jtxtUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtUsernameKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
             jbEntrar.doClick();
             jtxtUsername.requestFocus();
         }
     }//GEN-LAST:event_jtxtUsernameKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
+        jtxtUsername.setText(Util.CarregaConfiguracoes.getUsuario());
 
-        if (CarregaConfiguracoes.isUsernameSave()) {
+        if (Util.CarregaConfiguracoes.isUsernameSave()) {
             jcbSave.setSelected(true);
         }
     }//GEN-LAST:event_formWindowOpened

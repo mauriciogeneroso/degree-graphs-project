@@ -1,8 +1,5 @@
 package View.Login;
 
-import Principal.FramePrincipal;
-import Util.CarregaConfiguracoes;
-import java.io.IOException;
 
 /**
  * Classe responsável por armazenar as variáveis finais do aplicativo.
@@ -20,9 +17,12 @@ import java.io.IOException;
 public class Configuracao extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
+    private static final Util.Log log = new Util.Log();
 
     public Configuracao() {
         initComponents();
+        log.put("Configuracao", "Construtor", "Construído com sucesso");
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -187,32 +187,44 @@ public class Configuracao extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
-        jtxtUsername.setText(CarregaConfiguracoes.getUsuario());
-        if (CarregaConfiguracoes.isUsernameSave()) {
+        jtxtUsername.setText(Util.CarregaConfiguracoes.getUsuario());
+        if (Util.CarregaConfiguracoes.isUsernameSave()) {
             jbcSave.setSelected(true);
         }
+        log.put("Configuracao", "formWindowOpened", "Sucesso");
+
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        FramePrincipal fm = new FramePrincipal();
+        Principal.FramePrincipal fm = new Principal.FramePrincipal();
         fm.setVisible(true);
+        log.put("Configuracao", "formWindowClosing", "Fechada com sucesso");
+
     }//GEN-LAST:event_formWindowClosing
 
     private void jbRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRemoverActionPerformed
 
-        CarregaConfiguracoes.resetUsername();
+        Util.CarregaConfiguracoes.resetUsername();
         Util.MensagemCtrl.callMessage("Usuário resetado com sucesso!", "Sucesso!", 7);
+        log.put("Configuracao", "jbRemoverActionPerformed", "Usuário resetado com sucesso");
+
 
     }//GEN-LAST:event_jbRemoverActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
-        if (jtxtUsername.getText().trim().equals("")) {
+        String username = jtxtUsername.getText();
+        if (username.trim().equals("")) {
             Util.MensagemCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
-        } else if (jtxtUsername.getText().length() < 3) {
+            log.put("Configuracao", "jbRemoverActionPerformed", 0, "Ei, informe corretamente!");
+
+        } else if (username.length() < 3) {
             Util.MensagemCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
+            log.put("Configuracao", "jbRemoverActionPerformed", 1, ("Usuário \"" + username + "\" tem tamanho de " + username.length() + " caracteres, que é inferior ao mínimo (3)"));
+
         } else {
-            CarregaConfiguracoes.setUsuario(jtxtUsername.getText());
             Util.MensagemCtrl.callMessage("Usuário salvo com sucesso!", "Sucesso!", 7);
+            log.put("Configuracao", "jbRemoverActionPerformed", 2, "Usuário salvo com sucesso");
+
         }
     }//GEN-LAST:event_jbSalvarActionPerformed
 

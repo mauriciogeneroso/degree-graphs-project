@@ -1,17 +1,5 @@
 package Principal;
 
-import Objetos.Armazenamento.MatrizAdj;
-import Objetos.Armazenamento.MatrizInc;
-import Objetos.Grafo;
-import Util.MensagemCtrl;
-import Util.Strings;
-import java.awt.Cursor;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.Toolkit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ButtonGroup;
 
 /**
  * Janela para entrada do Grafo, nesta janela o usuário estará informando as
@@ -31,23 +19,24 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
 
-    private Grafo grafo2;
+    private Objetos.Grafo grafo2;
     private FramePrincipal frame;
-    private ButtonGroup buttonGroup;
+    private javax.swing.ButtonGroup buttonGroup = new javax.swing.ButtonGroup();;
+    private static final Util.Log log = new Util.Log();
 
     public EntradaDados(FramePrincipal frame) {
         initComponents();
         this.frame = frame;
-        this.grafo2 = new Grafo();
+        this.grafo2 = new Objetos.Grafo();
 
         // Grupo de botões para informar se o grafo é completo ou se o usuário definirá as adjacências
-        buttonGroup = new ButtonGroup();
+
         buttonGroup.add(rButtonCompleto);
         buttonGroup.add(rButtonDefinir);
         // Fim do grupo de botões da direção das arestas
+        log.put("EntradaDados", "Construtor", "FramePrincipal construido com sucesso");
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -413,17 +402,17 @@ public class EntradaDados extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    @SuppressWarnings("empty-statement")
     private void rButtonDefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButtonDefinirActionPerformed
         if (entradaNos.getText().equals("")) {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
-            MensagemCtrl.callMessage("Informe os Nós para definir", "Aviso", 2);
+            Util.MensagemCtrl.callMessage("Informe os Nós para definir", "Aviso", 2);
+            log.put("EntradaDados", "rButtonDefinirActionPerformed", 0, "Informe os nós para definir");
         } else if (nosRepetidos()) {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
-            MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
+            Util.MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
+            log.put("EntradaDados", "rButtonDefinirActionPerformed", 1, "Existem nós com o mesmo nome");
         } else {
             botaoDefinir();
         }
@@ -449,20 +438,23 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_rButtonCompletoActionPerformed
 
     private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
-
         exit();
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
     private void entradaArestasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusLost
         jlInfoMessage.setText("");
         if (entradaArestas.getText().equals("")) {
-            MensagemCtrl.callMessage("Informe as Arestas para definir o grafo", "Aviso", 2);
+            Util.MensagemCtrl.callMessage("Informe as Arestas para definir o grafo", "Aviso", 2);
+            log.put("EntradaDados", "entradaArestasFocusLost", 0, "Informe as Arestas para definir o grafo");
+
         } else if (arestasRepetidas()) {
-            MensagemCtrl.callMessage("Existem arestas com o mesmo nome", "Aviso", 2);
+            Util.MensagemCtrl.callMessage("Existem arestas com o mesmo nome", "Aviso", 2);
+            log.put("EntradaDados", "entradaArestasFocusLost", 1, "Existem arestas com o mesmo nome");
+
         } else {
             try {
                 grafo2.setArestas(capturarArestas(entradaArestas.getText()));
-                grafo2.iniciarMatriz(new MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
+                grafo2.iniciarMatriz(new Objetos.Armazenamento.MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
                 grafo2.iniciarListas();
                 cBoxAresta.removeAllItems();
                 botaoDefinir();
@@ -471,7 +463,9 @@ public class EntradaDados extends javax.swing.JFrame {
                 }
                 buttonDefinirAdjacencia.setEnabled(true);
             } catch (Exception e) {
-                MensagemCtrl.callMessage("Valores inválidos para as Arestas informadas", "Aviso", 8);
+                Util.MensagemCtrl.callMessage("Valores inválidos para as Arestas informadas", "Aviso", 8);
+                log.put("EntradaDados", "entradaArestasFocusLost", 2, "Valores inválidos para as Arestas informadas");
+
                 entradaArestas.setFocusable(true);
             }
         }
@@ -499,16 +493,16 @@ public class EntradaDados extends javax.swing.JFrame {
             frame.setGrafo(grafo2);
             exit();
         } else if (entradaNos.getText().trim().equals("")) {
-            MensagemCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
+            Util.MensagemCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
         } else {
             // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
             grafo2.setNos(capturarNos(entradaNos.getText()));
 
             if (grafo2.quantidadeNos() == 1) {
-                MensagemCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
+                Util.MensagemCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
 
             } else if (nosRepetidos()) {
-                MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
+                Util.   MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
             } else {
 
                 int contArestas = 0;
@@ -518,7 +512,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     }
                 }
 
-                grafo2.iniciarMatriz(new MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos()); // Adjacência
+                grafo2.iniciarMatriz(new Objetos.Armazenamento.MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos()); // Adjacência
                 grafo2.iniciarListas();
 
                 String[] arestasNaoDirecionado = new String[contArestas];
@@ -527,7 +521,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 }
 
                 grafo2.setArestas(arestasNaoDirecionado);
-                grafo2.iniciarMatriz(new MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
+                grafo2.iniciarMatriz(new Objetos.Armazenamento.MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
                 contArestas = 0;
                 for (int i = 0; i < grafo2.quantidadeNos(); i++) {
                     for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
@@ -540,7 +534,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(EntradaDados.class.getName()).log(Level.SEVERE, null, ex);
+                    log.put("EntradaDados", "buttonCriarGrafoActionPerformed", ex.getMessage());
                 }
                 frame.setGrafo(grafo2);
                 exit();
@@ -575,10 +569,13 @@ public class EntradaDados extends javax.swing.JFrame {
         for (int i = 0; i < n.length; i++) {
             for (int j = 0; j < n.length; j++) {
                 if (n[i].equals(n[j]) && i != j) {
+                    log.put("EntradaDados", "nosRepetidos", 0, "Há nós repetidos] [TRUE");
+
                     return true;
                 }
             }
         }
+        log.put("EntradaDados", "nosRepetidos", 1, "Não há nós repetidos] [FALSE");
         return false;
     }
 
@@ -593,10 +590,12 @@ public class EntradaDados extends javax.swing.JFrame {
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
                 if (a[i].equals(a[j]) && i != j) {
+                    log.put("EntradaDados", "arestasRepetidas", 0, "Há arestas repetidas] [TRUE");
                     return true;
                 }
             }
         }
+        log.put("EntradaDados", "arestasRepetidas", 1, "Não há arestas repetidas] [FALSE");
         return false;
     }
 
@@ -615,6 +614,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 break;
             }
         }
+        log.put("EntradaDados", "posicaoNoInicialSelecionado", 1, Integer.toString(posicaoLinhaNo));
         return posicaoLinhaNo;
     }
 
@@ -633,6 +633,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 break;
             }
         }
+        log.put("EntradaDados", "posicaoNoFinalSelecionado", 1, Integer.toString(posicaoColunaNo));
         return posicaoColunaNo;
     }
 
@@ -651,6 +652,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 break;
             }
         }
+        log.put("EntradaDados", "posicaoArestaSelecionada", 1, Integer.toString(posicaoAresta));
         return posicaoAresta;
     }
 
@@ -660,7 +662,9 @@ public class EntradaDados extends javax.swing.JFrame {
      * @return String[] - retorna um array com os nós informados pelo usuário
      */
     private String[] capturarNos(String entradaNos) {
-        return entradaNos.replace(" ", "").split(",");
+        String[] nos = entradaNos.replace(" ", "").split(",");
+        log.put("EntradaDados", "capturarNos", java.util.Arrays.toString(nos));
+        return nos;
     }
 
     /**
@@ -670,13 +674,15 @@ public class EntradaDados extends javax.swing.JFrame {
      * usuário
      */
     private String[] capturarArestas(String entradaArestas) {
-        return entradaArestas.replace(" ", "").split(",");
+        String[] nos = entradaArestas.replace(" ", "").split(",");
+        log.put("EntradaDados", "capturarArestas", java.util.Arrays.toString(nos));
+        return nos;
     }
 
     private void botaoDefinir() {
         grafo2.setNos(capturarNos(entradaNos.getText()));
         if (!grafo2.noIsEmpty()) {
-            grafo2.iniciarMatriz(new MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos());
+            grafo2.iniciarMatriz(new Objetos.Armazenamento.MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos());
             // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
             // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
             grafo2.iniciarListas();
@@ -694,6 +700,8 @@ public class EntradaDados extends javax.swing.JFrame {
             cBoxNoFinal.setEnabled(true);
             cBoxAresta.setEnabled(true);
             buttonCriarGrafo.setEnabled(false);
+            log.put("EntradaDados", "botaoDefinir", 1, "Sucesso");
+
         }
     }
 
@@ -720,6 +728,8 @@ public class EntradaDados extends javax.swing.JFrame {
         buttonDefinirAdjacencia.setEnabled(false);
         buttonCriarGrafo.setEnabled(true);
         cancelarCriacaoGrafo();
+        log.put("EntradaDados", "resetarJanela", 1, "Sucesso");
+
     }
 
     /**
@@ -728,6 +738,8 @@ public class EntradaDados extends javax.swing.JFrame {
     private void cancelarCriacaoGrafo() {
         if (grafo2.getMatrizAdj() == null) {
             grafo2.destruirGrafo();
+            log.put("EntradaDados", "cancelarCriacaoGrafo", 1, "Sucesso");
+
         }
     }
 
@@ -768,11 +780,10 @@ public class EntradaDados extends javax.swing.JFrame {
         frame.setVisible(true);
         try {
             Thread.sleep(10);
-
         } catch (InterruptedException ex) {
-            Logger.getLogger(EntradaDados.class
-                    .getName()).log(Level.SEVERE, null, ex);
+            log.put("EntradaDados", "exit", 0, ex.getMessage());
         }
         this.dispose();
+        log.put("EntradaDados", "exit", 1, "FramePrincipal chaamdo com sucesso");
     }
 }

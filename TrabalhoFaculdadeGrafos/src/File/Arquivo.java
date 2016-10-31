@@ -3,14 +3,10 @@ package File;
 import Objetos.Grafo;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  * Classe para importar e exportar grafos.
@@ -26,7 +22,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @version 1.1
  */
 public class Arquivo {
+
     private static final Util.Log log = new Util.Log();
+
     private Arquivo() {
     }
 
@@ -37,19 +35,15 @@ public class Arquivo {
      * @return Grafo - Retorna o grafo importado
      */
     public static Grafo importarGrafo(JFrame frame) {
-        JFileChooser fc = new JFileChooser();
+        javax.swing.JFileChooser fc = new javax.swing.JFileChooser();
         Grafo grafo = new Grafo();
         fc.getFileSystemView().getHomeDirectory();
-        fc.setFileFilter(new FileNameExtensionFilter("*.grafo", "grafo"));
+        fc.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("*.grafo", "grafo"));
         fc.setAcceptAllFileFilterUsed(false);
         fc.showOpenDialog(frame);
-        try {
-            grafo = lerArquivo(frame, fc.getSelectedFile());
-        } catch (IOException | ClassNotFoundException ex) {
-            Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro ao salvar o arquivo!", 8);
-            log.put("arquivo", "ImportarGrafo", 2, ex.getMessage());
-        }
-
+        grafo = lerArquivo(frame, fc.getSelectedFile());
+        log.put("Arquivo", "importarGrafo", 0, "lerArquivo solicitado");
+        log.put("Arquivo", "importarGrafo", 2, "Grafo retornado");
         return grafo;
     }
 
@@ -60,11 +54,12 @@ public class Arquivo {
      * @param grafo Grafo - para poder exportar
      */
     public static void exportarGrafo(JFrame frame, Grafo grafo) {
-        JFileChooser fc = new JFileChooser();
-        fc.setFileFilter(new FileNameExtensionFilter("*.grafo", ".grafo"));
+        javax.swing.JFileChooser fc = new javax.swing.JFileChooser();
+        fc.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("*.grafo", ".grafo"));
         fc.setAcceptAllFileFilterUsed(false);
         fc.getFileSystemView().getHomeDirectory();
         fc.showSaveDialog(frame);
+        log.put("Arquivo", "exportarGrafo", 0, "JFileChooser exibido com sucesso");
         java.io.File sFile = null;
         File f = fc.getSelectedFile();
         String filePath = f.getAbsolutePath();
@@ -72,6 +67,7 @@ public class Arquivo {
             f = new File(filePath + ".grafo");
         }
         gravarArquivo(frame, f.getAbsolutePath(), grafo);
+        log.put("Arquivo", "exportarGrafo", 1, "Gravou arquivo");
     }
 
     /**
@@ -89,14 +85,17 @@ public class Arquivo {
             objOutput = new ObjectOutputStream(output);
             objOutput.writeObject(grafo);
             objOutput.flush();
-        } catch (IOException ex) {
+            log.put("Arquivo", "gravarArquivo", 1, "Arquivo salvo com sucesso!");
+        } catch (java.io.IOException ex) {
             Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro ao salvar o arquivo!", 8);
+            log.put("Arquivo", "gravarArquivo", 1, "Erro ao salvar arquivo");
         } finally {
             if (objOutput != null) {
                 try {
                     objOutput.close();
-                } catch (IOException ex) {
+                } catch (java.io.IOException ex) {
                     Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro ao salvar o arquivo!", 8);
+                    log.put("Arquivo", "gravarArquivo", 2, "Erro ao salvar arquivo");
                 }
             }
         }
@@ -109,13 +108,27 @@ public class Arquivo {
      * @param arq File - Arquivo para leitura
      * @return Grafo - Grafo da leitura realizada no arquivo solicitado
      */
-    private static Grafo lerArquivo(JFrame frame, File arq) throws FileNotFoundException, IOException, ClassNotFoundException {
+    private static Grafo lerArquivo(JFrame frame, File arq) {
         Grafo grafo = new Grafo();
-        FileInputStream input;
-        ObjectInputStream objInput;
-        input = new FileInputStream(arq);
-        objInput = new ObjectInputStream(input);
-        grafo = (Grafo) objInput.readObject();
+        try {
+            FileInputStream input;
+            ObjectInputStream objInput = null;
+            input = new FileInputStream(arq);
+            try {
+                objInput = new ObjectInputStream(input);
+            } catch (java.io.IOException ex) {
+                log.put("Arquivo", "lerArquivo", 1, ex.getMessage());
+            }
+            try {
+                grafo = (Grafo) objInput.readObject();
+            } catch (java.io.IOException | ClassNotFoundException ex) {
+                log.put("Arquivo", "lerArquivo", 1, ex.getMessage());
+            }
+            log.put("Arquivo", "lerArquivo", "Objeto grafo lido com sucesso!");
+            return grafo;
+        } catch (java.io.FileNotFoundException ex) {
+            log.put("Arquivo", "lerArquivo", 1, ex.getMessage());
+        }
         return grafo;
     }
 

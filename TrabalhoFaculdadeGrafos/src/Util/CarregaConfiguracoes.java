@@ -1,11 +1,8 @@
 package Util;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Classe responsável pelo tratamento do arquivo de propriedades do programa,
@@ -37,7 +34,7 @@ public final class CarregaConfiguracoes {
         Properties temp = new Properties();
 
         try {
-            temp.load(new FileInputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')));
+            temp.load(new java.io.FileInputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')));
         } catch (IOException ex) {
             log.put("CarregaConfiguracoes", "getProperties", 1, ex.getMessage());
         }
