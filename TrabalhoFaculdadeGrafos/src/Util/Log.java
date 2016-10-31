@@ -24,7 +24,7 @@ public final class Log {
         try {
             java.io.BufferedWriter buffer = new java.io.BufferedWriter(new java.io.FileWriter("log.txt", true));
             renameDotJava(file);
-            write("[" + this.date + "] [" + this.file + "] [" + function + "] :: " + message + " :: [END]", buffer);
+            write("[" + this.date + "] [" + this.file + "] [" + function + "] :: " + message, buffer);
         } catch (java.io.IOException ex) {
             System.err.println(ex.getMessage());
         }
@@ -34,7 +34,7 @@ public final class Log {
         try {
             java.io.BufferedWriter buffer = new java.io.BufferedWriter(new java.io.FileWriter("log.txt", true));
             renameDotJava(file);
-            write("[" + this.date + "] [" + this.file + "] [" + function + "] [" + number + "] :: " + message + " :: [END]", buffer);
+            write("[" + this.date + "] [" + this.file + "] [" + function + "] [" + number + "] :: " + message, buffer);
         } catch (java.io.IOException ex) {
             System.err.println(ex.getMessage());
         }
@@ -42,7 +42,7 @@ public final class Log {
 
     private static void write(String content, java.io.BufferedWriter buffer) {
         try {
-            buffer.write(content);
+            buffer.write(content + System.getProperty("line.separator"));
             buffer.flush();
         } catch (java.io.IOException ex) {
             System.err.println(ex.getMessage());
