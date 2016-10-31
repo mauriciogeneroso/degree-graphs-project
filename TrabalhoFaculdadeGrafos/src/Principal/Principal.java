@@ -4,8 +4,6 @@ import Util.CarregaConfiguracoes;
 import View.Login.Login;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
@@ -28,14 +26,20 @@ import org.netbeans.lib.awtextra.*;
 public class Principal extends JWindow {
 
     private static final long serialVersionUID = 1L;
+
+    private static final Util.Log log = new Util.Log();
+    private int i = 0;
+    private static final String zero = " ";
+    private static final String um = ".";
+    private static final String dois = "..";
+    private static final String tres = "...";
+    private final AbsoluteLayout absoluto;
+    private final AbsoluteConstraints absimage;
+    private final AbsoluteConstraints absbarra;
+    private final ImageIcon image;
+    private final JLabel jlabel;
+    private JProgressBar barra;
     
-    int i = 0;
-    final String zero = " ", um = ".", dois = "..", tres = "...";
-    AbsoluteLayout absoluto;
-    AbsoluteConstraints absimage, absbarra;
-    ImageIcon image;
-    JLabel jlabel;
-    JProgressBar barra;
 
     /**
      * Metodo construtor.
@@ -70,15 +74,15 @@ public class Principal extends JWindow {
                     barra.setValue(i);
                     i++;
                     try {
-                        sleep(100);
+                        sleep(10);
                     } catch (InterruptedException ex) {
-                        javax.swing.JOptionPane.showMessageDialog(null, "Erro ao carregar a barra de progresso!");
+                        log.put("Principal", "Thread] [Run", 0, ex.getMessage());
                     }
                 }
                 try {
                     sleep(300);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    log.put("Principal", "Thread] [Run", 1, ex.getMessage());
                 }
                 if (i >= 100) {
                     barra.setForeground(Color.green);
@@ -88,7 +92,7 @@ public class Principal extends JWindow {
                 try {
                     sleep(30);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    log.put("Principal", "Thread] [Run", 2, ex.getMessage());
                 }
                 dispose();
             }
@@ -136,5 +140,12 @@ public class Principal extends JWindow {
      */
     public static void main(String[] args) {
         new Principal();
+        int coluna1 = 20;
+        int idx = 10;
+
+        System.out.println(coluna1 + "    " + idx);
+        System.out.println(coluna1 + "    " + idx);
+        System.out.println(coluna1 + "    " + idx);
+
     }
 }

@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.UnsupportedEncodingException;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -27,7 +26,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @version 1.1
  */
 public class Arquivo {
-
+    private static final Util.Log log = new Util.Log();
     private Arquivo() {
     }
 
@@ -40,15 +39,7 @@ public class Arquivo {
     public static Grafo importarGrafo(JFrame frame) {
         JFileChooser fc = new JFileChooser();
         Grafo grafo = new Grafo();
-        String decodedPath = System.getProperty("user.home");
-        System.out.println(decodedPath);
-        try {
-            String path = Principal.Principal.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-            decodedPath = java.net.URLDecoder.decode(path, "UTF-8");
-        } catch (UnsupportedEncodingException ex) {
-            System.err.println("[ARQUIVO.JAVA][IMPORTARGRAFO][1]: " + ex.getMessage());
-        }
-        fc.setCurrentDirectory(new File(decodedPath));
+        fc.getFileSystemView().getHomeDirectory();
         fc.setFileFilter(new FileNameExtensionFilter("*.grafo", "grafo"));
         fc.setAcceptAllFileFilterUsed(false);
         fc.showOpenDialog(frame);
@@ -56,7 +47,7 @@ public class Arquivo {
             grafo = lerArquivo(frame, fc.getSelectedFile());
         } catch (IOException | ClassNotFoundException ex) {
             Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro ao salvar o arquivo!", 8);
-            System.err.println("[ARQUIVO.JAVA][IMPORTARGRAFO][2]: " + ex.getMessage());
+            log.put("arquivo", "ImportarGrafo", 2, ex.getMessage());
         }
 
         return grafo;
@@ -72,6 +63,7 @@ public class Arquivo {
         JFileChooser fc = new JFileChooser();
         fc.setFileFilter(new FileNameExtensionFilter("*.grafo", ".grafo"));
         fc.setAcceptAllFileFilterUsed(false);
+        fc.getFileSystemView().getHomeDirectory();
         fc.showSaveDialog(frame);
         java.io.File sFile = null;
         File f = fc.getSelectedFile();

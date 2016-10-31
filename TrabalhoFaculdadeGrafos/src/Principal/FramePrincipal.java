@@ -23,6 +23,7 @@ import javax.swing.ImageIcon;
 public class FramePrincipal extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
+    private static final Util.Log log = new Util.Log();
 
     private Grafo grafo;
     private EntradaDados entrada;
@@ -542,7 +543,6 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btSairActionPerformed
 
     private void btCarrregarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarrregarGrafoActionPerformed
-        //jmiImportar.doClick();
         importar();
     }//GEN-LAST:event_btCarrregarGrafoActionPerformed
 
@@ -572,7 +572,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             grafo = Arquivo.importarGrafo(this);
             verificaSeIraExibirOsDados();
         } catch (NullPointerException ex) {
-            // Não faz nada pois foi clicado em cancelar
+            log.put("FramePrincipal", "Exportar" , "Cancelado com sucesso!");
         }
     }
 
@@ -582,11 +582,12 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void exportar() {
         if (grafo.getListaInc() == null) {
             MensagemCtrl.callMessage("Não existe um grafo para ser exportado!", "Exportar", 8);
+            log.put("FramePrincipal", "Exportar" , "Não existe um grafo para ser exportado!");
         } else {
             try {
                 Arquivo.exportarGrafo(this, grafo);
             } catch (NullPointerException e) {
-                // Não faz nada pois o usuário clicou em cancelar
+                log.put("FramePrincipal", "Exportar" , "Cancelado com sucesso!");
             }
         }
     }
