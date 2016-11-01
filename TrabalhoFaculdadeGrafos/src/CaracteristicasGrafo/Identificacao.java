@@ -88,7 +88,7 @@ public class Identificacao {
         // Fazer a validação e retornar false se não for conexo
         int v = 0; //Verifica
         int it = 1;
-        int ar = 0;
+        float ar = 0;
         Matriz mt = grafo.getMatrizAdj();
 
         mt.imprimirMatriz();
@@ -100,14 +100,15 @@ public class Identificacao {
                     break;
                 } else {
                     v = 1;
-                }
+                 }
 
             }
             if (v == 1) {
                 break;
             }
         }
-
+        System.out.println("" + v + "");
+       if(v==0){
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
                 if (i != j && mt.getMatriz()[i][j] > 0) {
@@ -116,10 +117,15 @@ public class Identificacao {
             }
         }
         ar = ar / 2;
-        if (ar < grafo.quantidadeNos()) {
+        if (ar >= grafo.quantidadeNos()-1) {
+            v = 0;
+        }
+        else {
             v = 1;
         }
-
+        System.out.println("" + v + "");
+       }
+       
         if (v == 0) {
             int n = 0;
             int cont = 1;
@@ -187,6 +193,7 @@ public class Identificacao {
      */
     public boolean VerifGrafoPlanar(Grafo grafo) {
         boolean result = false;
+        
         int v = 0;
         Matriz mt = grafo.getMatrizAdj();
         int proxlin = 0;
@@ -196,7 +203,7 @@ public class Identificacao {
         int c2 = 0;
         int counter1 = 0;
         int counter2 = 0;
-
+      
         for (int linha = 0; linha < mt.getLinhas(); linha++) {
             for (int coluna = 0; coluna < mt.getColunas(); coluna++) {
 
