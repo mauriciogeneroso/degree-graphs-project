@@ -287,7 +287,8 @@ public class Identificacao {
                 }
             }
         }
-
+        System.out.println("" + menorCiclo + "");
+        
         if (v == 1) {
             log.put("Identificacao", "VerifGrafoPlanar", 0, "O grafo não é planar] :: [FALSE");
             return false;
