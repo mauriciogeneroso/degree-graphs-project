@@ -203,39 +203,34 @@ public class Identificacao {
         int c2 = 0;
         int counter1 = 0;
         int counter2 = 0;
-      
-        for (int linha = 0; linha < mt.getLinhas(); linha++) {
-            for (int coluna = 0; coluna < mt.getColunas(); coluna++) {
-
-                if (linha == coluna && mt.getMatriz()[linha][coluna] > 0) {
-                    v = 1;
-                    c = coluna;
+        
+        int arestas = grafo.quantidadeArestas();
+        int nos = grafo.quantidadeNos();
+        int isolados=0;
+        int ver=0;
+        /*Está Função Serve para Contar se Existem nós isolados*/
+        for (int i = 0; i < mt.getLinhas(); i++) {
+            for (int j = 0; j < mt.getColunas(); j++) {
+                if (i != j && mt.getMatriz()[i][j] != 0) {
+                    ver = 0;
                     break;
-                } else if (mt.getMatriz()[linha][coluna] > 1) {
-                    v = 1;
-                    c = coluna;
-                    break;
-                }
+                } else {
+                    ver = 1;
+                 }
 
-                counter1 += mt.getMatriz()[linha][coluna];
-
-                if (coluna == grafo.quantidadeNos() - 1) {
-                    if (counter1 == 0) {
-                        v = 1;
-                        break;
-                    }
-                }
             }
-
-            if (linha == c && mt.getMatriz()[linha][c] > 0) {
-                break;
-            } else if (mt.getMatriz()[linha][c] > 1) {
-                break;
-            } else if (counter1 == 0) {
-                break;
+            if (ver == 1) {
+                isolados++;
             }
         }
-
+        System.out.println(""+ isolados + "");
+        nos = nos - isolados;
+        
+        if(nos<=2){ //Esta Função Serve para ver se existem 2 nós ou menos.
+            menorCiclo = -1;
+            v=1;
+        }
+      /*Função que Verifica se Existe Laço em um grafo*/
         if (v == 0) {
             for (int linha = 0; linha < mt.getLinhas(); linha++) {
                 for (int coluna1 = 0; coluna1 < mt.getColunas(); coluna1++) {
@@ -288,6 +283,31 @@ public class Identificacao {
             }
         }
         System.out.println("" + menorCiclo + "");
+        
+        /*Logo Abaixo estão as Formulas*/
+        if(menorCiclo==-1){
+            v=0;
+        }
+        if(menorCiclo>=0 && menorCiclo <=3){
+            int valor; //Valor Para Calcular e Armazenar resposta
+            valor = (3*nos) - 6;
+            if(arestas<=valor){
+                v=0;
+            }
+            else{
+                v=1;
+            }
+        }
+        if(menorCiclo > 3){
+            int valor; //Valor Para Calcular e Armazenar resposta
+            valor = (2*nos) - 4;
+            if(arestas<=valor){
+                v=0;
+            }
+            else{
+                v=1;
+            }   
+        }
         
         if (v == 1) {
             log.put("Identificacao", "VerifGrafoPlanar", 0, "O grafo não é planar] :: [FALSE");
