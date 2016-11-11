@@ -1,6 +1,7 @@
 package Principal;
 
 import Objetos.Grafo;
+import Util.TesteXML;
 
 /**
  * Estudantes de Ciência da Computação - 4 fase.
@@ -316,6 +317,11 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         btVisualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Util/Images/ic_view.png"))); // NOI18N
         btVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btVisualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVisualizarActionPerformed(evt);
+            }
+        });
 
         btEntradaDados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Util/Images/ic_add.png"))); // NOI18N
         btEntradaDados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -579,6 +585,15 @@ public class FramePrincipal extends javax.swing.JFrame {
         log.put("FramePrincipal", "btConfigActionPerformed", "JSobre.java chamada com sucesos");
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVisualizarActionPerformed
+        if (grafo.getMatrizAdj() == null) {
+            Util.MensagemCtrl.callMessage("Não existe um grafo para visualizar.", "Visualização do grafo", 2);
+            log.put("FramePrincipal", "btCompletoActionPerformed", 0, "Não existe um grafo para visualizar");
+        } else {
+            TesteXML.testarVisualizar(grafo);
+        }
+    }//GEN-LAST:event_btVisualizarActionPerformed
 
     /**
      * Método para importar um grafo
