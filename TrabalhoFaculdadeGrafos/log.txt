@@ -905,3 +905,25 @@
 [Fri Nov 11 01:10:54 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
 [Fri Nov 11 01:10:52 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
 [Fri Nov 11 01:10:54 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Fri Nov 11 01:20:00 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Fri Nov 11 01:20:00 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Fri Nov 11 01:20:00 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Fri Nov 11 01:20:04 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Fri Nov 11 01:20:00 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Fri Nov 11 01:20:04 BRST 2016] [EntradaDados.java] [capturarNos] :: [a, s, d, f]
+[Fri Nov 11 01:20:04 BRST 2016] [EntradaDados.java] [capturarNos] :: [a, s, d, f]
+[Fri Nov 11 01:20:04 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Fri Nov 11 01:20:00 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Fri Nov 11 01:20:04 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Fri Nov 11 01:20:00 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Fri Nov 11 01:56:54 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Fri Nov 11 01:56:54 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Fri Nov 11 01:56:54 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Fri Nov 11 01:56:56 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Fri Nov 11 01:56:54 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Fri Nov 11 01:56:56 BRST 2016] [EntradaDados.java] [capturarNos] :: [1, 2]
+[Fri Nov 11 01:56:56 BRST 2016] [EntradaDados.java] [capturarNos] :: [1, 2]
+[Fri Nov 11 01:56:56 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Fri Nov 11 01:56:54 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Fri Nov 11 01:56:56 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Fri Nov 11 01:56:54 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
