@@ -18,11 +18,11 @@ import java.util.Properties;
  * @since 15/10/2016
  * @version 1.2
  */
-public final class CarregaConfiguracoes {
+public final class LoadSettings {
 
     private static final Util.Log log = new Util.Log();
 
-    private CarregaConfiguracoes() {
+    private LoadSettings() {
     }
 
     /**
@@ -62,7 +62,7 @@ public final class CarregaConfiguracoes {
      */
     public static void setUsuario(String usuario) {
         try {
-            Properties prop = CarregaConfiguracoes.getProperties();
+            Properties prop = LoadSettings.getProperties();
             prop.setProperty(Strings.USERNAME_PROPERTIES_NAME, usuario);
             prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
             log.put("CarregaConfiguracoes", "setUsuario", 0, ("Usuário \"" + usuario + "\" salvo com sucesso"));

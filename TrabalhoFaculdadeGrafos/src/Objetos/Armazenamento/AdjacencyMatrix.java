@@ -14,7 +14,7 @@ package Objetos.Armazenamento;
  * @since 15/10/2016
  * @version 1.7
  */
-public class MatrizAdj extends Matriz implements java.io.Serializable {
+public class AdjacencyMatrix extends Matrix implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 

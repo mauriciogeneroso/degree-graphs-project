@@ -161,7 +161,7 @@ public class Login extends javax.swing.JFrame {
             jlErrorMessage.setText("<html><body><pre>  Ei, informe corretamente</pre></body></html>");
             jlErrorMessage.setForeground(java.awt.Color.red);
         } else {
-            Util.CarregaConfiguracoes.setUsuario(jtxtUsername.getText());
+            Util.LoadSettings.setUsuario(jtxtUsername.getText());
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                     if ("Nimbus".equals(info.getName())) {
@@ -170,12 +170,12 @@ public class Login extends javax.swing.JFrame {
                     }
                 }
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-                Util.MensagemCtrl.callMessage(ex.getMessage(), "Erro!", 8);
+                Util.MessageCtrl.callMessage(ex.getMessage(), "Erro!", 8);
             }
             if (jcbSave.isSelected()) {
-                Util.CarregaConfiguracoes.setSaveUsername(true);
+                Util.LoadSettings.setSaveUsername(true);
             } else {
-                Util.CarregaConfiguracoes.setSaveUsername(false);
+                Util.LoadSettings.setSaveUsername(false);
             }
             Principal.FramePrincipal fm = new Principal.FramePrincipal();
             fm.setVisible(true);
@@ -191,9 +191,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxtUsernameKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        jtxtUsername.setText(Util.CarregaConfiguracoes.getUsuario());
+        jtxtUsername.setText(Util.LoadSettings.getUsuario());
 
-        if (Util.CarregaConfiguracoes.isUsernameSave()) {
+        if (Util.LoadSettings.isUsernameSave()) {
             jcbSave.setSelected(true);
         }
     }//GEN-LAST:event_formWindowOpened

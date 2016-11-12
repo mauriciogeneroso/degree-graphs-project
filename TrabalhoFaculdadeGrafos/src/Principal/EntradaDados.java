@@ -19,7 +19,7 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
 
-    private Objetos.Grafo grafo2;
+    private Objetos.Graph grafo2;
     private FramePrincipal frame;
     private javax.swing.ButtonGroup buttonGroup = new javax.swing.ButtonGroup();;
     private static final Util.Log log = new Util.Log();
@@ -27,7 +27,7 @@ public class EntradaDados extends javax.swing.JFrame {
     public EntradaDados(FramePrincipal frame) {
         initComponents();
         this.frame = frame;
-        this.grafo2 = new Objetos.Grafo();
+        this.grafo2 = new Objetos.Graph();
 
         // Grupo de botões para informar se o grafo é completo ou se o usuário definirá as adjacências
 
@@ -406,12 +406,12 @@ public class EntradaDados extends javax.swing.JFrame {
         if (entradaNos.getText().equals("")) {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
-            Util.MensagemCtrl.callMessage("Informe os Nós para definir", "Aviso", 2);
+            Util.MessageCtrl.callMessage("Informe os Nós para definir", "Aviso", 2);
             log.put("EntradaDados", "rButtonDefinirActionPerformed", 0, "Informe os nós para definir");
         } else if (nosRepetidos()) {
             rButtonDefinir.setSelected(false);
             rButtonCompleto.setSelected(true);
-            Util.MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
+            Util.MessageCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
             log.put("EntradaDados", "rButtonDefinirActionPerformed", 1, "Existem nós com o mesmo nome");
         } else {
             botaoDefinir();
@@ -444,17 +444,17 @@ public class EntradaDados extends javax.swing.JFrame {
     private void entradaArestasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaArestasFocusLost
         jlInfoMessage.setText("");
         if (entradaArestas.getText().equals("")) {
-            Util.MensagemCtrl.callMessage("Informe as Arestas para definir o grafo", "Aviso", 2);
+            Util.MessageCtrl.callMessage("Informe as Arestas para definir o grafo", "Aviso", 2);
             log.put("EntradaDados", "entradaArestasFocusLost", 0, "Informe as Arestas para definir o grafo");
 
         } else if (arestasRepetidas()) {
-            Util.MensagemCtrl.callMessage("Existem arestas com o mesmo nome", "Aviso", 2);
+            Util.MessageCtrl.callMessage("Existem arestas com o mesmo nome", "Aviso", 2);
             log.put("EntradaDados", "entradaArestasFocusLost", 1, "Existem arestas com o mesmo nome");
 
         } else {
             try {
                 grafo2.setArestas(capturarArestas(entradaArestas.getText()));
-                grafo2.iniciarMatriz(new Objetos.Armazenamento.MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
+                grafo2.iniciarMatriz(new Objetos.Armazenamento.IncidenceMatrix(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
                 grafo2.iniciarListas();
                 cBoxAresta.removeAllItems();
                 botaoDefinir();
@@ -463,7 +463,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 }
                 buttonDefinirAdjacencia.setEnabled(true);
             } catch (Exception e) {
-                Util.MensagemCtrl.callMessage("Valores inválidos para as Arestas informadas", "Aviso", 8);
+                Util.MessageCtrl.callMessage("Valores inválidos para as Arestas informadas", "Aviso", 8);
                 log.put("EntradaDados", "entradaArestasFocusLost", 2, "Valores inválidos para as Arestas informadas");
 
                 entradaArestas.setFocusable(true);
@@ -493,16 +493,16 @@ public class EntradaDados extends javax.swing.JFrame {
             frame.setGrafo(grafo2);
             exit();
         } else if (entradaNos.getText().trim().equals("")) {
-            Util.MensagemCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
+            Util.MessageCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
         } else {
             // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
             grafo2.setNos(capturarNos(entradaNos.getText()));
 
             if (grafo2.quantidadeNos() == 1) {
-                Util.MensagemCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
+                Util.MessageCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
 
             } else if (nosRepetidos()) {
-                Util.   MensagemCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
+                Util.   MessageCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
             } else {
 
                 int contArestas = 0;
@@ -512,7 +512,7 @@ public class EntradaDados extends javax.swing.JFrame {
                     }
                 }
 
-                grafo2.iniciarMatriz(new Objetos.Armazenamento.MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos()); // Adjacência
+                grafo2.iniciarMatriz(new Objetos.Armazenamento.AdjacencyMatrix(), grafo2.quantidadeNos(), grafo2.quantidadeNos()); // Adjacência
                 grafo2.iniciarListas();
 
                 String[] arestasNaoDirecionado = new String[contArestas];
@@ -521,7 +521,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 }
 
                 grafo2.setArestas(arestasNaoDirecionado);
-                grafo2.iniciarMatriz(new Objetos.Armazenamento.MatrizInc(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
+                grafo2.iniciarMatriz(new Objetos.Armazenamento.IncidenceMatrix(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
                 contArestas = 0;
                 for (int i = 0; i < grafo2.quantidadeNos(); i++) {
                     for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
@@ -682,7 +682,7 @@ public class EntradaDados extends javax.swing.JFrame {
     private void botaoDefinir() {
         grafo2.setNos(capturarNos(entradaNos.getText()));
         if (!grafo2.noIsEmpty()) {
-            grafo2.iniciarMatriz(new Objetos.Armazenamento.MatrizAdj(), grafo2.quantidadeNos(), grafo2.quantidadeNos());
+            grafo2.iniciarMatriz(new Objetos.Armazenamento.AdjacencyMatrix(), grafo2.quantidadeNos(), grafo2.quantidadeNos());
             // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
             // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
             grafo2.iniciarListas();

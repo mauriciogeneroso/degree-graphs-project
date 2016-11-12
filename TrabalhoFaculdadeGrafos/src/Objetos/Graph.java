@@ -1,10 +1,10 @@
 package Objetos;
 
-import Objetos.Armazenamento.ElementoAdj;
-import Objetos.Armazenamento.ElementoInc;
-import Objetos.Armazenamento.MatrizInc;
-import Objetos.Armazenamento.MatrizAdj;
-import Objetos.Armazenamento.Matriz;
+import Objetos.Armazenamento.AdjacencyElement;
+import Objetos.Armazenamento.IncidencyElement;
+import Objetos.Armazenamento.IncidenceMatrix;
+import Objetos.Armazenamento.AdjacencyMatrix;
+import Objetos.Armazenamento.Matrix;
 import java.util.LinkedList;
 
 /**
@@ -24,16 +24,16 @@ import java.util.LinkedList;
  * @since 15/10/2016
  * @version 1.7
  */
-public class Grafo implements java.io.Serializable {
+public class Graph implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
     // Matrizes
-    private Matriz matrizAdj;
-    private Matriz matrizInc;
+    private Matrix matrizAdj;
+    private Matrix matrizInc;
 
     // Listas
-    private LinkedList<ElementoAdj>[] listaAdj;
-    private LinkedList<ElementoInc>[] listaInc;
+    private LinkedList<AdjacencyElement>[] listaAdj;
+    private LinkedList<IncidencyElement>[] listaInc;
 
     // Nós e arestas
     private String[] nos;
@@ -42,7 +42,7 @@ public class Grafo implements java.io.Serializable {
     /**
      * Construtor.
      */
-    public Grafo() {
+    public Graph() {
         matrizAdj = null;
         matrizInc = null;
 
@@ -58,7 +58,7 @@ public class Grafo implements java.io.Serializable {
      *
      * @return Matriz de adjacencia
      */
-    public Matriz getMatrizAdj() {
+    public Matrix getMatrizAdj() {
         return matrizAdj;
     }
 
@@ -67,7 +67,7 @@ public class Grafo implements java.io.Serializable {
      *
      * @return Matriz de incidência
      */
-    public Matriz getMatrizInc() {
+    public Matrix getMatrizInc() {
         return matrizInc;
     }
 
@@ -76,7 +76,7 @@ public class Grafo implements java.io.Serializable {
      *
      * @return Lista de elementos da lista de adjacencia
      */
-    public LinkedList<ElementoAdj>[] getListaAdj() {
+    public LinkedList<AdjacencyElement>[] getListaAdj() {
         return listaAdj;
     }
 
@@ -85,7 +85,7 @@ public class Grafo implements java.io.Serializable {
      *
      * @return Lista de elementos da lista de incidência
      */
-    public LinkedList<ElementoInc>[] getListaInc() {
+    public LinkedList<IncidencyElement>[] getListaInc() {
         return listaInc;
     }
 
@@ -179,13 +179,13 @@ public class Grafo implements java.io.Serializable {
      * @param qntLinhas int - Quantidade de linhas
      * @param qntColunas int - Quantidade de colunas
      */
-    public void iniciarMatriz(Matriz mt, int qntLinhas, int qntColunas) {
-        if (mt instanceof MatrizAdj) {
-            mt = new MatrizAdj();
+    public void iniciarMatriz(Matrix mt, int qntLinhas, int qntColunas) {
+        if (mt instanceof AdjacencyMatrix) {
+            mt = new AdjacencyMatrix();
             mt.iniciarMatriz(qntLinhas, qntColunas);
             matrizAdj = mt;
-        } else if (mt instanceof MatrizInc) {
-            mt = new MatrizInc();
+        } else if (mt instanceof IncidenceMatrix) {
+            mt = new IncidenceMatrix();
             mt.iniciarMatriz(qntLinhas, qntColunas);
             matrizInc = mt;
         }
@@ -226,11 +226,11 @@ public class Grafo implements java.io.Serializable {
      * @param noFinal int - Nó final
      * @param aresta int - Aresta
      */
-    public void alterarMatrizGrafoNaoDirecionado(Matriz mt, int noInicial, int noFinal, int aresta) {
-        if (mt instanceof MatrizAdj) {
-            ((MatrizAdj) mt).alterarMatrizGrafoNaoDirecionado(noInicial, noFinal);
-        } else if (mt instanceof MatrizInc) {
-            ((MatrizInc) mt).alterarMatrizGrafoNaoDirecionado(noInicial, noFinal, aresta);
+    public void alterarMatrizGrafoNaoDirecionado(Matrix mt, int noInicial, int noFinal, int aresta) {
+        if (mt instanceof AdjacencyMatrix) {
+            ((AdjacencyMatrix) mt).alterarMatrizGrafoNaoDirecionado(noInicial, noFinal);
+        } else if (mt instanceof IncidenceMatrix) {
+            ((IncidenceMatrix) mt).alterarMatrizGrafoNaoDirecionado(noInicial, noFinal, aresta);
         }
     }
 
@@ -273,15 +273,15 @@ public class Grafo implements java.io.Serializable {
      */
     public void alterarListaGrafoNaoDirecionado(String noInicial, String noFinal, String aresta) {
         if (noInicial.equals(noFinal)) {
-            listaAdj[posicaoLista(noInicial)].add(new ElementoAdj(noFinal));
+            listaAdj[posicaoLista(noInicial)].add(new AdjacencyElement(noFinal));
 
-            listaInc[posicaoLista(noInicial)].add(new ElementoInc(noFinal, aresta)); //uni os dois para não ter 2 ifs com mesmo resultado, desnecessário
+            listaInc[posicaoLista(noInicial)].add(new IncidencyElement(noFinal, aresta)); //uni os dois para não ter 2 ifs com mesmo resultado, desnecessário
         } else {
-            listaAdj[posicaoLista(noInicial)].add(new ElementoAdj(noFinal));
-            listaAdj[posicaoLista(noFinal)].add(new ElementoAdj(noInicial));
+            listaAdj[posicaoLista(noInicial)].add(new AdjacencyElement(noFinal));
+            listaAdj[posicaoLista(noFinal)].add(new AdjacencyElement(noInicial));
 
-            listaInc[posicaoLista(noInicial)].add(new ElementoInc(noFinal, aresta));
-            listaInc[posicaoLista(noFinal)].add(new ElementoInc(noInicial, aresta));
+            listaInc[posicaoLista(noInicial)].add(new IncidencyElement(noFinal, aresta));
+            listaInc[posicaoLista(noFinal)].add(new IncidencyElement(noInicial, aresta));
         }
         System.out.println("Lista de Adjacência não direcionada: ");
         imprimirLista(listaAdj);

@@ -28,7 +28,6 @@ public class PrefuseGraph extends JFrame {
             graph = new GraphMLReader().readGraph("graphXML.xml");
 
         } catch (DataIOException e) {
-            e.printStackTrace();
             System.err.println("Error loading graph. Exiting...");
             System.exit(1);
         }
@@ -40,7 +39,10 @@ public class PrefuseGraph extends JFrame {
         // create our nominal color palette
         // color to nodes
         int[] palette = new int[]{
-            ColorLib.rgb(255, 180, 180), ColorLib.rgb(190, 190, 255)
+            ColorLib.rgb(255, 180, 180), ColorLib.rgb(190, 190, 255),
+            ColorLib.rgb(107,35,142), ColorLib.rgb(35,142,35), 
+            ColorLib.rgb(255,165,0), ColorLib.rgb(234,234,174),
+            ColorLib.rgb(168,168,168), ColorLib.rgb(0,0,156)
         };
 
         // map nominal data values to colors using random in create XML
@@ -60,21 +62,17 @@ public class PrefuseGraph extends JFrame {
         color.add(edges);
 
         // create an action list with an animated layout
-        // the INFINITY parameter tells the action list to run indefinitely
         ActionList layout = new ActionList(Activity.INFINITY);
         layout.add(new ForceDirectedLayout("graph"));
         layout.add(new RepaintAction());
-
-        // add the actions to the visualization
-        vis.putAction("color", color);
-        vis.putAction("layout", layout);
-
+        
         // add the actions to the visualization
         vis.putAction("color", color);
         vis.putAction("layout", layout);
         
         // create a new Display that pull from our Visualization
         Display display = new Display(vis);
+        display.setHighQuality(true);
         display.setSize(600, 500); // set display size
         display.addControlListener(new DragControl()); // drag items around
         display.addControlListener(new PanControl());  // pan with background left-drag
@@ -87,6 +85,7 @@ public class PrefuseGraph extends JFrame {
         frame.add(display);
         frame.pack();           // layout components in window
         frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
         frame.setVisible(true); // show the window
 
         vis.run("color");  // assign the colors

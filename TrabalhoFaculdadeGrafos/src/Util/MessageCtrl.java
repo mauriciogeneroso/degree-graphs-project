@@ -14,9 +14,9 @@ package Util;
  * @version 1.2
  *
  */
-public final class MensagemCtrl {
+public final class MessageCtrl {
 
-    private MensagemCtrl() {
+    private MessageCtrl() {
     }
     private static final Util.Log log = new Util.Log();
 
@@ -28,11 +28,11 @@ public final class MensagemCtrl {
      * @param iconType int - 1 - Código do ícone: <br>1 - Informação<br>2 -
      * Aviso<br>3 - Configurações<br>4 - Adicionar<br>5 - Exportar<br>6 -
      * Importar<br>7 - Sucesso<br>8 - Erro
-     * @see Util.Mensagens.Mensagem
+     * @see Util.Mensagens.DMessage
      */
     public static void callMessage(String mensagem, String titulo, int iconType) {
         try {
-            Util.Mensagens.Mensagem message = new Util.Mensagens.Mensagem(mensagem, titulo, iconType);
+            Util.Mensagens.DMessage message = new Util.Mensagens.DMessage(mensagem, titulo, iconType);
             message.setVisible(true);
             log.put("MensagemCtrl", "callMessage", 0, "Mensagem :: " + mensagem + "] [Título :: " + titulo + "] [Ícone :: " + Integer.toString(iconType));
         } catch (java.io.IOException ex) {

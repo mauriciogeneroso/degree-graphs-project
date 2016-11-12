@@ -1,8 +1,8 @@
 package Util.Prefuse;
 
-import Objetos.Armazenamento.Matriz;
-import Objetos.Armazenamento.MatrizAdj;
-import Objetos.Grafo;
+import Objetos.Armazenamento.Matrix;
+import Objetos.Armazenamento.AdjacencyMatrix;
+import Objetos.Graph;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,10 +15,11 @@ import org.jdom2.output.XMLOutputter;
 
 public class CreateGraphXML {
 
-    public static void createXml (Grafo grafo){
-        // Variável para gerar valores aleatórios na tag que conterá o valor da 
-        //cor a ser lido pela API prefuse
-        Random rand = new Random(10);
+    private final String[] keyNames = {"name", "idcolor"};
+    private final int NAME = 0;
+    private final int COLOR = 1;
+
+    public void createXml (Graph grafo){
 
         // Cria a tag Pai
         Element graphml = new Element("graphml");
@@ -32,20 +33,23 @@ public class CreateGraphXML {
         /// Chave para identificação das informações do grafo
         Element key[] = new Element[2];
         key[0] = new Element("key");
-        key[0].setAttribute("id", "name");
+        key[0].setAttribute("id", keyNames[NAME]);
         key[0].setAttribute("for", "node");
-        key[0].setAttribute("attr.name", "name");
+        key[0].setAttribute("attr.name", keyNames[NAME]);
         key[0].setAttribute("attr.type", "string");
         key[1] = new Element("key");
-        key[1].setAttribute("id", "idcolor");
+        key[1].setAttribute("id", keyNames[COLOR]);
         key[1].setAttribute("for", "node");
-        key[1].setAttribute("attr.name", "idcolor");
+        key[1].setAttribute("attr.name", keyNames[COLOR]);
         key[1].setAttribute("attr.type", "string");
 
         // Tag para o nó
         Element[] node = new Element[grafo.quantidadeNos()];
         // Tag inserida dentro do nó, com os dados
         Element[] data = new Element[grafo.quantidadeNos() * 2];
+        // Variável para gerar valores aleatórios na tag que conterá o valor da 
+        //cor a ser lido pela API prefuse
+        Random rand = new Random();
 
         // Cria os nós e dados de cada nó
         for (int i = 0, j = 0; i < grafo.quantidadeNos(); i++, j += 2) {
@@ -53,17 +57,18 @@ public class CreateGraphXML {
             node[i].setAttribute("id", String.valueOf(i + 1));
 
             data[j] = new Element("data");
-            data[j].setAttribute("key", "name");
+            data[j].setAttribute("key", keyNames[NAME]);
             data[j].setText(grafo.getNoPosicao(i));
             data[j + 1] = new Element("data");
-            data[j + 1].setAttribute("key", "idcolor");
-            data[j + 1].setText(String.valueOf(rand.nextInt(2)));
+            data[j + 1].setAttribute("key", keyNames[COLOR]);
+            data[j + 1].setText(String.valueOf(rand.nextInt(8)));
 
             node[i].addContent(data[j]);
             node[i].addContent(data[j + 1]);
         }
 
-        Matriz mat = (MatrizAdj) grafo.getMatrizAdj();
+        // Cria a tag com as arestas
+        Matrix mat = (AdjacencyMatrix) grafo.getMatrizAdj();
         int numEdge = 0;
         Element[] edge = new Element[grafo.quantidadeArestas()];
 

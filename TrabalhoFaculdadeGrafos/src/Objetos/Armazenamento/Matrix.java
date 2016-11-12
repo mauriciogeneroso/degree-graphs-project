@@ -17,7 +17,7 @@ package Objetos.Armazenamento;
  * @since 15/10/2016
  * @version 1.7
  */
-public abstract class Matriz implements java.io.Serializable {
+public abstract class Matrix implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 

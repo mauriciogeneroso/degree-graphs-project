@@ -14,7 +14,7 @@ package Objetos.Armazenamento;
  * @since 15/10/2016
  * @version 1.7
  */
-public class ElementoAdj implements java.io.Serializable {
+public class AdjacencyElement implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class ElementoAdj implements java.io.Serializable {
      *
      * @param no String - Nome do nó
      */
-    public ElementoAdj(String no) {
+    public AdjacencyElement(String no) {
         this.no = no;
     }
 

@@ -14,7 +14,7 @@ package Objetos.Armazenamento;
  * @since 15/10/2016
  * @version 1.7
  */
-public class ElementoInc implements java.io.Serializable {
+public class IncidencyElement implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -26,7 +26,7 @@ public class ElementoInc implements java.io.Serializable {
      *
      * @param no String - Nome do n[o
      */
-    public ElementoInc(String no) {
+    public IncidencyElement(String no) {
         this.no = no;
     }
 
@@ -36,7 +36,7 @@ public class ElementoInc implements java.io.Serializable {
      * @param no String - Nome do n[o
      * @param aresta String - Nome da aresta
      */
-    public ElementoInc(String no, String aresta) {
+    public IncidencyElement(String no, String aresta) {
         this.no = no;
         this.aresta = aresta;
     }

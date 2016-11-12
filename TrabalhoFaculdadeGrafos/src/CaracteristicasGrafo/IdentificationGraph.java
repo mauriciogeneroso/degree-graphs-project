@@ -1,8 +1,8 @@
 package CaracteristicasGrafo;
 
-import Objetos.Armazenamento.Matriz;
-import Objetos.Armazenamento.MatrizAdj;
-import Objetos.Grafo;
+import Objetos.Armazenamento.Matrix;
+import Objetos.Armazenamento.AdjacencyMatrix;
+import Objetos.Graph;
 
 /**
  * Essa classe implementa todas as funções de identificações de um grafo.
@@ -18,7 +18,7 @@ import Objetos.Grafo;
  * @version 1.2
  * @version 1.3
  */
-public class Identificacao {
+public class IdentificationGraph {
 
     private static final long serialVersionUID = 1L;
     private static final Util.Log log = new Util.Log();
@@ -30,8 +30,8 @@ public class Identificacao {
      * @return boolean - Verdadiro caso seja um grafo simples, caso contrário,
      * falso.
      */
-    public boolean VerifGrafoSimples(Grafo grafo) {
-        Matriz mt = grafo.getMatrizAdj();
+    public boolean VerifGrafoSimples(Graph grafo) {
+        Matrix mt = grafo.getMatrizAdj();
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
                 if (mt.getMatriz()[i][j] > 1) {
@@ -57,8 +57,8 @@ public class Identificacao {
      * @return boolean - Verdadiro caso seja um grafo completo, caso contrário,
      * falso.
      */
-    public boolean VerifGrafoCompleto(Grafo grafo) {
-        Matriz mt = grafo.getMatrizAdj();
+    public boolean VerifGrafoCompleto(Graph grafo) {
+        Matrix mt = grafo.getMatrizAdj();
         for (int i = 0; i < mt.getLinhas(); i++) {
             for (int j = 0; j < mt.getColunas(); j++) {
                 if (i != j && mt.getMatriz()[i][j] != 1) {
@@ -84,12 +84,12 @@ public class Identificacao {
      * @return boolean - Verdadiro caso seja um grafo conexo, caso contrário,
      * falso.
      */
-    public boolean VerifGrafoConexo(Grafo grafo) {
+    public boolean VerifGrafoConexo(Graph grafo) {
         // Fazer a validação e retornar false se não for conexo
         int v = 0; //Verifica
         int it = 1;
         float ar = 0;
-        Matriz mt = grafo.getMatrizAdj();
+        Matrix mt = grafo.getMatrizAdj();
 
         mt.imprimirMatriz();
 
@@ -191,11 +191,11 @@ public class Identificacao {
      * @return boolean - Verdadiro caso seja um grafo planar, caso contrário,
      * falso.
      */
-    public boolean VerifGrafoPlanar(Grafo grafo) {
+    public boolean VerifGrafoPlanar(Graph grafo) {
         boolean result = false;
         
         int v = 0;
-        Matriz mt = grafo.getMatrizAdj();
+        Matrix mt = grafo.getMatrizAdj();
         int proxlin = 0;
         int menorCiclo = 0;
         int idx = 0;

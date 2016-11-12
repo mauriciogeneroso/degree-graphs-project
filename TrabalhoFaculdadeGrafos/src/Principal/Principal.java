@@ -1,6 +1,6 @@
 package Principal;
 
-import Util.CarregaConfiguracoes;
+import Util.LoadSettings;
 import View.Login.Login;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -124,7 +124,7 @@ public class Principal extends JWindow {
      * Metodo responsável por chamar a tela de usuário ou menu inicial
      */
     public static void chamarLogin() {
-        if (!CarregaConfiguracoes.isUsernameSave()) {
+        if (!LoadSettings.isUsernameSave()) {
             Login fm = new Login();
             fm.setVisible(true);
         } else {

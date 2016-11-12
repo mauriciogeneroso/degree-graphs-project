@@ -14,12 +14,12 @@ package View.Login;
  * @since 15/10/2016
  * @version 1.3
  */
-public class Configuracao extends javax.swing.JFrame {
+public class JSettings extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
     private static final Util.Log log = new Util.Log();
 
-    public Configuracao() {
+    public JSettings() {
         initComponents();
         log.put("Configuracao", "Construtor", "Construído com sucesso");
 
@@ -36,14 +36,15 @@ public class Configuracao extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Configuracao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Configuracao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Configuracao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Configuracao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
     }
 
@@ -73,8 +74,6 @@ public class Configuracao extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-
-        jpContent.setBorder(null);
 
         jlResetar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlResetar.setText("Resetar usuário");
@@ -187,8 +186,8 @@ public class Configuracao extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
-        jtxtUsername.setText(Util.CarregaConfiguracoes.getUsuario());
-        if (Util.CarregaConfiguracoes.isUsernameSave()) {
+        jtxtUsername.setText(Util.LoadSettings.getUsuario());
+        if (Util.LoadSettings.isUsernameSave()) {
             jbcSave.setSelected(true);
         }
         log.put("Configuracao", "formWindowOpened", "Sucesso");
@@ -204,8 +203,8 @@ public class Configuracao extends javax.swing.JFrame {
 
     private void jbRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRemoverActionPerformed
 
-        Util.CarregaConfiguracoes.resetUsername();
-        Util.MensagemCtrl.callMessage("Usuário resetado com sucesso!", "Sucesso!", 7);
+        Util.LoadSettings.resetUsername();
+        Util.MessageCtrl.callMessage("Usuário resetado com sucesso!", "Sucesso!", 7);
         log.put("Configuracao", "jbRemoverActionPerformed", "Usuário resetado com sucesso");
 
 
@@ -214,15 +213,15 @@ public class Configuracao extends javax.swing.JFrame {
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         String username = jtxtUsername.getText();
         if (username.trim().equals("")) {
-            Util.MensagemCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
+            Util.MessageCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
             log.put("Configuracao", "jbRemoverActionPerformed", 0, "Ei, informe corretamente!");
 
         } else if (username.length() < 3) {
-            Util.MensagemCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
+            Util.MessageCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
             log.put("Configuracao", "jbRemoverActionPerformed", 1, ("Usuário \"" + username + "\" tem tamanho de " + username.length() + " caracteres, que é inferior ao mínimo (3)"));
 
         } else {
-            Util.MensagemCtrl.callMessage("Usuário salvo com sucesso!", "Sucesso!", 7);
+            Util.MessageCtrl.callMessage("Usuário salvo com sucesso!", "Sucesso!", 7);
             log.put("Configuracao", "jbRemoverActionPerformed", 2, "Usuário salvo com sucesso");
 
         }

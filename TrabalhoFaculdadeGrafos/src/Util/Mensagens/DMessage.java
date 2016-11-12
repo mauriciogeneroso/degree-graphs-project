@@ -18,11 +18,11 @@ import javax.swing.ImageIcon;
  * @since 22/10/2016
  * @version 1.2
  */
-public class Mensagem extends javax.swing.JDialog {
+public class DMessage extends javax.swing.JDialog {
 
     private static final long serialVersionUID = 1L;
 
-    public Mensagem(String message, String title, int icon) throws java.io.IOException {
+    public DMessage(String message, String title, int icon) throws java.io.IOException {
         initComponents();
         ImageIcon image = null;
         switch (icon) {
