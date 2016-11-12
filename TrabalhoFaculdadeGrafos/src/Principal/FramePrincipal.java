@@ -1,7 +1,7 @@
 package Principal;
 
 import Objetos.Grafo;
-import Util.TesteXML;
+import Util.Prefuse.CreateGraphXML;
 
 /**
  * Estudantes de Ciência da Computação - 4 fase.
@@ -591,7 +591,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             Util.MensagemCtrl.callMessage("Não existe um grafo para visualizar.", "Visualização do grafo", 2);
             log.put("FramePrincipal", "btCompletoActionPerformed", 0, "Não existe um grafo para visualizar");
         } else {
-            TesteXML.testarVisualizar(grafo);
+            CreateGraphXML.testarVisualizar(grafo);
         }
     }//GEN-LAST:event_btVisualizarActionPerformed
 
