@@ -1011,3 +1011,221 @@
 [Sat Nov 12 13:32:30 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
 [Sat Nov 12 13:32:30 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
 [Sat Nov 12 13:32:28 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 16:29:34 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 16:29:34 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 16:29:34 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 16:29:34 BRST 2016] [FramePrincipal.java] [Exportar] :: Cancelado com sucesso!
+[Sat Nov 12 16:29:34 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 16:29:46 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 16:29:46 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 16:29:46 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 16:29:48 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 16:29:46 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 16:29:48 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e]
+[Sat Nov 12 16:29:48 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e]
+[Sat Nov 12 16:29:48 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Sat Nov 12 16:29:46 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Nov 12 16:29:48 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Nov 12 16:30:01 BRST 2016] [Arquivo.java] [exportarGrafo] [0] :: JFileChooser exibido com sucesso
+[Sat Nov 12 16:30:01 BRST 2016] [Arquivo.java] [gravarArquivo] [1] :: Arquivo salvo com sucesso!
+[Sat Nov 12 16:30:01 BRST 2016] [Arquivo.java] [exportarGrafo] [1] :: Gravou arquivo
+[Sat Nov 12 16:29:46 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 16:37:32 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 16:37:32 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 16:37:32 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 16:37:35 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 16:37:35 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 16:37:35 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 16:46:05 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 16:46:05 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 16:46:05 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 16:46:08 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 16:46:08 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 16:46:08 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 16:46:05 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 16:52:45 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 16:52:45 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 16:52:45 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 16:52:47 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 16:52:47 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 16:52:47 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 16:53:28 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 16:53:28 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 16:53:28 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 16:53:31 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 16:53:31 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 16:53:31 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 16:54:05 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 16:54:05 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 16:54:05 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 16:54:07 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 16:54:07 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 16:54:07 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 16:54:05 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:11:28 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:11:28 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:11:28 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:11:31 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:11:31 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:11:31 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:11:28 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:13:12 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:13:12 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:13:12 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:13:12 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:31:07 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:31:07 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:31:07 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:31:11 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:31:11 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:31:11 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:31:07 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:32:13 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:32:13 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:32:13 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:32:17 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 17:32:13 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 17:32:17 BRST 2016] [EntradaDados.java] [capturarNos] :: [a, s, d, f, g, h, j, k, l, i, u, y, t, r, e]
+[Sat Nov 12 17:32:17 BRST 2016] [EntradaDados.java] [capturarNos] :: [a, s, d, f, g, h, j, k, l, i, u, y, t, r, e]
+[Sat Nov 12 17:32:17 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Sat Nov 12 17:32:13 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Nov 12 17:32:17 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Nov 12 17:32:13 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:47:25 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:47:25 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:47:25 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:47:27 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:47:27 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:47:27 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:47:25 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:48:11 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:48:11 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:48:11 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:48:12 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:48:12 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:48:12 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:50:25 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:50:25 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:50:25 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:50:27 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:50:27 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:50:27 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:52:14 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:52:14 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:52:14 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:52:15 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:52:15 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:52:15 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:52:46 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:52:46 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:52:46 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:52:49 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:52:49 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:52:49 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:52:46 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:54:50 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:54:50 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:54:50 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:54:52 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 17:54:50 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 17:54:52 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, r, t, y, u, i, o]
+[Sat Nov 12 17:54:52 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, r, t, y, u, i, o]
+[Sat Nov 12 17:54:52 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Sat Nov 12 17:54:50 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Nov 12 17:54:52 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Nov 12 17:54:50 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:55:27 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:55:27 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:55:27 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:55:29 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 17:55:27 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 17:55:29 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, r, t, y, u, i, o, p]
+[Sat Nov 12 17:55:29 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, r, t, y, u, i, o, p]
+[Sat Nov 12 17:55:29 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Sat Nov 12 17:55:27 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Nov 12 17:55:29 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Nov 12 17:55:27 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:55:52 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:55:52 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:55:52 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:55:54 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:55:54 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:55:54 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:55:52 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:56:46 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:56:46 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:56:46 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:56:48 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:56:48 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:56:48 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:58:00 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:58:00 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:58:00 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:58:01 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:58:01 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:58:01 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 17:58:00 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 17:59:35 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 17:59:35 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 17:59:35 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 17:59:37 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 17:59:37 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 17:59:37 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 18:23:30 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 18:23:30 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 18:23:30 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 18:23:33 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 18:23:33 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 18:23:33 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 18:23:30 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 18:24:08 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 18:24:08 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 18:24:08 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 18:24:09 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 18:24:09 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 18:24:09 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 18:28:01 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 18:28:01 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 18:28:01 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 18:28:03 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 18:28:03 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 18:28:03 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 18:28:01 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 18:34:28 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 18:34:28 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 18:34:28 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 18:34:31 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 18:34:28 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 18:34:31 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, a, s, d, z, x, c]
+[Sat Nov 12 18:34:31 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, a, s, d, z, x, c]
+[Sat Nov 12 18:34:31 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Sat Nov 12 18:34:28 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Nov 12 18:34:31 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Nov 12 18:34:28 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 18:35:16 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 18:35:16 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 18:35:16 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 18:35:19 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 18:35:19 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 18:35:19 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 18:35:16 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, a, s, d, z, x, c, v, b, n, g, f, s, a, e, t, k]
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, a, s, d, z, x, c, v, b, n, g, f, s, a, e, t, k]
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [nosRepetidos] [0] :: Há nós repetidos] [TRUE
+[Sat Nov 12 18:35:53 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Existem nós com o mesmo nome] [Título :: Aviso] [Ícone :: 2
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, s, d, z, x, c, v, b, n, g, f, s, a, e, t, k]
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, s, d, z, x, c, v, b, n, g, f, s, a, e, t, k]
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [nosRepetidos] [0] :: Há nós repetidos] [TRUE
+[Sat Nov 12 18:35:53 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Existem nós com o mesmo nome] [Título :: Aviso] [Ícone :: 2
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, s, d, z, x, c, v, b, n, g, f, s, a, t, k]
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, s, d, z, x, c, v, b, n, g, f, s, a, t, k]
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [nosRepetidos] [0] :: Há nós repetidos] [TRUE
+[Sat Nov 12 18:35:53 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Existem nós com o mesmo nome] [Título :: Aviso] [Ícone :: 2
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [cancelarCriacaoGrafo] [1] :: Sucesso
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [resetarJanela] [1] :: Sucesso
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, r, t, y, u, i, o, p, a, s, d, f, g, h, j, k]
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, r, t, y, u, i, o, p, a, s, d, f, g, h, j, k]
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Sat Nov 12 18:35:16 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Nov 12 18:35:40 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso

@@ -19,9 +19,9 @@ import prefuse.data.io.GraphMLReader;
 import prefuse.util.ColorLib;
 import prefuse.visual.VisualItem;
 
-public class PrefuseGraph {
+public class PrefuseGraph extends JFrame {
 
-    public static void main(String[] args) {
+    public static void showGraficMode () {
 
         Graph graph = null;
         try {
@@ -38,14 +38,14 @@ public class PrefuseGraph {
         vis.add("graph", graph);
 
         // create our nominal color palette
-        // pink for females, baby blue for males
+        // color to nodes
         int[] palette = new int[]{
             ColorLib.rgb(255, 180, 180), ColorLib.rgb(190, 190, 255)
         };
-        
-        // map nominal data values to colors using our provided palette
-//        DataColorAction fill = new DataColorAction("graph.nodes", "gender",
-//                Constants.NOMINAL, VisualItem.FILLCOLOR, palette);
+
+        // map nominal data values to colors using random in create XML
+        DataColorAction fill = new DataColorAction("graph.nodes", "idcolor",
+                Constants.NOMINAL, VisualItem.FILLCOLOR, palette);
         // use black for node text
         ColorAction text = new ColorAction("graph.nodes",
                 VisualItem.TEXTCOLOR, ColorLib.gray(0));
@@ -55,7 +55,7 @@ public class PrefuseGraph {
 
         // create an action list containing all color assignments
         ActionList color = new ActionList();
-//        color.add(fill);
+        color.add(fill);
         color.add(text);
         color.add(edges);
 
@@ -72,20 +72,21 @@ public class PrefuseGraph {
         // add the actions to the visualization
         vis.putAction("color", color);
         vis.putAction("layout", layout);
-
+        
         // create a new Display that pull from our Visualization
         Display display = new Display(vis);
-        display.setSize(720, 500); // set display size
+        display.setSize(600, 500); // set display size
         display.addControlListener(new DragControl()); // drag items around
         display.addControlListener(new PanControl());  // pan with background left-drag
         display.addControlListener(new ZoomControl()); // zoom with vertical right-drag
-
+        
         // create a new window to hold the visualization
-        JFrame frame = new JFrame("prefuse example");
+        JFrame frame = new JFrame("Visualizar Grafo");
         // ensure application exits when window is closed
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(display);
         frame.pack();           // layout components in window
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true); // show the window
 
         vis.run("color");  // assign the colors
