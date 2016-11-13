@@ -28,29 +28,29 @@ public class Graph implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
     // Matrizes
-    private Matrix matrizAdj;
-    private Matrix matrizInc;
+    private Matrix AdjMatrix;
+    private Matrix IncMatrix;
 
     // Listas
-    private LinkedList<AdjacencyElement>[] listaAdj;
-    private LinkedList<IncidencyElement>[] listaInc;
+    private LinkedList<AdjacencyElement>[] listAdj;
+    private LinkedList<IncidencyElement>[] listInc;
 
     // Nós e arestas
-    private String[] nos;
-    private String[] arestas;
+    private String[] nodes;
+    private String[] edges;
 
     /**
      * Construtor.
      */
     public Graph() {
-        matrizAdj = null;
-        matrizInc = null;
+        AdjMatrix = null;
+        IncMatrix = null;
 
-        listaAdj = null;
-        listaInc = null;
+        listAdj = null;
+        listInc = null;
 
-        nos = null;
-        arestas = null;
+        nodes = null;
+        edges = null;
     }
 
     /**
@@ -58,8 +58,8 @@ public class Graph implements java.io.Serializable {
      *
      * @return Matriz de adjacencia
      */
-    public Matrix getMatrizAdj() {
-        return matrizAdj;
+    public Matrix getAdjMatrix() {
+        return AdjMatrix;
     }
 
     /**
@@ -67,8 +67,8 @@ public class Graph implements java.io.Serializable {
      *
      * @return Matriz de incidência
      */
-    public Matrix getMatrizInc() {
-        return matrizInc;
+    public Matrix getIncMatrix() {
+        return IncMatrix;
     }
 
     /**
@@ -76,8 +76,8 @@ public class Graph implements java.io.Serializable {
      *
      * @return Lista de elementos da lista de adjacencia
      */
-    public LinkedList<AdjacencyElement>[] getListaAdj() {
-        return listaAdj;
+    public LinkedList<AdjacencyElement>[] getListAdj() {
+        return listAdj;
     }
 
     /**
@@ -85,8 +85,8 @@ public class Graph implements java.io.Serializable {
      *
      * @return Lista de elementos da lista de incidência
      */
-    public LinkedList<IncidencyElement>[] getListaInc() {
-        return listaInc;
+    public LinkedList<IncidencyElement>[] getListInc() {
+        return listInc;
     }
 
     /**
@@ -94,17 +94,17 @@ public class Graph implements java.io.Serializable {
      *
      * @return String[] de nós
      */
-    public String[] getNos() {
-        return nos;
+    public String[] getNodes() {
+        return nodes;
     }
 
     /**
      * Atribui Nós.
      *
-     * @param nos String[] - Array de strings para setar nós
+     * @param nodes String[] - Array de strings para setar nós
      */
-    public void setNos(String[] nos) {
-        this.nos = nos;
+    public void setNodes(String[] nodes) {
+        this.nodes = nodes;
     }
 
     /**
@@ -112,37 +112,37 @@ public class Graph implements java.io.Serializable {
      *
      * @return String[] de arestas
      */
-    public String[] getArestas() {
-        return arestas;
+    public String[] getEdges() {
+        return edges;
     }
 
     /**
      * Atrubui arestas.
      *
-     * @param arestas String[] - Array de strings para setar arestas
+     * @param edges String[] - Array de strings para setar arestas
      */
-    public void setArestas(String[] arestas) {
-        this.arestas = arestas;
+    public void setEdges(String[] edges) {
+        this.edges = edges;
     }
 
     /**
      * Retorna nó da posição.
      *
-     * @param posicao int - Posição do nó solicitado
+     * @param position int - Posição do nó solicitado
      * @return String - Nome do nó na posição
      */
-    public String getNoPosicao(int posicao) {
-        return nos[posicao];
+    public String getPositionNode(int position) {
+        return nodes[position];
     }
 
     /**
      * Retorna aresta da posição.
      *
-     * @param posicao int - Posição da aresta solicitado
+     * @param position int - Posição da aresta solicitado
      * @return String - Nome da aresta na posição
      */
-    public String getArestaPosicao(int posicao) {
-        return arestas[posicao];
+    public String getPositionEdge(int position) {
+        return edges[position];
     }
 
     /**
@@ -150,8 +150,8 @@ public class Graph implements java.io.Serializable {
      *
      * @return int - Quantidade de nó
      */
-    public int quantidadeNos() {
-        return nos.length;
+    public int countNode() {
+        return nodes.length;
     }
 
     /**
@@ -160,7 +160,7 @@ public class Graph implements java.io.Serializable {
      * @return boolean - Verdadeiro se estiver vazio, caso contrário falso
      */
     public boolean noIsEmpty() {
-        return nos == null;
+        return nodes == null;
     }
 
     /**
@@ -168,69 +168,69 @@ public class Graph implements java.io.Serializable {
      *
      * @return int - Quantidade de arestas
      */
-    public int quantidadeArestas() {
-        return arestas.length;
+    public int countEdge() {
+        return edges.length;
     }
 
     /**
      * Inicia a matriz.
      *
      * @param mt Matriz - A matriz que será iniciada
-     * @param qntLinhas int - Quantidade de linhas
-     * @param qntColunas int - Quantidade de colunas
+     * @param amountRows int - Quantidade de linhas
+     * @param amountColumns int - Quantidade de colunas
      */
-    public void iniciarMatriz(Matrix mt, int qntLinhas, int qntColunas) {
+    public void startMatrix(Matrix mt, int amountRows, int amountColumns) {
         if (mt instanceof AdjacencyMatrix) {
             mt = new AdjacencyMatrix();
-            mt.iniciarMatriz(qntLinhas, qntColunas);
-            matrizAdj = mt;
+            mt.startMatrix(amountRows, amountColumns);
+            AdjMatrix = mt;
         } else if (mt instanceof IncidenceMatrix) {
             mt = new IncidenceMatrix();
-            mt.iniciarMatriz(qntLinhas, qntColunas);
-            matrizInc = mt;
+            mt.startMatrix(amountRows, amountColumns);
+            IncMatrix = mt;
         }
     }
 
     /**
      * Inicia as listas.
      */
-    public void iniciarListas() {
-        listaAdj = new LinkedList[quantidadeNos()];
-        for (int i = 0; i < quantidadeNos(); i++) {
-            listaAdj[i] = new LinkedList<>();
+    public void startLists() {
+        listAdj = new LinkedList[countNode()];
+        for (int i = 0; i < countNode(); i++) {
+            listAdj[i] = new LinkedList<>();
         }
 
-        listaInc = new LinkedList[quantidadeNos()];
-        for (int i = 0; i < quantidadeNos(); i++) {
-            listaInc[i] = new LinkedList<>();
+        listInc = new LinkedList[countNode()];
+        for (int i = 0; i < countNode(); i++) {
+            listInc[i] = new LinkedList<>();
         }
     }
 
     /**
      * Destroi o grafo.
      */
-    public void destruirGrafo() {
-        nos = null;
-        arestas = null;
-        matrizAdj = null;
-        matrizInc = null;
-        listaAdj = null;
-        listaInc = null;
+    public void destroyGraph() {
+        nodes = null;
+        edges = null;
+        AdjMatrix = null;
+        IncMatrix = null;
+        listAdj = null;
+        listInc = null;
     }
 
     /**
      * Altera a matriz do grafo não direcionado.
      *
      * @param mt Matriz - Matriz a ser alterada
-     * @param noInicial int - Nó inicial
-     * @param noFinal int - Nó final
-     * @param aresta int - Aresta
+     * @param startingNode int - Nó inicial
+     * @param finishingNode int - Nó final
+     * @param edge int - Aresta
      */
-    public void alterarMatrizGrafoNaoDirecionado(Matrix mt, int noInicial, int noFinal, int aresta) {
+    public void alterMatrix(Matrix mt, int startingNode, int finishingNode, int edge) {
         if (mt instanceof AdjacencyMatrix) {
-            ((AdjacencyMatrix) mt).alterarMatrizGrafoNaoDirecionado(noInicial, noFinal);
+            ((AdjacencyMatrix) mt).alterarMatrizGrafoNaoDirecionado(startingNode, finishingNode);
         } else if (mt instanceof IncidenceMatrix) {
-            ((IncidenceMatrix) mt).alterarMatrizGrafoNaoDirecionado(noInicial, noFinal, aresta);
+            ((IncidenceMatrix) mt).alterarMatrizGrafoNaoDirecionado(startingNode, finishingNode, edge);
         }
     }
 
@@ -242,21 +242,21 @@ public class Graph implements java.io.Serializable {
      *
      * @param lt Lista - Lista a ser impressa
      */
-    public void imprimirLista(LinkedList[] lt) {
-        for (int i = 0; i < quantidadeNos(); i++) {
-            System.out.println(nos[i] + " -> " + lt[i]);
+    public void printList(LinkedList[] lt) {
+        for (int i = 0; i < countNode(); i++) {
+            System.out.println(nodes[i] + " -> " + lt[i]);
         }
     }
 
     /**
      * Captura posição de um nó em uma lista
      *
-     * @param no String - nó a ser pesquisado
+     * @param node String - nó a ser pesquisado
      * @return posição do nó solicitado
      */
-    private int posicaoLista(String no) {
-        for (int i = 0; i < quantidadeNos(); i++) {
-            if (nos[i].equals(no)) {
+    private int positionList(String node) {
+        for (int i = 0; i < countNode(); i++) {
+            if (nodes[i].equals(node)) {
                 return i;
             }
         }
@@ -267,27 +267,27 @@ public class Graph implements java.io.Serializable {
     /**
      * Altera a lista do grafo não direcionado.
      *
-     * @param noInicial int - Nó inicial
-     * @param noFinal int - Nó final
-     * @param aresta int - Aresta
+     * @param startingNode int - Nó inicial
+     * @param finishingNode int - Nó final
+     * @param edge int - Aresta
      */
-    public void alterarListaGrafoNaoDirecionado(String noInicial, String noFinal, String aresta) {
-        if (noInicial.equals(noFinal)) {
-            listaAdj[posicaoLista(noInicial)].add(new AdjacencyElement(noFinal));
+    public void alterList(String startingNode, String finishingNode, String edge) {
+        if (startingNode.equals(finishingNode)) {
+            listAdj[positionList(startingNode)].add(new AdjacencyElement(finishingNode));
 
-            listaInc[posicaoLista(noInicial)].add(new IncidencyElement(noFinal, aresta)); //uni os dois para não ter 2 ifs com mesmo resultado, desnecessário
+            listInc[positionList(startingNode)].add(new IncidencyElement(finishingNode, edge)); //uni os dois para não ter 2 ifs com mesmo resultado, desnecessário
         } else {
-            listaAdj[posicaoLista(noInicial)].add(new AdjacencyElement(noFinal));
-            listaAdj[posicaoLista(noFinal)].add(new AdjacencyElement(noInicial));
+            listAdj[positionList(startingNode)].add(new AdjacencyElement(finishingNode));
+            listAdj[positionList(finishingNode)].add(new AdjacencyElement(startingNode));
 
-            listaInc[posicaoLista(noInicial)].add(new IncidencyElement(noFinal, aresta));
-            listaInc[posicaoLista(noFinal)].add(new IncidencyElement(noInicial, aresta));
+            listInc[positionList(startingNode)].add(new IncidencyElement(finishingNode, edge));
+            listInc[positionList(finishingNode)].add(new IncidencyElement(startingNode, edge));
         }
         System.out.println("Lista de Adjacência não direcionada: ");
-        imprimirLista(listaAdj);
+        printList(listAdj);
 
         System.out.println("Lista de Incidência não direcionada: ");
-        imprimirLista(listaInc);
+        printList(listInc);
     }
 
 }

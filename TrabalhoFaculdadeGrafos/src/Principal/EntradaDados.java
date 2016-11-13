@@ -59,12 +59,12 @@ public class EntradaDados extends javax.swing.JFrame {
         rButtonCompleto = new javax.swing.JRadioButton();
         rButtonDefinir = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
-        cBoxNoInicial = new javax.swing.JComboBox<String>();
+        cBoxNoInicial = new javax.swing.JComboBox<>();
         labelDefinirNo = new javax.swing.JLabel();
         labelDefinirNo2 = new javax.swing.JLabel();
         labelDefinirAresta = new javax.swing.JLabel();
-        cBoxAresta = new javax.swing.JComboBox<String>();
-        cBoxNoFinal = new javax.swing.JComboBox<String>();
+        cBoxAresta = new javax.swing.JComboBox<>();
+        cBoxNoFinal = new javax.swing.JComboBox<>();
         buttonDefinirAdjacencia = new javax.swing.JButton();
         buttonCriarGrafo = new javax.swing.JButton();
         buttonCancelar = new javax.swing.JButton();
@@ -453,12 +453,12 @@ public class EntradaDados extends javax.swing.JFrame {
 
         } else {
             try {
-                grafo2.setArestas(capturarArestas(entradaArestas.getText()));
-                grafo2.iniciarMatriz(new Objetos.Armazenamento.IncidenceMatrix(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
-                grafo2.iniciarListas();
+                grafo2.setEdges(capturarArestas(entradaArestas.getText()));
+                grafo2.startMatrix(new Objetos.Armazenamento.IncidenceMatrix(), grafo2.countNode(), grafo2.countEdge());
+                grafo2.startLists();
                 cBoxAresta.removeAllItems();
                 botaoDefinir();
-                for (String arestaa : grafo2.getArestas()) {
+                for (String arestaa : grafo2.getEdges()) {
                     cBoxAresta.addItem(arestaa);
                 }
                 buttonDefinirAdjacencia.setEnabled(true);
@@ -472,9 +472,9 @@ public class EntradaDados extends javax.swing.JFrame {
     }//GEN-LAST:event_entradaArestasFocusLost
 
     private void buttonDefinirAdjacenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDefinirAdjacenciaActionPerformed
-        grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizAdj(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-        grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizInc(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
-        grafo2.alterarListaGrafoNaoDirecionado(grafo2.getNoPosicao(posicaoNoInicialSelecionado()), grafo2.getNoPosicao(posicaoNoFinalSelecionado()), grafo2.getArestaPosicao(posicaoArestaSelecionada()));
+        grafo2.alterMatrix(grafo2.getAdjMatrix(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+        grafo2.alterMatrix(grafo2.getIncMatrix(), posicaoNoInicialSelecionado(), posicaoNoFinalSelecionado(), posicaoArestaSelecionada());
+        grafo2.alterList(grafo2.getPositionNode(posicaoNoInicialSelecionado()), grafo2.getPositionNode(posicaoNoFinalSelecionado()), grafo2.getPositionEdge(posicaoArestaSelecionada()));
 
         //Após definir remove a aresta da seleção de acordo com o index
         cBoxAresta.removeItemAt(cBoxAresta.getSelectedIndex());
@@ -490,15 +490,15 @@ public class EntradaDados extends javax.swing.JFrame {
 
     private void buttonCriarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCriarGrafoActionPerformed
         if (rButtonDefinir.isSelected()) {
-            frame.setGrafo(grafo2);
+            frame.setGraph(grafo2);
             exit();
         } else if (entradaNos.getText().trim().equals("")) {
             Util.MessageCtrl.callMessage("É necessário informar os nós para criar o grafo", "Aviso", 2);
         } else {
             // CRIA AUTOMATICAMENTE O GRAFO COMPLETO
-            grafo2.setNos(capturarNos(entradaNos.getText()));
+            grafo2.setNodes(capturarNos(entradaNos.getText()));
 
-            if (grafo2.quantidadeNos() == 1) {
+            if (grafo2.countNode() == 1) {
                 Util.MessageCtrl.callMessage("Não é posśivel criar um grafo completo com apenas um nó", "Aviso", 2);
 
             } else if (nosRepetidos()) {
@@ -506,28 +506,28 @@ public class EntradaDados extends javax.swing.JFrame {
             } else {
 
                 int contArestas = 0;
-                for (int i = 0; i < grafo2.quantidadeNos(); i++) {
-                    for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
+                for (int i = 0; i < grafo2.countNode(); i++) {
+                    for (int j = i + 1; j < grafo2.countNode(); j++) {
                         contArestas++;
                     }
                 }
 
-                grafo2.iniciarMatriz(new Objetos.Armazenamento.AdjacencyMatrix(), grafo2.quantidadeNos(), grafo2.quantidadeNos()); // Adjacência
-                grafo2.iniciarListas();
+                grafo2.startMatrix(new Objetos.Armazenamento.AdjacencyMatrix(), grafo2.countNode(), grafo2.countNode()); // Adjacência
+                grafo2.startLists();
 
                 String[] arestasNaoDirecionado = new String[contArestas];
                 for (int i = 0; i < contArestas; i++) {
                     arestasNaoDirecionado[i] = String.valueOf(i);
                 }
 
-                grafo2.setArestas(arestasNaoDirecionado);
-                grafo2.iniciarMatriz(new Objetos.Armazenamento.IncidenceMatrix(), grafo2.quantidadeNos(), grafo2.quantidadeArestas());
+                grafo2.setEdges(arestasNaoDirecionado);
+                grafo2.startMatrix(new Objetos.Armazenamento.IncidenceMatrix(), grafo2.countNode(), grafo2.countEdge());
                 contArestas = 0;
-                for (int i = 0; i < grafo2.quantidadeNos(); i++) {
-                    for (int j = i + 1; j < grafo2.quantidadeNos(); j++) {
-                        grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizAdj(), i, j, contArestas);
-                        grafo2.alterarMatrizGrafoNaoDirecionado(grafo2.getMatrizInc(), i, j, contArestas);
-                        grafo2.alterarListaGrafoNaoDirecionado(grafo2.getNoPosicao(i), grafo2.getNoPosicao(j), grafo2.getArestaPosicao(contArestas++));
+                for (int i = 0; i < grafo2.countNode(); i++) {
+                    for (int j = i + 1; j < grafo2.countNode(); j++) {
+                        grafo2.alterMatrix(grafo2.getAdjMatrix(), i, j, contArestas);
+                        grafo2.alterMatrix(grafo2.getIncMatrix(), i, j, contArestas);
+                        grafo2.alterList(grafo2.getPositionNode(i), grafo2.getPositionNode(j), grafo2.getPositionEdge(contArestas++));
                     }
                 }
                 frame.setVisible(true);
@@ -536,7 +536,7 @@ public class EntradaDados extends javax.swing.JFrame {
                 } catch (InterruptedException ex) {
                     log.put("EntradaDados", "buttonCriarGrafoActionPerformed", ex.getMessage());
                 }
-                frame.setGrafo(grafo2);
+                frame.setGraph(grafo2);
                 exit();
             } // fim do else            
         } // fim do else
@@ -608,8 +608,8 @@ public class EntradaDados extends javax.swing.JFrame {
     private int posicaoNoInicialSelecionado() {
         String tempNoInicialSelected = cBoxNoInicial.getItemAt(cBoxNoInicial.getSelectedIndex());
         int posicaoLinhaNo = 0;
-        for (int i = 0; i < grafo2.quantidadeNos(); i++) {
-            if (grafo2.getNos()[i].equals(tempNoInicialSelected)) {
+        for (int i = 0; i < grafo2.countNode(); i++) {
+            if (grafo2.getNodes()[i].equals(tempNoInicialSelected)) {
                 posicaoLinhaNo = i;
                 break;
             }
@@ -627,8 +627,8 @@ public class EntradaDados extends javax.swing.JFrame {
     private int posicaoNoFinalSelecionado() {
         String tempNoFinalSelected = cBoxNoFinal.getItemAt(cBoxNoFinal.getSelectedIndex());
         int posicaoColunaNo = 0;
-        for (int i = 0; i < grafo2.quantidadeNos(); i++) {
-            if (grafo2.getNos()[i].equals(tempNoFinalSelected)) {
+        for (int i = 0; i < grafo2.countNode(); i++) {
+            if (grafo2.getNodes()[i].equals(tempNoFinalSelected)) {
                 posicaoColunaNo = i;
                 break;
             }
@@ -646,8 +646,8 @@ public class EntradaDados extends javax.swing.JFrame {
     private int posicaoArestaSelecionada() {
         String tempArestaSelected = cBoxAresta.getItemAt(cBoxAresta.getSelectedIndex());
         int posicaoAresta = 0;
-        for (int i = 0; i < grafo2.quantidadeArestas(); i++) {
-            if (grafo2.getArestas()[i].equals(tempArestaSelected)) {
+        for (int i = 0; i < grafo2.countEdge(); i++) {
+            if (grafo2.getEdges()[i].equals(tempArestaSelected)) {
                 posicaoAresta = i;
                 break;
             }
@@ -680,15 +680,15 @@ public class EntradaDados extends javax.swing.JFrame {
     }
 
     private void botaoDefinir() {
-        grafo2.setNos(capturarNos(entradaNos.getText()));
+        grafo2.setNodes(capturarNos(entradaNos.getText()));
         if (!grafo2.noIsEmpty()) {
-            grafo2.iniciarMatriz(new Objetos.Armazenamento.AdjacencyMatrix(), grafo2.quantidadeNos(), grafo2.quantidadeNos());
+            grafo2.startMatrix(new Objetos.Armazenamento.AdjacencyMatrix(), grafo2.countNode(), grafo2.countNode());
             // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
             // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
-            grafo2.iniciarListas();
+            grafo2.startLists();
             cBoxNoInicial.removeAllItems();
             cBoxNoFinal.removeAllItems();
-            for (String no : grafo2.getNos()) {
+            for (String no : grafo2.getNodes()) {
                 cBoxNoInicial.addItem(no);
                 cBoxNoFinal.addItem(no);
             }
@@ -736,8 +736,8 @@ public class EntradaDados extends javax.swing.JFrame {
      * Método para cancelar a criação do grafo
      */
     private void cancelarCriacaoGrafo() {
-        if (grafo2.getMatrizAdj() == null) {
-            grafo2.destruirGrafo();
+        if (grafo2.getAdjMatrix() == null) {
+            grafo2.destroyGraph();
             log.put("EntradaDados", "cancelarCriacaoGrafo", 1, "Sucesso");
 
         }

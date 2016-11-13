@@ -1,7 +1,7 @@
 package Principal;
 
 import Objetos.Graph;
-import Util.Prefuse.CreateGraphXML;
+import Util.Prefuse.CreateGraphml;
 import Util.Prefuse.PrefuseGraph;
 
 /**
@@ -15,18 +15,18 @@ import Util.Prefuse.PrefuseGraph;
  * @since 15/10/2016
  * @version 1.7
  */
-public class FramePrincipal extends javax.swing.JFrame {
+public class FramePrincipal extends javax.swing.JFrame{
 
     private static final long serialVersionUID = 1L;
     private static final Util.Log log = new Util.Log();
 
-    private Graph grafo = new Graph();
+    private Graph graph = new Graph();
     private EntradaDados entrada;
     private CaracteristicasGrafo.IdentificationGraph ident = new CaracteristicasGrafo.IdentificationGraph();
     ;
     private javax.swing.ButtonGroup buttonGroup = new javax.swing.ButtonGroup();
 
-    public FramePrincipal() {
+    public FramePrincipal(){
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -34,7 +34,7 @@ public class FramePrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())){
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -456,20 +456,20 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btEntradaDadosActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
-        if (grafo.getMatrizAdj() != null) {
+        if (graph.getAdjMatrix() != null){
             textArea.setText("");
-            grafo.destruirGrafo();
+            graph.destroyGraph();
             log.put("FramePrincipal", "btLimparActionPerformed", 0, "Grafo destruído");
         }
         log.put("FramePrincipal", "btLimparActionPerformed", 1, "Sem grafo para destruir");
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimplesActionPerformed
-        if (grafo.getMatrizAdj() == null) {
+        if (graph.getAdjMatrix() == null){
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é simples", "Grafo Simples", 2);
             log.put("FramePrincipal", "btSimplesActionPerformed", 0, "Não existe um grafo para verificar se é simples");
 
-        } else if (ident.VerifGrafoSimples(grafo)) {
+        } else if (ident.VerifGrafoSimples(graph)){
             Util.MessageCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
             log.put("FramePrincipal", "btSimplesActionPerformed", 1, "O grafo é simples");
         } else {
@@ -479,10 +479,10 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btSimplesActionPerformed
 
     private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
-        if (grafo.getMatrizAdj() == null) {
+        if (graph.getAdjMatrix() == null){
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é completo.", "Grafo completo", 2);
             log.put("FramePrincipal", "btCompletoActionPerformed", 0, "Não existe um grafo para verificar se é completo");
-        } else if (ident.VerifGrafoCompleto(grafo)) {
+        } else if (ident.VerifGrafoCompleto(graph)){
             Util.MessageCtrl.callMessage("O grafo é completo", "Grafo Completo", 1);
             log.put("FramePrincipal", "btCompletoActionPerformed", 1, "O grafo é completo");
         } else {
@@ -492,10 +492,10 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btCompletoActionPerformed
 
     private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
-        if (grafo.getListaAdj() == null) {
+        if (graph.getListAdj() == null){
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é conexo", "Grafo Conexo", 2);
             log.put("FramePrincipal", "btConexoActionPerformed", 0, "Não existe um grafo para verificar se é conexo");
-        } else if (ident.VerifGrafoConexo(grafo)) {
+        } else if (ident.VerifGrafoConexo(graph)){
             Util.MessageCtrl.callMessage("O grafo é conexo", "Grafo Conexo", 1);
             log.put("FramePrincipal", "btConexoActionPerformed", 1, "O grafo é conexo");
         } else {
@@ -505,11 +505,11 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btConexoActionPerformed
 
     private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
-        if (grafo.getListaAdj() == null) {
+        if (graph.getListAdj() == null){
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é planar", "Grafo Planar", 2);
             log.put("FramePrincipal", "btPlanarActionPerformed", 0, "Não existe um grafo para verificar se é planar");
 
-        } else if (ident.VerifGrafoPlanar(grafo)) {
+        } else if (ident.VerifGrafoPlanar(graph)){
             Util.MessageCtrl.callMessage("O grafo é planar", "Grafo Planar", 1);
             log.put("FramePrincipal", "btPlanarActionPerformed", 1, "O grafo é planar");
         } else {
@@ -539,7 +539,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_rButtonListaIncActionPerformed
 
     private void btConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfigActionPerformed
-        View.Login.JSettings cfg = new View.Login.JSettings();
+        View.Login.Configuracoes cfg = new View.Login.Configuracoes();
         cfg.setVisible(true);
         this.dispose();
         log.put("FramePrincipal", "btConfigActionPerformed", "Configuracao.java chamada com sucesos");
@@ -580,30 +580,36 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiExportarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        JSobre jSobre = SingleStanceSobre.getStance();
+        JAbout jSobre = SingleStanceAbout.getStance();
         jSobre.setLocationRelativeTo(this);
         jSobre.setVisible(true);
-        log.put("FramePrincipal", "btConfigActionPerformed", "JSobre.java chamada com sucesos");
+        log.put("FramePrincipal", "btConfigActionPerformed", "JAbout.java chamada com sucesos");
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void btVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVisualizarActionPerformed
-//        if (grafo.getMatrizAdj() == null) {
-//            Util.MensagemCtrl.callMessage("Não existe um grafo para visualizar.", "Visualização do grafo", 2);
-//            log.put("FramePrincipal", "btCompletoActionPerformed", 0, "Não existe um grafo para visualizar");
-//        } else {
-            CreateGraphXML create = new CreateGraphXML();
-            create.createXml(grafo);
+        if (graph.getAdjMatrix() == null){
+            Util.MessageCtrl.callMessage("Não existe um grafo para visualizar.", "Visualização do grafo", 2);
+            log.put("FramePrincipal", "btVisualizarActionPerformed", 0, "Não existe um grafo para visualizar");
+        } else if (!ident.VerifGrafoSimples(graph)){
+            // Um grafo simples não possui laço ou aresta paralela, então se não for simples é porque possui
+            Util.MessageCtrl.callMessage("Não deve possuir laço ou aresta paralela", "Visualização do grafo", 2);
+            log.put("FramePrincipal", "btVisualizarActionPerformed", 0, "Não pode visualziar porque existe um laço ou aresta paralela");
+        } else {
+            CreateGraphml create = new CreateGraphml();
+            create.createXml(graph);
             PrefuseGraph.showGraficMode();
-//        }
+            log.put("FramePrincipal", "btVisualizarActionPerformed", "Prefuse chamada com sucesso para visualziar o grafo");
+        }
     }//GEN-LAST:event_btVisualizarActionPerformed
+
 
     /**
      * Método para importar um grafo
      */
-    private void importar() {
+    private void importar(){
         try {
-            grafo = File.FileImportExport.importarGrafo(this);
+            graph = File.FileImportExport.importarGrafo(this);
             verificaSeIraExibirOsDados();
         } catch (NullPointerException ex) {
             log.put("FramePrincipal", "Exportar", "Cancelado com sucesso!");
@@ -613,13 +619,13 @@ public class FramePrincipal extends javax.swing.JFrame {
     /**
      * Método para exportar o Grafo
      */
-    private void exportar() {
-        if (grafo.getListaInc() == null) {
+    private void exportar(){
+        if (graph.getListInc() == null){
             Util.MessageCtrl.callMessage("Não existe um grafo para ser exportado!", "Exportar", 8);
             log.put("FramePrincipal", "Exportar", "Não existe um grafo para ser exportado!");
         } else {
             try {
-                File.FileImportExport.exportarGrafo(this, grafo);
+                File.FileImportExport.exportarGrafo(this, graph);
             } catch (NullPointerException e) {
                 log.put("FramePrincipal", "Exportar", "Cancelado com sucesso!");
             }
@@ -629,15 +635,15 @@ public class FramePrincipal extends javax.swing.JFrame {
     /**
      * Método para verificar se os dados do Grafo serão exibidos em tela
      */
-    private void verificaSeIraExibirOsDados() {
-        if (grafo.getListaAdj() != null) {
-            if (rButtonMatrizAdj.isSelected()) {
+    private void verificaSeIraExibirOsDados(){
+        if (graph.getListAdj() != null){
+            if (rButtonMatrizAdj.isSelected()){
                 exibirMatrizAdj();
-            } else if (rButtonMatrizInc.isSelected()) {
+            } else if (rButtonMatrizInc.isSelected()){
                 exibirMatrizInc();
-            } else if (rButtonListaAdj.isSelected()) {
+            } else if (rButtonListaAdj.isSelected()){
                 exibirListaAdc();
-            } else if (rButtonListaInc.isSelected()) {
+            } else if (rButtonListaInc.isSelected()){
                 exibirListaInc();
             }
         }
@@ -647,11 +653,11 @@ public class FramePrincipal extends javax.swing.JFrame {
      * Método que imprime as informações em tela de acordo com a opção que
      * estiver selecionada no momento
      */
-    private void imprimirInformacoes() {
+    private void imprimirInformacoes(){
         // Imprime os Nós
         String nosFormal = "Nós = {";
-        String[] nos = grafo.getNos();
-        for (int i = 0; i < grafo.quantidadeNos() - 1; i++) {
+        String[] nos = graph.getNodes();
+        for (int i = 0; i < graph.countNode() - 1; i++) {
             nosFormal += nos[i] + ", ";
         }
         nosFormal += nos[nos.length - 1] + "}\n";
@@ -659,8 +665,8 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         // Imprime as Arestas
         String arestasFormal = "Arestas = {";
-        String arestas[] = grafo.getArestas();
-        for (int i = 0; i < grafo.quantidadeArestas() - 1; i++) {
+        String arestas[] = graph.getEdges();
+        for (int i = 0; i < graph.countEdge() - 1; i++) {
             arestasFormal += arestas[i] + ", ";
         }
         arestasFormal += arestas[arestas.length - 1] + "}\n\n";
@@ -670,37 +676,37 @@ public class FramePrincipal extends javax.swing.JFrame {
     /**
      * Método para exibir a Matriz de Adjacência em tela
      */
-    private void exibirMatrizAdj() {
+    private void exibirMatrizAdj(){
         textArea.setText("");
         imprimirInformacoes();
         textArea.setText(textArea.getText() + "------------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Matriz de Adjacência: \n\n");
-        textArea.setText(textArea.getText() + grafo.getMatrizAdj());
+        textArea.setText(textArea.getText() + graph.getAdjMatrix());
     }
 
     /**
      * Método para exibir a Matriz de Incidência em tela
      */
-    private void exibirMatrizInc() {
+    private void exibirMatrizInc(){
         textArea.setText("");
         imprimirInformacoes();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Matriz de Incidência: \n\n");
-        textArea.setText(textArea.getText() + grafo.getMatrizInc());
+        textArea.setText(textArea.getText() + graph.getIncMatrix());
     }
 
     /**
      * Método para exibir a Lista de Adjacência em tela
      */
-    private void exibirListaAdc() {
+    private void exibirListaAdc(){
         textArea.setText("");
         imprimirInformacoes();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Lista de Adjacência: \n\n");
-        String[] nos = grafo.getNos();
-        java.util.LinkedList[] lt = grafo.getListaAdj();
+        String[] nos = graph.getNodes();
+        java.util.LinkedList[] lt = graph.getListAdj();
 
-        for (int i = 0; i < grafo.quantidadeNos(); i++) {
+        for (int i = 0; i < graph.countNode(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
         }
     }
@@ -708,27 +714,27 @@ public class FramePrincipal extends javax.swing.JFrame {
     /**
      * Método para exibir a Lista de Incidẽncia em tela
      */
-    private void exibirListaInc() {
+    private void exibirListaInc(){
         textArea.setText("");
         imprimirInformacoes();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
         textArea.setText(textArea.getText() + "Lista de Incidência: \n\n");
-        String[] nos = grafo.getNos();
-        java.util.LinkedList[] lt = grafo.getListaInc();
+        String[] nos = graph.getNodes();
+        java.util.LinkedList[] lt = graph.getListInc();
 
-        for (int i = 0; i < grafo.quantidadeNos(); i++) {
+        for (int i = 0; i < graph.countNode(); i++) {
             textArea.setText(textArea.getText() + nos[i] + " -> " + lt[i] + "\n");
         }
     }
 
-    public void setGrafo(Graph grafo) {
-        if (this.grafo != grafo) {
+    public void setGraph(Graph graph){
+        if (this.graph != graph){
             log.put("FramePrincipal", "setGrafo", 0, "Grafo setado com sucesso");
         } else {
             log.put("FramePrincipal", "setGrafo", 1, "Grafo mantido");
         }
 
-        this.grafo = grafo;
+        this.graph = graph;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

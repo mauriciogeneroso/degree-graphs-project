@@ -18,7 +18,7 @@ public class AdjacencyElement implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String no;
+    private String node;
 
     /**
      * Elemento Adjacente.
@@ -26,7 +26,7 @@ public class AdjacencyElement implements java.io.Serializable {
      * @param no String - Nome do nó
      */
     public AdjacencyElement(String no) {
-        this.no = no;
+        this.node = no;
     }
 
     /**
@@ -36,6 +36,6 @@ public class AdjacencyElement implements java.io.Serializable {
      */
     @Override
     public String toString() {
-        return "{" + "No = " + no + '}';
+        return "{" + "No = " + node + '}';
     }
 }

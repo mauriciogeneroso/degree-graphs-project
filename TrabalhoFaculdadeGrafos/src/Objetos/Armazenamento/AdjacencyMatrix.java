@@ -23,19 +23,19 @@ public class AdjacencyMatrix extends Matrix implements java.io.Serializable {
      * Altera a Matriz de Adjacência(para Grafo Não Direcionado) de acordo com
      * os nós informados
      *
-     * @param noInicial - primeiro nó da adjacência
-     * @param noFinal - segundo nó da adjacência
+     * @param startingNode - primeiro nó da adjacência
+     * @param finishingNode - segundo nó da adjacência
      */
-    public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal) {
-        if (noInicial == noFinal) {
+    public void alterarMatrizGrafoNaoDirecionado(int startingNode, int finishingNode) {
+        if (startingNode == finishingNode) {
             // Se houver laço só irá armazenar uma vez
-            matriz[noInicial][noFinal] += 1;
+            matrix[startingNode][finishingNode] += 1;
         } else {
-            matriz[noInicial][noFinal] += 1;
-            matriz[noFinal][noInicial] += 1;
+            matrix[startingNode][finishingNode] += 1;
+            matrix[finishingNode][startingNode] += 1;
         }
         System.out.println("Matriz de adjacência - Grafo não direcionado: ");
-        this.imprimirMatriz();
+        this.printMatrix();
     }
 
 }

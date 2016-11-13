@@ -23,20 +23,20 @@ public class IncidenceMatrix extends Matrix implements java.io.Serializable {
      * Altera a Matriz de Incidência (para Grafo Não Direcionado) de acordo com
      * os nós informados
      *
-     * @param noInicial - primeiro nó da adjacência
-     * @param noFinal - segundo nó da adjacência
-     * @param aresta - Aresta que está ligando os dois nós
+     * @param startingNode - primeiro nó da adjacência
+     * @param finishingNode - segundo nó da adjacência
+     * @param edge - Aresta que está ligando os dois nós
      */
-    public void alterarMatrizGrafoNaoDirecionado(int noInicial, int noFinal, int aresta) {
-        if (noInicial == noFinal) {
+    public void alterarMatrizGrafoNaoDirecionado(int startingNode, int finishingNode, int edge) {
+        if (startingNode == finishingNode) {
             // Se houver laço só irá armazenar uma vez
-            matriz[noInicial][aresta] += 1;
+            matrix[startingNode][edge] += 1;
         } else {
-            matriz[noInicial][aresta] += 1;
-            matriz[noFinal][aresta] += 1;
+            matrix[startingNode][edge] += 1;
+            matrix[finishingNode][edge] += 1;
         }
         System.out.println("Matriz de Incidência - Grafo não direcionada: ");
-        this.imprimirMatriz();
+        this.printMatrix();
     }
 
 }

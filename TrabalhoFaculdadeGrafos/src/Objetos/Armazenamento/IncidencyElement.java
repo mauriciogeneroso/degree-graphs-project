@@ -18,27 +18,27 @@ public class IncidencyElement implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String no;
-    private String aresta;
+    private String node;
+    private String edge;
 
     /**
      * Retorna o Objeto em String.
      *
-     * @param no String - Nome do n[o
+     * @param node String - Nome do n[o
      */
-    public IncidencyElement(String no) {
-        this.no = no;
+    public IncidencyElement(String node) {
+        this.node = node;
     }
 
     /**
      * Retorna o Objeto em String.
      *
-     * @param no String - Nome do n[o
-     * @param aresta String - Nome da aresta
+     * @param node String - Nome do n[o
+     * @param edge String - Nome da aresta
      */
-    public IncidencyElement(String no, String aresta) {
-        this.no = no;
-        this.aresta = aresta;
+    public IncidencyElement(String node, String edge) {
+        this.node = node;
+        this.edge = edge;
     }
 
     /**
@@ -48,7 +48,7 @@ public class IncidencyElement implements java.io.Serializable {
      */
     @Override
     public String toString() {
-        return "{" + "No = " + no + ", Aresta = " + aresta + '}';
+        return "{" + "No = " + node + ", Aresta = " + edge + '}';
     }
 
 }

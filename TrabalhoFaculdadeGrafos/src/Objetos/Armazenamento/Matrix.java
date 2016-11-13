@@ -21,17 +21,17 @@ public abstract class Matrix implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    int[][] matriz;
-    int linhas;
-    int colunas;
+    int[][] matrix;
+    int rows;
+    int columns;
 
     /**
      * Retorna a matriz
      *
      * @return int[][] - Matriz
      */
-    public int[][] getMatriz() {
-        return matriz;
+    public int[][] getMatrix() {
+        return matrix;
     }
 
     /**
@@ -39,17 +39,17 @@ public abstract class Matrix implements java.io.Serializable {
      *
      * @return int - Linhas
      */
-    public int getLinhas() {
-        return linhas;
+    public int getCountRows() {
+        return rows;
     }
 
     /**
      * Atribui Linhas
      *
-     * @param linhas int - Valor para linhas
+     * @param rows int - Valor para linhas
      */
-    private void setLinhas(int linhas) {
-        this.linhas = linhas;
+    private void setRows(int rows) {
+        this.rows = rows;
     }
 
     /**
@@ -57,24 +57,24 @@ public abstract class Matrix implements java.io.Serializable {
      *
      * @return int - Colunas
      */
-    public int getColunas() {
-        return colunas;
+    public int getCountColumns() {
+        return columns;
     }
 
     /**
      * Atribui Linhas
      *
-     * @param colunas int - Valor para colunas
+     * @param columns int - Valor para colunas
      */
-    private void setColunas(int colunas) {
-        this.colunas = colunas;
+    private void setColumns(int columns) {
+        this.columns = columns;
     }
 
     /**
      * Limpa a matriz
      */
-    public void limparMatriz() {
-        for (int[] mt : matriz) {
+    public void cleanMatriz() {
+        for (int[] mt : matrix) {
             for (int j = 0; j < mt.length; j++) {
                 mt[j] = 0;
             }
@@ -84,24 +84,24 @@ public abstract class Matrix implements java.io.Serializable {
     /**
      * Imprimi a matriz
      */
-    public void imprimirMatriz() {
+    public void printMatrix() {
         System.out.print(this); // Iŕa chamar o toString();
     }
 
     /**
      * Retorna as linhas
      *
-     * @param linhas int - Linhas
-     * @param colunas int - Colunas
+     * @param rows int - Linhas
+     * @param columns int - Colunas
      */
-    public void iniciarMatriz(int linhas, int colunas) {
+    public void startMatrix(int rows, int columns) {
         /// Cuidar, a classe possui dois atributos com o mesmo nome linhas e colunas
-        this.setLinhas(linhas);
-        this.setColunas(colunas);
-        matriz = new int[this.linhas][this.colunas];
-        for (int i = 0; i < linhas; i++) {
-            for (int j = 0; j < this.colunas; j++) {
-                matriz[i][j] = 0;
+        this.setRows(rows);
+        this.setColumns(columns);
+        matrix = new int[this.rows][this.columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < this.columns; j++) {
+                matrix[i][j] = 0;
             }
         }
     }
@@ -114,7 +114,7 @@ public abstract class Matrix implements java.io.Serializable {
     @Override
     public String toString() {
         String imprimir = "";
-        for (int[] mt : matriz) {
+        for (int[] mt : matrix) {
             for (int j = 0; j < mt.length; j++) {
                 imprimir += mt[j] + "   ";
             }

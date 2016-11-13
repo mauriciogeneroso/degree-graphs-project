@@ -31,15 +31,15 @@ public class IdentificationGraph {
      * falso.
      */
     public boolean VerifGrafoSimples(Graph grafo) {
-        Matrix mt = grafo.getMatrizAdj();
-        for (int i = 0; i < mt.getLinhas(); i++) {
-            for (int j = 0; j < mt.getColunas(); j++) {
-                if (mt.getMatriz()[i][j] > 1) {
+        Matrix mt = grafo.getAdjMatrix();
+        for (int i = 0; i < mt.getCountRows(); i++) {
+            for (int j = 0; j < mt.getCountColumns(); j++) {
+                if (mt.getMatrix()[i][j] > 1) {
                     // Existe aresta paralela, não é simples
                     log.put("Identificacao", "VerifGrafoSimples", 0, "Existe aresta paralela, não é simples] ::[FALSE");
                     return false;
                 }
-                if (i == j && mt.getMatriz()[i][j] > 0) {
+                if (i == j && mt.getMatrix()[i][j] > 0) {
                     // Existe laço, não é simples
                     log.put("Identificacao", "VerifGrafoSimples", 1, "Existe laço, não é simples] :: [FALSE");
                     return false;
@@ -58,15 +58,15 @@ public class IdentificationGraph {
      * falso.
      */
     public boolean VerifGrafoCompleto(Graph grafo) {
-        Matrix mt = grafo.getMatrizAdj();
-        for (int i = 0; i < mt.getLinhas(); i++) {
-            for (int j = 0; j < mt.getColunas(); j++) {
-                if (i != j && mt.getMatriz()[i][j] != 1) {
+        Matrix mt = grafo.getAdjMatrix();
+        for (int i = 0; i < mt.getCountRows(); i++) {
+            for (int j = 0; j < mt.getCountColumns(); j++) {
+                if (i != j && mt.getMatrix()[i][j] != 1) {
                     // Existe algum nó que não é ligado ou que possui aresta paralela
                     log.put("Identificacao", "VerifGrafoCompleto", 0, "Existe algum nó que não é ligado ou que possui aresta paralela] :: [FALSE");
                     return false;
                 }
-                if (i == j && mt.getMatriz()[i][j] > 0) {
+                if (i == j && mt.getMatrix()[i][j] > 0) {
                     // Existe um laço no próprio nó
                     log.put("Identificacao", "VerifGrafoCompleto", 1, "Existe um laço no próprio nó] :: [FALSE");
                     return false;
@@ -89,13 +89,13 @@ public class IdentificationGraph {
         int v = 0; //Verifica
         int it = 1;
         float ar = 0;
-        Matrix mt = grafo.getMatrizAdj();
+        Matrix mt = grafo.getAdjMatrix();
 
-        mt.imprimirMatriz();
+        mt.printMatrix();
 
-        for (int i = 0; i < mt.getLinhas(); i++) {
-            for (int j = 0; j < mt.getColunas(); j++) {
-                if (i != j && mt.getMatriz()[i][j] != 0) {
+        for (int i = 0; i < mt.getCountRows(); i++) {
+            for (int j = 0; j < mt.getCountColumns(); j++) {
+                if (i != j && mt.getMatrix()[i][j] != 0) {
                     v = 0;
                     break;
                 } else {
@@ -109,15 +109,15 @@ public class IdentificationGraph {
         }
         System.out.println("" + v + "");
        if(v==0){
-        for (int i = 0; i < mt.getLinhas(); i++) {
-            for (int j = 0; j < mt.getColunas(); j++) {
-                if (i != j && mt.getMatriz()[i][j] > 0) {
+        for (int i = 0; i < mt.getCountRows(); i++) {
+            for (int j = 0; j < mt.getCountColumns(); j++) {
+                if (i != j && mt.getMatrix()[i][j] > 0) {
                     ar++;
                 }
             }
         }
         ar = ar / 2;
-        if (ar >= grafo.quantidadeNos()-1) {
+        if (ar >= grafo.countNode()-1) {
             v = 0;
         }
         else {
@@ -129,11 +129,11 @@ public class IdentificationGraph {
         if (v == 0) {
             int n = 0;
             int cont = 1;
-            int nos = grafo.quantidadeNos();
+            int nos = grafo.countNode();
 
-            int vetor[] = new int[grafo.quantidadeNos()];
+            int vetor[] = new int[grafo.countNode()];
 
-            for (int a = 0; a < grafo.quantidadeNos(); a++) {
+            for (int a = 0; a < grafo.countNode(); a++) {
                 vetor[a] = -1;
             }
 
@@ -142,19 +142,19 @@ public class IdentificationGraph {
             System.out.println("" + vetor[vetorsomado] + "alow");
             vetorsomado++;
 
-            for (int i = 0; i < mt.getLinhas(); i++) {
+            for (int i = 0; i < mt.getCountRows(); i++) {
                 cont = 1;
-                for (int j = 0; j < mt.getColunas(); j++) {
-                    if (j != i && mt.getMatriz()[i][j] > 0) {
+                for (int j = 0; j < mt.getCountColumns(); j++) {
+                    if (j != i && mt.getMatrix()[i][j] > 0) {
                         cont = 1;
-                        for (int f = 0; f < grafo.quantidadeNos(); f++) {
+                        for (int f = 0; f < grafo.countNode(); f++) {
 
                             if (vetor[f] == j && cont == 1) {
                                 cont = 20;
                             }
 
                         }
-                        for (int f = 0; f < grafo.quantidadeNos(); f++) {
+                        for (int f = 0; f < grafo.countNode(); f++) {
                             if (vetor[f] != j && cont == 1) {
                                 vetor[vetorsomado] = j;
                                 System.out.println("" + vetor[vetorsomado] + "alowzim");
@@ -169,13 +169,13 @@ public class IdentificationGraph {
             }
 
             int som = 0;
-            for (int f = 0; f < grafo.quantidadeNos(); f++) {
+            for (int f = 0; f < grafo.countNode(); f++) {
                 if (vetor[f] != -1) {
                     som++;
                 }
             }
             /*Verifica o numero de valores no Vetor*/
-            if (som == grafo.quantidadeNos()) {
+            if (som == grafo.countNode()) {
                 log.put("Identificacao", "VerifGrafoConexo", 0, "É um grafo conexo] :: [TRUE");
                 return true;
             }
@@ -195,7 +195,7 @@ public class IdentificationGraph {
         boolean result = false;
         
         int v = 0;
-        Matrix mt = grafo.getMatrizAdj();
+        Matrix mt = grafo.getAdjMatrix();
         int proxlin = 0;
         int menorCiclo = 0;
         int idx = 0;
@@ -204,14 +204,14 @@ public class IdentificationGraph {
         int counter1 = 0;
         int counter2 = 0;
         
-        int arestas = grafo.quantidadeArestas();
-        int nos = grafo.quantidadeNos();
+        int arestas = grafo.countEdge();
+        int nos = grafo.countNode();
         int isolados=0;
         int ver=0;
         /*Está Função Serve para Contar se Existem nós isolados*/
-        for (int i = 0; i < mt.getLinhas(); i++) {
-            for (int j = 0; j < mt.getColunas(); j++) {
-                if (i != j && mt.getMatriz()[i][j] != 0) {
+        for (int i = 0; i < mt.getCountRows(); i++) {
+            for (int j = 0; j < mt.getCountColumns(); j++) {
+                if (i != j && mt.getMatrix()[i][j] != 0) {
                     ver = 0;
                     break;
                 } else {
@@ -232,52 +232,52 @@ public class IdentificationGraph {
         }
       /*Função que Verifica se Existe Laço em um grafo*/
         if (v == 0) {
-            for (int linha = 0; linha < mt.getLinhas(); linha++) {
-                for (int coluna1 = 0; coluna1 < mt.getColunas(); coluna1++) {
-                    if (mt.getMatriz()[linha][coluna1] == 1) {
+            for (int linha = 0; linha < mt.getCountRows(); linha++) {
+                for (int coluna1 = 0; coluna1 < mt.getCountColumns(); coluna1++) {
+                    if (mt.getMatrix()[linha][coluna1] == 1) {
                         proxlin = coluna1;
                         idx = coluna1 -= 1;
                         menorCiclo++;
-                        while (proxlin < mt.getLinhas()) {
-                            for (int coluna2 = 0; coluna2 < mt.getColunas(); coluna2++) {
-                                if (coluna1 != coluna2 && proxlin != coluna2 && mt.getMatriz()[proxlin][coluna2] == 1) {
+                        while (proxlin < mt.getCountRows()) {
+                            for (int coluna2 = 0; coluna2 < mt.getCountColumns(); coluna2++) {
+                                if (coluna1 != coluna2 && proxlin != coluna2 && mt.getMatrix()[proxlin][coluna2] == 1) {
                                     menorCiclo++;
                                     c2 = coluna2;
-                                    if (menorCiclo == grafo.quantidadeNos() && coluna2 == idx) {
+                                    if (menorCiclo == grafo.countNode() && coluna2 == idx) {
                                         break;
                                     }
                                     proxlin = c2;
                                     coluna1 = c2 - 1;
                                     break;
                                 } else {
-                                    counter2 += mt.getMatriz()[proxlin][coluna2];
+                                    counter2 += mt.getMatrix()[proxlin][coluna2];
                                     if (counter2 == 0
-                                            && coluna2 == grafo.quantidadeNos() - 1) {
+                                            && coluna2 == grafo.countNode() - 1) {
                                         v = 1;
                                         break;
                                     }
                                 }
                             }
-                            if (menorCiclo == grafo.quantidadeNos() && c2 == idx) {
+                            if (menorCiclo == grafo.countNode() && c2 == idx) {
                                 break;
                             }
-                            if (counter2 == 0 && c2 == grafo.quantidadeNos() - 1) {
+                            if (counter2 == 0 && c2 == grafo.countNode() - 1) {
                                 break;
                             }
                         }
                     }
-                    if (menorCiclo == grafo.quantidadeNos() && c2 == idx) {
+                    if (menorCiclo == grafo.countNode() && c2 == idx) {
                         break;
                     }
-                    if (counter2 == 0 && c2 == grafo.quantidadeNos() - 1) {
+                    if (counter2 == 0 && c2 == grafo.countNode() - 1) {
                         break;
                     }
                 }
-                if (menorCiclo == grafo.quantidadeNos() && c2 == idx) {
+                if (menorCiclo == grafo.countNode() && c2 == idx) {
                     break;
                 }
 
-                if (counter2 == 0 && c2 == grafo.quantidadeNos() - 1) {
+                if (counter2 == 0 && c2 == grafo.countNode() - 1) {
                     break;
                 }
             }
