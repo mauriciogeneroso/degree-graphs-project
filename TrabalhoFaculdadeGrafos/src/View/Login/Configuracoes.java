@@ -21,6 +21,8 @@ public class Configuracoes extends javax.swing.JFrame {
 
     public Configuracoes() {
         initComponents();
+        javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
+        this.setIconImage(img.getImage());
         log.put("Configuracao", "Construtor", "Construído com sucesso");
 
         /* Set the Nimbus look and feel */

@@ -120,8 +120,10 @@ public class PrefuseGraph extends JFrame{
         frame.pack();           // layout components in window
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
+        javax.swing.ImageIcon img = new javax.swing.ImageIcon(frame.getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
+        frame.setIconImage(img.getImage());
         frame.setVisible(true); // show the window
-
+        
         vis.run("color");  // assign the colors
         vis.run("layout"); // start up the animated layout
 

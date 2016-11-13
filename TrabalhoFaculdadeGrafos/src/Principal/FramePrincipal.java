@@ -550,6 +550,7 @@ public class FramePrincipal extends javax.swing.JFrame{
         EntradaDados entrada = new EntradaDados(this);
         entrada.setLocationRelativeTo(this);
         entrada.setVisible(true);
+        this.setVisible(false);
         log.put("FramePrincipal", "btConfigActionPerformed", "EntradaDados.java chamada com sucesos");
     }//GEN-LAST:event_jmiNovoGrafoActionPerformed
 

@@ -26,6 +26,8 @@ public class EntradaDados extends javax.swing.JFrame {
 
     public EntradaDados(FramePrincipal frame) {
         initComponents();
+        javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
+        this.setIconImage(img.getImage());
         this.frame = frame;
         this.grafo2 = new Objetos.Graph();
 

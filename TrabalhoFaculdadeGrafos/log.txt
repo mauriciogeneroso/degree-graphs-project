@@ -2484,3 +2484,150 @@
 [Sat Nov 12 23:06:05 BRST 2016] [Identificacao.java] [VerifGrafoSimples] [2] :: É um grafo simples] :: [TRUE
 [Sat Nov 12 23:06:05 BRST 2016] [FramePrincipal.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
 [Sat Nov 12 23:06:05 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 23:15:10 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:15:10 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:15:12 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 23:15:12 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, r, t, y, u, i, o, p, l, ç, k, j, h, g, f, d, s, a, z, x, c, v, b, n, m]
+[Sat Nov 12 23:15:12 BRST 2016] [EntradaDados.java] [capturarNos] :: [q, w, e, r, t, y, u, i, o, p, l, ç, k, j, h, g, f, d, s, a, z, x, c, v, b, n, m]
+[Sat Nov 12 23:15:12 BRST 2016] [EntradaDados.java] [nosRepetidos] [1] :: Não há nós repetidos] [FALSE
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Nov 12 23:15:12 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Nov 12 23:16:45 BRST 2016] [Arquivo.java] [exportarGrafo] [0] :: JFileChooser exibido com sucesso
+[Sat Nov 12 23:16:45 BRST 2016] [Arquivo.java] [gravarArquivo] [1] :: Arquivo salvo com sucesso!
+[Sat Nov 12 23:16:45 BRST 2016] [Arquivo.java] [exportarGrafo] [1] :: Gravou arquivo
+[Sat Nov 12 23:15:10 BRST 2016] [Identificacao.java] [VerifGrafoSimples] [2] :: É um grafo simples] :: [TRUE
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sat Nov 12 23:15:10 BRST 2016] [Identificacao.java] [VerifGrafoSimples] [2] :: É um grafo simples] :: [TRUE
+[Sat Nov 12 23:19:14 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é simples!] [Título :: Grafo Simples] [Ícone :: 1
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [btSimplesActionPerformed] [1] :: O grafo é simples
+[Sat Nov 12 23:15:10 BRST 2016] [Identificacao.java] [VerifGrafoCompleto] [2] :: É um grafo completo] :: [TRUE
+[Sat Nov 12 23:19:14 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é completo] [Título :: Grafo Completo] [Ícone :: 1
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [btCompletoActionPerformed] [1] :: O grafo é completo
+[Sat Nov 12 23:15:10 BRST 2016] [Identificacao.java] [VerifGrafoConexo] [0] :: É um grafo conexo] :: [TRUE
+[Sat Nov 12 23:19:14 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é conexo] [Título :: Grafo Conexo] [Ícone :: 1
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [btConexoActionPerformed] [1] :: O grafo é conexo
+[Sat Nov 12 23:15:10 BRST 2016] [Identificacao.java] [VerifGrafoPlanar] [0] :: O grafo não é planar] :: [FALSE
+[Sat Nov 12 23:19:14 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: O grafo não é planar] [Título :: Grafo Planar] [Ícone :: 1
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [btPlanarActionPerformed] [2] :: O grafo não é planar
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:15:12 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: EntradaDados.java chamada com sucesos
+[Sat Nov 12 23:15:12 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [Exportar] :: Cancelado com sucesso!
+[Sat Nov 12 23:16:45 BRST 2016] [Arquivo.java] [exportarGrafo] [0] :: JFileChooser exibido com sucesso
+[Sat Nov 12 23:15:10 BRST 2016] [FramePrincipal.java] [Exportar] :: Cancelado com sucesso!
+[Sat Nov 12 23:21:41 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:21:41 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:21:45 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: EntradaDados.java chamada com sucesos
+[Sat Nov 12 23:21:45 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [Exportar] :: Cancelado com sucesso!
+[Sat Nov 12 23:21:59 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para ser exportado!] [Título :: Exportar] [Ícone :: 8
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [Exportar] :: Não existe um grafo para ser exportado!
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [Exportar] :: Cancelado com sucesso!
+[Sat Nov 12 23:21:59 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para verificar se é planar] [Título :: Grafo Planar] [Ícone :: 2
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btPlanarActionPerformed] [0] :: Não existe um grafo para verificar se é planar
+[Sat Nov 12 23:21:59 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para verificar se é completo.] [Título :: Grafo completo] [Ícone :: 2
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btCompletoActionPerformed] [0] :: Não existe um grafo para verificar se é completo
+[Sat Nov 12 23:21:59 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para verificar se é simples] [Título :: Grafo Simples] [Ícone :: 2
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btSimplesActionPerformed] [0] :: Não existe um grafo para verificar se é simples
+[Sat Nov 12 23:22:25 BRST 2016] [Configuracao.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sat Nov 12 23:21:41 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:21:41 BRST 2016] [CarregaConfiguracoes.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sat Nov 12 23:21:41 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:21:41 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:22:25 BRST 2016] [Configuracao.java] [formWindowOpened] :: Sucesso
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:22:25 BRST 2016] [Configuracao.java] [formWindowClosing] :: Fechada com sucesso
+[Sat Nov 12 23:21:45 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 23:21:59 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para visualizar.] [Título :: Visualização do grafo] [Ícone :: 2
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btVisualizarActionPerformed] [0] :: Não existe um grafo para visualizar
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btLimparActionPerformed] [1] :: Sem grafo para destruir
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:21:41 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:25:02 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:25:02 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:25:02 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:25:02 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:25:33 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:25:33 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:25:33 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:25:33 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:25:54 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:25:54 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:25:54 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:25:54 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:26:36 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:26:36 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:26:36 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:26:42 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 23:26:36 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 23:26:36 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:26:42 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 23:26:36 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: EntradaDados.java chamada com sucesos
+[Sat Nov 12 23:26:36 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:27:22 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:27:22 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:27:28 BRST 2016] [EntradaDados.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [Exportar] :: Cancelado com sucesso!
+[Sat Nov 12 23:27:40 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para ser exportado!] [Título :: Exportar] [Ícone :: 8
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [Exportar] :: Não existe um grafo para ser exportado!
+[Sat Nov 12 23:27:44 BRST 2016] [Configuracao.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sat Nov 12 23:27:22 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:27:22 BRST 2016] [CarregaConfiguracoes.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sat Nov 12 23:27:22 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:27:22 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:27:44 BRST 2016] [Configuracao.java] [formWindowOpened] :: Sucesso
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:27:44 BRST 2016] [Configuracao.java] [formWindowClosing] :: Fechada com sucesso
+[Sat Nov 12 23:27:22 BRST 2016] [FramePrincipal.java] [jmiSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 23:29:01 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:29:01 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:29:01 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:29:03 BRST 2016] [Arquivo.java] [lerArquivo] :: Objeto grafo lido com sucesso!
+[Sat Nov 12 23:29:03 BRST 2016] [Arquivo.java] [importarGrafo] [0] :: lerArquivo solicitado
+[Sat Nov 12 23:29:03 BRST 2016] [Arquivo.java] [importarGrafo] [2] :: Grafo retornado
+[Sat Nov 12 23:29:01 BRST 2016] [Identificacao.java] [VerifGrafoSimples] [2] :: É um grafo simples] :: [TRUE
+[Sat Nov 12 23:29:01 BRST 2016] [FramePrincipal.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sat Nov 12 23:29:01 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 23:29:26 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:29:26 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:29:26 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:29:27 BRST 2016] [Configuracao.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:29:26 BRST 2016] [FramePrincipal.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sat Nov 12 23:29:26 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:29:26 BRST 2016] [CarregaConfiguracoes.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sat Nov 12 23:29:26 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:29:26 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: true
+[Sat Nov 12 23:29:27 BRST 2016] [Configuracao.java] [formWindowOpened] :: Sucesso
+[Sat Nov 12 23:29:26 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:29:26 BRST 2016] [CarregaConfiguracoes.java] [resetUsername] [1] :: Usuário resetado com sucesso!
+[Sat Nov 12 23:29:30 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: Usuário resetado com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sat Nov 12 23:29:27 BRST 2016] [Configuracao.java] [jbRemoverActionPerformed] :: Usuário resetado com sucesso
+[Sat Nov 12 23:29:26 BRST 2016] [FramePrincipal.java] [Construtor] :: Construído com sucesso
+[Sat Nov 12 23:29:27 BRST 2016] [Configuracao.java] [formWindowClosing] :: Fechada com sucesso
+[Sat Nov 12 23:29:26 BRST 2016] [FramePrincipal.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Nov 12 23:29:38 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:29:38 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: false
+[Sat Nov 12 23:29:38 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:29:38 BRST 2016] [CarregaConfiguracoes.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sat Nov 12 23:29:38 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:29:38 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: false
+[Sat Nov 12 23:30:12 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:30:12 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: false
+[Sat Nov 12 23:30:12 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:30:12 BRST 2016] [CarregaConfiguracoes.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sat Nov 12 23:30:12 BRST 2016] [CarregaConfiguracoes.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Nov 12 23:30:12 BRST 2016] [CarregaConfiguracoes.java] [isUsernameSave] [1] :: false
