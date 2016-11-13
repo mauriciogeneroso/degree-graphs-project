@@ -213,6 +213,7 @@ public class IdentificationGraph {
         int c2 = 0;
         int counter1 = 0;
         int counter2 = 0;
+        int bug=0;
         
         int arestas = graph.countEdge();
         int nos = graph.countNode();
@@ -242,6 +243,7 @@ public class IdentificationGraph {
         }
       /*Função que Verifica se Existe Laço em um grafo*/
         if (v == 0) {
+            
             for (int linha = 0; linha < mt.getCountRows(); linha++) {
                 for (int coluna1 = 0; coluna1 < mt.getCountColumns(); coluna1++) {
                     if (mt.getMatrix()[linha][coluna1] == 1) {
@@ -252,7 +254,10 @@ public class IdentificationGraph {
                             for (int coluna2 = 0; coluna2 < mt.getCountColumns(); coluna2++) {
                                 if (coluna1 != coluna2 && proxlin != coluna2 && mt.getMatrix()[proxlin][coluna2] == 1) {
                                     menorCiclo++;
+                                    
+                                    
                                     c2 = coluna2;
+                                    
                                     if (menorCiclo == graph.countNode() && coluna2 == idx) {
                                         break;
                                     }
@@ -274,6 +279,12 @@ public class IdentificationGraph {
                             if (counter2 == 0 && c2 == graph.countNode() - 1) {
                                 break;
                             }
+                            bug++;
+                            System.out.println("" +bug + "aad");
+                            if(bug>1000){
+                                        
+                               break;
+                                    }
                         }
                     }
                     if (menorCiclo == graph.countNode() && c2 == idx) {
@@ -282,6 +293,10 @@ public class IdentificationGraph {
                     if (counter2 == 0 && c2 == graph.countNode() - 1) {
                         break;
                     }
+                    if(bug>1000){
+                                        
+                               break;
+                                    }
                 }
                 if (menorCiclo == graph.countNode() && c2 == idx) {
                     break;
@@ -290,6 +305,10 @@ public class IdentificationGraph {
                 if (counter2 == 0 && c2 == graph.countNode() - 1) {
                     break;
                 }
+                if(bug>1000){
+                                        
+                               break;
+                                    }
             }
         }
         System.out.println("" + menorCiclo + "");
