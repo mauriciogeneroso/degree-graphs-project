@@ -283,10 +283,10 @@ public class Graph implements java.io.Serializable {
             listInc[positionList(startingNode)].add(new IncidencyElement(finishingNode, edge));
             listInc[positionList(finishingNode)].add(new IncidencyElement(startingNode, edge));
         }
-        System.out.println("Lista de Adjacência não direcionada: ");
+        System.out.println("Lista de Adjacência: ");
         printList(listAdj);
 
-        System.out.println("Lista de Incidência não direcionada: ");
+        System.out.println("Lista de Incidência: ");
         printList(listInc);
     }
 

@@ -70,11 +70,11 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="454" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                          <Component id="jPanel3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -142,7 +142,7 @@
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="             Projeto interdisciplinar realizado com as disciplinas:               &#xa;&#xa;                                   1. Estruturas de Dados II                                   &#xa;                     2. Projeto interdisciplinar da Computa&#xe7;&#xe3;o II                   &#xa;                                       3. Teoria dos Grafos                                  &#xa;                             ---------------------------------------------------&#xa;                             Graduandos autores do projeto:                             &#xa;&#xa;                                         1. Gustavo Souza                                        &#xa;                                          2. Luan Darabas&#xa;                                      3. Luiz Alexandre da Luz                                  &#xa;                                       4. Maur&#xed;cio Generoso&#xa;&#xa;                             ---------------------------------------------------&#xa;                                            Professores:&#xa;&#xa;                                       1. Christine Vieira&#xa;                                  2. Gilberto Vieira da Silva&#xa;                                    3. Leila La&#xed;s Gon&#xe7;alves&#xa;&#xa;&#xa;       22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE"/>
+                    <Property name="text" type="java.lang.String" value=" Projeto interdisciplinar realizado com as disciplinas:&#xa;               1. Estruturas de Dados II                                   &#xa;      2. Projeto interdisciplinar da Computa&#xe7;&#xe3;o II                   &#xa;                3. Teoria dos Grafos                                  &#xa; ----------------------------------------------------&#xa;             Graduandos autores do projeto:                             &#xa;&#xa;                  1. Gustavo Souza                                        &#xa;                        2. Luan Darabas&#xa;                         3. Luiz Alexandre da Luz&#xa;                   4. Maur&#xed;cio Generoso&#xa;&#xa; ---------------------------------------------------&#xa;                  Professores:&#xa;&#xa;                   1. Christine Vieira&#xa;               2. Gilberto Vieira da Silva&#xa;                      3. Leila La&#xed;s Gon&#xe7;alves&#xa;&#xa; 22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE"/>
                     <Property name="autoscrolls" type="boolean" value="false"/>
                     <Property name="focusable" type="boolean" value="false"/>
                     <Property name="requestFocusEnabled" type="boolean" value="false"/>

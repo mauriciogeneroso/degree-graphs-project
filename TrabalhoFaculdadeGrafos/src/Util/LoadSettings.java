@@ -38,7 +38,7 @@ public final class LoadSettings {
         } catch (IOException ex) {
             log.put("CarregaConfiguracoes", "getProperties", 1, ex.getMessage());
         }
-        log.put("CarregaConfiguracoes", "getProperties", 0, "Propriedades carregadas");
+        log.put("LoadSettings", "getProperties", 0, "Propriedades carregadas");
         return temp;
     }
 
@@ -50,7 +50,7 @@ public final class LoadSettings {
     public static String getUsuario() {
         Properties prop = getProperties();
         String user = prop.getProperty(Strings.USERNAME_PROPERTIES_NAME);
-        log.put("CarregaConfiguracoes", "getUsuario", ("Usuário \"" + user + "\" capturado com sucesso"));
+        log.put("LoadSettings", "getUsuario", ("Usuário \"" + user + "\" capturado com sucesso"));
         return user;
     }
 
@@ -67,7 +67,7 @@ public final class LoadSettings {
             prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
             log.put("CarregaConfiguracoes", "setUsuario", 0, ("Usuário \"" + usuario + "\" salvo com sucesso"));
         } catch (IOException ex) {
-            log.put("CarregaConfiguracoes", "setUsuario", 1, ("Erro ao salvar usuário \"" + usuario + "\"!"));
+            log.put("LoadSettings", "setUsuario", 1, ("Erro ao salvar usuário \"" + usuario + "\"!"));
         }
     }
 
@@ -79,7 +79,7 @@ public final class LoadSettings {
     public static boolean isUsernameSave() {
         Properties prop = getProperties();
         Boolean stats = prop.getProperty(Strings.USERNAME_SAVE_NAME).equals("true");
-        log.put("CarregaConfiguracoes", "isUsernameSave", 1, Boolean.toString(stats));
+        log.put("LoadSettings", "isUsernameSave", 1, Boolean.toString(stats));
         return stats;
     }
 
@@ -93,9 +93,9 @@ public final class LoadSettings {
         try {
             prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
         } catch (IOException ex) {
-            log.put("CarregaConfiguracoes", "resetUsername", 0, ex.getMessage());
+            log.put("LoadSettings", "resetUsername", 0, ex.getMessage());
         }
-        log.put("CarregaConfiguracoes", "resetUsername", 1, "Usuário resetado com sucesso!");
+        log.put("LoadSettings", "resetUsername", 1, "Usuário resetado com sucesso!");
 
     }
 
@@ -108,15 +108,15 @@ public final class LoadSettings {
         Properties prop = getProperties();
         if (opcao) {
             prop.setProperty(Strings.USERNAME_SAVE_NAME, Strings.USERNAME_SAVE_SAVED);
-            log.put("CarregaConfiguracoes", "setSaveUsername", 0, "Usuário salvo setado como] [ TRUE");
+            log.put("LoadSettings", "setSaveUsername", 0, "Usuário salvo setado como] [ TRUE");
         } else {
             prop.setProperty(Strings.USERNAME_SAVE_NAME, Strings.USERNAME_PROPERTIES_DEFAULT_SAVE);//false
-            log.put("CarregaConfiguracoes", "setSaveUsername", 1, "Usuário salvo setado como] [ FALSE");
+            log.put("LoadSettings", "setSaveUsername", 1, "Usuário salvo setado como] [ FALSE");
         }
         try {
             prop.store(new FileOutputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')), null);
         } catch (IOException ex) {
-            log.put("CarregaConfiguracoes", "setSaveUsername", 2, ex.getMessage());
+            log.put("LoadSettings", "setSaveUsername", 2, ex.getMessage());
         }
     }
 

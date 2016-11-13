@@ -73,7 +73,7 @@ public class JAbout extends javax.swing.JFrame{
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("             Projeto interdisciplinar realizado com as disciplinas:               \n\n                                   1. Estruturas de Dados II                                   \n                     2. Projeto interdisciplinar da Computação II                   \n                                       3. Teoria dos Grafos                                  \n                             ---------------------------------------------------\n                             Graduandos autores do projeto:                             \n\n                                         1. Gustavo Souza                                        \n                                          2. Luan Darabas\n                                      3. Luiz Alexandre da Luz                                  \n                                       4. Maurício Generoso\n\n                             ---------------------------------------------------\n                                            Professores:\n\n                                       1. Christine Vieira\n                                  2. Gilberto Vieira da Silva\n                                    3. Leila Laís Gonçalves\n\n\n       22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE");
+        jTextArea1.setText(" Projeto interdisciplinar realizado com as disciplinas:\n               1. Estruturas de Dados II                                   \n      2. Projeto interdisciplinar da Computação II                   \n                3. Teoria dos Grafos                                  \n ----------------------------------------------------\n             Graduandos autores do projeto:                             \n\n                  1. Gustavo Souza                                        \n                        2. Luan Darabas\n                         3. Luiz Alexandre da Luz\n                   4. Maurício Generoso\n\n ---------------------------------------------------\n                  Professores:\n\n                   1. Christine Vieira\n               2. Gilberto Vieira da Silva\n                      3. Leila Laís Gonçalves\n\n 22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE");
         jTextArea1.setAutoscrolls(false);
         jTextArea1.setFocusable(false);
         jTextArea1.setRequestFocusEnabled(false);
@@ -86,9 +86,9 @@ public class JAbout extends javax.swing.JFrame{
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(

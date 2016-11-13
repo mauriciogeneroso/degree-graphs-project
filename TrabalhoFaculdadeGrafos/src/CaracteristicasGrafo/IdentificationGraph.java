@@ -1,7 +1,6 @@
 package CaracteristicasGrafo;
 
 import Objetos.Armazenamento.Matrix;
-import Objetos.Armazenamento.AdjacencyMatrix;
 import Objetos.Graph;
 
 /**
@@ -26,114 +25,127 @@ public class IdentificationGraph {
     /**
      * Verifica se um grafo é simples.
      *
-     * @param grafo Grafo - Entrada de um Grafo
+     * @param graph Grafo - Entrada de um Grafo
      * @return boolean - Verdadiro caso seja um grafo simples, caso contrário,
      * falso.
      */
-    public boolean VerifGrafoSimples(Graph grafo) {
-        Matrix mt = grafo.getAdjMatrix();
+    public boolean checkSimpleGraph(Graph graph) {
+        Matrix mt = graph.getAdjMatrix();
         for (int i = 0; i < mt.getCountRows(); i++) {
             for (int j = 0; j < mt.getCountColumns(); j++) {
                 if (mt.getMatrix()[i][j] > 1) {
                     // Existe aresta paralela, não é simples
-                    log.put("Identificacao", "VerifGrafoSimples", 0, "Existe aresta paralela, não é simples] ::[FALSE");
+                    log.put("IdentificationGraph", "checkSimpleGraph", 0, "Existe aresta paralela, não é simples] ::[FALSE");
                     return false;
                 }
                 if (i == j && mt.getMatrix()[i][j] > 0) {
                     // Existe laço, não é simples
-                    log.put("Identificacao", "VerifGrafoSimples", 1, "Existe laço, não é simples] :: [FALSE");
+                    log.put("IdentificationGraph", "checkSimpleGraph", 1, "Existe laço, não é simples] :: [FALSE");
                     return false;
                 }
             }
         }
-        log.put("Identificacao", "VerifGrafoSimples", 2, "É um grafo simples] :: [TRUE");
+        log.put("IdentificationGraph", "checkSimpleGraph", 2, "É um grafo simples] :: [TRUE");
         return true;
     }
 
     /**
      * Verifica se um grafo é completo.
      *
-     * @param grafo Grafo - Entrada de um Grafo
+     * @param graph Grafo - Entrada de um Grafo
      * @return boolean - Verdadiro caso seja um grafo completo, caso contrário,
      * falso.
      */
-    public boolean VerifGrafoCompleto(Graph grafo) {
-        Matrix mt = grafo.getAdjMatrix();
+    public boolean checkCompleteGraph(Graph graph) {
+        Matrix mt = graph.getAdjMatrix();
         for (int i = 0; i < mt.getCountRows(); i++) {
-            for (int j = 0; j < mt.getCountColumns(); j++) {
+            //j = i para fazer com que verifique somente a metade da matriz, 
+            // pois um lado equivale também ao segundo na adjacência e completo
+            for (int j = i; j < mt.getCountColumns(); j++) {
                 if (i != j && mt.getMatrix()[i][j] != 1) {
                     // Existe algum nó que não é ligado ou que possui aresta paralela
-                    log.put("Identificacao", "VerifGrafoCompleto", 0, "Existe algum nó que não é ligado ou que possui aresta paralela] :: [FALSE");
+                    log.put("IdentificationGraph", "checkCompleteGraph", 0, "Existe algum nó que não é ligado ou que possui aresta paralela] :: [FALSE");
                     return false;
                 }
                 if (i == j && mt.getMatrix()[i][j] > 0) {
                     // Existe um laço no próprio nó
-                    log.put("Identificacao", "VerifGrafoCompleto", 1, "Existe um laço no próprio nó] :: [FALSE");
+                    log.put("IdentificationGraph", "checkCompleteGraph", 1, "Existe um laço no próprio nó] :: [FALSE");
                     return false;
                 }
             }
         }
-        log.put("Identificacao", "VerifGrafoCompleto", 2, "É um grafo completo] :: [TRUE");
+        log.put("IdentificationGraph", "checkCompleteGraph", 2, "É um grafo completo] :: [TRUE");
         return true;
     }
 
     /**
      * Verifica se um grafo é conexo.
      *
-     * @param grafo Grafo - Entrada de um Grafo
+     * @param graph Grafo - Entrada de um Grafo
      * @return boolean - Verdadiro caso seja um grafo conexo, caso contrário,
      * falso.
      */
-    public boolean VerifGrafoConexo(Graph grafo) {
-        // Fazer a validação e retornar false se não for conexo
-        int v = 0; //Verifica
+    public boolean checkConnectedGraph(Graph graph) {
+        int checkConnection = 0; // Checa se é conexo
         int it = 1;
         float ar = 0;
-        Matrix mt = grafo.getAdjMatrix();
-
+        Matrix mt = graph.getAdjMatrix();
         mt.printMatrix();
-
+        
+        // Verifica a existencia de algum nó isolado, pega linha por linha e faz
+        // a leitura, se passou por todas as possibilidades de conexão e terminou 
+        // com valor 1, existe um nó isolado e já pode parar a verificação, pois 
+        // não há um caminho para aquele nó
         for (int i = 0; i < mt.getCountRows(); i++) {
             for (int j = 0; j < mt.getCountColumns(); j++) {
-                if (i != j && mt.getMatrix()[i][j] != 0) {
-                    v = 0;
+                // alterado o if abaixo pelo motivo de que no grafo conexo é 
+                // permitido ter laço, então i == j é válido e também faz parte
+                // da comparação
+                //if (i != j && mt.getMatrix()[i][j] != 0) {
+                if (mt.getMatrix()[i][j] != 0) {
+                    // possui conexão e não está isolado, já pode parar aqui
+                    checkConnection = 0;
                     break;
                 } else {
-                    v = 1;
-                 }
-
+                    // Não possui conexão, irá verificar se possui a conexão 
+                    //com o próximo nó, se finalizar este for interno e terminar
+                    // com 1, é porque o nó está isolado e então para-se o for
+                    // externo no if logo abaixo, dentro do for externo
+                    checkConnection = 1;
+                }
             }
-            if (v == 1) {
+            if (checkConnection == 1) {
                 break;
             }
         }
-        System.out.println("" + v + "");
-       if(v==0){
-        for (int i = 0; i < mt.getCountRows(); i++) {
-            for (int j = 0; j < mt.getCountColumns(); j++) {
-                if (i != j && mt.getMatrix()[i][j] > 0) {
-                    ar++;
+        
+        System.out.println("" + checkConnection + "");
+        if(checkConnection == 0){
+            for (int i = 0; i < mt.getCountRows(); i++) {
+                for (int j = 0; j < mt.getCountColumns(); j++) {
+                    if (i != j && mt.getMatrix()[i][j] > 0) {
+                        ar++;
+                    }
                 }
             }
+            ar = ar / 2;
+            if (ar >= graph.countNode()-1) {
+                checkConnection = 0;
+            }
+            else {
+                checkConnection = 1;
+            }
+            System.out.println("" + checkConnection + "");
         }
-        ar = ar / 2;
-        if (ar >= grafo.countNode()-1) {
-            v = 0;
-        }
-        else {
-            v = 1;
-        }
-        System.out.println("" + v + "");
-       }
        
-        if (v == 0) {
+        if (checkConnection == 0) {
             int n = 0;
             int cont = 1;
-            int nos = grafo.countNode();
+            int nos = graph.countNode();
 
-            int vetor[] = new int[grafo.countNode()];
+            int vetor[] = new int[graph.countNode()];
 
-            for (int a = 0; a < grafo.countNode(); a++) {
+            for (int a = 0; a < graph.countNode(); a++) {
                 vetor[a] = -1;
             }
 
@@ -147,14 +159,14 @@ public class IdentificationGraph {
                 for (int j = 0; j < mt.getCountColumns(); j++) {
                     if (j != i && mt.getMatrix()[i][j] > 0) {
                         cont = 1;
-                        for (int f = 0; f < grafo.countNode(); f++) {
+                        for (int f = 0; f < graph.countNode(); f++) {
 
                             if (vetor[f] == j && cont == 1) {
                                 cont = 20;
                             }
 
                         }
-                        for (int f = 0; f < grafo.countNode(); f++) {
+                        for (int f = 0; f < graph.countNode(); f++) {
                             if (vetor[f] != j && cont == 1) {
                                 vetor[vetorsomado] = j;
                                 System.out.println("" + vetor[vetorsomado] + "alowzim");
@@ -162,40 +174,38 @@ public class IdentificationGraph {
                                 break;
                             }
                         }
-
                     }
-
                 }
             }
 
             int som = 0;
-            for (int f = 0; f < grafo.countNode(); f++) {
+            for (int f = 0; f < graph.countNode(); f++) {
                 if (vetor[f] != -1) {
                     som++;
                 }
             }
             /*Verifica o numero de valores no Vetor*/
-            if (som == grafo.countNode()) {
-                log.put("Identificacao", "VerifGrafoConexo", 0, "É um grafo conexo] :: [TRUE");
+            if (som == graph.countNode()) {
+                log.put("IdentificationGraph", "checkConnectedGraph", 0, "É um grafo conexo] :: [TRUE");
                 return true;
             }
         }
-        log.put("Identificacao", "VerifGrafoConexo", 1, "Não é conexo] :: [FALSE");
+        log.put("IdentificationGraph", "checkConnectedGraph", 1, "Não é conexo] :: [FALSE");
         return false;
     }
 
     /**
      * Verifica se um grafo é planar.
      *
-     * @param grafo Grafo - Entrada de um Grafo
+     * @param graph Grafo - Entrada de um Grafo
      * @return boolean - Verdadiro caso seja um grafo planar, caso contrário,
      * falso.
      */
-    public boolean VerifGrafoPlanar(Graph grafo) {
+    public boolean checkPlanarGraph(Graph graph) {
         boolean result = false;
         
         int v = 0;
-        Matrix mt = grafo.getAdjMatrix();
+        Matrix mt = graph.getAdjMatrix();
         int proxlin = 0;
         int menorCiclo = 0;
         int idx = 0;
@@ -204,8 +214,8 @@ public class IdentificationGraph {
         int counter1 = 0;
         int counter2 = 0;
         
-        int arestas = grafo.countEdge();
-        int nos = grafo.countNode();
+        int arestas = graph.countEdge();
+        int nos = graph.countNode();
         int isolados=0;
         int ver=0;
         /*Está Função Serve para Contar se Existem nós isolados*/
@@ -243,7 +253,7 @@ public class IdentificationGraph {
                                 if (coluna1 != coluna2 && proxlin != coluna2 && mt.getMatrix()[proxlin][coluna2] == 1) {
                                     menorCiclo++;
                                     c2 = coluna2;
-                                    if (menorCiclo == grafo.countNode() && coluna2 == idx) {
+                                    if (menorCiclo == graph.countNode() && coluna2 == idx) {
                                         break;
                                     }
                                     proxlin = c2;
@@ -252,32 +262,32 @@ public class IdentificationGraph {
                                 } else {
                                     counter2 += mt.getMatrix()[proxlin][coluna2];
                                     if (counter2 == 0
-                                            && coluna2 == grafo.countNode() - 1) {
+                                            && coluna2 == graph.countNode() - 1) {
                                         v = 1;
                                         break;
                                     }
                                 }
                             }
-                            if (menorCiclo == grafo.countNode() && c2 == idx) {
+                            if (menorCiclo == graph.countNode() && c2 == idx) {
                                 break;
                             }
-                            if (counter2 == 0 && c2 == grafo.countNode() - 1) {
+                            if (counter2 == 0 && c2 == graph.countNode() - 1) {
                                 break;
                             }
                         }
                     }
-                    if (menorCiclo == grafo.countNode() && c2 == idx) {
+                    if (menorCiclo == graph.countNode() && c2 == idx) {
                         break;
                     }
-                    if (counter2 == 0 && c2 == grafo.countNode() - 1) {
+                    if (counter2 == 0 && c2 == graph.countNode() - 1) {
                         break;
                     }
                 }
-                if (menorCiclo == grafo.countNode() && c2 == idx) {
+                if (menorCiclo == graph.countNode() && c2 == idx) {
                     break;
                 }
 
-                if (counter2 == 0 && c2 == grafo.countNode() - 1) {
+                if (counter2 == 0 && c2 == graph.countNode() - 1) {
                     break;
                 }
             }
@@ -310,10 +320,10 @@ public class IdentificationGraph {
         }
         
         if (v == 1) {
-            log.put("Identificacao", "VerifGrafoPlanar", 0, "O grafo não é planar] :: [FALSE");
+            log.put("IdentificationGraph", "checkPlanarGraph", 0, "O grafo não é planar] :: [FALSE");
             return false;
         } else {
-            log.put("Identificacao", "VerifGrafoPlanar", 1, "O grafo é planar] :: [TRUE");
+            log.put("IdentificationGraph", "checkPlanarGraph", 1, "O grafo é planar] :: [TRUE");
             return true;
         }
     }

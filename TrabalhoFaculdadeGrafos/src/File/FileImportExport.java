@@ -34,17 +34,17 @@ public class FileImportExport {
      * @param frame JFrame - Para poder retornar
      * @return Grafo - Retorna o grafo importado
      */
-    public static Graph importarGrafo(JFrame frame) {
+    public static Graph importGraph(JFrame frame) {
         javax.swing.JFileChooser fc = new javax.swing.JFileChooser();
-        Graph grafo = new Graph();
+        Graph graph = new Graph();
         fc.getFileSystemView().getHomeDirectory();
         fc.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("*.grafo", "grafo"));
         fc.setAcceptAllFileFilterUsed(false);
         fc.showOpenDialog(frame);
-        grafo = lerArquivo(frame, fc.getSelectedFile());
-        log.put("Arquivo", "importarGrafo", 0, "lerArquivo solicitado");
-        log.put("Arquivo", "importarGrafo", 2, "Grafo retornado");
-        return grafo;
+        graph = readFile(frame, fc.getSelectedFile());
+        log.put("FileImportExport", "importGraph", 0, "lerArquivo solicitado");
+        log.put("FileImportExport", "importGraph", 2, "Grafo retornado");
+        return graph;
     }
 
     /**
@@ -53,49 +53,49 @@ public class FileImportExport {
      * @param frame JFrame - Para poder retornar
      * @param grafo Grafo - para poder exportar
      */
-    public static void exportarGrafo(JFrame frame, Graph grafo) {
+    public static void exportGraph(JFrame frame, Graph grafo) {
         javax.swing.JFileChooser fc = new javax.swing.JFileChooser();
         fc.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("*.grafo", ".grafo"));
         fc.setAcceptAllFileFilterUsed(false);
         fc.getFileSystemView().getHomeDirectory();
         fc.showSaveDialog(frame);
-        log.put("Arquivo", "exportarGrafo", 0, "JFileChooser exibido com sucesso");
+        log.put("FileImportExport", "exportGraph", 0, "JFileChooser exibido com sucesso");
         java.io.File sFile = null;
         File f = fc.getSelectedFile();
         String filePath = f.getAbsolutePath();
         if (!filePath.endsWith(".grafo")) {
             f = new File(filePath + ".grafo");
         }
-        gravarArquivo(frame, f.getAbsolutePath(), grafo);
-        log.put("Arquivo", "exportarGrafo", 1, "Gravou arquivo");
+        saveFile(frame, f.getAbsolutePath(), grafo);
+        log.put("FileImportExport", "exportGraph", 1, "Gravou arquivo");
     }
 
     /**
      * Grava arquivo.
      *
      * @param frame JFrame - Para poder retornar
-     * @param nomeArquivo String - Nome do arquivo
-     * @param grafo Grafo - para poder gravar
+     * @param nameFile String - Nome do arquivo
+     * @param graph Grafo - para poder gravar
      */
-    private static void gravarArquivo(JFrame frame, String nomeArquivo, Graph grafo) {
+    private static void saveFile(JFrame frame, String nameFile, Graph graph) {
         FileOutputStream output;
         ObjectOutputStream objOutput = null;
         try {
-            output = new FileOutputStream(nomeArquivo, false);
+            output = new FileOutputStream(nameFile, false);
             objOutput = new ObjectOutputStream(output);
-            objOutput.writeObject(grafo);
+            objOutput.writeObject(graph);
             objOutput.flush();
-            log.put("Arquivo", "gravarArquivo", 1, "Arquivo salvo com sucesso!");
+            log.put("FileImportExport", "saveFile", 1, "Arquivo salvo com sucesso!");
         } catch (java.io.IOException ex) {
             Util.MessageCtrl.callMessage(ex.getMessage(), "Erro ao salvar o arquivo!", 8);
-            log.put("Arquivo", "gravarArquivo", 1, "Erro ao salvar arquivo");
+            log.put("FileImportExport", "saveFile", 1, "Erro ao salvar arquivo");
         } finally {
             if (objOutput != null) {
                 try {
                     objOutput.close();
                 } catch (java.io.IOException ex) {
                     Util.MessageCtrl.callMessage(ex.getMessage(), "Erro ao salvar o arquivo!", 8);
-                    log.put("Arquivo", "gravarArquivo", 2, "Erro ao salvar arquivo");
+                    log.put("FileImportExport", "saveFile", 2, "Erro ao salvar arquivo");
                 }
             }
         }
@@ -105,31 +105,31 @@ public class FileImportExport {
      * Lê arquivo
      *
      * @param frame JFrame - Para poder retornarz.
-     * @param arq File - Arquivo para leitura
+     * @param file File - Arquivo para leitura
      * @return Grafo - Grafo da leitura realizada no arquivo solicitado
      */
-    private static Graph lerArquivo(JFrame frame, File arq) {
-        Graph grafo = new Graph();
+    private static Graph readFile(JFrame frame, File file) {
+        Graph graph = new Graph();
         try {
             FileInputStream input;
             ObjectInputStream objInput = null;
-            input = new FileInputStream(arq);
+            input = new FileInputStream(file);
             try {
                 objInput = new ObjectInputStream(input);
             } catch (java.io.IOException ex) {
-                log.put("Arquivo", "lerArquivo", 1, ex.getMessage());
+                log.put("FileImportExport", "readFile", 1, ex.getMessage());
             }
             try {
-                grafo = (Graph) objInput.readObject();
+                graph = (Graph) objInput.readObject();
             } catch (java.io.IOException | ClassNotFoundException ex) {
-                log.put("Arquivo", "lerArquivo", 1, ex.getMessage());
+                log.put("FileImportExport", "readFile", 1, ex.getMessage());
             }
-            log.put("Arquivo", "lerArquivo", "Objeto grafo lido com sucesso!");
-            return grafo;
+            log.put("FileImportExport", "readFile", "Objeto grafo lido com sucesso!");
+            return graph;
         } catch (java.io.FileNotFoundException ex) {
-            log.put("Arquivo", "lerArquivo", 1, ex.getMessage());
+            log.put("FileImportExport", "readFile", 1, ex.getMessage());
         }
-        return grafo;
+        return graph;
     }
 
 }

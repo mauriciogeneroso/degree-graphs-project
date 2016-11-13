@@ -34,9 +34,9 @@ public final class MessageCtrl {
         try {
             Util.Mensagens.DMessage message = new Util.Mensagens.DMessage(mensagem, titulo, iconType);
             message.setVisible(true);
-            log.put("MensagemCtrl", "callMessage", 0, "Mensagem :: " + mensagem + "] [Título :: " + titulo + "] [Ícone :: " + Integer.toString(iconType));
+            log.put("MessageCtrl", "callMessage", 0, "Mensagem :: " + mensagem + "] [Título :: " + titulo + "] [Ícone :: " + Integer.toString(iconType));
         } catch (java.io.IOException ex) {
-            log.put("MensagemCtrl", "callMessage", 1, ex.getMessage());
+            log.put("MessageCtrl", "callMessage", 1, ex.getMessage());
         }
     }
 }

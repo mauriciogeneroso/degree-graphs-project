@@ -14,16 +14,16 @@ package View.Login;
  * @since 15/10/2016
  * @version 1.3
  */
-public class Configuracoes extends javax.swing.JFrame {
+public class JSettings extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
     private static final Util.Log log = new Util.Log();
 
-    public Configuracoes() {
+    public JSettings() {
         initComponents();
         javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
         this.setIconImage(img.getImage());
-        log.put("Configuracao", "Construtor", "Construído com sucesso");
+        log.put("JSettings", "Construtor", "Construído com sucesso");
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -38,14 +38,26 @@ public class Configuracoes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Configuracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Configuracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Configuracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Configuracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -194,14 +206,14 @@ public class Configuracoes extends javax.swing.JFrame {
         if (Util.LoadSettings.isUsernameSave()) {
             jbcSave.setSelected(true);
         }
-        log.put("Configuracao", "formWindowOpened", "Sucesso");
+        log.put("JSettings", "formWindowOpened", "Sucesso");
 
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        Principal.FramePrincipal fm = new Principal.FramePrincipal();
+        Principal.JMainWindow fm = new Principal.JMainWindow();
         fm.setVisible(true);
-        log.put("Configuracao", "formWindowClosing", "Fechada com sucesso");
+        log.put("JSettings", "formWindowClosing", "Fechada com sucesso");
 
     }//GEN-LAST:event_formWindowClosing
 
@@ -209,7 +221,7 @@ public class Configuracoes extends javax.swing.JFrame {
 
         Util.LoadSettings.resetUsername();
         Util.MessageCtrl.callMessage("Usuário resetado com sucesso!", "Sucesso!", 7);
-        log.put("Configuracao", "jbRemoverActionPerformed", "Usuário resetado com sucesso");
+        log.put("JSettings", "jbRemoverActionPerformed", "Usuário resetado com sucesso");
 
 
     }//GEN-LAST:event_jbRemoverActionPerformed
@@ -218,15 +230,15 @@ public class Configuracoes extends javax.swing.JFrame {
         String username = jtxtUsername.getText();
         if (username.trim().equals("")) {
             Util.MessageCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
-            log.put("Configuracao", "jbRemoverActionPerformed", 0, "Ei, informe corretamente!");
+            log.put("JSettings", "jbRemoverActionPerformed", 0, "Ei, informe corretamente!");
 
         } else if (username.length() < 3) {
             Util.MessageCtrl.callMessage("Ei, informe corretamente!", "Aviso!", 2);
-            log.put("Configuracao", "jbRemoverActionPerformed", 1, ("Usuário \"" + username + "\" tem tamanho de " + username.length() + " caracteres, que é inferior ao mínimo (3)"));
+            log.put("JSettings", "jbRemoverActionPerformed", 1, ("Usuário \"" + username + "\" tem tamanho de " + username.length() + " caracteres, que é inferior ao mínimo (3)"));
 
         } else {
             Util.MessageCtrl.callMessage("Usuário salvo com sucesso!", "Sucesso!", 7);
-            log.put("Configuracao", "jbRemoverActionPerformed", 2, "Usuário salvo com sucesso");
+            log.put("JSettings", "jbRemoverActionPerformed", 2, "Usuário salvo com sucesso");
 
         }
     }//GEN-LAST:event_jbSalvarActionPerformed

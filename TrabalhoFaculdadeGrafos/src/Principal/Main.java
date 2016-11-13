@@ -1,7 +1,7 @@
 package Principal;
 
 import Util.LoadSettings;
-import View.Login.Login;
+import View.Login.JLogin;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
@@ -23,7 +23,7 @@ import org.netbeans.lib.awtextra.*;
  * @since 19/10/2016
  * @version 2
  */
-public class Principal extends JWindow {
+public class Main extends JWindow {
 
     private static final long serialVersionUID = 1L;
 
@@ -44,7 +44,7 @@ public class Principal extends JWindow {
     /**
      * Metodo construtor.
      */
-    public Principal() {
+    public Main() {
         absoluto = new AbsoluteLayout();
         absimage = new AbsoluteConstraints(0, 0);
         absbarra = new AbsoluteConstraints(0, 500);
@@ -76,13 +76,13 @@ public class Principal extends JWindow {
                     try {
                         sleep(10);
                     } catch (InterruptedException ex) {
-                        log.put("Principal", "Thread] [Run", 0, ex.getMessage());
+                        log.put("Main", "Thread] [Run", 0, ex.getMessage());
                     }
                 }
                 try {
                     sleep(300);
                 } catch (InterruptedException ex) {
-                    log.put("Principal", "Thread] [Run", 1, ex.getMessage());
+                    log.put("Main", "Thread] [Run", 1, ex.getMessage());
                 }
                 if (i >= 100) {
                     barra.setForeground(Color.green);
@@ -92,7 +92,7 @@ public class Principal extends JWindow {
                 try {
                     sleep(30);
                 } catch (InterruptedException ex) {
-                    log.put("Principal", "Thread] [Run", 2, ex.getMessage());
+                    log.put("Main", "Thread] [Run", 2, ex.getMessage());
                 }
                 dispose();
             }
@@ -125,10 +125,10 @@ public class Principal extends JWindow {
      */
     public static void chamarLogin() {
         if (!LoadSettings.isUsernameSave()) {
-            Login fm = new Login();
+            JLogin fm = new JLogin();
             fm.setVisible(true);
         } else {
-            FramePrincipal fm = new FramePrincipal();
+            JMainWindow fm = new JMainWindow();
             fm.setVisible(true);
         }
     }
@@ -139,7 +139,7 @@ public class Principal extends JWindow {
      * @param args String[] - Argumentos
      */
     public static void main(String[] args) {
-        new Principal();
+        new Main();
         int coluna1 = 20;
         int idx = 10;
 
