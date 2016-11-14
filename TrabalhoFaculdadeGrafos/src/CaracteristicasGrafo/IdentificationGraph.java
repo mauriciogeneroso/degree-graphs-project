@@ -241,6 +241,15 @@ public class IdentificationGraph {
             menorCiclo = -1;
             v=1;
         }
+        
+        System.out.println("" +mt.getCountColumns());
+        if(mt.getCountColumns()==4 && mt.getCountRows()==4){
+          if(checkCompleteGraph(graph)==true){
+              menorCiclo = -1;
+              v=1;
+          }
+          
+        }
       /*Função que Verifica se Existe Laço em um grafo*/
         if (v == 0) {
             
