@@ -290,7 +290,7 @@ public class IdentificationGraph {
                             }
                             bug++;
                             System.out.println("" +bug + "aad");
-                            if(bug>1000){
+                            if(bug > ((graph.countNode() * graph.countEdge())* graph.countNode())){
                                         
                                break;
                                     }
@@ -302,7 +302,7 @@ public class IdentificationGraph {
                     if (counter2 == 0 && c2 == graph.countNode() - 1) {
                         break;
                     }
-                    if(bug>1000){
+                    if(bug > ((graph.countNode() * graph.countEdge())* graph.countNode())){
                                         
                                break;
                                     }
@@ -314,7 +314,7 @@ public class IdentificationGraph {
                 if (counter2 == 0 && c2 == graph.countNode() - 1) {
                     break;
                 }
-                if(bug>1000){
+                if(bug > ((graph.countNode() * graph.countEdge())* graph.countNode())){
                                         
                                break;
                                     }
