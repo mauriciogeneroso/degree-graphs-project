@@ -3304,3 +3304,200 @@
 [Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozinho" capturado com sucesso
 [Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
 [Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozinho" capturado com sucesso
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:44:36 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuário" salvo com sucesso
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:44:36 BRST 2016] [LoadSettings.java] [setSaveUsername] [1] :: Usuário salvo setado como] [ FALSE
+[Sun Nov 20 19:52:43 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:54:58 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 19:52:43 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 19:54:58 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 19:52:43 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:55:20 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuário" salvo com sucesso
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [setSaveUsername] [1] :: Usuário salvo setado como] [ FALSE
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [captureNodes] :: [João]
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [captureNodes] :: [João]
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [buttonDefine] [1] :: Sucesso
+[Sun Nov 20 19:57:33 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Informe as Arestas para definir o grafo] [Título :: Aviso] [Ícone :: 2
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [entradaArestasFocusLost] [0] :: Informe as Arestas para definir o grafo
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [captureNodes] :: [José, Antonio, Carlos, João, Pedro, Ricardo]
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [captureNodes] :: [José, Antonio, Carlos, João, Pedro, Ricardo]
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 19:55:22 BRST 2016] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sun Nov 20 19:57:33 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é simples!] [Título :: Grafo Simples] [Ícone :: 1
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btSimplesActionPerformed] [1] :: O grafo é simples
+[Sun Nov 20 19:55:22 BRST 2016] [IdentificationGraph.java] [checkCompleteGraph] [2] :: É um grafo completo] :: [TRUE
+[Sun Nov 20 19:57:33 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é completo] [Título :: Grafo Completo] [Ícone :: 1
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btCompletoActionPerformed] [1] :: O grafo é completo
+[Sun Nov 20 19:55:22 BRST 2016] [IdentificationGraph.java] [checkPlanarGraph] [0] :: O grafo não é planar] :: [FALSE
+[Sun Nov 20 19:57:33 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo não é planar] [Título :: Grafo Planar] [Ícone :: 1
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btPlanarActionPerformed] [2] :: O grafo não é planar
+[Sun Nov 20 19:55:22 BRST 2016] [IdentificationGraph.java] [checkPlanarGraph] [0] :: O grafo não é planar] :: [FALSE
+[Sun Nov 20 19:57:33 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo não é planar] [Título :: Grafo Planar] [Ícone :: 1
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btPlanarActionPerformed] [2] :: O grafo não é planar
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 20:12:03 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:55:20 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 20:12:03 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 20:12:03 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 19:57:33 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para visualizar.] [Título :: Visualização do grafo] [Ícone :: 2
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btVisualizarActionPerformed] [0] :: Não existe um grafo para visualizar
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [captureNodes] :: [José, Antônio, Carlos, Pedro, João, Ricadro]
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [captureNodes] :: [José, Antônio, Carlos, Pedro, João, Ricadro]
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Nov 20 19:55:23 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 20:15:20 BRST 2016] [FileImportExport.java] [exportGraph] [0] :: JFileChooser exibido com sucesso
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [exportGraph] :: Cancelado com sucesso!
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [ImportGraph] :: Cancelado com sucesso!
+[Sun Nov 20 19:55:22 BRST 2016] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [0] :: Grafo destruído
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [1] :: Sem grafo para destruir
+[Sun Nov 20 19:55:22 BRST 2016] [JMainWindow.java] [btSairActionPerformed] :: Programa finalizado
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:37:23 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuário" salvo com sucesso
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [setSaveUsername] [0] :: Usuário salvo setado como] [ TRUE
+[Sun Nov 20 20:37:28 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 20:37:32 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 20:37:28 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 20:37:32 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 20:37:33 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário "Usuário" salvo com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 20:37:32 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] [2] :: Usuário "Usuário" salvo com sucesso
+[Sun Nov 20 20:37:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:37:23 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuário" salvo com sucesso
+[Sun Nov 20 20:37:28 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 20:37:32 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 20:37:37 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 20:37:28 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 20:37:37 BRST 2016] [JDataInput.java] [captureNodes] :: [a, s, f, h, has]
+[Sun Nov 20 20:37:37 BRST 2016] [JDataInput.java] [captureNodes] :: [a, s, f, h, has]
+[Sun Nov 20 20:37:37 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 20:37:28 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Nov 20 20:37:37 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 20:49:03 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 20:49:03 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 20:49:06 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 20:49:09 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 20:49:06 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 20:49:23 BRST 2016] [FileImportExport.java] [readFile] [1] :: C:\Users\Usuario\Documents\Grafos\Grafos (O sistema não pode encontrar o arquivo especificado)
+[Sun Nov 20 20:49:23 BRST 2016] [FileImportExport.java] [importGraph] [0] :: lerArquivo solicitado
+[Sun Nov 20 20:49:23 BRST 2016] [FileImportExport.java] [importGraph] [2] :: Grafo retornado
+[Sun Nov 20 20:49:09 BRST 2016] [JDataInput.java] [captureNodes] :: [1, 2, 3]
+[Sun Nov 20 20:49:09 BRST 2016] [JDataInput.java] [captureNodes] :: [1, 2, 3]
+[Sun Nov 20 20:49:09 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 20:49:06 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Nov 20 20:49:09 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 20:55:02 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: dilma] [Título :: Sapatao] [Ícone :: 2] [Response:: 2]
+[Sun Nov 20 20:55:57 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: dilma] [Título :: Sapatao] [Ícone :: 2] [Response:: 0]
+[Sun Nov 20 20:56:32 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: dilma] [Título :: Sapatao] [Ícone :: 2] [Response:: 0]
+[Sun Nov 20 20:58:17 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: dilma] [Título :: Sapatao] [Ícone :: 2] [Response:: 0]
+[Sun Nov 20 21:00:00 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: dilma] [Título :: Sapatao] [Ícone :: 2] [Response:: 0]
+[Sun Nov 20 21:00:07 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: dilma] [Título :: Sapatao] [Ícone :: 2] [Response:: 2]
+[Sun Nov 20 21:03:09 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 21:03:09 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [captureNodes] :: []
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [captureNodes] :: []
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [captureNodes] :: [, ., ;, sad, dfg, df, fdg]
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [captureNodes] :: [, ., ;, sad, dfg, df, fdg]
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Nov 20 21:03:11 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 21:03:09 BRST 2016] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sun Nov 20 21:04:22 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: Deseja realmente destruir o grafo informado? Irá perder todas os dados.] [Título :: Confirmar ação] [Ícone :: 2] [Response:: 2]
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [1] :: Grafo não destruído
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [2] :: Sem grafo para destruir
+[Sun Nov 20 21:04:22 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: Deseja realmente destruir o grafo informado? Irá perder todas os dados.] [Título :: Confirmar ação] [Ícone :: 2] [Response:: 2]
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [1] :: Grafo não destruído
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [2] :: Sem grafo para destruir
+[Sun Nov 20 21:03:09 BRST 2016] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sun Nov 20 21:04:22 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: Deseja realmente destruir o grafo informado? Irá perder todas os dados.] [Título :: Confirmar ação] [Ícone :: 2] [Response:: 0]
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [0] :: Grafo destruído
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [2] :: Sem grafo para destruir
+[Sun Nov 20 21:03:09 BRST 2016] [JMainWindow.java] [btSairActionPerformed] :: Programa finalizado
+[Sun Nov 20 21:04:57 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 21:04:57 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 21:04:58 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 21:05:00 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:04:58 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 21:05:00 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:04:58 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 21:05:00 BRST 2016] [JDataInput.java] [captureNodes] :: [a, s, d, f, g, h]
+[Sun Nov 20 21:05:00 BRST 2016] [JDataInput.java] [captureNodes] :: [a, s, d, f, g, h]
+[Sun Nov 20 21:05:00 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 21:04:58 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Nov 20 21:05:00 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 21:05:21 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: Deseja realmente destruir o grafo informado? Irá perder todas os dados.] [Título :: Confirmar ação] [Ícone :: 2] [Response:: 2]
+[Sun Nov 20 21:04:58 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [1] :: Grafo não destruído
+[Sun Nov 20 21:04:58 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [2] :: Sem grafo para destruir
+[Sun Nov 20 21:05:21 BRST 2016] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: Deseja realmente destruir o grafo informado? Irá perder todas os dados.] [Título :: Confirmar ação] [Ícone :: 2] [Response:: 0]
+[Sun Nov 20 21:04:58 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [0] :: Grafo destruído
+[Sun Nov 20 21:04:58 BRST 2016] [JMainWindow.java] [btLimparActionPerformed] [2] :: Sem grafo para destruir
+[Sun Nov 20 21:10:14 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 21:10:14 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 21:10:14 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 21:10:15 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:14:53 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 21:14:53 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 21:14:53 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 21:14:55 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:14:53 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 21:14:55 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:14:53 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 21:15:06 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 21:15:06 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 21:15:06 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 21:15:10 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 21:15:06 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso

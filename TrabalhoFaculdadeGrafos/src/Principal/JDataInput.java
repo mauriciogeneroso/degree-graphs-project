@@ -1,6 +1,5 @@
 package Principal;
 
-
 /**
  * Janela para entrada do Grafo, nesta janela o usuário estará informando as
  * características para realizar a criação do grafo.
@@ -21,7 +20,8 @@ public class JDataInput extends javax.swing.JFrame {
 
     private Objetos.Graph graph2;
     private JMainWindow frame;
-    private javax.swing.ButtonGroup buttonGroup = new javax.swing.ButtonGroup();;
+    private javax.swing.ButtonGroup buttonGroup = new javax.swing.ButtonGroup();
+    ;
     private static final Util.Log log = new Util.Log();
 
     public JDataInput(JMainWindow frame) {
@@ -32,7 +32,6 @@ public class JDataInput extends javax.swing.JFrame {
         this.graph2 = new Objetos.Graph();
 
         // Grupo de botões para informar se o grafo é completo ou se o usuário definirá as adjacências
-
         buttonGroup.add(rButtonCompleto);
         buttonGroup.add(rButtonDefinir);
         // Fim do grupo de botões da direção das arestas
@@ -566,7 +565,7 @@ public class JDataInput extends javax.swing.JFrame {
      * @return boolean - Retorna true se existir nó repetido e false se não
      * existir
      */
-        private boolean nodeRepeated() {
+    private boolean nodeRepeated() {
         String[] node = captureNodes(entradaNos.getText());
         for (int i = 0; i < node.length; i++) {
             for (int j = 0; j < node.length; j++) {

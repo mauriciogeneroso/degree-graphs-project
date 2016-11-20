@@ -15,7 +15,7 @@ import Util.Prefuse.PrefuseGraph;
  * @since 15/10/2016
  * @version 1.7
  */
-public class JMainWindow extends javax.swing.JFrame{
+public class JMainWindow extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
     private static final Util.Log log = new Util.Log();
@@ -25,7 +25,7 @@ public class JMainWindow extends javax.swing.JFrame{
     private CaracteristicasGrafo.IdentificationGraph ident = new CaracteristicasGrafo.IdentificationGraph();
     private javax.swing.ButtonGroup buttonGroup = new javax.swing.ButtonGroup();
 
-    public JMainWindow(){
+    public JMainWindow() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -33,7 +33,7 @@ public class JMainWindow extends javax.swing.JFrame{
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())){
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -449,26 +449,36 @@ public class JMainWindow extends javax.swing.JFrame{
     private void btEntradaDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntradaDadosActionPerformed
         JDataInput input = new JDataInput(this);
         input.setLocationRelativeTo(this);
-        input.setVisible(true);
+        new Thread() {
+            @Override
+            public void run() {
+                input.setVisible(true);
+            }
+        }.start();
         this.setVisible(false);
         log.put("JMainWindow", "btEntradaDadosActionPerformed", "EntradaDados exibido com sucesso");
     }//GEN-LAST:event_btEntradaDadosActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
-        if (graph.getAdjMatrix() != null){
-            textArea.setText("");
-            graph.destroyGraph();
-            log.put("JMainWindow", "btLimparActionPerformed", 0, "Grafo destruído");
+        if (graph.getAdjMatrix() != null) {
+            Util.MessageCtrl mc = new Util.MessageCtrl();
+            if (mc.callConfirmDialog("Deseja realmente destruir o grafo informado? Irá perder todas os dados.", "Confirmar ação")) {
+                textArea.setText("");
+                graph.destroyGraph();
+                log.put("JMainWindow", "btLimparActionPerformed", 0, "Grafo destruído");
+            } else {
+                log.put("JMainWindow", "btLimparActionPerformed", 1, "Grafo não destruído");
+            }
         }
-        log.put("JMainWindow", "btLimparActionPerformed", 1, "Sem grafo para destruir");
+        log.put("JMainWindow", "btLimparActionPerformed", 2, "Sem grafo para destruir");
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimplesActionPerformed
-        if (graph.getAdjMatrix() == null){
+        if (graph.getAdjMatrix() == null) {
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é simples", "Grafo Simples", 2);
             log.put("JMainWindow", "btSimplesActionPerformed", 0, "Não existe um grafo para verificar se é simples");
 
-        } else if (ident.checkSimpleGraph(graph)){
+        } else if (ident.checkSimpleGraph(graph)) {
             Util.MessageCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
             log.put("JMainWindow", "btSimplesActionPerformed", 1, "O grafo é simples");
         } else {
@@ -478,10 +488,10 @@ public class JMainWindow extends javax.swing.JFrame{
     }//GEN-LAST:event_btSimplesActionPerformed
 
     private void btCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompletoActionPerformed
-        if (graph.getAdjMatrix() == null){
+        if (graph.getAdjMatrix() == null) {
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é completo.", "Grafo completo", 2);
             log.put("JMainWindow", "btCompletoActionPerformed", 0, "Não existe um grafo para verificar se é completo");
-        } else if (ident.checkCompleteGraph(graph)){
+        } else if (ident.checkCompleteGraph(graph)) {
             Util.MessageCtrl.callMessage("O grafo é completo", "Grafo Completo", 1);
             log.put("JMainWindow", "btCompletoActionPerformed", 1, "O grafo é completo");
         } else {
@@ -491,10 +501,10 @@ public class JMainWindow extends javax.swing.JFrame{
     }//GEN-LAST:event_btCompletoActionPerformed
 
     private void btConexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConexoActionPerformed
-        if (graph.getListAdj() == null){
+        if (graph.getListAdj() == null) {
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é conexo", "Grafo Conexo", 2);
             log.put("JMainWindow", "btConexoActionPerformed", 0, "Não existe um grafo para verificar se é conexo");
-        } else if (ident.checkConnectedGraph(graph)){
+        } else if (ident.checkConnectedGraph(graph)) {
             Util.MessageCtrl.callMessage("O grafo é conexo", "Grafo Conexo", 1);
             log.put("JMainWindow", "btConexoActionPerformed", 1, "O grafo é conexo");
         } else {
@@ -504,11 +514,11 @@ public class JMainWindow extends javax.swing.JFrame{
     }//GEN-LAST:event_btConexoActionPerformed
 
     private void btPlanarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPlanarActionPerformed
-        if (graph.getListAdj() == null){
+        if (graph.getListAdj() == null) {
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é planar", "Grafo Planar", 2);
             log.put("JMainWindow", "btPlanarActionPerformed", 0, "Não existe um grafo para verificar se é planar");
 
-        } else if (ident.checkPlanarGraph(graph)){
+        } else if (ident.checkPlanarGraph(graph)) {
             Util.MessageCtrl.callMessage("O grafo é planar", "Grafo Planar", 1);
             log.put("JMainWindow", "btPlanarActionPerformed", 1, "O grafo é planar");
         } else {
@@ -588,10 +598,10 @@ public class JMainWindow extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void btVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVisualizarActionPerformed
-        if (graph.getAdjMatrix() == null){
+        if (graph.getAdjMatrix() == null) {
             Util.MessageCtrl.callMessage("Não existe um grafo para visualizar.", "Visualização do grafo", 2);
             log.put("JMainWindow", "btVisualizarActionPerformed", 0, "Não existe um grafo para visualizar");
-        } else if (!ident.checkSimpleGraph(graph)){
+        } else if (!ident.checkSimpleGraph(graph)) {
             // Um grafo simples não possui laço ou aresta paralela, então se não for simples é porque possui
             Util.MessageCtrl.callMessage("Não deve possuir laço ou aresta paralela", "Visualização do grafo", 2);
             log.put("JMainWindow", "btVisualizarActionPerformed", 0, "Não pode visualziar porque existe um laço ou aresta paralela");
@@ -603,11 +613,10 @@ public class JMainWindow extends javax.swing.JFrame{
         }
     }//GEN-LAST:event_btVisualizarActionPerformed
 
-
     /**
      * Método para importar um grafo
      */
-    private void importGraph(){
+    private void importGraph() {
         try {
             graph = File.FileImportExport.importGraph(this);
             checkIfGoWillDisplayTheData();
@@ -619,8 +628,8 @@ public class JMainWindow extends javax.swing.JFrame{
     /**
      * Método para exportar o Grafo
      */
-    private void exportGraph(){
-        if (graph.getListInc() == null){
+    private void exportGraph() {
+        if (graph.getListInc() == null) {
             Util.MessageCtrl.callMessage("Não existe um grafo para ser exportado!", "Exportar", 8);
             log.put("JMainWindow", "exportGraph", "Não existe um grafo para ser exportado!");
         } else {
@@ -635,15 +644,15 @@ public class JMainWindow extends javax.swing.JFrame{
     /**
      * Método para verificar se os dados do Grafo serão exibidos em tela
      */
-    private void checkIfGoWillDisplayTheData(){
-        if (graph.getListAdj() != null){
-            if (rButtonMatrizAdj.isSelected()){
+    private void checkIfGoWillDisplayTheData() {
+        if (graph.getListAdj() != null) {
+            if (rButtonMatrizAdj.isSelected()) {
                 displayAdjacencyMatrix();
-            } else if (rButtonMatrizInc.isSelected()){
+            } else if (rButtonMatrizInc.isSelected()) {
                 displayIncidenceMatrix();
-            } else if (rButtonListaAdj.isSelected()){
+            } else if (rButtonListaAdj.isSelected()) {
                 displayAdjacencyList();
-            } else if (rButtonListaInc.isSelected()){
+            } else if (rButtonListaInc.isSelected()) {
                 displayIncidenceList();
             }
         }
@@ -653,7 +662,7 @@ public class JMainWindow extends javax.swing.JFrame{
      * Método que imprime as informações em tela de acordo com a opção que
      * estiver selecionada no momento
      */
-    private void imprimirInfo(){
+    private void imprimirInfo() {
         // Imprime os Nós
         String nodesFormal = "Nós = {";
         String[] nodes = graph.getNodes();
@@ -676,7 +685,7 @@ public class JMainWindow extends javax.swing.JFrame{
     /**
      * Método para exibir a Matriz de Adjacência em tela
      */
-    private void displayAdjacencyMatrix(){
+    private void displayAdjacencyMatrix() {
         textArea.setText("");
         imprimirInfo();
         textArea.setText(textArea.getText() + "------------------------------------------\n\n");
@@ -687,7 +696,7 @@ public class JMainWindow extends javax.swing.JFrame{
     /**
      * Método para exibir a Matriz de Incidência em tela
      */
-    private void displayIncidenceMatrix(){
+    private void displayIncidenceMatrix() {
         textArea.setText("");
         imprimirInfo();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
@@ -698,7 +707,7 @@ public class JMainWindow extends javax.swing.JFrame{
     /**
      * Método para exibir a Lista de Adjacência em tela
      */
-    private void displayAdjacencyList(){
+    private void displayAdjacencyList() {
         textArea.setText("");
         imprimirInfo();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
@@ -714,7 +723,7 @@ public class JMainWindow extends javax.swing.JFrame{
     /**
      * Método para exibir a Lista de Incidẽncia em tela
      */
-    private void displayIncidenceList(){
+    private void displayIncidenceList() {
         textArea.setText("");
         imprimirInfo();
         textArea.setText(textArea.getText() + "-----------------------------------------\n\n");
@@ -727,8 +736,8 @@ public class JMainWindow extends javax.swing.JFrame{
         }
     }
 
-    public void setGraph(Graph graph){
-        if (this.graph != graph){
+    public void setGraph(Graph graph) {
+        if (this.graph != graph) {
             log.put("JMainWindow", "setGrafo", 0, "Grafo setado com sucesso");
         } else {
             log.put("JMainWindow", "setGrafo", 1, "Grafo mantido");

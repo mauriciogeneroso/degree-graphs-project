@@ -1,5 +1,8 @@
 package Util;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  * Classe responsável controle de exibição de mensagens.
  *
@@ -16,7 +19,7 @@ package Util;
  */
 public final class MessageCtrl {
 
-    private MessageCtrl() {
+    public MessageCtrl() {
     }
     private static final Util.Log log = new Util.Log();
 
@@ -38,5 +41,19 @@ public final class MessageCtrl {
         } catch (java.io.IOException ex) {
             log.put("MessageCtrl", "callMessage", 1, ex.getMessage());
         }
+    }
+
+    /**
+     * Método para chamar classe de mensagem
+     *
+     * @param mensagem String - Mensagem para ser exibida
+     * @param titulo String - Título da mensagem
+     * @return boolean
+     */
+    public boolean callConfirmDialog(String mensagem, String titulo) {
+        int response = javax.swing.JOptionPane.showConfirmDialog(null, mensagem, titulo, 2);
+        log.put("MessageCtrl", "callConfirmDialog", 0, "Mensagem :: " + mensagem + "] [Título :: " + titulo + "] [Ícone :: 2] [Response:: " + response + "]");
+        System.out.println(response);
+        return response == 0;
     }
 }
