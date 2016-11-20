@@ -28,40 +28,33 @@ public class Main extends JWindow {
     private static final long serialVersionUID = 1L;
 
     private static final Util.Log log = new Util.Log();
-    private int i = 0;
     private static final String zero = " ";
     private static final String um = ".";
     private static final String dois = "..";
     private static final String tres = "...";
-    private final AbsoluteLayout absoluto;
-    private final AbsoluteConstraints absimage;
-    private final AbsoluteConstraints absbarra;
-    private final ImageIcon image;
-    private final JLabel jlabel;
-    private JProgressBar barra;
-    
+    private static final AbsoluteLayout absoluto = new AbsoluteLayout();
+    private static final AbsoluteConstraints absimage = new AbsoluteConstraints(0, 0);
+    private static final AbsoluteConstraints absbarra = new AbsoluteConstraints(0, 500);;
+    private final ImageIcon image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_IMAGES_FOLDER + "splash.png"));;
+    private static final JLabel jlabel = new JLabel();
+    private static final JProgressBar barra = new JProgressBar();
 
     /**
      * Metodo construtor.
      */
     public Main() {
-        absoluto = new AbsoluteLayout();
-        absimage = new AbsoluteConstraints(0, 0);
-        absbarra = new AbsoluteConstraints(0, 500);
-        jlabel = new JLabel();
-        image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_IMAGES_FOLDER + "splash.png"));
-        jlabel.setIcon(image);
-        jlabel.setBackground(Color.red);
-        barra = new JProgressBar();
-        barra.setPreferredSize(new Dimension(512, 40));
-        barra.setForeground(Color.gray);
         this.getContentPane().setLayout(absoluto);
         this.getContentPane().add(jlabel, absimage);
         this.getContentPane().add(barra, absbarra);
         this.setAlwaysOnTop(true);
+        barra.setPreferredSize(new Dimension(512, 40));
+        barra.setForeground(Color.gray);
         barra.setForeground(Color.gray);
         barra.setString(zero);
         barra.setStringPainted(true);
+        jlabel.setIcon(image);
+        jlabel.setBackground(Color.red);
+        
         /**
          * Reponsável por iniciar uma nova thread.
          *
@@ -69,25 +62,22 @@ public class Main extends JWindow {
         new Thread() {
             @Override
             public void run() {
+                int i = 0;
                 while (i < 101) {
-                    progresso();
+                    progresso(i);
                     barra.setValue(i);
                     i++;
                     try {
-                        sleep(10);
+                        sleep(30);
                     } catch (InterruptedException ex) {
                         log.put("Main", "Thread] [Run", 0, ex.getMessage());
                     }
                 }
                 try {
-                    sleep(300);
+                    sleep(100);
                 } catch (InterruptedException ex) {
                     log.put("Main", "Thread] [Run", 1, ex.getMessage());
                 }
-                if (i >= 100) {
-                    barra.setForeground(Color.green);
-                }
-                //chama login,
                 chamarLogin();
                 try {
                     sleep(30);
@@ -105,18 +95,15 @@ public class Main extends JWindow {
 
     /**
      * Método responsável por redefinir texto para a barra de carregamento.
+     * @param i int - Control "barra" String text
      */
-    public void progresso() {
+    public void progresso(int i) {
         if (i % 2 == 0) {
             barra.setString(um);
+        } else if (i % 3 == 0) {
+            barra.setString(dois);
         } else {
-            if (i % 3 == 0) {
-                barra.setString(dois);
-            } else {
-                if (i % 1 == 0) {
-                    barra.setString(tres);
-                }
-            }
+            barra.setString(tres);
         }
     }
 
@@ -140,12 +127,5 @@ public class Main extends JWindow {
      */
     public static void main(String[] args) {
         new Main();
-        int coluna1 = 20;
-        int idx = 10;
-
-        System.out.println(coluna1 + "    " + idx);
-        System.out.println(coluna1 + "    " + idx);
-        System.out.println(coluna1 + "    " + idx);
-
     }
 }

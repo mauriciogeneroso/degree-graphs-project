@@ -237,9 +237,9 @@ public class JSettings extends javax.swing.JFrame {
             log.put("JSettings", "jbRemoverActionPerformed", 1, ("Usuário \"" + username + "\" tem tamanho de " + username.length() + " caracteres, que é inferior ao mínimo (3)"));
 
         } else {
-            Util.MessageCtrl.callMessage("Usuário salvo com sucesso!", "Sucesso!", 7);
-            log.put("JSettings", "jbRemoverActionPerformed", 2, "Usuário salvo com sucesso");
-
+            Util.MessageCtrl.callMessage("Usuário \"" + username  + "\" salvo com sucesso!", "Sucesso!", 7);
+            log.put("JSettings", "jbRemoverActionPerformed", 2, "Usuário \"" + username  + "\" salvo com sucesso");
+            Util.LoadSettings.setUsuario(username);
         }
     }//GEN-LAST:event_jbSalvarActionPerformed
 

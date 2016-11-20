@@ -3060,3 +3060,247 @@
 [Sun Nov 13 00:44:43 BRST 2016] [EntradaDados.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
 [Sun Nov 13 00:44:49 BRST 2016] [MensagemCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é conexo] [Título :: Grafo Conexo] [Ícone :: 1
 [Sun Nov 13 00:44:41 BRST 2016] [FramePrincipal.java] [btConexoActionPerformed] [1] :: O grafo é conexo
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:24 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "JailsonMendes" salvo com sucesso
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:24 BRST 2016] [LoadSettings.java] [setSaveUsername] [1] :: Usuário salvo setado como] [ FALSE
+[Sun Nov 20 19:08:38 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "JailsonMendes" capturado com sucesso
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:46 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "JailsonMendes" salvo com sucesso
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:08:46 BRST 2016] [LoadSettings.java] [setSaveUsername] [0] :: Usuário salvo setado como] [ TRUE
+[Sun Nov 20 19:08:58 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:04 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:04 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 19:09:04 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:08 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:04 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 19:09:04 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:04 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "JailsonMendes" capturado com sucesso
+[Sun Nov 20 19:09:04 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:04 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 19:09:08 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 19:09:04 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:04 BRST 2016] [LoadSettings.java] [resetUsername] [1] :: Usuário resetado com sucesso!
+[Sun Nov 20 19:09:12 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário resetado com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:09:08 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] :: Usuário resetado com sucesso
+[Sun Nov 20 19:09:04 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:08 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:19 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuário" salvo com sucesso
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [setSaveUsername] [0] :: Usuário salvo setado como] [ TRUE
+[Sun Nov 20 19:09:23 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:24 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:23 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Nov 20 19:09:24 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:19 BRST 2016] [LoadSettings.java] [resetUsername] [1] :: Usuário resetado com sucesso!
+[Sun Nov 20 19:09:26 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário resetado com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:09:24 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] :: Usuário resetado com sucesso
+[Sun Nov 20 19:09:26 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário salvo com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:09:24 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] [2] :: Usuário salvo com sucesso
+[Sun Nov 20 19:09:26 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário salvo com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:09:24 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] [2] :: Usuário salvo com sucesso
+[Sun Nov 20 19:09:23 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:24 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:36 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuário" salvo com sucesso
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [setSaveUsername] [1] :: Usuário salvo setado como] [ FALSE
+[Sun Nov 20 19:09:40 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:42 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:40 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:36 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:09:42 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 19:09:45 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário salvo com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:09:42 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] [2] :: Usuário salvo com sucesso
+[Sun Nov 20 19:09:40 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:09:42 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 19:09:52 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:52 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:09:52 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:52 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:09:52 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:09:52 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:17:15 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuário" salvo com sucesso
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [setSaveUsername] [1] :: Usuário salvo setado como] [ FALSE
+[Sun Nov 20 19:17:17 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:17:20 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 19:17:17 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 19:17:20 BRST 2016] [JDataInput.java] [captureNodes] :: [1, 2]
+[Sun Nov 20 19:17:20 BRST 2016] [JDataInput.java] [captureNodes] :: [1, 2]
+[Sun Nov 20 19:17:20 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Nov 20 19:17:17 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Nov 20 19:17:20 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 19:17:17 BRST 2016] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sun Nov 20 19:17:17 BRST 2016] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sun Nov 20 19:17:56 BRST 2016] [FileImportExport.java] [exportGraph] [0] :: JFileChooser exibido com sucesso
+[Sun Nov 20 19:17:56 BRST 2016] [FileImportExport.java] [saveFile] [1] :: Arquivo salvo com sucesso!
+[Sun Nov 20 19:17:56 BRST 2016] [FileImportExport.java] [exportGraph] [1] :: Gravou arquivo
+[Sun Nov 20 19:17:20 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Nov 20 19:17:17 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Nov 20 19:17:20 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Nov 20 19:18:11 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:17:17 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:18:11 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 19:18:14 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário salvo com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:18:11 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] [2] :: Usuário salvo com sucesso
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:17:15 BRST 2016] [LoadSettings.java] [resetUsername] [1] :: Usuário resetado com sucesso!
+[Sun Nov 20 19:18:14 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário resetado com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:18:11 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] :: Usuário resetado com sucesso
+[Sun Nov 20 19:17:17 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:18:11 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuário" capturado com sucesso
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:21:55 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuáriozão" salvo com sucesso
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [setSaveUsername] [1] :: Usuário salvo setado como] [ FALSE
+[Sun Nov 20 19:23:08 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:23:16 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:23:08 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:21:55 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:23:16 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 19:23:22 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário salvo com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:23:16 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] [2] :: Usuário salvo com sucesso
+[Sun Nov 20 19:23:08 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:23:16 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 19:30:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:30:56 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:30:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:30:56 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:30:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:30:56 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:31:46 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:31:46 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:31:46 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:31:46 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:31:46 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:31:46 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:31:51 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:31:51 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:31:51 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:31:51 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:31:51 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:31:51 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:32:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:32:15 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:32:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:32:15 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:32:15 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:32:15 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:32:24 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:32:24 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:32:24 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:32:24 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:32:24 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:32:24 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:35:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:35:23 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:35:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:35:23 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:35:23 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:35:23 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:35:57 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:35:57 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:35:57 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:35:57 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:35:57 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:35:57 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:36:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:19 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:36:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:19 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:36:19 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:19 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuáriozão" salvo com sucesso
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [setSaveUsername] [1] :: Usuário salvo setado como] [ FALSE
+[Sun Nov 20 19:36:58 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:36:59 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:36:58 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozão" capturado com sucesso
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:36:59 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 19:37:04 BRST 2016] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Usuário "Usuáriozinho" salvo com sucesso!] [Título :: Sucesso!] [Ícone :: 7
+[Sun Nov 20 19:36:59 BRST 2016] [JSettings.java] [jbRemoverActionPerformed] [2] :: Usuário "Usuáriozinho" salvo com sucesso
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [CarregaConfiguracoes.java] [setUsuario] [0] :: Usuário "Usuáriozinho" salvo com sucesso
+[Sun Nov 20 19:36:58 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:36:59 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 19:36:59 BRST 2016] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:36:58 BRST 2016] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozinho" capturado com sucesso
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:36:56 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:36:59 BRST 2016] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sun Nov 20 19:36:58 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Nov 20 19:36:59 BRST 2016] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
+[Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [getUsuario] :: Usuário "Usuáriozinho" capturado com sucesso
+[Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Nov 20 19:37:17 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: false
