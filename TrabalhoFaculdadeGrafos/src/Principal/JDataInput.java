@@ -447,11 +447,9 @@ public class JDataInput extends javax.swing.JFrame {
         if (entradaArestas.getText().equals("")) {
             Util.MessageCtrl.callMessage("Informe as Arestas para definir o grafo", "Aviso", 2);
             log.put("JDataInput", "entradaArestasFocusLost", 0, "Informe as Arestas para definir o grafo");
-
         } else if (edgeRepeated()) {
             Util.MessageCtrl.callMessage("Existem arestas com o mesmo nome", "Aviso", 2);
             log.put("JDataInput", "entradaArestasFocusLost", 1, "Existem arestas com o mesmo nome");
-
         } else {
             try {
                 graph2.setEdges(captureEdges(entradaArestas.getText()));
@@ -466,7 +464,6 @@ public class JDataInput extends javax.swing.JFrame {
             } catch (Exception e) {
                 Util.MessageCtrl.callMessage("Valores inválidos para as Arestas informadas", "Aviso", 8);
                 log.put("JDataInput", "entradaArestasFocusLost", 2, "Valores inválidos para as Arestas informadas");
-
                 entradaArestas.setFocusable(true);
             }
         }
@@ -505,7 +502,6 @@ public class JDataInput extends javax.swing.JFrame {
             } else if (nodeRepeated()) {
                 Util.MessageCtrl.callMessage("Existem nós com o mesmo nome", "Aviso", 2);
             } else {
-
                 int countEdges = 0;
                 for (int i = 0; i < graph2.countNode(); i++) {
                     for (int j = i + 1; j < graph2.countNode(); j++) {

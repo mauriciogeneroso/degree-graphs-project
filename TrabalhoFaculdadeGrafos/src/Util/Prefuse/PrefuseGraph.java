@@ -27,8 +27,8 @@ import prefuse.visual.VisualItem;
 
 /**
  * Classe com utilização da API prefuse para realizar a leitura um arquivo XML
- * no modelo graphml, e demonstrar em tela a visualização do grafo 
- * Site: http://prefuse.org/
+ * no modelo graphml, e demonstrar em tela a visualização do grafo Site:
+ * http://prefuse.org/
  *
  * Estudantes de Ciência da Computação - 4 fase.
  *
@@ -40,9 +40,9 @@ import prefuse.visual.VisualItem;
  * @since 12/11/2016
  * @version 2.1
  */
-public class PrefuseGraph extends JFrame{
+public class PrefuseGraph extends JFrame {
 
-    public static void showGraficMode(){
+    public static void showGraficMode() {
 
         Graph graph = null;
         try {
@@ -123,7 +123,7 @@ public class PrefuseGraph extends JFrame{
         javax.swing.ImageIcon img = new javax.swing.ImageIcon(frame.getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
         frame.setIconImage(img.getImage());
         frame.setVisible(true); // show the window
-        
+
         vis.run("color");  // assign the colors
         vis.run("layout"); // start up the animated layout
 

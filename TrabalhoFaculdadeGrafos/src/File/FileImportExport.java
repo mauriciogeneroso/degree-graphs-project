@@ -36,7 +36,7 @@ public class FileImportExport {
      */
     public static Graph importGraph(JFrame frame) {
         javax.swing.JFileChooser fc = new javax.swing.JFileChooser();
-        Graph graph = new Graph();
+        Graph graph;
         fc.getFileSystemView().getHomeDirectory();
         fc.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("*.grafo", "grafo"));
         fc.setAcceptAllFileFilterUsed(false);

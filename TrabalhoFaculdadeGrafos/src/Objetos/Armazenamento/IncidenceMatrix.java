@@ -18,7 +18,6 @@ public class IncidenceMatrix extends Matrix implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-
     /**
      * Altera a Matriz de Incidência (para Grafo Não Direcionado) de acordo com
      * os nós informados

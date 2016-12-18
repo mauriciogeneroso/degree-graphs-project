@@ -14,9 +14,9 @@ import org.jdom2.Element;
 import org.jdom2.output.XMLOutputter;
 
 /**
- *  Classe para criar um arquivo XML no modelo graphml, que será lido pela API Prefuse.
- *  Site: http://graphml.graphdrawing.org/
- * 
+ * Classe para criar um arquivo XML no modelo graphml, que será lido pela API
+ * Prefuse. Site: http://graphml.graphdrawing.org/
+ *
  * Estudantes de Ciência da Computação - 4 fase.
  *
  * @author Gustavo Souza
@@ -33,7 +33,7 @@ public class CreateGraphml {
     private final int NAME = 0;
     private final int COLOR = 1;
 
-    public void createXml (Graph grafo){
+    public void createXml(Graph grafo) {
 
         // Cria a tag Pai
         Element graphml = new Element("graphml");

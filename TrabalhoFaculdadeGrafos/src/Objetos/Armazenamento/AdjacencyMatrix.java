@@ -18,7 +18,6 @@ public class AdjacencyMatrix extends Matrix implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-
     /**
      * Altera a Matriz de Adjacência(para Grafo Não Direcionado) de acordo com
      * os nós informados

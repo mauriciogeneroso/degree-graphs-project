@@ -91,7 +91,7 @@ public class IdentificationGraph {
         float ar = 0;
         Matrix mt = graph.getAdjMatrix();
         mt.printMatrix();
-        
+
         // Verifica a existencia de algum nó isolado, pega linha por linha e faz
         // a leitura, se passou por todas as possibilidades de conexão e terminou 
         // com valor 1, existe um nó isolado e já pode parar a verificação, pois 
@@ -118,9 +118,9 @@ public class IdentificationGraph {
                 break;
             }
         }
-        
+
         //System.out.println("" + checkConnection + "");
-        if(checkConnection == 0){
+        if (checkConnection == 0) {
             for (int i = 0; i < mt.getCountRows(); i++) {
                 for (int j = 0; j < mt.getCountColumns(); j++) {
                     if (i != j && mt.getMatrix()[i][j] > 0) {
@@ -129,15 +129,14 @@ public class IdentificationGraph {
                 }
             }
             ar = ar / 2;
-            if (ar >= graph.countNode()-1) {
+            if (ar >= graph.countNode() - 1) {
                 checkConnection = 0;
-            }
-            else {
+            } else {
                 checkConnection = 1;
             }
             //System.out.println("" + checkConnection + "");
         }
-       
+
         if (checkConnection == 0) {
             int n = 0;
             int cont = 1;
@@ -203,7 +202,7 @@ public class IdentificationGraph {
      */
     public boolean checkPlanarGraph(Graph graph) {
         boolean result = false;
-        
+
         int v = 0;
         Matrix mt = graph.getAdjMatrix();
         int proxlin = 0;
@@ -213,12 +212,12 @@ public class IdentificationGraph {
         int c2 = 0;
         int counter1 = 0;
         int counter2 = 0;
-        int bug=0;
-        
+        int bug = 0;
+
         int arestas = graph.countEdge();
         int nos = graph.countNode();
-        int isolados=0;
-        int ver=0;
+        int isolados = 0;
+        int ver = 0;
         /*Está Função Serve para Contar se Existem nós isolados*/
         for (int i = 0; i < mt.getCountRows(); i++) {
             for (int j = 0; j < mt.getCountColumns(); j++) {
@@ -227,8 +226,7 @@ public class IdentificationGraph {
                     break;
                 } else {
                     ver = 1;
-                 }
-
+                }
             }
             if (ver == 1) {
                 isolados++;
@@ -236,23 +234,21 @@ public class IdentificationGraph {
         }
         //System.out.println(""+ isolados + "");
         nos = nos - isolados;
-        
-        if(nos<=2){ //Esta Função Serve para ver se existem 2 nós ou menos.
+
+        if (nos <= 2) { //Esta Função Serve para ver se existem 2 nós ou menos.
             menorCiclo = -1;
-            v=1;
+            v = 1;
         }
-        
+
         //System.out.println("" +mt.getCountColumns());
-        if(mt.getCountColumns()==4 && mt.getCountRows()==4){
-          if(checkCompleteGraph(graph)==true){
-              menorCiclo = -1;
-              v=1;
-          }
-          
+        if (mt.getCountColumns() == 4 && mt.getCountRows() == 4) {
+            if (checkCompleteGraph(graph) == true) {
+                menorCiclo = -1;
+                v = 1;
+            }
         }
-      /*Função que Verifica se Existe Laço em um grafo*/
+        /*Função que Verifica se Existe Laço em um grafo*/
         if (v == 0) {
-            
             for (int linha = 0; linha < mt.getCountRows(); linha++) {
                 for (int coluna1 = 0; coluna1 < mt.getCountColumns(); coluna1++) {
                     if (mt.getMatrix()[linha][coluna1] == 1) {
@@ -263,10 +259,7 @@ public class IdentificationGraph {
                             for (int coluna2 = 0; coluna2 < mt.getCountColumns(); coluna2++) {
                                 if (coluna1 != coluna2 && proxlin != coluna2 && mt.getMatrix()[proxlin][coluna2] == 1) {
                                     menorCiclo++;
-                                    
-                                    
                                     c2 = coluna2;
-                                    
                                     if (menorCiclo == graph.countNode() && coluna2 == idx) {
                                         break;
                                     }
@@ -290,10 +283,10 @@ public class IdentificationGraph {
                             }
                             bug++;
                             //System.out.println("" +bug + "aad");
-                            if(bug > ((graph.countNode() * graph.countEdge())* graph.countNode())){
-                                        
-                               break;
-                                    }
+                            if (bug > ((graph.countNode() * graph.countEdge()) * graph.countNode())) {
+
+                                break;
+                            }
                         }
                     }
                     if (menorCiclo == graph.countNode() && c2 == idx) {
@@ -302,51 +295,48 @@ public class IdentificationGraph {
                     if (counter2 == 0 && c2 == graph.countNode() - 1) {
                         break;
                     }
-                    if(bug > ((graph.countNode() * graph.countEdge())* graph.countNode())){
-                                        
-                               break;
-                                    }
+                    if (bug > ((graph.countNode() * graph.countEdge()) * graph.countNode())) {
+
+                        break;
+                    }
                 }
                 if (menorCiclo == graph.countNode() && c2 == idx) {
                     break;
                 }
-
                 if (counter2 == 0 && c2 == graph.countNode() - 1) {
                     break;
                 }
-                if(bug > ((graph.countNode() * graph.countEdge())* graph.countNode())){
-                                        
-                               break;
-                                    }
+                if (bug > ((graph.countNode() * graph.countEdge()) * graph.countNode())) {
+
+                    break;
+                }
             }
         }
         //System.out.println("" + menorCiclo + "");
-        
+
         /*Logo Abaixo estão as Formulas*/
-        if(menorCiclo==-1){
-            v=0;
+        if (menorCiclo == -1) {
+            v = 0;
         }
-        if(menorCiclo>=0 && menorCiclo <=3){
+        if (menorCiclo >= 0 && menorCiclo <= 3) {
             int valor; //Valor Para Calcular e Armazenar resposta
-            valor = (3*nos) - 6;
-            if(arestas<=valor){
-                v=0;
-            }
-            else{
-                v=1;
+            valor = (3 * nos) - 6;
+            if (arestas <= valor) {
+                v = 0;
+            } else {
+                v = 1;
             }
         }
-        if(menorCiclo > 3){
+        if (menorCiclo > 3) {
             int valor; //Valor Para Calcular e Armazenar resposta
-            valor = (2*nos) - 4;
-            if(arestas<=valor){
-                v=0;
+            valor = (2 * nos) - 4;
+            if (arestas <= valor) {
+                v = 0;
+            } else {
+                v = 1;
             }
-            else{
-                v=1;
-            }   
         }
-        
+
         if (v == 1) {
             log.put("IdentificationGraph", "checkPlanarGraph", 0, "O grafo não é planar] :: [FALSE");
             return false;

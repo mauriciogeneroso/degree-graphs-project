@@ -35,9 +35,9 @@ public class Main extends JWindow {
     private static final AbsoluteLayout absoluto = new AbsoluteLayout();
     private static final AbsoluteConstraints absimage = new AbsoluteConstraints(0, 0);
     private static final AbsoluteConstraints absbarra = new AbsoluteConstraints(0, 500);
-    ;
+    
     private final ImageIcon image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_IMAGES_FOLDER + "splash.png"));
-    ;
+    
     private static final JLabel jlabel = new JLabel();
     private static final JProgressBar barra = new JProgressBar();
 
@@ -76,7 +76,7 @@ public class Main extends JWindow {
                     }
                 }
                 try {
-                    sleep(100);
+                    Thread.sleep(100);
                 } catch (InterruptedException ex) {
                     log.put("Main", "Thread] [Run", 1, ex.getMessage());
                 }
