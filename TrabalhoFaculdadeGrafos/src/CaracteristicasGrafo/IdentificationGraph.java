@@ -119,7 +119,7 @@ public class IdentificationGraph {
             }
         }
         
-        System.out.println("" + checkConnection + "");
+        //System.out.println("" + checkConnection + "");
         if(checkConnection == 0){
             for (int i = 0; i < mt.getCountRows(); i++) {
                 for (int j = 0; j < mt.getCountColumns(); j++) {
@@ -135,7 +135,7 @@ public class IdentificationGraph {
             else {
                 checkConnection = 1;
             }
-            System.out.println("" + checkConnection + "");
+            //System.out.println("" + checkConnection + "");
         }
        
         if (checkConnection == 0) {
@@ -151,7 +151,7 @@ public class IdentificationGraph {
 
             int vetorsomado = 0;
             vetor[vetorsomado] = 0;
-            System.out.println("" + vetor[vetorsomado] + "alow");
+            //System.out.println("" + vetor[vetorsomado] + "alow");
             vetorsomado++;
 
             for (int i = 0; i < mt.getCountRows(); i++) {
@@ -169,7 +169,7 @@ public class IdentificationGraph {
                         for (int f = 0; f < graph.countNode(); f++) {
                             if (vetor[f] != j && cont == 1) {
                                 vetor[vetorsomado] = j;
-                                System.out.println("" + vetor[vetorsomado] + "alowzim");
+                                //System.out.println("" + vetor[vetorsomado] + "alowzim");
                                 vetorsomado++;
                                 break;
                             }
@@ -234,7 +234,7 @@ public class IdentificationGraph {
                 isolados++;
             }
         }
-        System.out.println(""+ isolados + "");
+        //System.out.println(""+ isolados + "");
         nos = nos - isolados;
         
         if(nos<=2){ //Esta Função Serve para ver se existem 2 nós ou menos.
@@ -242,7 +242,7 @@ public class IdentificationGraph {
             v=1;
         }
         
-        System.out.println("" +mt.getCountColumns());
+        //System.out.println("" +mt.getCountColumns());
         if(mt.getCountColumns()==4 && mt.getCountRows()==4){
           if(checkCompleteGraph(graph)==true){
               menorCiclo = -1;
@@ -289,7 +289,7 @@ public class IdentificationGraph {
                                 break;
                             }
                             bug++;
-                            System.out.println("" +bug + "aad");
+                            //System.out.println("" +bug + "aad");
                             if(bug > ((graph.countNode() * graph.countEdge())* graph.countNode())){
                                         
                                break;
@@ -320,7 +320,7 @@ public class IdentificationGraph {
                                     }
             }
         }
-        System.out.println("" + menorCiclo + "");
+        //System.out.println("" + menorCiclo + "");
         
         /*Logo Abaixo estão as Formulas*/
         if(menorCiclo==-1){

@@ -32,7 +32,6 @@ public final class LoadSettings {
      */
     protected static Properties getProperties() {
         Properties temp = new Properties();
-
         try {
             temp.load(new java.io.FileInputStream(Strings.CONFIG_FILE_PATH.replace('\\', '/')));
         } catch (IOException ex) {

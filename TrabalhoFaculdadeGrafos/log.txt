@@ -1,0 +1,23 @@
+[Sun Dec 18 01:48:21 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Dec 18 01:48:21 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Dec 18 01:48:21 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Dec 18 01:48:21 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [captureNodes] :: [a, b, v]
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [captureNodes] :: [a, b, v]
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Dec 18 01:48:21 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Dec 18 02:00:29 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Dec 18 02:00:29 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [captureNodes] :: [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, z]
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [captureNodes] :: [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, z]
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Dec 18 02:00:29 BRST 2016] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [btSairActionPerformed] :: Programa finalizado

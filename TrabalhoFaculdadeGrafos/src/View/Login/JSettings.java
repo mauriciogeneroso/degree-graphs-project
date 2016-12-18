@@ -22,7 +22,7 @@ public class JSettings extends javax.swing.JFrame {
     public JSettings() {
         initComponents();
         javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
-        this.setIconImage(img.getImage());
+        JSettings.this.setIconImage(img.getImage());
         log.put("JSettings", "Construtor", "Construído com sucesso");
 
         /* Set the Nimbus look and feel */
@@ -201,7 +201,6 @@ public class JSettings extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-
         jtxtUsername.setText(Util.LoadSettings.getUsuario());
         if (Util.LoadSettings.isUsernameSave()) {
             jbcSave.setSelected(true);
@@ -214,16 +213,12 @@ public class JSettings extends javax.swing.JFrame {
         Principal.JMainWindow fm = new Principal.JMainWindow();
         fm.setVisible(true);
         log.put("JSettings", "formWindowClosing", "Fechada com sucesso");
-
     }//GEN-LAST:event_formWindowClosing
 
     private void jbRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRemoverActionPerformed
-
         Util.LoadSettings.resetUsername();
         Util.MessageCtrl.callMessage("Usuário resetado com sucesso!", "Sucesso!", 7);
         log.put("JSettings", "jbRemoverActionPerformed", "Usuário resetado com sucesso");
-
-
     }//GEN-LAST:event_jbRemoverActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
@@ -246,7 +241,6 @@ public class JSettings extends javax.swing.JFrame {
     private void jtxtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxtUsernameFocusGained
         jtxtUsername.selectAll();
     }//GEN-LAST:event_jtxtUsernameFocusGained
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;

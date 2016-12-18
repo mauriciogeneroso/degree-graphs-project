@@ -27,9 +27,9 @@ public class JDataInput extends javax.swing.JFrame {
     public JDataInput(JMainWindow frame) {
         initComponents();
         javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
-        this.setIconImage(img.getImage());
-        this.frame = frame;
-        this.graph2 = new Objetos.Graph();
+        JDataInput.this.setIconImage(img.getImage());
+        JDataInput.this.frame = frame;
+        JDataInput.this.graph2 = new Objetos.Graph();
 
         // Grupo de botões para informar se o grafo é completo ou se o usuário definirá as adjacências
         buttonGroup.add(rButtonCompleto);

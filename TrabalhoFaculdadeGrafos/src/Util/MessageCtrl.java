@@ -1,8 +1,5 @@
 package Util;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-
 /**
  * Classe responsável controle de exibição de mensagens.
  *
@@ -53,7 +50,7 @@ public final class MessageCtrl {
     public boolean callConfirmDialog(String mensagem, String titulo) {
         int response = javax.swing.JOptionPane.showConfirmDialog(null, mensagem, titulo, 2);
         log.put("MessageCtrl", "callConfirmDialog", 0, "Mensagem :: " + mensagem + "] [Título :: " + titulo + "] [Ícone :: 2] [Response:: " + response + "]");
-        System.out.println(response);
+        //System.out.println(response);
         return response == 0;
     }
 }

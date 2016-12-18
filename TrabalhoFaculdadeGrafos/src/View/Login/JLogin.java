@@ -43,7 +43,7 @@ public class JLogin extends javax.swing.JFrame {
         //</editor-fold>
         initComponents();
         javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
-        this.setIconImage(img.getImage());
+        JLogin.this.setIconImage(img.getImage());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

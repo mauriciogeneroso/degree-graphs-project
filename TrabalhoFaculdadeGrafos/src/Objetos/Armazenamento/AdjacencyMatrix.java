@@ -34,8 +34,8 @@ public class AdjacencyMatrix extends Matrix implements java.io.Serializable {
             matrix[startingNode][finishingNode] += 1;
             matrix[finishingNode][startingNode] += 1;
         }
-        System.out.println("Matriz de adjacência: ");
-        this.printMatrix();
+        //System.out.println("Matriz de adjacência: ");
+        //this.printMatrix();
     }
 
 }

@@ -18,15 +18,15 @@ package Principal;
  * @since 22/10/2016
  * @version 1.7
  */
-public class JAbout extends javax.swing.JFrame{
+public class JAbout extends javax.swing.JFrame {
 
     /**
      * Creates new form JSobre
      */
-    public JAbout(){
+    public JAbout() {
         initComponents();
         javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
-        this.setIconImage(img.getImage());
+        JAbout.this.setIconImage(img.getImage());
     }
 
     /**
@@ -147,11 +147,11 @@ public class JAbout extends javax.swing.JFrame{
  * Classe para garantir que a janela Sobre não seja aberta mais de uma vez ao
  * mesmo tempo
  */
-class SingleStanceAbout{
+class SingleStanceAbout {
 
     private static JAbout jAbout = null;
 
-    private SingleStanceAbout(){
+    private SingleStanceAbout() {
     }
 
     /**
@@ -159,8 +159,8 @@ class SingleStanceAbout{
      *
      * @return JSobre - Retorna a instância da janela Sobre
      */
-    public static JAbout getStance(){
-        if (jAbout == null){
+    public static JAbout getStance() {
+        if (jAbout == null) {
 
             jAbout = new JAbout();
             jAbout.setVisible(true);

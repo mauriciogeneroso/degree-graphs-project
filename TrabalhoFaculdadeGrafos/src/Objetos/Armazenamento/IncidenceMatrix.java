@@ -35,8 +35,8 @@ public class IncidenceMatrix extends Matrix implements java.io.Serializable {
             matrix[startingNode][edge] += 1;
             matrix[finishingNode][edge] += 1;
         }
-        System.out.println("Matriz de Incidência: ");
-        this.printMatrix();
+        //System.out.println("Matriz de Incidência: ");
+        //this.printMatrix();
     }
 
 }

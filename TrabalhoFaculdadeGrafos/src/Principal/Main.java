@@ -34,8 +34,10 @@ public class Main extends JWindow {
     private static final String tres = "...";
     private static final AbsoluteLayout absoluto = new AbsoluteLayout();
     private static final AbsoluteConstraints absimage = new AbsoluteConstraints(0, 0);
-    private static final AbsoluteConstraints absbarra = new AbsoluteConstraints(0, 500);;
-    private final ImageIcon image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_IMAGES_FOLDER + "splash.png"));;
+    private static final AbsoluteConstraints absbarra = new AbsoluteConstraints(0, 500);
+    ;
+    private final ImageIcon image = new ImageIcon(getClass().getResource(Util.Strings.PATH_TO_IMAGES_FOLDER + "splash.png"));
+    ;
     private static final JLabel jlabel = new JLabel();
     private static final JProgressBar barra = new JProgressBar();
 
@@ -43,10 +45,10 @@ public class Main extends JWindow {
      * Metodo construtor.
      */
     public Main() {
-        this.getContentPane().setLayout(absoluto);
-        this.getContentPane().add(jlabel, absimage);
-        this.getContentPane().add(barra, absbarra);
-        this.setAlwaysOnTop(true);
+        Main.this.getContentPane().setLayout(absoluto);
+        Main.this.getContentPane().add(jlabel, absimage);
+        Main.this.getContentPane().add(barra, absbarra);
+        Main.this.setAlwaysOnTop(true);
         barra.setPreferredSize(new Dimension(512, 40));
         barra.setForeground(Color.gray);
         barra.setForeground(Color.gray);
@@ -54,7 +56,7 @@ public class Main extends JWindow {
         barra.setStringPainted(true);
         jlabel.setIcon(image);
         jlabel.setBackground(Color.red);
-        
+
         /**
          * Reponsável por iniciar uma nova thread.
          *
@@ -68,7 +70,7 @@ public class Main extends JWindow {
                     barra.setValue(i);
                     i++;
                     try {
-                        sleep(30);
+                        Thread.sleep(30);
                     } catch (InterruptedException ex) {
                         log.put("Main", "Thread] [Run", 0, ex.getMessage());
                     }
@@ -88,13 +90,14 @@ public class Main extends JWindow {
             }
         }.start();
 
-        this.pack();
-        this.setVisible(true);
-        this.setLocationRelativeTo(null);
+        Main.this.pack();
+        Main.this.setVisible(true);
+        Main.this.setLocationRelativeTo(null);
     }
 
     /**
      * Método responsável por redefinir texto para a barra de carregamento.
+     *
      * @param i int - Control "barra" String text
      */
     public void progresso(int i) {

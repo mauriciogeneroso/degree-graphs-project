@@ -50,7 +50,7 @@ public class JMainWindow extends javax.swing.JFrame {
         //</editor-fold>
         initComponents();
         javax.swing.ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(Util.Strings.PATH_TO_ICON_FOLDER + "icon.png"));
-        this.setIconImage(img.getImage());
+        JMainWindow.this.setIconImage(img.getImage());
         buttonGroup.add(rButtonMatrizAdj);
         buttonGroup.add(rButtonMatrizInc);
         buttonGroup.add(rButtonListaAdj);
@@ -477,7 +477,6 @@ public class JMainWindow extends javax.swing.JFrame {
         if (graph.getAdjMatrix() == null) {
             Util.MessageCtrl.callMessage("Não existe um grafo para verificar se é simples", "Grafo Simples", 2);
             log.put("JMainWindow", "btSimplesActionPerformed", 0, "Não existe um grafo para verificar se é simples");
-
         } else if (ident.checkSimpleGraph(graph)) {
             Util.MessageCtrl.callMessage("O grafo é simples!", "Grafo Simples", 1);
             log.put("JMainWindow", "btSimplesActionPerformed", 1, "O grafo é simples");
