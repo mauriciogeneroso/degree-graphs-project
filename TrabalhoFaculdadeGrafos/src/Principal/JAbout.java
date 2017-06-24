@@ -42,8 +42,7 @@ public class JAbout extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sobre");
@@ -68,17 +67,9 @@ public class JAbout extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setEnabled(false);
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText(" Projeto interdisciplinar realizado com as disciplinas:\n               1. Estruturas de Dados II                                   \n      2. Projeto interdisciplinar da Computação II                   \n                3. Teoria dos Grafos                                  \n ----------------------------------------------------\n             Graduandos autores do projeto:                             \n\n                  1. Gustavo Souza                                        \n                        2. Luan Darabas\n                         3. Luiz Alexandre da Luz\n                   4. Maurício Generoso\n\n ---------------------------------------------------\n                  Professores:\n\n                   1. Christine Vieira\n               2. Gilberto Vieira da Silva\n                      3. Leila Laís Gonçalves\n\n 22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE");
-        jTextArea1.setAutoscrolls(false);
-        jTextArea1.setFocusable(false);
-        jTextArea1.setRequestFocusEnabled(false);
-        jTextArea1.setVerifyInputWhenFocusTarget(false);
-        jScrollPane1.setViewportView(jTextArea1);
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("<html>\n<body>\n<p align=\"center\"><strong>Projeto interdisciplinar realizado com as disciplinas:</strong></p><br />\n<p align=\"center\">       1. Estruturas de Dados II                                                                  </p>\n<p align=\"center\">       2. Projeto interdisciplinar da Computação II                                     </p>\n<p align=\"center\">       3. Teoria dos Grafos                                                                          </p>\n<p align=\"center\"> ---------------------------------------------------------------------------             </p>\n<p align=\"center\"><strong>Graduandos autores do projeto:                             </strong></p> <br />   \n<p align=\"center\">        1. Gustavo Souza                                                                              </p>                                   \n<p align=\"center\">        2. Luan Darabas                                                                                </p> \n<p align=\"center\">        3. Luiz Alexandre da Luz                                                                   </p> \n<p align=\"center\">        4. Maurício Generoso                                                                        </p>\n<p align=\"center\"> ---------------------------------------------------------------------------             </p>\n<p align=\"center\"><strong>Professores:                                                             </strong></p> <br />\n<p align=\"center\">        1. Christine Vieira                                                                              </p>\n<p align=\"center\">        2. Gilberto Vieira da Silva                                                                  </p>\n<p align=\"center\">        3. Leila Laís Gonçalves                                                                      </p>\n<p align=\"center\"> ---------------------------------------------------------------------------             </p>\n<p align=\"center\"> 22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE            </p> <br />\n</body>\n</html>");
+        jLabel1.setToolTipText("");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -87,7 +78,7 @@ public class JAbout extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jLabel1)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -96,9 +87,9 @@ public class JAbout extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
-                .addGap(6, 6, 6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -112,7 +103,7 @@ public class JAbout extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -134,12 +125,11 @@ public class JAbout extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
 

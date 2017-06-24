@@ -49,7 +49,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel2" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -73,7 +73,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                          <Component id="jLabel1" max="32767" attributes="0"/>
                           <Component id="jPanel3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -85,9 +85,9 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="395" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="332" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -127,30 +127,13 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+            <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;Projeto interdisciplinar realizado com as disciplinas:&lt;/strong&gt;&lt;/p&gt;&lt;br /&gt;&#xa;&lt;p align=&quot;center&quot;&gt;       1. Estruturas de Dados II                                                                  &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt;       2. Projeto interdisciplinar da Computa&#xe7;&#xe3;o II                                     &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt;       3. Teoria dos Grafos                                                                          &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt; ---------------------------------------------------------------------------             &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;Graduandos autores do projeto:                             &lt;/strong&gt;&lt;/p&gt; &lt;br /&gt;   &#xa;&lt;p align=&quot;center&quot;&gt;        1. Gustavo Souza                                                                              &lt;/p&gt;                                   &#xa;&lt;p align=&quot;center&quot;&gt;        2. Luan Darabas                                                                                &lt;/p&gt; &#xa;&lt;p align=&quot;center&quot;&gt;        3. Luiz Alexandre da Luz                                                                   &lt;/p&gt; &#xa;&lt;p align=&quot;center&quot;&gt;        4. Maur&#xed;cio Generoso                                                                        &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt; ---------------------------------------------------------------------------             &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;Professores:                                                             &lt;/strong&gt;&lt;/p&gt; &lt;br /&gt;&#xa;&lt;p align=&quot;center&quot;&gt;        1. Christine Vieira                                                                              &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt;        2. Gilberto Vieira da Silva                                                                  &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt;        3. Leila La&#xed;s Gon&#xe7;alves                                                                      &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt; ---------------------------------------------------------------------------             &lt;/p&gt;&#xa;&lt;p align=&quot;center&quot;&gt; 22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE            &lt;/p&gt; &lt;br /&gt;&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
-                  <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value=" Projeto interdisciplinar realizado com as disciplinas:&#xa;               1. Estruturas de Dados II                                   &#xa;      2. Projeto interdisciplinar da Computa&#xe7;&#xe3;o II                   &#xa;                3. Teoria dos Grafos                                  &#xa; ----------------------------------------------------&#xa;             Graduandos autores do projeto:                             &#xa;&#xa;                  1. Gustavo Souza                                        &#xa;                        2. Luan Darabas&#xa;                         3. Luiz Alexandre da Luz&#xa;                   4. Maur&#xed;cio Generoso&#xa;&#xa; ---------------------------------------------------&#xa;                  Professores:&#xa;&#xa;                   1. Christine Vieira&#xa;               2. Gilberto Vieira da Silva&#xa;                      3. Leila La&#xed;s Gon&#xe7;alves&#xa;&#xa; 22/10/2016 - UNIVERSIDADE DO EXTREMO SUL CATARINENSE"/>
-                    <Property name="autoscrolls" type="boolean" value="false"/>
-                    <Property name="focusable" type="boolean" value="false"/>
-                    <Property name="requestFocusEnabled" type="boolean" value="false"/>
-                    <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
