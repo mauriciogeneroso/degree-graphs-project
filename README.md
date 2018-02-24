@@ -1,7 +1,7 @@
 ## Trabalho universitário - Teoria dos Grafos
 <h6>4ª fase - 2016/2</h6>
 
-Algoritmos para validações de grafos simples, completos e conexos, e visualização de grafos.
+Algoritmos para validações de grafos simples, completos e conexos, além de sua visualização gráfica.
 
 * <h5>Tecnologias e conceitos utilizados e estudados</h5>
   - Grafos; <br />
