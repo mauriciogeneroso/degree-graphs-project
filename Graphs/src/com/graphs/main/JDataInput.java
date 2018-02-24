@@ -1,6 +1,8 @@
 package com.graphs.main;
 
 import com.graphs.objects.Graph;
+import com.graphs.objects.storage.AdjacencyMatrix;
+import com.graphs.objects.storage.IncidenceMatrix;
 import com.graphs.util.Log;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -26,7 +28,7 @@ public class JDataInput extends javax.swing.JFrame {
     private Graph graph2;
     private JMainWindow frame;
     private ButtonGroup buttonGroup = new ButtonGroup();
-    
+
     private static final Log LOG = new Log();
 
     public JDataInput(JMainWindow frame) {
@@ -34,7 +36,7 @@ public class JDataInput extends javax.swing.JFrame {
         ImageIcon img = new javax.swing.ImageIcon(getClass().getResource(com.graphs.util.Constants.PATH_TO_ICON_FOLDER + "icon.png"));
         JDataInput.this.setIconImage(img.getImage());
         JDataInput.this.frame = frame;
-        JDataInput.this.graph2 = new com.graphs.objects.Graph();
+        JDataInput.this.graph2 = new Graph();
 
         // Grupo de botões para informar se o grafo é completo ou se o usuário definirá as adjacências
         buttonGroup.add(rButtonCompleto);
@@ -458,7 +460,7 @@ public class JDataInput extends javax.swing.JFrame {
         } else {
             try {
                 graph2.setEdges(captureEdges(entradaArestas.getText()));
-                graph2.startMatrix(new com.graphs.objects.storage.IncidenceMatrix(), graph2.countNode(), graph2.countEdge());
+                graph2.startMatrix(new IncidenceMatrix(0, 0), graph2.countNode(), graph2.countEdge());
                 graph2.startLists();
                 cBoxAresta.removeAllItems();
                 buttonDefine();
@@ -514,7 +516,7 @@ public class JDataInput extends javax.swing.JFrame {
                     }
                 }
 
-                graph2.startMatrix(new com.graphs.objects.storage.AdjacencyMatrix(), graph2.countNode(), graph2.countNode()); // Adjacência
+                graph2.startMatrix(new AdjacencyMatrix(0, 0), graph2.countNode(), graph2.countNode()); // Adjacência
                 graph2.startLists();
 
                 String[] edges = new String[countEdges];
@@ -523,7 +525,7 @@ public class JDataInput extends javax.swing.JFrame {
                 }
 
                 graph2.setEdges(edges);
-                graph2.startMatrix(new com.graphs.objects.storage.IncidenceMatrix(), graph2.countNode(), graph2.countEdge());
+                graph2.startMatrix(new IncidenceMatrix(0, 0), graph2.countNode(), graph2.countEdge());
                 countEdges = 0;
                 for (int i = 0; i < graph2.countNode(); i++) {
                     for (int j = i + 1; j < graph2.countNode(); j++) {
@@ -683,7 +685,7 @@ public class JDataInput extends javax.swing.JFrame {
     private void buttonDefine() {
         graph2.setNodes(captureNodes(entradaNos.getText()));
         if (!graph2.noIsEmpty()) {
-            graph2.startMatrix(new com.graphs.objects.storage.AdjacencyMatrix(), graph2.countNode(), graph2.countNode());
+            graph2.startMatrix(new AdjacencyMatrix(0, 0), graph2.countNode(), graph2.countNode());
             // A matriz de incidência é inicializada quando tirar o foco do campo de arestas pois as colunas é o número de arestas,
             // quanto clicar neste botão ainda não tem o número de arestas para poder inicialiar a matriz de Incidência.
             graph2.startLists();

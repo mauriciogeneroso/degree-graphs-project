@@ -19,13 +19,28 @@ public class AdjacencyMatrix extends Matrix {
     private static final long serialVersionUID = 1L;
 
     /**
+     * Constructor.
+     *
+     * @param rows - Linhas.
+     * @param columns - Colunas.
+     */
+    public AdjacencyMatrix(int rows, int columns) {
+        this.matrix = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
+    /**
      * Altera a Matriz de Adjacência(para Grafo Não Direcionado) de acordo com
      * os nós informados
      *
      * @param startingNode - primeiro nó da adjacência
      * @param finishingNode - segundo nó da adjacência
      */
-    public void alterarMatrizGrafoNaoDirecionado(int startingNode, int finishingNode) {
+    public void changeMatrixGraphNotDirected(int startingNode, int finishingNode) {
         if (startingNode == finishingNode) {
             // Se houver laço só irá armazenar uma vez
             matrix[startingNode][finishingNode] += 1;

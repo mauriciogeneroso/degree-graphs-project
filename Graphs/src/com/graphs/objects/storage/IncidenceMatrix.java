@@ -19,6 +19,21 @@ public class IncidenceMatrix extends Matrix {
     private static final long serialVersionUID = 1L;
 
     /**
+     * Constructor.
+     *
+     * @param rows - Linhas.
+     * @param columns - Colunas.
+     */
+    public IncidenceMatrix(int rows, int columns) {
+        this.matrix = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+    
+    /**
      * Altera a Matriz de Incidência (para Grafo Não Direcionado) de acordo com
      * os nós informados
      *

@@ -23,9 +23,7 @@ public abstract class Matrix implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    int[][] matrix;
-    int rows;
-    int columns;
+    protected int[][] matrix;
 
     /**
      * Retorna a matriz
@@ -42,16 +40,7 @@ public abstract class Matrix implements Serializable {
      * @return int - Linhas
      */
     public int getCountRows() {
-        return rows;
-    }
-
-    /**
-     * Atribui Linhas
-     *
-     * @param rows int - Valor para linhas
-     */
-    private void setRows(int rows) {
-        this.rows = rows;
+        return matrix.length;
     }
 
     /**
@@ -60,16 +49,7 @@ public abstract class Matrix implements Serializable {
      * @return int - Colunas
      */
     public int getCountColumns() {
-        return columns;
-    }
-
-    /**
-     * Atribui Linhas
-     *
-     * @param columns int - Valor para colunas
-     */
-    private void setColumns(int columns) {
-        this.columns = columns;
+        return matrix[0].length;
     }
 
     /**
@@ -89,24 +69,7 @@ public abstract class Matrix implements Serializable {
     public void printMatrix() {
         System.out.print(this); // Iŕa chamar o toString();
     }
-
-    /**
-     * Retorna as linhas
-     *
-     * @param rows int - Linhas
-     * @param columns int - Colunas
-     */
-    public void startMatrix(int rows, int columns) {
-        /// Cuidar, a classe possui dois atributos com o mesmo nome linhas e colunas
-        this.setRows(rows);
-        this.setColumns(columns);
-        matrix = new int[this.rows][this.columns];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < this.columns; j++) {
-                matrix[i][j] = 0;
-            }
-        }
-    }
+    
 
     /**
      * Retorna o Objeto em String

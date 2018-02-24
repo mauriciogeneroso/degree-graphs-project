@@ -29,8 +29,8 @@ public class Graph implements Serializable {
 
     private static final long serialVersionUID = 1L;
     // Matrizes
-    private Matrix AdjMatrix;
-    private Matrix IncMatrix;
+    private Matrix adjMatrix;
+    private Matrix incMatrix;
 
     // Listas
     private LinkedList<AdjacencyElement>[] listAdj;
@@ -44,8 +44,8 @@ public class Graph implements Serializable {
      * Construtor.
      */
     public Graph() {
-        AdjMatrix = null;
-        IncMatrix = null;
+        adjMatrix = null;
+        incMatrix = null;
 
         listAdj = null;
         listInc = null;
@@ -60,7 +60,7 @@ public class Graph implements Serializable {
      * @return Matriz de adjacencia
      */
     public Matrix getAdjMatrix() {
-        return AdjMatrix;
+        return adjMatrix;
     }
 
     /**
@@ -69,7 +69,7 @@ public class Graph implements Serializable {
      * @return Matriz de incidência
      */
     public Matrix getIncMatrix() {
-        return IncMatrix;
+        return incMatrix;
     }
 
     /**
@@ -182,13 +182,11 @@ public class Graph implements Serializable {
      */
     public void startMatrix(Matrix mt, int amountRows, int amountColumns) {
         if (mt instanceof AdjacencyMatrix) {
-            mt = new AdjacencyMatrix();
-            mt.startMatrix(amountRows, amountColumns);
-            AdjMatrix = mt;
+            mt = new AdjacencyMatrix(amountRows, amountColumns);
+            adjMatrix = mt;
         } else if (mt instanceof IncidenceMatrix) {
-            mt = new IncidenceMatrix();
-            mt.startMatrix(amountRows, amountColumns);
-            IncMatrix = mt;
+            mt = new IncidenceMatrix(amountRows, amountColumns);
+            incMatrix = mt;
         }
     }
 
@@ -213,8 +211,8 @@ public class Graph implements Serializable {
     public void destroyGraph() {
         nodes = null;
         edges = null;
-        AdjMatrix = null;
-        IncMatrix = null;
+        adjMatrix = null;
+        incMatrix = null;
         listAdj = null;
         listInc = null;
     }
@@ -229,7 +227,7 @@ public class Graph implements Serializable {
      */
     public void alterMatrix(Matrix mt, int startingNode, int finishingNode, int edge) {
         if (mt instanceof AdjacencyMatrix) {
-            ((AdjacencyMatrix) mt).alterarMatrizGrafoNaoDirecionado(startingNode, finishingNode);
+            ((AdjacencyMatrix) mt).changeMatrixGraphNotDirected(startingNode, finishingNode);
         } else if (mt instanceof IncidenceMatrix) {
             ((IncidenceMatrix) mt).alterarMatrizGrafoNaoDirecionado(startingNode, finishingNode, edge);
         }
