@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.9.4
-Created-By: 1.8.0_101-b13 (Oracle Corporation)
-Class-Path: lib/ant.jar lib/lucene-1.4.3.jar
-X-COMMENT: Main-Class will be added automatically by build
-
