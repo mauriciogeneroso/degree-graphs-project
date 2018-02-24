@@ -1,0 +1,200 @@
+[Sun Dec 18 01:48:21 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Dec 18 01:48:21 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Dec 18 01:48:21 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Dec 18 01:48:21 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [captureNodes] :: [a, b, v]
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [captureNodes] :: [a, b, v]
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Dec 18 01:48:21 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Dec 18 01:48:25 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Dec 18 02:00:29 BRST 2016] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sun Dec 18 02:00:29 BRST 2016] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [captureNodes] :: [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, z]
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [captureNodes] :: [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, z]
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sun Dec 18 02:00:31 BRST 2016] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sun Dec 18 02:00:29 BRST 2016] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sun Dec 18 02:00:29 BRST 2016] [JMainWindow.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Jun 24 01:03:13 BRT 2017] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Jun 24 01:03:13 BRT 2017] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Jun 24 01:03:18 BRT 2017] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para verificar se é simples] [Título :: Grafo Simples] [Ícone :: 2
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btSimplesActionPerformed] [0] :: Não existe um grafo para verificar se é simples
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btLimparActionPerformed] [2] :: Sem grafo para destruir
+[Sat Jun 24 01:03:45 BRT 2017] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sat Jun 24 01:03:13 BRT 2017] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Jun 24 01:03:13 BRT 2017] [LoadSettings.java] [getUsuario] :: Usuário "User" capturado com sucesso
+[Sat Jun 24 01:03:13 BRT 2017] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Jun 24 01:03:13 BRT 2017] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Jun 24 01:03:45 BRT 2017] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Jun 24 01:03:45 BRT 2017] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [captureNodes] :: [A, B, C, D, E, F]
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [captureNodes] :: [A, B, C, D, E, F]
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [buttonDefine] [1] :: Sucesso
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [capturarArestas] :: [a1, a3, a2]
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [edgeRepeated] [1] :: Não há arestas repetidas] [FALSE
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [capturarArestas] :: [a1, a3, a2]
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [captureNodes] :: [A, B, C, D, E, F]
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [buttonDefine] [1] :: Sucesso
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 1
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 1
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 1
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 5
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 4
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 1
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 5
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 4
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 1
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 5
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 4
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 1
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 4
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 2
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 4
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 2
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeStartingSelected] [1] :: 0
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionNodeFinishingSelected] [1] :: 4
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [positionEdgeSelected] [1] :: 2
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Jun 24 01:03:13 BRT 2017] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sat Jun 24 01:03:13 BRT 2017] [IdentificationGraph.java] [checkPlanarGraph] [1] :: O grafo é planar] :: [TRUE
+[Sat Jun 24 01:03:18 BRT 2017] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é planar] [Título :: Grafo Planar] [Ícone :: 1
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btPlanarActionPerformed] [1] :: O grafo é planar
+[Sat Jun 24 01:03:13 BRT 2017] [IdentificationGraph.java] [checkCompleteGraph] [0] :: Existe algum nó que não é ligado ou que possui aresta paralela] :: [FALSE
+[Sat Jun 24 01:03:18 BRT 2017] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo não é completo] [Título :: Grafo Completo] [Ícone :: 1
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btCompletoActionPerformed] [2] :: O grafo não é completo
+[Sat Jun 24 01:03:13 BRT 2017] [IdentificationGraph.java] [checkConnectedGraph] [1] :: Não é conexo] :: [FALSE
+[Sat Jun 24 01:03:18 BRT 2017] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo não é conexo] [Título :: Grafo Conexo] [Ícone :: 1
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btConexoActionPerformed] [2] :: O grafo não é conexo
+[Sat Jun 24 01:03:13 BRT 2017] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sat Jun 24 01:03:18 BRT 2017] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é simples!] [Título :: Grafo Simples] [Ícone :: 1
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btSimplesActionPerformed] [1] :: O grafo é simples
+[Sat Jun 24 01:10:26 BRT 2017] [FileImportExport.java] [exportGraph] [0] :: JFileChooser exibido com sucesso
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [exportGraph] :: Cancelado com sucesso!
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Jun 24 01:03:51 BRT 2017] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Jun 24 01:03:13 BRT 2017] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sat Jun 24 01:03:18 BRT 2017] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é simples!] [Título :: Grafo Simples] [Ícone :: 1
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btSimplesActionPerformed] [1] :: O grafo é simples
+[Sat Jun 24 01:03:13 BRT 2017] [JMainWindow.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Jun 24 01:26:01 BRT 2017] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Jun 24 01:26:01 BRT 2017] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Jun 24 01:26:01 BRT 2017] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Jun 24 01:26:01 BRT 2017] [JMainWindow.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
+[Sat Feb 24 00:20:31 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:20:31 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:21:18 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:21:18 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:22:32 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:22:32 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:23:59 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:23:59 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:23:59 BRT 2018] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Feb 24 00:28:42 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:28:42 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:28:42 BRT 2018] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Feb 24 00:29:32 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:29:32 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:29:32 BRT 2018] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Feb 24 00:29:34 BRT 2018] [JSettings.java] [Construtor] :: Construído com sucesso
+[Sat Feb 24 00:29:32 BRT 2018] [JMainWindow.java] [btConfigActionPerformed] :: Configuracao.java chamada com sucesos
+[Sat Feb 24 00:29:32 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:29:32 BRT 2018] [LoadSettings.java] [getUsuario] :: Usuário "User" capturado com sucesso
+[Sat Feb 24 00:29:32 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:29:32 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:29:34 BRT 2018] [JSettings.java] [formWindowOpened] :: Sucesso
+[Sat Feb 24 00:29:32 BRT 2018] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Feb 24 00:29:34 BRT 2018] [JSettings.java] [formWindowClosing] :: Fechada com sucesso
+[Sat Feb 24 00:29:36 BRT 2018] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Feb 24 00:29:32 BRT 2018] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Feb 24 00:29:39 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para visualizar.] [Título :: Visualização do grafo] [Ícone :: 2
+[Sat Feb 24 00:29:32 BRT 2018] [JMainWindow.java] [btVisualizarActionPerformed] [0] :: Não existe um grafo para visualizar
+[Sat Feb 24 00:29:32 BRT 2018] [JMainWindow.java] [btLimparActionPerformed] [2] :: Sem grafo para destruir
+[Sat Feb 24 00:29:32 BRT 2018] [JMainWindow.java] [btSairActionPerformed] :: Programa finalizado
+[Sat Feb 24 00:29:47 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:29:47 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para verificar se é completo.] [Título :: Grafo completo] [Ícone :: 2
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btCompletoActionPerformed] [0] :: Não existe um grafo para verificar se é completo
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [ImportGraph] :: Cancelado com sucesso!
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [readFile] [1] :: Objetos.Graph
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [readFile] :: Objeto grafo lido com sucesso!
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [importGraph] [0] :: lerArquivo solicitado
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [importGraph] [2] :: Grafo retornado
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para visualizar.] [Título :: Visualização do grafo] [Ícone :: 2
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btVisualizarActionPerformed] [0] :: Não existe um grafo para visualizar
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [readFile] [1] :: Objetos.Graph
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [readFile] :: Objeto grafo lido com sucesso!
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [importGraph] [0] :: lerArquivo solicitado
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [importGraph] [2] :: Grafo retornado
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [ImportGraph] :: Cancelado com sucesso!
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Não existe um grafo para ser exportado!] [Título :: Exportar] [Ícone :: 8
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [exportGraph] :: Não existe um grafo para ser exportado!
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btEntradaDadosActionPerformed] :: EntradaDados exibido com sucesso
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [captureNodes] :: [4, 1, 4]
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [captureNodes] :: [4, 1, 4]
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [nodeRepeated] [0] :: Há nós repetidos] [TRUE
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: Existem nós com o mesmo nome] [Título :: Aviso] [Ícone :: 2
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [captureNodes] :: [4, 1, 5]
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [captureNodes] :: [4, 1, 5]
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [nodeRepeated] [1] :: Não há nós repetidos] [FALSE
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [setGrafo] [0] :: Grafo setado com sucesso
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [exit] [1] :: FramePrincipal chaamdo com sucesso
+[Sat Feb 24 00:29:47 BRT 2018] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sat Feb 24 00:29:47 BRT 2018] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btVisualizarActionPerformed] :: Prefuse chamada com sucesso para visualziar o grafo
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [exportGraph] [0] :: JFileChooser exibido com sucesso
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [saveFile] [1] :: Arquivo salvo com sucesso!
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [exportGraph] [1] :: Gravou arquivo
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callConfirmDialog] [0] :: Mensagem :: Deseja realmente destruir o grafo informado? Irá perder todas os dados.] [Título :: Confirmar ação] [Ícone :: 2] [Response:: 0]
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btLimparActionPerformed] [0] :: Grafo destruído
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btLimparActionPerformed] [2] :: Sem grafo para destruir
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [readFile] :: Objeto grafo lido com sucesso!
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [importGraph] [0] :: lerArquivo solicitado
+[Sat Feb 24 00:29:54 BRT 2018] [FileImportExport.java] [importGraph] [2] :: Grafo retornado
+[Sat Feb 24 00:29:47 BRT 2018] [IdentificationGraph.java] [checkConnectedGraph] [0] :: É um grafo conexo] :: [TRUE
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é conexo] [Título :: Grafo Conexo] [Ícone :: 1
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btConexoActionPerformed] [1] :: O grafo é conexo
+[Sat Feb 24 00:29:47 BRT 2018] [IdentificationGraph.java] [checkSimpleGraph] [2] :: É um grafo simples] :: [TRUE
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é simples!] [Título :: Grafo Simples] [Ícone :: 1
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btSimplesActionPerformed] [1] :: O grafo é simples
+[Sat Feb 24 00:29:47 BRT 2018] [IdentificationGraph.java] [checkCompleteGraph] [2] :: É um grafo completo] :: [TRUE
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é completo] [Título :: Grafo Completo] [Ícone :: 1
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btCompletoActionPerformed] [1] :: O grafo é completo
+[Sat Feb 24 00:29:47 BRT 2018] [IdentificationGraph.java] [checkPlanarGraph] [1] :: O grafo é planar] :: [TRUE
+[Sat Feb 24 00:29:51 BRT 2018] [MessageCtrl.java] [callMessage] [0] :: Mensagem :: O grafo é planar] [Título :: Grafo Planar] [Ícone :: 1
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btPlanarActionPerformed] [1] :: O grafo é planar
+[Sat Feb 24 00:30:51 BRT 2018] [JDataInput.java] [Construtor] :: FramePrincipal construido com sucesso
+[Sat Feb 24 00:29:47 BRT 2018] [JMainWindow.java] [btConfigActionPerformed] :: EntradaDados.java chamada com sucesos
+[Sat Feb 24 00:33:13 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:33:13 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:33:13 BRT 2018] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Feb 24 00:34:17 BRT 2018] [LoadSettings.java] [getProperties] [0] :: Propriedades carregadas
+[Sat Feb 24 00:34:17 BRT 2018] [LoadSettings.java] [isUsernameSave] [1] :: true
+[Sat Feb 24 00:34:17 BRT 2018] [JMainWindow.java] [Construtor] :: Construído com sucesso
+[Sat Feb 24 00:34:17 BRT 2018] [JMainWindow.java] [btConfigActionPerformed] :: JAbout.java chamada com sucesos
