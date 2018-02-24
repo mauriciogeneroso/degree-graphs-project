@@ -1,7 +1,13 @@
-Este projeto tem a finalidade de criar um sistema que é possível validar e visualizar um grafo. Fins universitários.
+## Trabalho universitário - Teoria dos Grafos
+<h6>4ª fase - 2016/2</h6>
 
-Se for utilizar parcialmente ou totalmente você deve dar os créditos, e não modificar nenhuma linha de código. Se quiser solicitar alterações ou informar problemas, para isso que serve o Issue e Pull Request.
+Algoritmos para validações de grafos simples, completos e conexos, e visualização de grafos.
 
-@author: [Luan Darabas](https://github.com/luandr) <br>
-@author: [Luiz Alexandre](https://github.com/LuizAlexandre17) <br>
-@author: [Maurício Generoso](https://github.com/programmerGM) <br>
+* <h5>Tecnologias e conceitos utilizados e estudados</h5>
+  - Grafos.
+  - Java; <br />
+  - API gráfica <a href="http://prefuse.org/" >Prefuse</a> <br /> 
+
+<h6>@author: <a href="https://github.com/luandr">Luan Darabas</a> <br />
+@author: <a href="https://github.com/LuizAlexandre17">Luiz Alexandre</a> <br />
+@author: <a href="https://github.com/programmerGM">Maurício Generoso</a></h6>
